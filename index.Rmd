@@ -106,7 +106,7 @@ $$\frac{a + ib}{c + id} = \frac{(a + ib)(c - id)}{(c + id)(c - id)} = \frac{ac +
 - The plane is called the **complex plane**
 
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/A_plus_bi.svg/250px-A_plus_bi.svg.png)
+![Image Source: Wikimedia](fig/pic.png)
 
 ###  Vector Interpretation
 
@@ -157,6 +157,8 @@ $$\frac{a + ib}{c + id} = \frac{(a + ib)(c - id)}{(c + id)(c - id)} = \frac{ac +
 
 ### Stereographic Projection and the Riemann Sphere
 
+The extended complex plane is the complex plane together with the 
+point at infinity. We denote the it by \(C^* = c\cup\{\infty\}\).
 - The extended complex plane includes $\infty$ and can be represented on a unit sphere
 - Under stereographic projection, the point $(x_1, x_2, x_3)$ on the sphere corresponds to:
   - $z = \frac{x_1 + ix_2}{1 - x_3}$

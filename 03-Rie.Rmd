@@ -1,0 +1,103 @@
+# Riemann Surfaces. 
+```{definition,name="Riemann surface"}
+A **Riemann surface** is a second‑countable, Hausdorff topological space \(X\) equipped with a **complex atlas**  \(\mathcal{A} = \{(U_\alpha, \varphi_\alpha)\}\) satisfying the following properties:
+
+1. Each \(U_\alpha \subseteq X\) is open.
+
+2. Each map  \(   \varphi_\alpha : U_\alpha \to V_\alpha   \)
+   is a homeomorphism onto an open set \(V_\alpha \subseteq \mathbb{C}\).
+
+3. The collection \(\{U_\alpha\}\) covers \(X\).
+
+4. For every pair of charts \((U_\alpha, \varphi_\alpha)\) and \((U_\beta, \varphi_\beta)\) with  \(   U_\alpha \cap U_\beta \neq \varnothing,\)
+   the **transition map**
+   \[
+   \varphi_\beta \circ \varphi_\alpha^{-1} :
+   \varphi_\alpha(U_\alpha \cap U_\beta) \longrightarrow
+   \varphi_\beta(U_\alpha \cap U_\beta)
+   \]
+   is a **biholomorphism**.
+
+
+```
+
+![Two coordinate charts on a manifold (Image Credit: Wikipedia) ](fig/Picture1.png)
+
+
+
+```{remark}
+**Terminology**: 
+  -"holomorphic functions"  are functions which are complex differentiable on an open set in the complex plane. 
+  -A "biholomorphic map" is a holomorphic bijection whose inverse is holomorphic.
+```
+
+
+```{definition}
+Let \(R_1\) and \(R_2\) be Riemann surfaces. A map  \(f : R_1 \to R_2\)
+is said to be **holomorphic** if for every pair of charts \((U, \varphi) \quad \text{on } R_1, \qquad (V, \psi) \quad \text{on } R_2,\) the map  \(\psi \circ f \circ \varphi^{-1}\) is holomorphic on its domain (which may be empty).
+```
+
+Suppose \((U, \varphi)\), \((U', \varphi')\) are charts on \(R_1\), and \((V, \psi)\), \((V', \psi')\) are charts on \(R_2\). On the overlap where all maps are defined, we have:
+
+- the transition maps   \(  \varphi' \circ \varphi^{-1},\psi' \circ \psi^{-1}  \) are **biholomorphisms** (by condition (5) in the definition of a complex atlas)
+- therefore  
+  \[
+  \psi' \circ f \circ (\varphi')^{-1}
+  = (\psi' \circ \psi^{-1}) 
+    \circ (\psi \circ f \circ \varphi^{-1}) 
+    \circ (\varphi \circ (\varphi')^{-1})
+  \]   is holomorphic if and only if \(\psi \circ f \circ \varphi^{-1}\) is holomorphic.
+
+Thus the notion of holomorphicity does **not** depend on the choice of charts.
+```
+
+![](fig/pic 2.jpeg)
+
+```{exercise}
+ Let \(R_1\) and \(R_2\) be Riemann surfaces, and let  \(f : R_1 \to R_2\)
+be a continuous map. Assume that for every point \(p \in R_1\) there exist:
+
+- a chart \((U_p, \varphi_p)\) on \(R_1\) with \(p \in U_p\),
+- a chart \((V_p, \psi_p)\) on \(R_2\) with \(f(p) \in V_p\),
+
+such that
+\[
+\psi_p \circ f \circ \varphi_p^{-1}
+\]
+is holomorphic (in the usual sense) on its domain, an open subset of \(\mathbb{C}\).
+
+Show that \(f\) is holomorphic (in the sense of the definition for maps between Riemann surfaces).
+```
+
+
+**Solution**:I will update it later.
+
+```{example}
+Define an equivalence relation on \(\mathbb{C}\) by  \(
+z \sim w \quad \Longleftrightarrow \quad w = z + 2\pi i k \quad \text{for some } k \in \mathbb{Z}. \)Let  \(R = \mathbb{C} / \!\sim\)
+be the quotient topological space, with projection map \(\pi : \mathbb{C} \to R.\) We will define an atlas on \(R\) that makes it a Riemann surface.
+
+Define \(U = \{\, z \in \mathbb{C} : -\pi < \operatorname{Im} z < \pi \,\}.
+\)
+
+Restrict to \(U\) for convenience.  
+Let  
+\[
+W = \pi(U) \subset R.
+\]
+
+Let  
+\[
+\sigma : W \to U
+\]
+be the unique right inverse of \(\pi\) on \(W\), i.e. the unique map satisfying:
+
+- \(\pi \circ \sigma = \mathrm{id}_W\),
+- \(\sigma(W) = U\).
+
+```
+
+```{exercise}
+
+Show that for any \(p \in W\) and any \(q \in W\), the map  \(\sigma(q) - \sigma(p) : U \longrightarrow \mathbb{C}\) is a **translation**, and in particular holomorphic.
+```
