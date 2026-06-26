@@ -1,0 +1,437 @@
+--- 
+title: "Complex Analysis"
+author: "Ashan Jayamal"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
+description: |
+  This is a minimal example of using the bookdown package to write a book.
+  The HTML output format for this example is bookdown::gitbook,
+  set in the _output.yml file.
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+---
+
+# Complex Numbers
+
+A complex number is an expression of the form $z = x+iy$, where $x$ and $y$ are real numbers. The component $x$ is called the real part of $z$, and $y$ is the imaginary part of $z$. We will denote these by 
+\begin{align*}
+x &= \operatorname{Re}z, \\
+y &= \operatorname{Im}z.
+\end{align*}
+
+The set of complex numbers forms the complex plane, which we denote by $\mathbb{C}$. We denote the set of real numbers by $\mathbb{R}$, and we think of the real numbers as being a subset of the complex plane, consisting of the complex numbers with imaginary part equal to zero.
+
+ 
+The correspondence 
+\begin{align*}
+z = x+iy \longleftrightarrow (x,y)
+\end{align*}
+
+is a one-to-one correspondence between complex numbers and points (or vectors) in the Euclidean plane $\mathbb{R}^2$. The real numbers correspond to the $x$-axis in the Euclidean plane. The complex numbers of the form $iy$ are called purely imaginary numbers. They form the imaginary axis $i\mathbb{R}$ in the complex plane, which corresponds to the $y$-axis in the Euclidean plane.
+
+
+
+
+
+###  Basic Definitions and Algebra
+
+- A complex number has the form $z = a + ib$ where $a, b$ are real numbers
+- $a$ is the **real part**: $\text{Re}(z) = a$
+- $b$ is the **imaginary part**: $\text{Im}(z) = b$
+- A number is **purely imaginary** if $a = 0$
+- A number is **real** if $b = 0$
+- Zero is the only number that is both real and purely imaginary
+
+###  Arithmetic Operations
+
+#### Addition
+$(a + ib) + (c + id) = (a + c) + i(b + d)$
+
+#### Multiplication
+$(a + ib)(c + id) = (ac - bd) + i(ad + bc)$
+
+#### Division
+$$\frac{a + ib}{c + id} = \frac{(a + ib)(c - id)}{(c + id)(c - id)} = \frac{ac + bd}{c^2 + d^2} + i\frac{bc - ad}{c^2 + d^2}$$
+
+### Complex Conjugate
+
+- The conjugate of $z = a + ib$ is $\bar{z} = a - ib$
+- Properties:
+  - $\overline{z_1 + z_2} = \bar{z}_1 + \bar{z}_2$
+  - $\overline{z_1 \cdot z_2} = \bar{z}_1 \cdot \bar{z}_2$
+  - $\overline{\left(\frac{z_1}{z_2}\right)} = \frac{\bar{z}_1}{\bar{z}_2}$
+  - $z$ is real if and only if $z = \bar{z}$
+  - $z$ is purely imaginary if and only if $z = -\bar{z}$
+
+- Expressing real and imaginary parts using conjugate:
+  - $\text{Re}(z) = \frac{z + \bar{z}}{2}$
+  - $\text{Im}(z) = \frac{z - \bar{z}}{2i}$
+
+### Absolute Value (Modulus)
+
+- The absolute value or modulus of $z = a + ib$ is:
+  - $|z| = \sqrt{a^2 + b^2} = \sqrt{z\bar{z}}$
+
+- Properties:
+  - $|z| \geq 0$ for all $z$, with equality if and only if $z = 0$
+  - $|z_1 \cdot z_2| = |z_1| \cdot |z_2|$
+  - $\left|\frac{z_1}{z_2}\right| = \frac{|z_1|}{|z_2|}$ for $z_2 \neq 0$
+  - $|z_1 + z_2| \leq |z_1| + |z_2|$ (Triangle inequality)
+  - $\left| |z_1| - |z_2| \right| \leq |z_1 - z_2|$
+
+###  Important Inequalities
+
+1. **Triangle Inequality**: $|z_1 + z_2| \leq |z_1| + |z_2|$
+   - Equality holds if and only if $\frac{z_1}{z_2} > 0$ (i.e., the ratio is positive real)
+
+2. $-|z| \leq \text{Re}(z) \leq |z|$
+   - Equality on right when $z$ is positive real
+
+3. $-|z| \leq \text{Im}(z) \leq |z|$
+
+4. **Cauchy's Inequality**: $|a_1b_1 + a_2b_2 + \ldots + a_nb_n|^2 \leq (|a_1|^2 + \ldots + |a_n|^2)(|b_1|^2 + \ldots + |b_n|^2)$
+   - Equality holds if and only if the $a_i$ are proportional to the $b_i$
+
+## Geometric Representation
+
+### The Complex Plane
+
+- A complex number $z = a + ib$ corresponds to the point $(a,b)$ in the plane
+- The $x$-axis is called the **real axis**
+- The $y$-axis is called the **imaginary axis**
+- The plane is called the **complex plane**
+
+
+![Image Source: Wikimedia](fig/pic.png)
+
+###  Vector Interpretation
+
+- Complex numbers can be represented as vectors from the origin
+- Vector addition corresponds to complex addition
+- The length of the vector is $|z|$
+- The distance between points $z_1$ and $z_2$ is $|z_1 - z_2|$
+
+### Polar Form
+
+- A complex number can be written in **polar form**:
+  - $z = r(\cos\theta + i\sin\theta)$ where $r = |z|$ and $\theta = \arg(z)$
+  - $r$ is the modulus: $r = |z| = \sqrt{a^2 + b^2}$
+  - $\theta$ is the **argument** or **amplitude**: $\theta = \arg(z)$
+
+- Properties of polar form:
+  - For $z_1 = r_1(\cos\theta_1 + i\sin\theta_1)$ and $z_2 = r_2(\cos\theta_2 + i\sin\theta_2)$:
+  - $z_1z_2 = r_1r_2[\cos(\theta_1 + \theta_2) + i\sin(\theta_1 + \theta_2)]$
+  - $\arg(z_1z_2) = \arg(z_1) + \arg(z_2)$
+  - $\arg\left(\frac{z_1}{z_2}\right) = \arg(z_1) - \arg(z_2)$
+
+### De Moivre's Formula
+
+- For $z = r(\cos\theta + i\sin\theta)$:
+  - $z^n = r^n(\cos n\theta + i\sin n\theta)$
+
+- For $r = 1$:
+  - $(\cos\theta + i\sin\theta)^n = \cos n\theta + i\sin n\theta$
+
+###  Roots of Complex Numbers
+
+- The $n$-th roots of $z = r(\cos\theta + i\sin\theta)$ are:
+  - $\sqrt[n]{z} = \sqrt[n]{r}\left[\cos\left(\frac{\theta + 2\pi k}{n}\right) + i\sin\left(\frac{\theta + 2\pi k}{n}\right)\right]$ for $k = 0, 1, 2, \ldots, n-1$
+
+- There are $n$ distinct $n$-th roots of any non-zero complex number
+- These roots have equal moduli and are equally spaced around a circle
+- For $z = 1$, the roots are called the **$n$-th roots of unity**
+
+### Equations in the Complex Plane
+
+- Circle with center $a$ and radius $r$: $|z - a| = r$
+  - In algebraic form: $(z - a)(\bar{z} - \bar{a}) = r^2$
+
+- Straight line: $z = a + bt$ where $t$ is a real parameter
+  - Two lines are parallel if $b'$ is a real multiple of $b$
+  - Lines are orthogonal if $\frac{b'}{b}$ is purely imaginary
+  - The angle between lines is $\arg\frac{b'}{b}$
+
+### Stereographic Projection and the Riemann Sphere
+
+The extended complex plane is the complex plane together with the 
+point at infinity. We denote the it by \(C^* = c\cup\{\infty\}\).
+- The extended complex plane includes $\infty$ and can be represented on a unit sphere
+- Under stereographic projection, the point $(x_1, x_2, x_3)$ on the sphere corresponds to:
+  - $z = \frac{x_1 + ix_2}{1 - x_3}$
+
+- The north pole $(0,0,1)$ corresponds to $\infty$
+- Properties:
+  - Circles on the sphere correspond to circles or lines in the plane
+  - The distance formula: $d(z,z') = \frac{2|z-z'|}{\sqrt{(1+|z|^2)(1+|z'|^2)}}$
+  - The sphere is often called the **Riemann sphere**
+
+### Key Formulas and Results
+
+1. $z\bar{z} = |z|^2 = a^2 + b^2$
+
+2. $\frac{1}{z} = \frac{\bar{z}}{|z|^2} = \frac{a - ib}{a^2 + b^2}$
+
+3. $z^n = r^n(\cos n\theta + i\sin n\theta)$
+
+4. $\sqrt[n]{z} = \sqrt[n]{r}\left[\cos\left(\frac{\theta + 2\pi k}{n}\right) + i\sin\left(\frac{\theta + 2\pi k}{n}\right)\right]$ where $k = 0, 1, \ldots, n-1$
+
+5. Triangle inequality: $|z_1 + z_2| \leq |z_1| + |z_2|$
+
+6. Cauchy's inequality: $\left|\sum_{i=1}^{n} a_i\bar{b}_i\right|^2 \leq \left(\sum_{i=1}^{n}|a_i|^2\right)\left(\sum_{i=1}^{n}|b_i|^2\right)$
+
+7. The equation of a circle: $|z - a| = r$
+
+8. The roots of unity: $\omega^k$ where $\omega = \cos\frac{2\pi}{n} + i\sin\frac{2\pi}{n}$ and $k = 0, 1, \ldots, n-1$
+
+<!--chapter:end:index.Rmd-->
+
+# Complex Functions
+
+<!--chapter:end:01-intro.Rmd-->
+
+# Exercise
+
+1. Find the values of
+\[    (1 + 2i)^3, \quad \frac{5}{-3 + 4i}, \quad \left( \frac{2 + i}{3 - 2i} \right)^2, \quad (1 + i)^n + (1 - i)^n.\]
+
+1. If \( z = x + iy \) (where \(x\) and \(y\) are real numbers), find the real and imaginary parts of:
+\[z^4, \quad \frac{1}{z}, \quad \frac{z - 1}{z + 1}, \quad \frac{1}{z^2}.\]
+    
+1. Show that:
+\[  \left( \frac{-1 \pm i\sqrt{3}}{2} \right)^3 = 1 \quad \text{and} \quad \left( \frac{\pm 1 \pm i\sqrt{3}}{2} \right)^6 = 1\]
+for all combinations of signs.
+
+
+# Green functions
+ Let $G$ be a reigon and $a\in G$. Green functions $G$ with singularity at $a$, the unique function $g_a:G\setminus \{0\}$ 
+ 
+ 1. $g_a$ is harmonisc on $G\setminus\{a\}.
+ 2. $g_a(z)+\log(|z-a|)$ is harmonic^[has an exteror to $u$. ($a\in u$) , $u$ is open in $G$.] on an open neighbourhood of $a$.
+ 3. $\lim_{z\to w}g_a(z)=0 ~~~\forall w \in \partial_\infty G$.
+ 
+ ```{remark}
+ $g_a(z)>0$ for all $z \in G\setminus \{a\}$ because $g_a(z)+\log(|z-a|)$ has contious externsion to $u$ and $$\lim_{z\to w}g_a(z)=-\infty$
+ ```
+ 
+ We have $g_a(z)0$ on $|z-a|=r$ for $r$ small enough (then there exist $R$ such that its positive $\forall r<R$) Given $r<R$ such that $z_0$ is $|z-a|=r$. Apply max principle on $G\setminus\{z:|z-a|\leq r\}$. Since $g_a(z)\geq 0$ or $\$
+ 
+
+<!--chapter:end:02-intro.Rmd-->
+
+# Riemann Surfaces. 
+```{definition,name="Riemann surface"}
+A **Riemann surface** is a second‑countable, Hausdorff topological space \(X\) equipped with a **complex atlas**  \(\mathcal{A} = \{(U_\alpha, \varphi_\alpha)\}\) satisfying the following properties:
+
+1. Each \(U_\alpha \subseteq X\) is open.
+
+2. Each map  \(   \varphi_\alpha : U_\alpha \to V_\alpha   \)
+   is a homeomorphism onto an open set \(V_\alpha \subseteq \mathbb{C}\).
+
+3. The collection \(\{U_\alpha\}\) covers \(X\).
+
+4. For every pair of charts \((U_\alpha, \varphi_\alpha)\) and \((U_\beta, \varphi_\beta)\) with  \(   U_\alpha \cap U_\beta \neq \varnothing,\)
+   the **transition map**
+   \[
+   \varphi_\beta \circ \varphi_\alpha^{-1} :
+   \varphi_\alpha(U_\alpha \cap U_\beta) \longrightarrow
+   \varphi_\beta(U_\alpha \cap U_\beta)
+   \]
+   is a **biholomorphism**.
+
+
+```
+
+![Two coordinate charts on a manifold (Image Credit: Wikipedia) ](fig/Picture1.png)
+
+
+
+```{remark}
+**Terminology**: 
+  -"holomorphic functions"  are functions which are complex differentiable on an open set in the complex plane. 
+  -A "biholomorphic map" is a holomorphic bijection whose inverse is holomorphic.
+```
+
+
+```{definition}
+Let \(R_1\) and \(R_2\) be Riemann surfaces. A map  \(f : R_1 \to R_2\)
+is said to be **holomorphic** if for every pair of charts \((U, \varphi) \quad \text{on } R_1, \qquad (V, \psi) \quad \text{on } R_2,\) the map  \(\psi \circ f \circ \varphi^{-1}\) is holomorphic on its domain (which may be empty).
+```
+
+Suppose \((U, \varphi)\), \((U', \varphi')\) are charts on \(R_1\), and \((V, \psi)\), \((V', \psi')\) are charts on \(R_2\). On the overlap where all maps are defined, we have:
+
+- the transition maps   \(  \varphi' \circ \varphi^{-1},\psi' \circ \psi^{-1}  \) are **biholomorphisms** (by condition (5) in the definition of a complex atlas)
+- therefore  
+  \[
+  \psi' \circ f \circ (\varphi')^{-1}
+  = (\psi' \circ \psi^{-1}) 
+    \circ (\psi \circ f \circ \varphi^{-1}) 
+    \circ (\varphi \circ (\varphi')^{-1})
+  \]   is holomorphic if and only if \(\psi \circ f \circ \varphi^{-1}\) is holomorphic.
+
+Thus the notion of holomorphicity does **not** depend on the choice of charts.
+```
+
+![](fig/pic 2.jpeg)
+
+```{exercise}
+ Let \(R_1\) and \(R_2\) be Riemann surfaces, and let  \(f : R_1 \to R_2\)
+be a continuous map. Assume that for every point \(p \in R_1\) there exist:
+
+- a chart \((U_p, \varphi_p)\) on \(R_1\) with \(p \in U_p\),
+- a chart \((V_p, \psi_p)\) on \(R_2\) with \(f(p) \in V_p\),
+
+such that
+\[
+\psi_p \circ f \circ \varphi_p^{-1}
+\]
+is holomorphic (in the usual sense) on its domain, an open subset of \(\mathbb{C}\).
+
+Show that \(f\) is holomorphic (in the sense of the definition for maps between Riemann surfaces).
+```
+
+
+**Solution**:I will update it later.
+
+```{example}
+Define an equivalence relation on \(\mathbb{C}\) by  \(
+z \sim w \quad \Longleftrightarrow \quad w = z + 2\pi i k \quad \text{for some } k \in \mathbb{Z}. \)Let  \(R = \mathbb{C} / \!\sim\)
+be the quotient topological space, with projection map \(\pi : \mathbb{C} \to R.\) We will define an atlas on \(R\) that makes it a Riemann surface. Define \(U = \{\, z \in \mathbb{C} : -\pi < \operatorname{Im} z < \pi \,\}.
+\) Restrict to \(U\) for convenience. Let  \(W = \pi(U) \subset R.\) Let \(\sigma : W \to U\) be the unique right inverse of \(\pi\) on \(W\), i.e. the unique map satisfying:
+
+- \(\pi \circ \sigma = \mathrm{id}_W\),
+- \(\sigma(W) = U\).
+
+```
+
+```{exercise}
+Show that for any \(p \in W\) and any \(q \in W\), the map  \(\sigma(q) - \sigma(p) : U \longrightarrow \mathbb{C}\) is a **translation**, and in particular holomorphic.
+```
+
+## The ann sphere
+
+
+As a set, the **Riemann sphere** is  \(\widehat{\mathbb{C}} = \mathbb{C} \cup \{\infty\}.\) To make this into a Riemann surface, we must specify a **topology** and an **atlas**.
+
+
+A basis for the topology consists of:
+
+1. Sets of the form  \(   U \subset \mathbb{C},\)
+   where \(U\) is open in \(\mathbb{C}\) and \(\infty \notin U\).
+
+2. Sets of the form  \(\{\infty\} \cup (\mathbb{C} \setminus K),
+   \) where \(K \subset \mathbb{C}\) is compact.
+
+Equivalently, a set \(V \subset \widehat{\mathbb{C}}\) is open iff:
+
+- If \(p \in \mathbb{C}\), then there exists an open set \(U \subset \mathbb{C}\) with  \(p \in U \subset V.\)
+
+- If \(p = \infty\), then there exists a compact \(K \subset \mathbb{C}\) such that  \(  \{\infty\} \cup (\mathbb{C} \setminus K) \subset V.
+  \)
+
+```{exercise}
+Show that \(\widehat{\mathbb{C}}\) is compact.
+```
+
+We define an atlas consisting of two charts:
+
+
+\[
+U_1 = \widehat{\mathbb{C}} \setminus \{\infty\}, \qquad 
+\varphi_1(z) = z.
+\]
+\[
+U_2 = \widehat{\mathbb{C}} \setminus \{0\}, \qquad 
+\varphi_2(z) = \frac{1}{z}.
+\]
+
+The first chart and its inverse are clearly continuous.
+
+To see that \(\varphi_2\) is continuous, note that it maps  \(U_1 \cap U_2 = \widehat{\mathbb{C}} \setminus \{0,\infty\}\) bijectively onto \(\mathbb{C} \setminus \{0\}\).
+
+
+The overlap maps are:
+\[
+\varphi_2 \circ \varphi_1^{-1}(z) = \frac{1}{z}, \qquad
+\varphi_1 \circ \varphi_2^{-1}(w) = \frac{1}{w}.
+\]
+
+These are biholomorphic, since the inverse of \(z \mapsto 1/z\) is again \(z \mapsto 1/z\).
+
+Thus, this defines a valid atlas, and the resulting Riemann surface is the **Riemann sphere**.
+
+### Stereographic Projection and the Metric
+
+We identify the Riemann sphere with the unit sphere \(S^2 = \{(x_1,x_2,x_3) \in \mathbb{R}^3 : x_1^2 + x_2^2 + x_3^2 = 1\}.\) Think of \(\mathbb{C}\) as the plane \((x_1,y_1,0)\). Given \(z = x + iy \in \mathbb{C}\), draw the line from the north pole \((0,0,1)\) to \((x,y,0)\).  
+This intersects the sphere at:
+<div style="display: flex; justify-content: space-between; align-items: flex-start;">
+
+<div style="width: 48%;">
+
+
+
+\[
+\begin{align*}
+x_1 &= \frac{2x}{|z|^2+1}
+     = \frac{2x}{x^2 + y^2 + 1},\\
+x_2 &= \frac{2y}{|z|^2+1}
+     = \frac{2y}{x^2 + y^2 + 1},\\
+x_3 &= \frac{|z|^2-1}{|z|^2+1}
+     = \frac{x^2 + y^2 - 1}{x^2 + y^2 + 1}.
+\end{align*}
+\]
+
+
+
+</div>
+
+<div style="width: 48%; text-align: center;">
+
+<img src="fig/pic 3.jpeg" width="90%" />
+
+</div>
+
+</div>
+
+Define
+\[
+\sigma : S^2 \to \widehat{\mathbb{C}}
+\]
+by
+\[
+\sigma(x_1,x_2,x_3) =
+\begin{cases}
+\dfrac{x_1}{1 - x_3} + i\,\dfrac{x_2}{1 - x_3}, & (x_1,x_2,x_3) \neq (0,0,1), \\[1em]
+\infty, & (x_1,x_2,x_3) = (0,0,1).
+\end{cases}
+\]
+
+
+\[
+\sigma^{-1}(z) =
+\begin{cases}
+\left(
+\dfrac{2\Re z}{|z|^2 + 1},
+\dfrac{2\Im z}{|z|^2 + 1},
+\dfrac{|z|^2 - 1}{|z|^2 + 1}
+\right), & z \in \mathbb{C}, \\[1em]
+(0,0,1), & z = \infty.
+\end{cases}
+\]
+
+
+The spherical (or chordal) metric is:
+\[
+d_{\widehat{\mathbb{C}}}(z,w)
+= \left\|\sigma^{-1}(z) - \sigma^{-1}(w)\right\|
+= \frac{2|z-w|}{\sqrt{(1+|z|^2)(1+|w|^2)}},
+\]
+with the natural extension when one point is \(\infty\).
+
+
+
+<!--chapter:end:03-Rie.Rmd-->
+

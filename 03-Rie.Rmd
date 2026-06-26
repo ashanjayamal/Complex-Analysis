@@ -75,22 +75,8 @@ Show that \(f\) is holomorphic (in the sense of the definition for maps between 
 ```{example}
 Define an equivalence relation on \(\mathbb{C}\) by  \(
 z \sim w \quad \Longleftrightarrow \quad w = z + 2\pi i k \quad \text{for some } k \in \mathbb{Z}. \)Let  \(R = \mathbb{C} / \!\sim\)
-be the quotient topological space, with projection map \(\pi : \mathbb{C} \to R.\) We will define an atlas on \(R\) that makes it a Riemann surface.
-
-Define \(U = \{\, z \in \mathbb{C} : -\pi < \operatorname{Im} z < \pi \,\}.
-\)
-
-Restrict to \(U\) for convenience.  
-Let  
-\[
-W = \pi(U) \subset R.
-\]
-
-Let  
-\[
-\sigma : W \to U
-\]
-be the unique right inverse of \(\pi\) on \(W\), i.e. the unique map satisfying:
+be the quotient topological space, with projection map \(\pi : \mathbb{C} \to R.\) We will define an atlas on \(R\) that makes it a Riemann surface. Define \(U = \{\, z \in \mathbb{C} : -\pi < \operatorname{Im} z < \pi \,\}.
+\) Restrict to \(U\) for convenience. Let  \(W = \pi(U) \subset R.\) Let \(\sigma : W \to U\) be the unique right inverse of \(\pi\) on \(W\), i.e. the unique map satisfying:
 
 - \(\pi \circ \sigma = \mathrm{id}_W\),
 - \(\sigma(W) = U\).
@@ -98,6 +84,127 @@ be the unique right inverse of \(\pi\) on \(W\), i.e. the unique map satisfying:
 ```
 
 ```{exercise}
-
 Show that for any \(p \in W\) and any \(q \in W\), the map  \(\sigma(q) - \sigma(p) : U \longrightarrow \mathbb{C}\) is a **translation**, and in particular holomorphic.
 ```
+
+## The ann sphere
+
+
+As a set, the **Riemann sphere** is  \(\widehat{\mathbb{C}} = \mathbb{C} \cup \{\infty\}.\) To make this into a Riemann surface, we must specify a **topology** and an **atlas**.
+
+
+A basis for the topology consists of:
+
+1. Sets of the form  \(   U \subset \mathbb{C},\)
+   where \(U\) is open in \(\mathbb{C}\) and \(\infty \notin U\).
+
+2. Sets of the form  \(\{\infty\} \cup (\mathbb{C} \setminus K),
+   \) where \(K \subset \mathbb{C}\) is compact.
+
+Equivalently, a set \(V \subset \widehat{\mathbb{C}}\) is open iff:
+
+- If \(p \in \mathbb{C}\), then there exists an open set \(U \subset \mathbb{C}\) with  \(p \in U \subset V.\)
+
+- If \(p = \infty\), then there exists a compact \(K \subset \mathbb{C}\) such that  \(  \{\infty\} \cup (\mathbb{C} \setminus K) \subset V.
+  \)
+
+```{exercise}
+Show that \(\widehat{\mathbb{C}}\) is compact.
+```
+
+We define an atlas consisting of two charts:
+
+
+\[
+U_1 = \widehat{\mathbb{C}} \setminus \{\infty\}, \qquad 
+\varphi_1(z) = z.
+\]
+\[
+U_2 = \widehat{\mathbb{C}} \setminus \{0\}, \qquad 
+\varphi_2(z) = \frac{1}{z}.
+\]
+
+The first chart and its inverse are clearly continuous.
+
+To see that \(\varphi_2\) is continuous, note that it maps  \(U_1 \cap U_2 = \widehat{\mathbb{C}} \setminus \{0,\infty\}\) bijectively onto \(\mathbb{C} \setminus \{0\}\).
+
+
+The overlap maps are:
+\[
+\varphi_2 \circ \varphi_1^{-1}(z) = \frac{1}{z}, \qquad
+\varphi_1 \circ \varphi_2^{-1}(w) = \frac{1}{w}.
+\]
+
+These are biholomorphic, since the inverse of \(z \mapsto 1/z\) is again \(z \mapsto 1/z\).
+
+Thus, this defines a valid atlas, and the resulting Riemann surface is the **Riemann sphere**.
+
+### Stereographic Projection and the Metric
+
+We identify the Riemann sphere with the unit sphere \(S^2 = \{(x_1,x_2,x_3) \in \mathbb{R}^3 : x_1^2 + x_2^2 + x_3^2 = 1\}.\) Think of \(\mathbb{C}\) as the plane \((x_1,y_1,0)\). Given \(z = x + iy \in \mathbb{C}\), draw the line from the north pole \((0,0,1)\) to \((x,y,0)\).  
+This intersects the sphere at:
+<div style="display: flex; justify-content: space-between; align-items: flex-start;">
+
+<div style="width: 48%;">
+
+
+
+\[
+\begin{align*}
+x_1 &= \frac{2x}{|z|^2+1}
+     = \frac{2x}{x^2 + y^2 + 1},\\
+x_2 &= \frac{2y}{|z|^2+1}
+     = \frac{2y}{x^2 + y^2 + 1},\\
+x_3 &= \frac{|z|^2-1}{|z|^2+1}
+     = \frac{x^2 + y^2 - 1}{x^2 + y^2 + 1}.
+\end{align*}
+\]
+
+
+
+</div>
+
+<div style="width: 48%; text-align: center;">
+
+<img src="fig/pic 3.jpeg" width="90%" />
+
+</div>
+
+</div>
+
+Define
+\[
+\sigma : S^2 \to \widehat{\mathbb{C}}
+\]
+by
+\[
+\sigma(x_1,x_2,x_3) =
+\begin{cases}
+\dfrac{x_1}{1 - x_3} + i\,\dfrac{x_2}{1 - x_3}, & (x_1,x_2,x_3) \neq (0,0,1), \\[1em]
+\infty, & (x_1,x_2,x_3) = (0,0,1).
+\end{cases}
+\]
+
+
+\[
+\sigma^{-1}(z) =
+\begin{cases}
+\left(
+\dfrac{2\Re z}{|z|^2 + 1},
+\dfrac{2\Im z}{|z|^2 + 1},
+\dfrac{|z|^2 - 1}{|z|^2 + 1}
+\right), & z \in \mathbb{C}, \\[1em]
+(0,0,1), & z = \infty.
+\end{cases}
+\]
+
+
+The spherical (or chordal) metric is:
+\[
+d_{\widehat{\mathbb{C}}}(z,w)
+= \left\|\sigma^{-1}(z) - \sigma^{-1}(w)\right\|
+= \frac{2|z-w|}{\sqrt{(1+|z|^2)(1+|w|^2)}},
+\]
+with the natural extension when one point is \(\infty\).
+
+

@@ -104,7 +104,13 @@ set in the _output.yml file.</p>" />
 <li class="chapter" data-level="2" data-path="complex-functions.html"><a href="complex-functions.html"><i class="fa fa-check"></i><b>2</b> Complex Functions</a></li>
 <li class="chapter" data-level="3" data-path="exercise.html"><a href="exercise.html"><i class="fa fa-check"></i><b>3</b> Exercise</a></li>
 <li class="chapter" data-level="4" data-path="green-functions.html"><a href="green-functions.html"><i class="fa fa-check"></i><b>4</b> Green functions</a></li>
-<li class="chapter" data-level="5" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html"><i class="fa fa-check"></i><b>5</b> Riemann Surfaces.</a></li>
+<li class="chapter" data-level="5" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html"><i class="fa fa-check"></i><b>5</b> Riemann Surfaces.</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html#the-ann-sphere"><i class="fa fa-check"></i><b>5.1</b> The ann sphere</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html#stereographic-projection-and-the-metric"><i class="fa fa-check"></i><b>5.1.1</b> Stereographic Projection and the Metric</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://ashanjayamal.github.io/academicpages" target="blank">Property of Ashan Jayamal</a></li>
 
@@ -188,18 +194,7 @@ is holomorphic (in the usual sense) on its domain, an open subset of <span class
 <p><strong>Solution</strong>:I will update it later.</p>
 <div class="example">
 <p><span id="exm:unnamed-chunk-6" class="example"><strong>Example 5.1  </strong></span>Define an equivalence relation on <span class="math inline">\(\mathbb{C}\)</span> by <span class="math inline">\(z \sim w \quad \Longleftrightarrow \quad w = z + 2\pi i k \quad \text{for some } k \in \mathbb{Z}.\)</span>Let <span class="math inline">\(R = \mathbb{C} / \!\sim\)</span>
-be the quotient topological space, with projection map <span class="math inline">\(\pi : \mathbb{C} \to R.\)</span> We will define an atlas on <span class="math inline">\(R\)</span> that makes it a Riemann surface.</p>
-<p>Define <span class="math inline">\(U = \{\, z \in \mathbb{C} : -\pi &lt; \operatorname{Im} z &lt; \pi \,\}.\)</span></p>
-<p>Restrict to <span class="math inline">\(U\)</span> for convenience.<br />
-Let<br />
-<span class="math display">\[
-W = \pi(U) \subset R.
-\]</span></p>
-<p>Let<br />
-<span class="math display">\[
-\sigma : W \to U
-\]</span>
-be the unique right inverse of <span class="math inline">\(\pi\)</span> on <span class="math inline">\(W\)</span>, i.e. the unique map satisfying:</p>
+be the quotient topological space, with projection map <span class="math inline">\(\pi : \mathbb{C} \to R.\)</span> We will define an atlas on <span class="math inline">\(R\)</span> that makes it a Riemann surface. Define <span class="math inline">\(U = \{\, z \in \mathbb{C} : -\pi &lt; \operatorname{Im} z &lt; \pi \,\}.\)</span> Restrict to <span class="math inline">\(U\)</span> for convenience. Let <span class="math inline">\(W = \pi(U) \subset R.\)</span> Let <span class="math inline">\(\sigma : W \to U\)</span> be the unique right inverse of <span class="math inline">\(\pi\)</span> on <span class="math inline">\(W\)</span>, i.e. the unique map satisfying:</p>
 <ul>
 <li><span class="math inline">\(\pi \circ \sigma = \mathrm{id}_W\)</span>,</li>
 <li><span class="math inline">\(\sigma(W) = U\)</span>.</li>
@@ -208,7 +203,95 @@ be the unique right inverse of <span class="math inline">\(\pi\)</span> on <span
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-7" class="exercise"><strong>Exercise 5.2  </strong></span>Show that for any <span class="math inline">\(p \in W\)</span> and any <span class="math inline">\(q \in W\)</span>, the map <span class="math inline">\(\sigma(q) - \sigma(p) : U \longrightarrow \mathbb{C}\)</span> is a <strong>translation</strong>, and in particular holomorphic.</p>
 </div>
+<div id="the-ann-sphere" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> The ann sphere<a href="riemann-surfaces..html#the-ann-sphere" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>As a set, the <strong>Riemann sphere</strong> is <span class="math inline">\(\widehat{\mathbb{C}} = \mathbb{C} \cup \{\infty\}.\)</span> To make this into a Riemann surface, we must specify a <strong>topology</strong> and an <strong>atlas</strong>.</p>
+<p>A basis for the topology consists of:</p>
+<ol style="list-style-type: decimal">
+<li><p>Sets of the form <span class="math inline">\(U \subset \mathbb{C},\)</span>
+where <span class="math inline">\(U\)</span> is open in <span class="math inline">\(\mathbb{C}\)</span> and <span class="math inline">\(\infty \notin U\)</span>.</p></li>
+<li><p>Sets of the form <span class="math inline">\(\{\infty\} \cup (\mathbb{C} \setminus K),\)</span> where <span class="math inline">\(K \subset \mathbb{C}\)</span> is compact.</p></li>
+</ol>
+<p>Equivalently, a set <span class="math inline">\(V \subset \widehat{\mathbb{C}}\)</span> is open iff:</p>
+<ul>
+<li><p>If <span class="math inline">\(p \in \mathbb{C}\)</span>, then there exists an open set <span class="math inline">\(U \subset \mathbb{C}\)</span> with <span class="math inline">\(p \in U \subset V.\)</span></p></li>
+<li><p>If <span class="math inline">\(p = \infty\)</span>, then there exists a compact <span class="math inline">\(K \subset \mathbb{C}\)</span> such that <span class="math inline">\(\{\infty\} \cup (\mathbb{C} \setminus K) \subset V.\)</span></p></li>
+</ul>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-8" class="exercise"><strong>Exercise 5.3  </strong></span>Show that <span class="math inline">\(\widehat{\mathbb{C}}\)</span> is compact.</p>
+</div>
+<p>We define an atlas consisting of two charts:</p>
+<p><span class="math display">\[
+U_1 = \widehat{\mathbb{C}} \setminus \{\infty\}, \qquad
+\varphi_1(z) = z.
+\]</span>
+<span class="math display">\[
+U_2 = \widehat{\mathbb{C}} \setminus \{0\}, \qquad
+\varphi_2(z) = \frac{1}{z}.
+\]</span></p>
+<p>The first chart and its inverse are clearly continuous.</p>
+<p>To see that <span class="math inline">\(\varphi_2\)</span> is continuous, note that it maps <span class="math inline">\(U_1 \cap U_2 = \widehat{\mathbb{C}} \setminus \{0,\infty\}\)</span> bijectively onto <span class="math inline">\(\mathbb{C} \setminus \{0\}\)</span>.</p>
+<p>The overlap maps are:
+<span class="math display">\[
+\varphi_2 \circ \varphi_1^{-1}(z) = \frac{1}{z}, \qquad
+\varphi_1 \circ \varphi_2^{-1}(w) = \frac{1}{w}.
+\]</span></p>
+<p>These are biholomorphic, since the inverse of <span class="math inline">\(z \mapsto 1/z\)</span> is again <span class="math inline">\(z \mapsto 1/z\)</span>.</p>
+<p>Thus, this defines a valid atlas, and the resulting Riemann surface is the <strong>Riemann sphere</strong>.</p>
+<div id="stereographic-projection-and-the-metric" class="section level3 hasAnchor" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Stereographic Projection and the Metric<a href="riemann-surfaces..html#stereographic-projection-and-the-metric" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+We identify the Riemann sphere with the unit sphere <span class="math inline">\(S^2 = \{(x_1,x_2,x_3) \in \mathbb{R}^3 : x_1^2 + x_2^2 + x_3^2 = 1\}.\)</span> Think of <span class="math inline">\(\mathbb{C}\)</span> as the plane <span class="math inline">\((x_1,y_1,0)\)</span>. Given <span class="math inline">\(z = x + iy \in \mathbb{C}\)</span>, draw the line from the north pole <span class="math inline">\((0,0,1)\)</span> to <span class="math inline">\((x,y,0)\)</span>.<br />
+This intersects the sphere at:
+<div style="display: flex; justify-content: space-between; align-items: flex-start;">
+<div style="width: 48%;">
+<p><span class="math display">\[
+\begin{align*}
+x_1 &amp;= \frac{2x}{|z|^2+1}
+     = \frac{2x}{x^2 + y^2 + 1},\\
+x_2 &amp;= \frac{2y}{|z|^2+1}
+     = \frac{2y}{x^2 + y^2 + 1},\\
+x_3 &amp;= \frac{|z|^2-1}{|z|^2+1}
+     = \frac{x^2 + y^2 - 1}{x^2 + y^2 + 1}.
+\end{align*}
+\]</span></p>
+</div>
+<div style="width: 48%; text-align: center;">
+<p><img src="fig/pic%203.jpeg" width="90%" /></p>
+</div>
+</div>
+<p>Define
+<span class="math display">\[
+\sigma : S^2 \to \widehat{\mathbb{C}}
+\]</span>
+by
+<span class="math display">\[
+\sigma(x_1,x_2,x_3) =
+\begin{cases}
+\dfrac{x_1}{1 - x_3} + i\,\dfrac{x_2}{1 - x_3}, &amp; (x_1,x_2,x_3) \neq (0,0,1), \\[1em]
+\infty, &amp; (x_1,x_2,x_3) = (0,0,1).
+\end{cases}
+\]</span></p>
+<p><span class="math display">\[
+\sigma^{-1}(z) =
+\begin{cases}
+\left(
+\dfrac{2\Re z}{|z|^2 + 1},
+\dfrac{2\Im z}{|z|^2 + 1},
+\dfrac{|z|^2 - 1}{|z|^2 + 1}
+\right), &amp; z \in \mathbb{C}, \\[1em]
+(0,0,1), &amp; z = \infty.
+\end{cases}
+\]</span></p>
+<p>The spherical (or chordal) metric is:
+<span class="math display">\[
+d_{\widehat{\mathbb{C}}}(z,w)
+= \left\|\sigma^{-1}(z) - \sigma^{-1}(w)\right\|
+= \frac{2|z-w|}{\sqrt{(1+|z|^2)(1+|w|^2)}},
+\]</span>
+with the natural extension when one point is <span class="math inline">\(\infty\)</span>.</p>
 
+</div>
+</div>
 </div>
 
 
