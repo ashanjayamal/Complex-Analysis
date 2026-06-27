@@ -37,6 +37,7 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -267,7 +268,7 @@ is a one-to-one correspondence between complex numbers and points (or vectors) i
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio]{fig/pic.png}}
+\pandocbounded{\includegraphics[keepaspectratio,alt={Image Source: Wikimedia}]{_main_files/fig/pic.png}}
 \caption{Image Source: Wikimedia}
 \end{figure}
 
@@ -503,7 +504,7 @@ A \textbf{Riemann surface} is a second‑countable, Hausdorff topological space 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio]{fig/Picture1.png}}
+\pandocbounded{\includegraphics[keepaspectratio,alt={Two coordinate charts on a manifold (Image Credit: Wikipedia)}]{_main_files/fig/Picture1.png}}
 \caption{Two coordinate charts on a manifold (Image Credit: Wikipedia)}
 \end{figure}
 
@@ -537,27 +538,10 @@ Suppose \((U, \varphi)\), \((U', \varphi')\) are charts on \(R_1\), and \((V, \p
 Thus the notion of holomorphicity does \textbf{not} depend on the choice of charts.
 ```
 
-\pandocbounded{\includegraphics[keepaspectratio]{fig/pic 2.jpeg}}
+\pandocbounded{\includegraphics[keepaspectratio]{_main_files/fig/pic 2.jpeg}}
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-5}{}\label{exr:unnamed-chunk-5}Let \(R_1\) and \(R_2\) be Riemann surfaces, and let \(f : R_1 \to R_2\)
-be a continuous map. Assume that for every point \(p \in R_1\) there exist:
-
-\begin{itemize}
-\tightlist
-\item
-  a chart \((U_p, \varphi_p)\) on \(R_1\) with \(p \in U_p\),
-\item
-  a chart \((V_p, \psi_p)\) on \(R_2\) with \(f(p) \in V_p\),
-\end{itemize}
-
-such that
-\[
-\psi_p \circ f \circ \varphi_p^{-1}
-\]
-is holomorphic (in the usual sense) on its domain, an open subset of \(\mathbb{C}\).
-
-Show that \(f\) is holomorphic (in the sense of the definition for maps between Riemann surfaces).
+\protect\hypertarget{exr:unnamed-chunk-5}{}\label{exr:unnamed-chunk-5}Assume that for all \(p \in R_1\) there is a chart \((U,\phi)\) such that \(p \in U\) and a chart \((V,\psi)\) such that \(f(p) \in V\), so that \(\psi \circ f \circ \phi^{-1}\) is holomorphic (in the standard sense, as a complex analytic function on an open subset of the plane). Show that \(f\) is holomorphic.
 \end{exercise}
 
 \textbf{Solution}:I will update it later.
@@ -565,36 +549,120 @@ Show that \(f\) is holomorphic (in the sense of the definition for maps between 
 \begin{example}
 \protect\hypertarget{exm:unnamed-chunk-6}{}\label{exm:unnamed-chunk-6}
 
-Define an equivalence relation on \(\mathbb{C}\) by \(z \sim w \quad \Longleftrightarrow \quad w = z + 2\pi i k \quad \text{for some } k \in \mathbb{Z}.\)Let \(R = \mathbb{C} / \!\sim\)
-be the quotient topological space, with projection map \(\pi : \mathbb{C} \to R.\) We will define an atlas on \(R\) that makes it a Riemann surface.
+Define the equivalence relation on \(\mathbb{C}\) by \(z \sim w \quad \text{if and only if} \quad z = w + 2\pi i n \quad \text{for some } n \in \mathbb{Z}.\) Let \(R = \mathbb{C}/\!\sim\) as a topological space, with projection map \(\pi : \mathbb{C} \to R.\)
 
-Define \(U = \{\, z \in \mathbb{C} : -\pi < \operatorname{Im} z < \pi \,\}.\)
+We will define an atlas on \(R\) which will make it a Riemann surface.
+Define \(W_{z_0,r} = \{\, z \in \mathbb{C} : |z - z_0| < r \,\}.\) Restrict to \(r < \pi\) (for convenience). Let \(U_{z_0,r} = \pi(W_{z_0,r}).\)
 
-Restrict to \(U\) for convenience.\\
-Let\\
-\[
-W = \pi(U) \subset R.
-\]
+Let \(\varphi_{z_0,r} : U_{z_0,r} \to W_{z_0,r}\)
+be the unique right inverse of \(\pi\) on \(U_{z_0,r}\) with image \(W_{z_0,r}\).
 
-Let\\
-\[
-\sigma : W \to U
-\]
-be the unique right inverse of \(\pi\) on \(W\), i.e.~the unique map satisfying:
-
-\begin{itemize}
-\tightlist
-\item
-  \(\pi \circ \sigma = \mathrm{id}_W\),
-\item
-  \(\sigma(W) = U\).
-\end{itemize}
+\includegraphics[width=0.5\linewidth,height=\textheight,keepaspectratio]{_main_files/fig/pic 4.jpeg}
 
 \end{example}
 
 \begin{exercise}
 \protect\hypertarget{exr:unnamed-chunk-7}{}\label{exr:unnamed-chunk-7}Show that for any \(p \in W\) and any \(q \in W\), the map \(\sigma(q) - \sigma(p) : U \longrightarrow \mathbb{C}\) is a \textbf{translation}, and in particular holomorphic.
 \end{exercise}
+
+\section{The Riemann sphere}\label{the-riemann-sphere}
+
+As a set, the \textbf{Riemann sphere} is \(\widehat{\mathbb{C}} = \mathbb{C} \cup \{\infty\}.\) To make this into a Riemann surface, we must specify a \textbf{topology} and an \textbf{atlas}.
+
+A basis for the topology consists of:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Sets of the form \(U \subset \mathbb{C},\)
+  where \(U\) is open in \(\mathbb{C}\) and \(\infty \notin U\).
+\item
+  Sets of the form \(\{\infty\} \cup (\mathbb{C} \setminus K),\) where \(K \subset \mathbb{C}\) is compact.
+\end{enumerate}
+
+Equivalently, a set \(V \subset \widehat{\mathbb{C}}\) is open iff:
+
+\begin{itemize}
+\item
+  If \(p \in \mathbb{C}\), then there exists an open set \(U \subset \mathbb{C}\) with \(p \in U \subset V.\)
+\item
+  If \(p = \infty\), then there exists a compact \(K \subset \mathbb{C}\) such that \(\{\infty\} \cup (\mathbb{C} \setminus K) \subset V.\)
+\end{itemize}
+
+\begin{exercise}
+\protect\hypertarget{exr:unnamed-chunk-8}{}\label{exr:unnamed-chunk-8}Show that \(\widehat{\mathbb{C}}\) is compact.
+\end{exercise}
+
+We define an atlas consisting of two charts:
+
+\[
+U_1 = \widehat{\mathbb{C}} \setminus \{\infty\}, \qquad 
+\varphi_1(z) = z.
+\]
+\[
+U_2 = \widehat{\mathbb{C}} \setminus \{0\}, \qquad 
+\varphi_2(z) = \frac{1}{z}.
+\]
+
+The first chart and its inverse are clearly continuous.
+
+To see that \(\varphi_2\) is continuous, note that it maps \(U_1 \cap U_2 = \widehat{\mathbb{C}} \setminus \{0,\infty\}\) bijectively onto \(\mathbb{C} \setminus \{0\}\).
+
+The overlap maps are:
+\[
+\varphi_2 \circ \varphi_1^{-1}(z) = \frac{1}{z}, \qquad
+\varphi_1 \circ \varphi_2^{-1}(w) = \frac{1}{w}.
+\]
+
+These are biholomorphic, since the inverse of \(z \mapsto 1/z\) is again \(z \mapsto 1/z\).
+
+Thus, this defines a valid atlas, and the resulting Riemann surface is the \textbf{Riemann sphere}.
+
+\subsection{Stereographic Projection and the Metric}\label{stereographic-projection-and-the-metric}
+
+We identify the Riemann sphere with the unit sphere \(S^2 = \{(x_1,x_2,x_3) \in \mathbb{R}^3 : x_1^2 + x_2^2 + x_3^2 = 1\}.\) Think of \(\mathbb{C}\) as the plane \((x_1,y_1,0)\). Given \(z = x + iy \in \mathbb{C}\), draw the line from the north pole \((0,0,1)\) to \((x,y,0)\).\\
+This intersects the sphere at:
+
+\begin{align*}
+x_1 &= \frac{2x}{|z|^2+1}
+     = \frac{2x}{x^2 + y^2 + 1},\\
+x_2 &= \frac{2y}{|z|^2+1}
+     = \frac{2y}{x^2 + y^2 + 1},\\
+x_3 &= \frac{|z|^2-1}{|z|^2+1}
+     = \frac{x^2 + y^2 - 1}{x^2 + y^2 + 1}.
+\end{align*}
+
+Define
+\[
+\sigma : S^2 \to \widehat{\mathbb{C}}
+\]
+by
+\[
+\sigma(x_1,x_2,x_3) =
+\begin{cases}
+\dfrac{x_1}{1 - x_3} + i\,\dfrac{x_2}{1 - x_3}, & (x_1,x_2,x_3) \neq (0,0,1), \\[1em]
+\infty, & (x_1,x_2,x_3) = (0,0,1).
+\end{cases}
+\]
+
+\[
+\sigma^{-1}(z) =
+\begin{cases}
+\left(
+\dfrac{2\Re z}{|z|^2 + 1},
+\dfrac{2\Im z}{|z|^2 + 1},
+\dfrac{|z|^2 - 1}{|z|^2 + 1}
+\right), & z \in \mathbb{C}, \\[1em]
+(0,0,1), & z = \infty.
+\end{cases}
+\]
+
+The spherical (or chordal) metric is:
+\[
+d_{\widehat{\mathbb{C}}}(z,w)|
+= \frac{2|z-w|}{\sqrt{(1+|z|^2)(1+|w|^2)}},
+\]
+with the natural extension when one point is \(\infty\).
 
 \bibliography{book.bib,packages.bib}
 

@@ -8,7 +8,7 @@
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
-  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 Riemann Surfaces. | Complex Analysis" />
   <meta property="og:type" content="book" />
@@ -106,7 +106,7 @@ set in the _output.yml file.</p>" />
 <li class="chapter" data-level="4" data-path="green-functions.html"><a href="green-functions.html"><i class="fa fa-check"></i><b>4</b> Green functions</a></li>
 <li class="chapter" data-level="5" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html"><i class="fa fa-check"></i><b>5</b> Riemann Surfaces.</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html#the-ann-sphere"><i class="fa fa-check"></i><b>5.1</b> The ann sphere</a>
+<li class="chapter" data-level="5.1" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html#the-riemann-sphere"><i class="fa fa-check"></i><b>5.1</b> The Riemann sphere</a>
 <ul>
 <li class="chapter" data-level="5.1.1" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html#stereographic-projection-and-the-metric"><i class="fa fa-check"></i><b>5.1.1</b> Stereographic Projection and the Metric</a></li>
 </ul></li>
@@ -178,33 +178,24 @@ is said to be <strong>holomorphic</strong> if for every pair of charts <span cla
 ```</p>
 <p><img src="fig/pic%202.jpeg" /></p>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-5" class="exercise"><strong>Exercise 5.1  </strong></span>Let <span class="math inline">\(R_1\)</span> and <span class="math inline">\(R_2\)</span> be Riemann surfaces, and let <span class="math inline">\(f : R_1 \to R_2\)</span>
-be a continuous map. Assume that for every point <span class="math inline">\(p \in R_1\)</span> there exist:</p>
-<ul>
-<li>a chart <span class="math inline">\((U_p, \varphi_p)\)</span> on <span class="math inline">\(R_1\)</span> with <span class="math inline">\(p \in U_p\)</span>,</li>
-<li>a chart <span class="math inline">\((V_p, \psi_p)\)</span> on <span class="math inline">\(R_2\)</span> with <span class="math inline">\(f(p) \in V_p\)</span>,</li>
-</ul>
-<p>such that
-<span class="math display">\[
-\psi_p \circ f \circ \varphi_p^{-1}
-\]</span>
-is holomorphic (in the usual sense) on its domain, an open subset of <span class="math inline">\(\mathbb{C}\)</span>.</p>
-<p>Show that <span class="math inline">\(f\)</span> is holomorphic (in the sense of the definition for maps between Riemann surfaces).</p>
+<p><span id="exr:unnamed-chunk-5" class="exercise"><strong>Exercise 5.1  </strong></span>Assume that for all <span class="math inline">\(p \in R_1\)</span> there is a chart <span class="math inline">\((U,\phi)\)</span> such that <span class="math inline">\(p \in U\)</span> and a chart <span class="math inline">\((V,\psi)\)</span> such that <span class="math inline">\(f(p) \in V\)</span>, so that <span class="math inline">\(\psi \circ f \circ \phi^{-1}\)</span> is holomorphic (in the standard sense, as a complex analytic function on an open subset of the plane). Show that <span class="math inline">\(f\)</span> is holomorphic.</p>
 </div>
 <p><strong>Solution</strong>:I will update it later.</p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-6" class="example"><strong>Example 5.1  </strong></span>Define an equivalence relation on <span class="math inline">\(\mathbb{C}\)</span> by <span class="math inline">\(z \sim w \quad \Longleftrightarrow \quad w = z + 2\pi i k \quad \text{for some } k \in \mathbb{Z}.\)</span>Let <span class="math inline">\(R = \mathbb{C} / \!\sim\)</span>
-be the quotient topological space, with projection map <span class="math inline">\(\pi : \mathbb{C} \to R.\)</span> We will define an atlas on <span class="math inline">\(R\)</span> that makes it a Riemann surface. Define <span class="math inline">\(U = \{\, z \in \mathbb{C} : -\pi &lt; \operatorname{Im} z &lt; \pi \,\}.\)</span> Restrict to <span class="math inline">\(U\)</span> for convenience. Let <span class="math inline">\(W = \pi(U) \subset R.\)</span> Let <span class="math inline">\(\sigma : W \to U\)</span> be the unique right inverse of <span class="math inline">\(\pi\)</span> on <span class="math inline">\(W\)</span>, i.e. the unique map satisfying:</p>
-<ul>
-<li><span class="math inline">\(\pi \circ \sigma = \mathrm{id}_W\)</span>,</li>
-<li><span class="math inline">\(\sigma(W) = U\)</span>.</li>
-</ul>
+<p><span id="exm:unnamed-chunk-6" class="example"><strong>Example 5.1  </strong></span>Define the equivalence relation on <span class="math inline">\(\mathbb{C}\)</span> by <span class="math inline">\(z \sim w \quad \text{if and only if} \quad z = w + 2\pi i n \quad \text{for some } n \in \mathbb{Z}.\)</span> Let <span class="math inline">\(R = \mathbb{C}/\!\sim\)</span> as a topological space, with projection map <span class="math inline">\(\pi : \mathbb{C} \to R.\)</span></p>
+<p>We will define an atlas on <span class="math inline">\(R\)</span> which will make it a Riemann surface.
+Define <span class="math inline">\(W_{z_0,r} = \{\, z \in \mathbb{C} : |z - z_0| &lt; r \,\}.\)</span> Restrict to <span class="math inline">\(r &lt; \pi\)</span> (for convenience). Let <span class="math inline">\(U_{z_0,r} = \pi(W_{z_0,r}).\)</span></p>
+Let <span class="math inline">\(\varphi_{z_0,r} : U_{z_0,r} \to W_{z_0,r}\)</span>
+be the unique right inverse of <span class="math inline">\(\pi\)</span> on <span class="math inline">\(U_{z_0,r}\)</span> with image <span class="math inline">\(W_{z_0,r}\)</span>.
+<center>
+<img src="fig/pic%204.jpeg" style="width:50.0%" />
+</center>
 </div>
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-7" class="exercise"><strong>Exercise 5.2  </strong></span>Show that for any <span class="math inline">\(p \in W\)</span> and any <span class="math inline">\(q \in W\)</span>, the map <span class="math inline">\(\sigma(q) - \sigma(p) : U \longrightarrow \mathbb{C}\)</span> is a <strong>translation</strong>, and in particular holomorphic.</p>
 </div>
-<div id="the-ann-sphere" class="section level2 hasAnchor" number="5.1">
-<h2><span class="header-section-number">5.1</span> The ann sphere<a href="riemann-surfaces..html#the-ann-sphere" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="the-riemann-sphere" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> The Riemann sphere<a href="riemann-surfaces..html#the-riemann-sphere" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>As a set, the <strong>Riemann sphere</strong> is <span class="math inline">\(\widehat{\mathbb{C}} = \mathbb{C} \cup \{\infty\}.\)</span> To make this into a Riemann surface, we must specify a <strong>topology</strong> and an <strong>atlas</strong>.</p>
 <p>A basis for the topology consists of:</p>
 <ol style="list-style-type: decimal">
@@ -284,8 +275,7 @@ by
 \]</span></p>
 <p>The spherical (or chordal) metric is:
 <span class="math display">\[
-d_{\widehat{\mathbb{C}}}(z,w)
-= \left\|\sigma^{-1}(z) - \sigma^{-1}(w)\right\|
+d_{\widehat{\mathbb{C}}}(z,w)|
 = \frac{2|z-w|}{\sqrt{(1+|z|^2)(1+|w|^2)}},
 \]</span>
 with the natural extension when one point is <span class="math inline">\(\infty\)</span>.</p>
