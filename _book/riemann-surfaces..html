@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Riemann Surfaces. | Complex Analysis</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Riemann Surfaces. | Complex Analysis" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Riemann Surfaces. | Complex Analysis" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Ashan Jayamal" />
+
+
+<meta name="date" content="2026-07-09" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="green-functions.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Complex Analysis </a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Complex Numbers</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="index.html"><a href="index.html#basic-definitions-and-algebra"><i class="fa fa-check"></i><b>1.0.1</b> Basic Definitions and Algebra</a></li>
+<li class="chapter" data-level="1.0.2" data-path="index.html"><a href="index.html#arithmetic-operations"><i class="fa fa-check"></i><b>1.0.2</b> Arithmetic Operations</a></li>
+<li class="chapter" data-level="1.0.3" data-path="index.html"><a href="index.html#complex-conjugate"><i class="fa fa-check"></i><b>1.0.3</b> Complex Conjugate</a></li>
+<li class="chapter" data-level="1.0.4" data-path="index.html"><a href="index.html#absolute-value-modulus"><i class="fa fa-check"></i><b>1.0.4</b> Absolute Value (Modulus)</a></li>
+<li class="chapter" data-level="1.0.5" data-path="index.html"><a href="index.html#important-inequalities"><i class="fa fa-check"></i><b>1.0.5</b> Important Inequalities</a></li>
+<li class="chapter" data-level="1.0.6" data-path="index.html"><a href="index.html#fundamental-theorem-of-algebra"><i class="fa fa-check"></i><b>1.0.6</b> Fundamental Theorem of Algebra</a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#geometric-representation"><i class="fa fa-check"></i><b>1.1</b> Geometric Representation</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#the-complex-plane"><i class="fa fa-check"></i><b>1.1.1</b> The Complex Plane</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#vector-interpretation"><i class="fa fa-check"></i><b>1.1.2</b> Vector Interpretation</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#polar-form"><i class="fa fa-check"></i><b>1.1.3</b> Polar Form</a></li>
+<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#de-moivres-formula"><i class="fa fa-check"></i><b>1.1.4</b> De Moivre’s Formula</a></li>
+<li class="chapter" data-level="1.1.5" data-path="index.html"><a href="index.html#roots-of-complex-numbers"><i class="fa fa-check"></i><b>1.1.5</b> Roots of Complex Numbers</a></li>
+<li class="chapter" data-level="1.1.6" data-path="index.html"><a href="index.html#equations-in-the-complex-plane"><i class="fa fa-check"></i><b>1.1.6</b> Equations in the Complex Plane</a></li>
+<li class="chapter" data-level="1.1.7" data-path="index.html"><a href="index.html#stereographic-projection-and-the-riemann-sphere"><i class="fa fa-check"></i><b>1.1.7</b> Stereographic Projection and the Riemann Sphere</a></li>
+<li class="chapter" data-level="1.1.8" data-path="index.html"><a href="index.html#key-formulas-and-results"><i class="fa fa-check"></i><b>1.1.8</b> Key Formulas and Results</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="complex-functions.html"><a href="complex-functions.html"><i class="fa fa-check"></i><b>2</b> Complex Functions</a></li>
+<li class="chapter" data-level="3" data-path="exercise.html"><a href="exercise.html"><i class="fa fa-check"></i><b>3</b> Exercise</a></li>
+<li class="chapter" data-level="4" data-path="green-functions.html"><a href="green-functions.html"><i class="fa fa-check"></i><b>4</b> Green functions</a></li>
+<li class="chapter" data-level="5" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html"><i class="fa fa-check"></i><b>5</b> Riemann Surfaces.</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html#solution"><i class="fa fa-check"></i><b>5.1</b> <strong>Solution</strong>:</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html#functions-defnied-on-the-riemann-surface."><i class="fa fa-check"></i><b>5.1.1</b> Functions defnied on the Riemann Surface.</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html#the-riemann-sphere"><i class="fa fa-check"></i><b>5.2</b> The Riemann sphere</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html#stereographic-projection-and-the-metric"><i class="fa fa-check"></i><b>5.2.1</b> Stereographic Projection and the Metric</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://ashanjayamal.github.io/academicpages" target="blank">Property of Ashan Jayamal</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Complex Analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="riemann-surfaces." class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Riemann Surfaces.<a href="riemann-surfaces..html#riemann-surfaces." class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="definition">
+<p><span id="def:unnamed-chunk-8" class="definition"><strong>Definition 5.1  (Riemann surface) </strong></span>A <strong>Riemann surface</strong> is a second‑countable, Hausdorff topological space <span class="math inline">\(X\)</span> equipped with a <strong>complex atlas</strong> <span class="math inline">\(\mathcal{A} = \{(U_\alpha, \varphi_\alpha)\}\)</span> satisfying the following properties:</p>
+<ol style="list-style-type: decimal">
+<li><p>Each <span class="math inline">\(U_\alpha \subseteq X\)</span> is open.</p></li>
+<li><p>Each map <span class="math inline">\(\varphi_\alpha : U_\alpha \to V_\alpha\)</span>
+is a homeomorphism onto an open set <span class="math inline">\(V_\alpha \subseteq \mathbb{C}\)</span>.</p></li>
+<li><p>The collection <span class="math inline">\(\{U_\alpha\}\)</span> covers <span class="math inline">\(X\)</span>.</p></li>
+<li><p>For every pair of charts <span class="math inline">\((U_\alpha, \varphi_\alpha)\)</span> and <span class="math inline">\((U_\beta, \varphi_\beta)\)</span> with <span class="math inline">\(U_\alpha \cap U_\beta \neq \varnothing,\)</span>
+the <strong>transition map</strong>
+<span class="math display">\[
+\varphi_\beta \circ \varphi_\alpha^{-1} :
+\varphi_\alpha(U_\alpha \cap U_\beta) \longrightarrow
+\varphi_\beta(U_\alpha \cap U_\beta)
+\]</span>
+is a <strong>biholomorphism</strong>.</p></li>
+</ol>
+</div>
+<div class="float">
+<img src="fig/Picture1.png" alt="Two coordinate charts on a manifold (Image Credit: Wikipedia)" />
+<div class="figcaption">Two coordinate charts on a manifold (Image Credit: Wikipedia)</div>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-2" class="remark"><em>Remark</em>. </span><strong>Terminology</strong>:
+-“holomorphic functions” are functions which are complex differentiable on an open set in the complex plane.
+-A “biholomorphic map” is a holomorphic bijection whose inverse is holomorphic.</p>
+</div>
+<div class="definition">
+<p><span id="def:unnamed-chunk-10" class="definition"><strong>Definition 5.2  </strong></span>Let <span class="math inline">\(R_1\)</span> and <span class="math inline">\(R_2\)</span> be Riemann surfaces. A map <span class="math inline">\(f : R_1 \to R_2\)</span>
+is said to be <strong>holomorphic</strong> if for every pair of charts <span class="math inline">\((U, \varphi) \quad \text{on } R_1, \qquad (V, \psi) \quad \text{on } R_2,\)</span> the map <span class="math inline">\(\psi \circ f \circ \varphi^{-1}\)</span> is holomorphic on its domain (which may be empty).</p>
+</div>
+<p>Suppose <span class="math inline">\((U, \varphi)\)</span>, <span class="math inline">\((U&#39;, \varphi&#39;)\)</span> are charts on <span class="math inline">\(R_1\)</span>, and <span class="math inline">\((V, \psi)\)</span>, <span class="math inline">\((V&#39;, \psi&#39;)\)</span> are charts on <span class="math inline">\(R_2\)</span>. On the overlap where all maps are defined, we have:</p>
+<ul>
+<li>the transition maps <span class="math inline">\(\varphi&#39; \circ \varphi^{-1},\psi&#39; \circ \psi^{-1}\)</span> are <strong>biholomorphisms</strong> (by condition (5) in the definition of a complex atlas)</li>
+<li>therefore<br />
+<span class="math display">\[
+\psi&#39; \circ f \circ (\varphi&#39;)^{-1}
+= (\psi&#39; \circ \psi^{-1})
+  \circ (\psi \circ f \circ \varphi^{-1})
+  \circ (\varphi \circ (\varphi&#39;)^{-1})
+\]</span> is holomorphic if and only if <span class="math inline">\(\psi \circ f \circ \varphi^{-1}\)</span> is holomorphic.</li>
+</ul>
+<p>Thus the notion of holomorphicity does <strong>not</strong> depend on the choice of charts.
+```</p>
+<p><img src="fig/pic%202.jpeg" /></p>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-11" class="exercise"><strong>Exercise 5.1  </strong></span>Assume that for all <span class="math inline">\(p \in R_1\)</span> there is a chart <span class="math inline">\((U,\phi)\)</span> such that <span class="math inline">\(p \in U\)</span> and a chart <span class="math inline">\((V,\psi)\)</span> such that <span class="math inline">\(f(p) \in V\)</span>, so that <span class="math inline">\(\psi \circ f \circ \phi^{-1}\)</span> is holomorphic (in the standard sense, as a complex analytic function on an open subset of the plane). Show that <span class="math inline">\(f\)</span> is holomorphic.</p>
+</div>
+<p><strong>Solution</strong>: We are given that for each <span class="math inline">\(p \in R_1\)</span>, there exist some charts <span class="math inline">\((U,\phi)\)</span> at <span class="math inline">\(p\)</span> and <span class="math inline">\((V,\psi)\)</span> at <span class="math inline">\(f(p)\)</span> such that <span class="math inline">\(\psi \circ f \circ \phi^{-1}\)</span>is holomorphic.</p>
+<p>Now take any other charts <span class="math inline">\((U_1,\phi_1)\)</span> at <span class="math inline">\(p\)</span> and <span class="math inline">\((V_1,\psi_1)\)</span> at <span class="math inline">\(f(p)\)</span>, with <span class="math inline">\(f(U_1) \subset V_1\)</span>. On overlaps, the transition maps <span class="math inline">\(\phi \circ \phi_1^{-1} \quad \text{and} \quad \psi_1 \circ \psi^{-1}\)</span> are biholomorphic (holomorphic with holomorphic inverses), because they are chart transition maps on a Riemann surface.</p>
+<p>On the intersection where everything is defined, we can write <span class="math inline">\(\psi_1 \circ f \circ \phi_1^{-1}
+= (\psi_1 \circ \psi^{-1}) \circ (\psi \circ f \circ \phi^{-1}) \circ (\phi \circ \phi_1^{-1}).\)</span></p>
+<ul>
+<li><span class="math inline">\(\psi \circ f \circ \phi^{-1}\)</span> is holomorphic by assumption.</li>
+<li><span class="math inline">\(\phi \circ \phi_1^{-1}\)</span> and <span class="math inline">\(\psi_1 \circ \psi^{-1}\)</span> are holomorphic (indeed biholomorphic) transition maps.</li>
+</ul>
+<p>A composition of holomorphic maps is holomorphic, so <span class="math inline">\(\psi_1 \circ f \circ \phi_1^{-1}\)</span> is holomorphic.</p>
+<p>Since this holds for any charts <span class="math inline">\((U_1,\phi_1)\)</span>, <span class="math inline">\((V_1,\psi_1)\)</span> around <span class="math inline">\(p\)</span> and <span class="math inline">\(f(p)\)</span>, it follows that <span class="math inline">\(f\)</span> is holomorphic by the definition of a holomorphic map between Riemann surfaces.</p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-12" class="example"><strong>Example 5.1  </strong></span>Define the equivalence relation on <span class="math inline">\(\mathbb{C}\)</span> by <span class="math inline">\(z \sim w \quad \text{if and only if} \quad z = w + 2\pi i n \quad \text{for some } n \in \mathbb{Z}.\)</span> Let <span class="math inline">\(R = \mathbb{C}/\!\sim\)</span> as a topological space, with projection map <span class="math inline">\(\pi : \mathbb{C} \to R.\)</span></p>
+<p>We will define an atlas on <span class="math inline">\(R\)</span> which will make it a Riemann surface.
+Define <span class="math inline">\(W_{z_0,r} = \{\, z \in \mathbb{C} : |z - z_0| &lt; r \,\}.\)</span> Restrict to <span class="math inline">\(r &lt; \pi\)</span> (for convenience). Let <span class="math inline">\(U_{z_0,r} = \pi(W_{z_0,r}).\)</span></p>
+Let <span class="math inline">\(\varphi_{z_0,r} : U_{z_0,r} \to W_{z_0,r}\)</span>
+be the unique right inverse of <span class="math inline">\(\pi\)</span> on <span class="math inline">\(U_{z_0,r}\)</span> with image <span class="math inline">\(W_{z_0,r}\)</span>.
+<center>
+<img src="fig/pic%204.jpeg" style="width:50.0%" />
+</center>
+</div>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-13" class="exercise"><strong>Exercise 5.2  </strong></span>Show that for any <span class="math inline">\(z_1, z_2\)</span> and <span class="math inline">\(r_1, r_2\)</span> the map <span class="math inline">\(\phi_{z_1, r_1} \circ \phi^{-1}_{z_2, r_2}\)</span> is a translation, and in particular holomorphic. This shows that <span class="math inline">\(\left\{ (U_{z_0, r}, \phi_{z_0, r}) \right\}_{\{ z_0 \in \mathbb{C},\, r &gt; 0 \}}\)</span> is an atlas making <span class="math inline">\(R\)</span> a Riemann surface.</p>
+</div>
+<div id="solution" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> <strong>Solution</strong>:<a href="riemann-surfaces..html#solution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="functions-defnied-on-the-riemann-surface." class="section level3 hasAnchor" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Functions defnied on the Riemann Surface.<a href="riemann-surfaces..html#functions-defnied-on-the-riemann-surface." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="exp-function" class="section level4 hasAnchor" number="5.1.1.1">
+<h4><span class="header-section-number">5.1.1.1</span> Exp function<a href="riemann-surfaces..html#exp-function" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>We know that <span class="math inline">\(\exp z\)</span> is a holomorphic function on <span class="math inline">\(\mathbb{C}\)</span> which is periodic in the sense that <span class="math inline">\(\exp(z + 2\pi i n) = \exp(z)\)</span> for all <span class="math inline">\(n \in \mathbb{Z}.\)</span> Thus this passes to a well-defined function on <span class="math inline">\(R\)</span>. Namely,
+<span class="math display">\[\begin{align}
+\operatorname{Exp} : R &amp;\longrightarrow \mathbb{C}\\
+[z] &amp;\longmapsto \exp(z)
+\end{align}\]</span></p>
+<p>where <span class="math inline">\([z]\)</span> is the equivalence class of <span class="math inline">\(z\)</span>.</p>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-14" class="exercise"><strong>Exercise 5.3  </strong></span>Verify that this is well-defined.</p>
+</div>
+<p><strong>Solution</strong>: To see that <span class="math inline">\(\operatorname{Exp}\)</span> is well-defined, assume <span class="math inline">\(z \sim w\)</span>.
+Then there is an integer <span class="math inline">\(n \in \mathbb{Z}\)</span> such that <span class="math inline">\(z = w + 2\pi i\, n.\)</span> Hence,</p>
+<p><span class="math display">\[
+\operatorname{Exp}([z]) = e^{z}
+= e^{\,w + 2\pi i n}
+= e^{w}\, e^{2\pi i n}
+= e^{w}
+= \operatorname{Exp}([w]).
+\]</span></p>
+<p>Thus the value of <span class="math inline">\(\operatorname{Exp}([z])\)</span> depends only on the equivalence class <span class="math inline">\([z]\)</span>,
+so the function is well-defined.</p>
+<p>
+To see that <span class="math inline">\(\operatorname{Exp}\)</span> is holomorphic, observe that for any chart
+<span class="math inline">\((U_{z_0,r}, \phi_{z_0,r})\)</span> we have</p>
+<p><span class="math display">\[
+\operatorname{Id}\circ\operatorname{Exp} \circ \phi_{z_0,r}^{-1}(z)
+= e^{z},
+\]</span></p>
+<p>which is holomorphic on <span class="math inline">\(\mathbb{C}\)</span>.<br />
+Thus <span class="math inline">\(\operatorname{Exp}\)</span> is holomorphic by definition.</p>
+</div>
+<div id="sin-function" class="section level4 hasAnchor" number="5.1.1.2">
+<h4><span class="header-section-number">5.1.1.2</span> Sin function<a href="riemann-surfaces..html#sin-function" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>
+We may similarly define the function
+<span class="math inline">\(\operatorname{Sin}([z]) = \sin z,\)</span>
+which is again well-defined and holomorphic.</p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-15" class="example"><strong>Example 5.2  </strong></span>The complex plane <span class="math inline">\(\mathbb{C}\)</span> is a Riemann surface if we choose the atlas
+<span class="math inline">\(\mathcal{A} = \{ (U_{z_0,r}, \phi_{z_0,r}) \}\)</span>.
+This was implicit in the previous example, where we composed by the identity
+map on the left.</p>
+</div>
+<p><strong>Idea 1</strong>: Periodic functions are holomorphic functions on the Riemann surface obtained by taking quotients with respect to their periods.</p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-16" class="example"><strong>Example 5.3  </strong></span>Let</p>
+<p><span class="math display">\[
+R = \{(r,\theta) : r &gt; 0,\ \theta \in \mathbb{R}\}.
+\]</span></p>
+<p>This is trivially a topological space. We make it into a Riemann surface by
+defining charts as follows. For each <span class="math inline">\(\theta_0 \in \mathbb{R}\)</span>, set</p>
+<p><span class="math display">\[
+U_{\theta_0}
+= \{(r,\theta) : \theta_0 &lt; \theta &lt; \theta_0 + 2\pi,\ r &gt; 0\},
+\]</span></p>
+<p>and define</p>
+<p><span class="math display">\[
+\phi_{\theta_0} : U_{\theta_0} \to \mathbb{C}, \qquad
+\phi_{\theta_0}(r,\theta) = r e^{i\theta}.
+\]</span></p>
+</div>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-17" class="exercise"><strong>Exercise 5.4  </strong></span>Show that for any pair <span class="math inline">\(\theta_1, \theta_2\)</span>, the transition map</p>
+<p><span class="math display">\[
+\phi_{\theta_1} \circ \phi_{\theta_2}^{-1}
+\]</span></p>
+<p>is a biholomorphism.</p>
+</div>
+</div>
+<div id="log-function" class="section level4 hasAnchor" number="5.1.1.3">
+<h4><span class="header-section-number">5.1.1.3</span> LOG function<a href="riemann-surfaces..html#log-function" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>We then have a well-defined function</p>
+<p><span class="math display">\[\begin{align}
+\operatorname{LOG} : R &amp;\to \mathbb{C}, \\
+\operatorname{LOG}(r,\theta) &amp;= \log r + i\theta.
+\end{align}\]</span></p>
+<p>For any <span class="math inline">\(\theta_0\)</span>, the function</p>
+<p><span class="math display">\[
+\operatorname{LOG} \circ \phi_{\theta_0}^{-1}
+\]</span></p>
+<p>is a branch of the logarithm on the plane minus the slit
+<span class="math inline">\(\arg z = \theta_0\)</span>. Explicitly,</p>
+<p><span class="math display">\[
+\operatorname{LOG} \circ \phi_{\theta_0}^{-1}(z) = \log z,
+\]</span></p>
+<p>where the right-hand side denotes the branch of the logarithm whose domain
+is the plane slit along the ray of argument <span class="math inline">\(\theta_0\)</span>, and whose values lie in the strip</p>
+<p><span class="math display">\[
+\{ w \in \mathbb{C} : \theta_0 &lt; \Im(w) &lt; \theta_0 + 2\pi \}.
+\]</span></p>
+<p><img src="fig/pic%205.jpeg" /></p>
+</div>
+</div>
+</div>
+<div id="the-riemann-sphere" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> The Riemann sphere<a href="riemann-surfaces..html#the-riemann-sphere" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>As a set, the <strong>Riemann sphere</strong> is <span class="math inline">\(\widehat{\mathbb{C}} = \mathbb{C} \cup \{\infty\}.\)</span> To make this into a Riemann surface, we must specify a <strong>topology</strong> and an <strong>atlas</strong>.</p>
+<p>A basis for the topology consists of:</p>
+<ol style="list-style-type: decimal">
+<li><p>Sets of the form <span class="math inline">\(U \subset \mathbb{C},\)</span>
+where <span class="math inline">\(U\)</span> is open in <span class="math inline">\(\mathbb{C}\)</span> and <span class="math inline">\(\infty \notin U\)</span>.</p></li>
+<li><p>Sets of the form <span class="math inline">\(\{\infty\} \cup (\mathbb{C} \setminus K),\)</span> where <span class="math inline">\(K \subset \mathbb{C}\)</span> is compact.</p></li>
+</ol>
+<p>Equivalently, a set <span class="math inline">\(V \subset \widehat{\mathbb{C}}\)</span> is open iff:</p>
+<ul>
+<li><p>If <span class="math inline">\(p \in \mathbb{C}\)</span>, then there exists an open set <span class="math inline">\(U \subset \mathbb{C}\)</span> with <span class="math inline">\(p \in U \subset V.\)</span></p></li>
+<li><p>If <span class="math inline">\(p = \infty\)</span>, then there exists a compact <span class="math inline">\(K \subset \mathbb{C}\)</span> such that <span class="math inline">\(\{\infty\} \cup (\mathbb{C} \setminus K) \subset V.\)</span></p></li>
+</ul>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-18" class="exercise"><strong>Exercise 5.5  </strong></span>Show that <span class="math inline">\(\widehat{\mathbb{C}}\)</span> is compact.</p>
+</div>
+<p>We define an atlas consisting of two charts:</p>
+<p><span class="math display">\[
+U_1 = \widehat{\mathbb{C}} \setminus \{\infty\}, \qquad
+\varphi_1(z) = z.
+\]</span>
+<span class="math display">\[
+U_2 = \widehat{\mathbb{C}} \setminus \{0\}, \qquad
+\varphi_2(z) = \frac{1}{z}.
+\]</span></p>
+<p>The first chart and its inverse are clearly continuous.</p>
+<p>To see that <span class="math inline">\(\varphi_2\)</span> is continuous, note that it maps <span class="math inline">\(U_1 \cap U_2 = \widehat{\mathbb{C}} \setminus \{0,\infty\}\)</span> bijectively onto <span class="math inline">\(\mathbb{C} \setminus \{0\}\)</span>.</p>
+<p>The overlap maps are:
+<span class="math display">\[
+\varphi_2 \circ \varphi_1^{-1}(z) = \frac{1}{z}, \qquad
+\varphi_1 \circ \varphi_2^{-1}(w) = \frac{1}{w}.
+\]</span></p>
+<p>These are biholomorphic, since the inverse of <span class="math inline">\(z \mapsto 1/z\)</span> is again <span class="math inline">\(z \mapsto 1/z\)</span>.</p>
+<p>Thus, this defines a valid atlas, and the resulting Riemann surface is the <strong>Riemann sphere</strong>.</p>
+<div id="stereographic-projection-and-the-metric" class="section level3 hasAnchor" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Stereographic Projection and the Metric<a href="riemann-surfaces..html#stereographic-projection-and-the-metric" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+We identify the Riemann sphere with the unit sphere <span class="math inline">\(S^2 = \{(x_1,x_2,x_3) \in \mathbb{R}^3 : x_1^2 + x_2^2 + x_3^2 = 1\}.\)</span> Think of <span class="math inline">\(\mathbb{C}\)</span> as the plane <span class="math inline">\((x_1,y_1,0)\)</span>. Given <span class="math inline">\(z = x + iy \in \mathbb{C}\)</span>, draw the line from the north pole <span class="math inline">\((0,0,1)\)</span> to <span class="math inline">\((x,y,0)\)</span>.<br />
+This intersects the sphere at:
+<div style="display: flex; justify-content: space-between; align-items: flex-start;">
+<div style="width: 48%;">
+<p><span class="math display">\[
+\begin{align*}
+x_1 &amp;= \frac{2x}{|z|^2+1}
+     = \frac{2x}{x^2 + y^2 + 1},\\
+x_2 &amp;= \frac{2y}{|z|^2+1}
+     = \frac{2y}{x^2 + y^2 + 1},\\
+x_3 &amp;= \frac{|z|^2-1}{|z|^2+1}
+     = \frac{x^2 + y^2 - 1}{x^2 + y^2 + 1}.
+\end{align*}
+\]</span></p>
+</div>
+<div style="width: 48%; text-align: center;">
+<p><img src="fig/pic%203.jpeg" width="90%" /></p>
+</div>
+</div>
+<p>Define
+<span class="math display">\[
+\sigma : S^2 \to \widehat{\mathbb{C}}
+\]</span>
+by
+<span class="math display">\[
+\sigma(x_1,x_2,x_3) =
+\begin{cases}
+\dfrac{x_1}{1 - x_3} + i\,\dfrac{x_2}{1 - x_3}, &amp; (x_1,x_2,x_3) \neq (0,0,1), \\[1em]
+\infty, &amp; (x_1,x_2,x_3) = (0,0,1).
+\end{cases}
+\]</span></p>
+<p><span class="math display">\[
+\sigma^{-1}(z) =
+\begin{cases}
+\left(
+\dfrac{2\Re z}{|z|^2 + 1},
+\dfrac{2\Im z}{|z|^2 + 1},
+\dfrac{|z|^2 - 1}{|z|^2 + 1}
+\right), &amp; z \in \mathbb{C}, \\[1em]
+(0,0,1), &amp; z = \infty.
+\end{cases}
+\]</span></p>
+<p>The spherical (or chordal) metric is:
+<span class="math display">\[
+d_{\widehat{\mathbb{C}}}(z,w)|
+= \frac{2|z-w|}{\sqrt{(1+|z|^2)(1+|w|^2)}},
+\]</span>
+with the natural extension when one point is <span class="math inline">\(\infty\)</span>.</p>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="green-functions.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/ashanjaymal/Complex-Analysis/edit/main/03-Rie.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["_main.pdf", "_main.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

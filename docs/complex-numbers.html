@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Complex Numbers | Complex Analysis</title>
+  <meta name="description" content="This is just a test" />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Complex Numbers | Complex Analysis" />
+  <meta property="og:type" content="book" />
+  <meta property="og:image" content="https://ashanjayamal.github.io/Complex-Analysis/fig/cover.png" />
+  <meta property="og:description" content="This is just a test" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Complex Numbers | Complex Analysis" />
+  
+  <meta name="twitter:description" content="This is just a test" />
+  <meta name="twitter:image" content="https://ashanjayamal.github.io/Complex-Analysis/fig/cover.png" />
+
+<meta name="author" content="Ashan Jayamal" />
+
+
+<meta name="date" content="2026-07-09" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="green-functions.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Complex Analysis </a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="index.html"><a href="index.html#why-complex-numbers"><i class="fa fa-check"></i><b>1.0.1</b> Why Complex Numbers</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="complex-numbers.html"><a href="complex-numbers.html"><i class="fa fa-check"></i><b>2</b> Complex Numbers</a>
+<ul>
+<li class="chapter" data-level="2.0.1" data-path="complex-numbers.html"><a href="complex-numbers.html#basic-definitions-and-algebra"><i class="fa fa-check"></i><b>2.0.1</b> Basic Definitions and Algebra</a></li>
+<li class="chapter" data-level="2.0.2" data-path="complex-numbers.html"><a href="complex-numbers.html#arithmetic-operations"><i class="fa fa-check"></i><b>2.0.2</b> Arithmetic Operations</a></li>
+<li class="chapter" data-level="2.0.3" data-path="complex-numbers.html"><a href="complex-numbers.html#complex-conjugate"><i class="fa fa-check"></i><b>2.0.3</b> Complex Conjugate</a></li>
+<li class="chapter" data-level="2.0.4" data-path="complex-numbers.html"><a href="complex-numbers.html#absolute-value-modulus"><i class="fa fa-check"></i><b>2.0.4</b> Absolute Value (Modulus)</a></li>
+<li class="chapter" data-level="2.0.5" data-path="complex-numbers.html"><a href="complex-numbers.html#important-inequalities"><i class="fa fa-check"></i><b>2.0.5</b> Important Inequalities</a></li>
+<li class="chapter" data-level="2.0.6" data-path="complex-numbers.html"><a href="complex-numbers.html#fundamental-theorem-of-algebra"><i class="fa fa-check"></i><b>2.0.6</b> Fundamental Theorem of Algebra</a></li>
+<li class="chapter" data-level="2.1" data-path="complex-numbers.html"><a href="complex-numbers.html#geometric-representation"><i class="fa fa-check"></i><b>2.1</b> Geometric Representation</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="complex-numbers.html"><a href="complex-numbers.html#the-complex-plane"><i class="fa fa-check"></i><b>2.1.1</b> The Complex Plane</a></li>
+<li class="chapter" data-level="2.1.2" data-path="complex-numbers.html"><a href="complex-numbers.html#vector-interpretation"><i class="fa fa-check"></i><b>2.1.2</b> Vector Interpretation</a></li>
+<li class="chapter" data-level="2.1.3" data-path="complex-numbers.html"><a href="complex-numbers.html#polar-form"><i class="fa fa-check"></i><b>2.1.3</b> Polar Form</a></li>
+<li class="chapter" data-level="2.1.4" data-path="complex-numbers.html"><a href="complex-numbers.html#de-moivres-formula"><i class="fa fa-check"></i><b>2.1.4</b> De Moivre’s Formula</a></li>
+<li class="chapter" data-level="2.1.5" data-path="complex-numbers.html"><a href="complex-numbers.html#roots-of-complex-numbers"><i class="fa fa-check"></i><b>2.1.5</b> Roots of Complex Numbers</a></li>
+<li class="chapter" data-level="2.1.6" data-path="complex-numbers.html"><a href="complex-numbers.html#equations-in-the-complex-plane"><i class="fa fa-check"></i><b>2.1.6</b> Equations in the Complex Plane</a></li>
+<li class="chapter" data-level="2.1.7" data-path="complex-numbers.html"><a href="complex-numbers.html#stereographic-projection-and-the-riemann-sphere"><i class="fa fa-check"></i><b>2.1.7</b> Stereographic Projection and the Riemann Sphere</a></li>
+<li class="chapter" data-level="2.1.8" data-path="complex-numbers.html"><a href="complex-numbers.html#key-formulas-and-results"><i class="fa fa-check"></i><b>2.1.8</b> Key Formulas and Results</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="complex-numbers.html"><a href="complex-numbers.html#exercise"><i class="fa fa-check"></i><b>2.2</b> Exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="green-functions.html"><a href="green-functions.html"><i class="fa fa-check"></i><b>3</b> Green functions</a></li>
+<li class="chapter" data-level="4" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html"><i class="fa fa-check"></i><b>4</b> Riemann Surfaces.</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html#solution"><i class="fa fa-check"></i><b>4.1</b> <strong>Solution</strong>:</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html#functions-defnied-on-the-riemann-surface."><i class="fa fa-check"></i><b>4.1.1</b> Functions defnied on the Riemann Surface.</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html#the-riemann-sphere"><i class="fa fa-check"></i><b>4.2</b> The Riemann sphere</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html#stereographic-projection-and-the-metric"><i class="fa fa-check"></i><b>4.2.1</b> Stereographic Projection and the Metric</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://ashanjayamal.github.io/academicpages" target="blank">Property of Ashan Jayamal</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Complex Analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="complex-numbers" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Complex Numbers<a href="complex-numbers.html#complex-numbers" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>A complex number is defined as <span class="math inline">\(z = x + iy\)</span>, where <span class="math inline">\(x, y \in \mathbb{R}\)</span>. Here, <span class="math inline">\(x\)</span> represents the <strong>real part</strong> (<span class="math inline">\(\operatorname{Re}z\)</span>) and <span class="math inline">\(y\)</span> represents the <strong>imaginary part</strong> (<span class="math inline">\(\operatorname{Im}z\)</span>).</p>
+<p>The set of all such numbers, <span class="math inline">\(\mathbb{C}\)</span>, constitutes the complex plane. Since <span class="math inline">\(\mathbb{R} \subset \mathbb{C}\)</span>, real numbers are identified as complex numbers where <span class="math inline">\(\operatorname{Im}z = 0\)</span>.</p>
+<p>There exists a bijective correspondence between <span class="math inline">\(\mathbb{C}\)</span> and the Euclidean plane <span class="math inline">\(\mathbb{R}^2\)</span>, expressed as:</p>
+<p><span class="math display">\[z = x + iy \longleftrightarrow (x, y)\]</span></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-1-1.png" alt="" width="672" />
+In this geometric representation:</p>
+<ul>
+<li>The <strong>real axis</strong> corresponds to the <span class="math inline">\(x\)</span>-axis.</li>
+<li>The <strong>imaginary axis</strong> (<span class="math inline">\(i\mathbb{R}\)</span>), containing purely imaginary numbers of the form <span class="math inline">\(iy\)</span>, corresponds to the <span class="math inline">\(y\)</span>-axis.</li>
+</ul>
+<div id="basic-definitions-and-algebra" class="section level3 hasAnchor" number="2.0.1">
+<h3><span class="header-section-number">2.0.1</span> Basic Definitions and Algebra<a href="complex-numbers.html#basic-definitions-and-algebra" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>A complex number has the form <span class="math inline">\(z = a + ib\)</span> where <span class="math inline">\(a, b\)</span> are real numbers</li>
+<li><span class="math inline">\(a\)</span> is the <strong>real part</strong>: <span class="math inline">\(\text{Re}(z) = a\)</span></li>
+<li><span class="math inline">\(b\)</span> is the <strong>imaginary part</strong>: <span class="math inline">\(\text{Im}(z) = b\)</span></li>
+<li>A number is <strong>purely imaginary</strong> if <span class="math inline">\(a = 0\)</span></li>
+<li>A number is <strong>real</strong> if <span class="math inline">\(b = 0\)</span></li>
+<li>Zero is the only number that is both real and purely imaginary</li>
+</ul>
+</div>
+<div id="arithmetic-operations" class="section level3 hasAnchor" number="2.0.2">
+<h3><span class="header-section-number">2.0.2</span> Arithmetic Operations<a href="complex-numbers.html#arithmetic-operations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="addition" class="section level4 hasAnchor" number="2.0.2.1">
+<h4><span class="header-section-number">2.0.2.1</span> Addition<a href="complex-numbers.html#addition" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><span class="math inline">\(z+w=(x + iy) + (u + iv) = (x+u) + i(y+v)\)</span></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-2-1.png" alt="" width="672" /></p>
+</div>
+<div id="subtraction" class="section level4 hasAnchor" number="2.0.2.2">
+<h4><span class="header-section-number">2.0.2.2</span> Subtraction<a href="complex-numbers.html#subtraction" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><span class="math inline">\(z-w=(x + iy) - (u + iv) = (x-u) + i(y-v)\)</span></p>
+</div>
+<div id="multiplication" class="section level4 hasAnchor" number="2.0.2.3">
+<h4><span class="header-section-number">2.0.2.3</span> Multiplication<a href="complex-numbers.html#multiplication" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><span class="math inline">\((a + ib)(c + id) = (ac - bd) + i(ad + bc)\)</span></p>
+</div>
+<div id="division" class="section level4 hasAnchor" number="2.0.2.4">
+<h4><span class="header-section-number">2.0.2.4</span> Division<a href="complex-numbers.html#division" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><span class="math display">\[\frac{a + ib}{c + id} = \frac{(a + ib)(c - id)}{(c + id)(c - id)} = \frac{ac + bd}{c^2 + d^2} + i\frac{bc - ad}{c^2 + d^2}\]</span></p>
+</div>
+</div>
+<div id="complex-conjugate" class="section level3 hasAnchor" number="2.0.3">
+<h3><span class="header-section-number">2.0.3</span> Complex Conjugate<a href="complex-numbers.html#complex-conjugate" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p>The conjugate of <span class="math inline">\(z = a + ib\)</span> is <span class="math inline">\(\bar{z} = a - ib\)</span>
+<img src="_main_files/figure-html/unnamed-chunk-3-1.png" alt="" width="672" /></p></li>
+<li><p>Properties: <span class="math inline">\(\text{For all } z,w \in \mathbb{C}:\)</span></p>
+<ul>
+<li><span class="math inline">\(\overline{z+w} = \bar{z} + \bar{w}\)</span><br />
+</li>
+<li><span class="math inline">\(\overline{zw} = \bar{z}\,\bar{w}\)</span><br />
+</li>
+<li><span class="math inline">\(\overline{(z/w)} = \frac{\bar{z}}{\bar{w}},\ w \neq 0\)</span><br />
+</li>
+<li><span class="math inline">\(\frac{1}{z} = \frac{\bar{z}}{|z|^{2}},\ z \neq 0\)</span><br />
+</li>
+<li><span class="math inline">\(z\)</span> is real <span class="math inline">\(\Longleftrightarrow z = \bar{z}\)</span><br />
+</li>
+<li><span class="math inline">\(z\)</span> is purely imaginary <span class="math inline">\(\Longleftrightarrow z = -\bar{z}\)</span></li>
+</ul></li>
+</ul>
+</div>
+<div id="absolute-value-modulus" class="section level3 hasAnchor" number="2.0.4">
+<h3><span class="header-section-number">2.0.4</span> Absolute Value (Modulus)<a href="complex-numbers.html#absolute-value-modulus" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>The absolute value or modulus of <span class="math inline">\(z = a + ib\)</span> is:
+<ul>
+<li><span class="math inline">\(|z| = \sqrt{a^2 + b^2} = \sqrt{z\bar{z}}\)</span>
+<img src="_main_files/figure-html/unnamed-chunk-4-1.png" alt="" width="672" /></li>
+</ul></li>
+<li>Properties:
+<ul>
+<li><span class="math inline">\(|z| \geq 0\)</span> for all <span class="math inline">\(z\)</span>, with equality if and only if <span class="math inline">\(z = 0\)</span></li>
+<li><span class="math inline">\(|zw|^{2} = (zw)(\overline{zw}) = (z\bar{z})(w\bar{w}) = |z|^{2}|w|^{2}\)</span><br />
+</li>
+<li><span class="math inline">\(|z_1 \cdot z_2| = |z_1| \cdot |z_2|\)</span></li>
+<li><span class="math inline">\(\left|\frac{z_1}{z_2}\right| = \frac{|z_1|}{|z_2|}\)</span> for <span class="math inline">\(z_2 \neq 0\)</span></li>
+<li><span class="math inline">\(|z_1 + z_2| \leq |z_1| + |z_2|\)</span> (Triangle inequality)</li>
+<li><span class="math inline">\(\left| |z_1| - |z_2| \right| \leq |z_1 - z_2|\)</span></li>
+</ul></li>
+</ul>
+</div>
+<div id="important-inequalities" class="section level3 hasAnchor" number="2.0.5">
+<h3><span class="header-section-number">2.0.5</span> Important Inequalities<a href="complex-numbers.html#important-inequalities" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><p><strong>Triangle Inequality</strong>: <span class="math inline">\(|z_1 + z_2| \leq |z_1| + |z_2|\)</span></p>
+<ul>
+<li>Equality holds if and only if <span class="math inline">\(\frac{z_1}{z_2} &gt; 0\)</span> (i.e., the ratio is positive real)</li>
+</ul></li>
+<li><p><span class="math inline">\(-|z| \leq \text{Re}(z) \leq |z|\)</span></p>
+<ul>
+<li>Equality on right when <span class="math inline">\(z\)</span> is positive real</li>
+</ul></li>
+<li><p><span class="math inline">\(-|z| \leq \text{Im}(z) \leq |z|\)</span></p></li>
+<li><p><strong>Cauchy’s Inequality</strong>: <span class="math inline">\(|a_1b_1 + a_2b_2 + \ldots + a_nb_n|^2 \leq (|a_1|^2 + \ldots + |a_n|^2)(|b_1|^2 + \ldots + |b_n|^2)\)</span></p>
+<ul>
+<li>Equality holds if and only if the <span class="math inline">\(a_i\)</span> are proportional to the <span class="math inline">\(b_i\)</span></li>
+</ul></li>
+</ol>
+</div>
+<div id="fundamental-theorem-of-algebra" class="section level3 hasAnchor" number="2.0.6">
+<h3><span class="header-section-number">2.0.6</span> Fundamental Theorem of Algebra<a href="complex-numbers.html#fundamental-theorem-of-algebra" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A complex polynomial of degree <span class="math inline">\(n \ge 0\)</span> is a function of the form</p>
+<p><span class="math display">\[
+p(z) = a_n z^n + a_{n-1} z^{\,n-1} + \cdots + a_1 z + a_0,
+\qquad z \in \mathbb{C},
+\]</span></p>
+<p>where <span class="math inline">\(a_0, a_1, \ldots, a_n\)</span> are complex numbers and <span class="math inline">\(a_n \neq 0\)</span>.</p>
+<p>A fundamental property of the complex numbers is that every polynomial
+with complex coefficients can be factored completely into linear factors.</p>
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-5" class="theorem"><strong>Theorem 2.1  (Fundamental Theorem of Algebra) </strong></span>Every complex polynomial <span class="math inline">\(p(z)\)</span> of degree <span class="math inline">\(n \ge 1\)</span> admits a factorization</p>
+<p><span class="math display">\[
+p(z) = c\,(z - \zeta_1)^{m_1} (z - \zeta_2)^{m_2} \cdots (z - \zeta_k)^{m_k},
+\]</span></p>
+<p>where the numbers <span class="math inline">\(\zeta_1, \ldots, \zeta_k\)</span> are distinct complex roots of <span class="math inline">\(p\)</span>,
+each multiplicity satisfies <span class="math inline">\(m_j \ge 1\)</span>, and <span class="math inline">\(m_1 + m_2 + \cdots + m_k = n.\)</span>
+This factorization is <strong>unique</strong>, up to a permutation of the factors.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-1" class="proof"><em>Proof</em>. </span><em>Omitted.</em> Multiple complete and rigorous proofs are available at
+<a href="https://proofwiki.org/wiki/Fundamental_Theorem_of_Algebra">ProofWiki</a>.</p>
+</div>
+<p>The uniqueness of the factorization is straightforward.
+The points <span class="math inline">\(\zeta_1, \ldots, \zeta_k\)</span> are uniquely determined as the zeros of <span class="math inline">\(p(z)\)</span>,
+that is, the solutions of <span class="math inline">\(p(z)=0\)</span>. Each multiplicity <span class="math inline">\(m_j\)</span> is the unique
+integer <span class="math inline">\(m \ge 1\)</span> for which <span class="math inline">\(p(z)\)</span> can be written in the form
+<span class="math inline">\((z-\zeta_j)^m q(z)\)</span> with <span class="math inline">\(q(\zeta_j)\neq 0\)</span>.</p>
+<p>To prove that such a factorization exists, one uses induction on the degree
+<span class="math inline">\(n\)</span> of the polynomial. The key step is to show that <span class="math inline">\(p(z)\)</span> has at least one
+root <span class="math inline">\(\zeta_1\)</span>. Once a root is found, the polynomial can be factored as
+<span class="math inline">\(p(z) = (z-\zeta_1) q(z)\)</span>, where <span class="math inline">\(q(z)\)</span> has degree <span class="math inline">\(n-1\)</span>. By the induction
+hypothesis, <span class="math inline">\(q(z)\)</span> can be factored into linear factors, which completes the
+factorization of <span class="math inline">\(p(z)\)</span>. Thus, the Fundamental Theorem of Algebra is
+equivalent to the statement that every complex polynomial of degree
+<span class="math inline">\(n \ge 1\)</span> has at least one zero.</p>
+</div>
+<div id="geometric-representation" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Geometric Representation<a href="complex-numbers.html#geometric-representation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="the-complex-plane" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> The Complex Plane<a href="complex-numbers.html#the-complex-plane" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>A complex number <span class="math inline">\(z = a + ib\)</span> corresponds to the point <span class="math inline">\((a,b)\)</span> in the plane</li>
+<li>The <span class="math inline">\(x\)</span>-axis is called the <strong>real axis</strong></li>
+<li>The <span class="math inline">\(y\)</span>-axis is called the <strong>imaginary axis</strong></li>
+<li>The plane is called the <strong>complex plane</strong></li>
+</ul>
+<div class="float">
+<img src="fig/pic.png" alt="Image Source: Wikimedia" />
+<div class="figcaption">Image Source: Wikimedia</div>
+</div>
+</div>
+<div id="vector-interpretation" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Vector Interpretation<a href="complex-numbers.html#vector-interpretation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Complex numbers can be represented as vectors from the origin</li>
+<li>Vector addition corresponds to complex addition</li>
+<li>The length of the vector is <span class="math inline">\(|z|\)</span></li>
+<li>The distance between points <span class="math inline">\(z_1\)</span> and <span class="math inline">\(z_2\)</span> is <span class="math inline">\(|z_1 - z_2|\)</span></li>
+</ul>
+</div>
+<div id="polar-form" class="section level3 hasAnchor" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> Polar Form<a href="complex-numbers.html#polar-form" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>A complex number can be written in <strong>polar form</strong>:
+<ul>
+<li><span class="math inline">\(z = r(\cos\theta + i\sin\theta)\)</span> where <span class="math inline">\(r = |z|\)</span> and <span class="math inline">\(\theta = \arg(z)\)</span></li>
+<li><span class="math inline">\(r\)</span> is the modulus: <span class="math inline">\(r = |z| = \sqrt{a^2 + b^2}\)</span></li>
+<li><span class="math inline">\(\theta\)</span> is the <strong>argument</strong> or <strong>amplitude</strong>: <span class="math inline">\(\theta = \arg(z)\)</span></li>
+</ul></li>
+<li>Properties of polar form:
+<ul>
+<li>For <span class="math inline">\(z_1 = r_1(\cos\theta_1 + i\sin\theta_1)\)</span> and <span class="math inline">\(z_2 = r_2(\cos\theta_2 + i\sin\theta_2)\)</span>:</li>
+<li><span class="math inline">\(z_1z_2 = r_1r_2[\cos(\theta_1 + \theta_2) + i\sin(\theta_1 + \theta_2)]\)</span></li>
+<li><span class="math inline">\(\arg(z_1z_2) = \arg(z_1) + \arg(z_2)\)</span></li>
+<li><span class="math inline">\(\arg\left(\frac{z_1}{z_2}\right) = \arg(z_1) - \arg(z_2)\)</span></li>
+</ul></li>
+</ul>
+</div>
+<div id="de-moivres-formula" class="section level3 hasAnchor" number="2.1.4">
+<h3><span class="header-section-number">2.1.4</span> De Moivre’s Formula<a href="complex-numbers.html#de-moivres-formula" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>For <span class="math inline">\(z = r(\cos\theta + i\sin\theta)\)</span>:
+<ul>
+<li><span class="math inline">\(z^n = r^n(\cos n\theta + i\sin n\theta)\)</span></li>
+</ul></li>
+<li>For <span class="math inline">\(r = 1\)</span>:
+<ul>
+<li><span class="math inline">\((\cos\theta + i\sin\theta)^n = \cos n\theta + i\sin n\theta\)</span></li>
+</ul></li>
+</ul>
+</div>
+<div id="roots-of-complex-numbers" class="section level3 hasAnchor" number="2.1.5">
+<h3><span class="header-section-number">2.1.5</span> Roots of Complex Numbers<a href="complex-numbers.html#roots-of-complex-numbers" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>The <span class="math inline">\(n\)</span>-th roots of <span class="math inline">\(z = r(\cos\theta + i\sin\theta)\)</span> are:
+<ul>
+<li><span class="math inline">\(\sqrt[n]{z} = \sqrt[n]{r}\left[\cos\left(\frac{\theta + 2\pi k}{n}\right) + i\sin\left(\frac{\theta + 2\pi k}{n}\right)\right]\)</span> for <span class="math inline">\(k = 0, 1, 2, \ldots, n-1\)</span></li>
+</ul></li>
+<li>There are <span class="math inline">\(n\)</span> distinct <span class="math inline">\(n\)</span>-th roots of any non-zero complex number</li>
+<li>These roots have equal moduli and are equally spaced around a circle</li>
+<li>For <span class="math inline">\(z = 1\)</span>, the roots are called the <strong><span class="math inline">\(n\)</span>-th roots of unity</strong></li>
+</ul>
+</div>
+<div id="equations-in-the-complex-plane" class="section level3 hasAnchor" number="2.1.6">
+<h3><span class="header-section-number">2.1.6</span> Equations in the Complex Plane<a href="complex-numbers.html#equations-in-the-complex-plane" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Circle with center <span class="math inline">\(a\)</span> and radius <span class="math inline">\(r\)</span>: <span class="math inline">\(|z - a| = r\)</span>
+<ul>
+<li>In algebraic form: <span class="math inline">\((z - a)(\bar{z} - \bar{a}) = r^2\)</span></li>
+</ul></li>
+<li>Straight line: <span class="math inline">\(z = a + bt\)</span> where <span class="math inline">\(t\)</span> is a real parameter
+<ul>
+<li>Two lines are parallel if <span class="math inline">\(b&#39;\)</span> is a real multiple of <span class="math inline">\(b\)</span></li>
+<li>Lines are orthogonal if <span class="math inline">\(\frac{b&#39;}{b}\)</span> is purely imaginary</li>
+<li>The angle between lines is <span class="math inline">\(\arg\frac{b&#39;}{b}\)</span></li>
+</ul></li>
+</ul>
+</div>
+<div id="stereographic-projection-and-the-riemann-sphere" class="section level3 hasAnchor" number="2.1.7">
+<h3><span class="header-section-number">2.1.7</span> Stereographic Projection and the Riemann Sphere<a href="complex-numbers.html#stereographic-projection-and-the-riemann-sphere" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The extended complex plane is the complex plane together with the
+point at infinity. We denote the it by <span class="math inline">\(C^* = c\cup\{\infty\}\)</span>.
+- The extended complex plane includes <span class="math inline">\(\infty\)</span> and can be represented on a unit sphere
+- Under stereographic projection, the point <span class="math inline">\((x_1, x_2, x_3)\)</span> on the sphere corresponds to:
+- <span class="math inline">\(z = \frac{x_1 + ix_2}{1 - x_3}\)</span></p>
+<ul>
+<li>The north pole <span class="math inline">\((0,0,1)\)</span> corresponds to <span class="math inline">\(\infty\)</span></li>
+<li>Properties:
+<ul>
+<li>Circles on the sphere correspond to circles or lines in the plane</li>
+<li>The distance formula: <span class="math inline">\(d(z,z&#39;) = \frac{2|z-z&#39;|}{\sqrt{(1+|z|^2)(1+|z&#39;|^2)}}\)</span></li>
+<li>The sphere is often called the <strong>Riemann sphere</strong></li>
+</ul></li>
+</ul>
+</div>
+<div id="key-formulas-and-results" class="section level3 hasAnchor" number="2.1.8">
+<h3><span class="header-section-number">2.1.8</span> Key Formulas and Results<a href="complex-numbers.html#key-formulas-and-results" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(z\bar{z} = |z|^2 = a^2 + b^2\)</span></p></li>
+<li><p><span class="math inline">\(\frac{1}{z} = \frac{\bar{z}}{|z|^2} = \frac{a - ib}{a^2 + b^2}\)</span></p></li>
+<li><p><span class="math inline">\(z^n = r^n(\cos n\theta + i\sin n\theta)\)</span></p></li>
+<li><p><span class="math inline">\(\sqrt[n]{z} = \sqrt[n]{r}\left[\cos\left(\frac{\theta + 2\pi k}{n}\right) + i\sin\left(\frac{\theta + 2\pi k}{n}\right)\right]\)</span> where <span class="math inline">\(k = 0, 1, \ldots, n-1\)</span></p></li>
+<li><p>Triangle inequality: <span class="math inline">\(|z_1 + z_2| \leq |z_1| + |z_2|\)</span></p></li>
+<li><p>Cauchy’s inequality: <span class="math inline">\(\left|\sum_{i=1}^{n} a_i\bar{b}_i\right|^2 \leq \left(\sum_{i=1}^{n}|a_i|^2\right)\left(\sum_{i=1}^{n}|b_i|^2\right)\)</span></p></li>
+<li><p>The equation of a circle: <span class="math inline">\(|z - a| = r\)</span></p></li>
+<li><p>The roots of unity: <span class="math inline">\(\omega^k\)</span> where <span class="math inline">\(\omega = \cos\frac{2\pi}{n} + i\sin\frac{2\pi}{n}\)</span> and <span class="math inline">\(k = 0, 1, \ldots, n-1\)</span></p></li>
+</ol>
+
+</div>
+</div>
+<div id="exercise" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Exercise<a href="complex-numbers.html#exercise" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><p>Find the values of
+<span class="math display">\[    (1 + 2i)^3, \quad \frac{5}{-3 + 4i}, \quad \left( \frac{2 + i}{3 - 2i} \right)^2, \quad (1 + i)^n + (1 - i)^n.\]</span></p></li>
+<li><p>If <span class="math inline">\(z = x + iy\)</span> (where <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are real numbers), find the real and imaginary parts of:
+<span class="math display">\[z^4, \quad \frac{1}{z}, \quad \frac{z - 1}{z + 1}, \quad \frac{1}{z^2}.\]</span></p></li>
+<li><p>Show that:
+<span class="math display">\[  \left( \frac{-1 \pm i\sqrt{3}}{2} \right)^3 = 1 \quad \text{and} \quad \left( \frac{\pm 1 \pm i\sqrt{3}}{2} \right)^6 = 1\]</span>
+for all combinations of signs.</p></li>
+</ol>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="green-functions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/ashanjaymal/Complex-Analysis/edit/main/01-intro.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["_main.pdf", "_main.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

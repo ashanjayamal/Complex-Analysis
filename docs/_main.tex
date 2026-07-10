@@ -79,7 +79,7 @@
 
 \title{Complex Analysis}
 \author{Ashan Jayamal}
-\date{2026-06-26}
+\date{2026-07-09}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -105,22 +105,30 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
+\chapter{Introduction}\label{introduction}
+
+\subsection{Why Complex Numbers}\label{why-complex-numbers}
+
 \chapter{Complex Numbers}\label{complex-numbers}
 
-A complex number is an expression of the form \(z = x+iy\), where \(x\) and \(y\) are real numbers. The component \(x\) is called the real part of \(z\), and \(y\) is the imaginary part of \(z\). We will denote these by
-\begin{align*}
-x &= \operatorname{Re}z, \\
-y &= \operatorname{Im}z.
-\end{align*}
+A complex number is defined as \(z = x + iy\), where \(x, y \in \mathbb{R}\). Here, \(x\) represents the \textbf{real part} (\(\operatorname{Re}z\)) and \(y\) represents the \textbf{imaginary part} (\(\operatorname{Im}z\)).
 
-The set of complex numbers forms the complex plane, which we denote by \(\mathbb{C}\). We denote the set of real numbers by \(\mathbb{R}\), and we think of the real numbers as being a subset of the complex plane, consisting of the complex numbers with imaginary part equal to zero.
+The set of all such numbers, \(\mathbb{C}\), constitutes the complex plane. Since \(\mathbb{R} \subset \mathbb{C}\), real numbers are identified as complex numbers where \(\operatorname{Im}z = 0\).
 
-The correspondence
-\begin{align*}
-z = x+iy \longleftrightarrow (x,y)
-\end{align*}
+There exists a bijective correspondence between \(\mathbb{C}\) and the Euclidean plane \(\mathbb{R}^2\), expressed as:
 
-is a one-to-one correspondence between complex numbers and points (or vectors) in the Euclidean plane \(\mathbb{R}^2\). The real numbers correspond to the \(x\)-axis in the Euclidean plane. The complex numbers of the form \(iy\) are called purely imaginary numbers. They form the imaginary axis \(i\mathbb{R}\) in the complex plane, which corresponds to the \(y\)-axis in the Euclidean plane.
+\[z = x + iy \longleftrightarrow (x, y)\]
+
+\pandocbounded{\includegraphics[keepaspectratio]{_main_files/_main_files/figure-latex/unnamed-chunk-1-1.pdf}}
+In this geometric representation:
+
+\begin{itemize}
+\tightlist
+\item
+  The \textbf{real axis} corresponds to the \(x\)-axis.
+\item
+  The \textbf{imaginary axis} (\(i\mathbb{R}\)), containing purely imaginary numbers of the form \(iy\), corresponds to the \(y\)-axis.
+\end{itemize}
 
 \subsection{Basic Definitions and Algebra}\label{basic-definitions-and-algebra}
 
@@ -144,7 +152,13 @@ is a one-to-one correspondence between complex numbers and points (or vectors) i
 
 \subsubsection{Addition}\label{addition}
 
-\((a + ib) + (c + id) = (a + c) + i(b + d)\)
+\(z+w=(x + iy) + (u + iv) = (x+u) + i(y+v)\)
+
+\pandocbounded{\includegraphics[keepaspectratio]{_main_files/_main_files/figure-latex/unnamed-chunk-2-1.pdf}}
+
+\subsubsection{Subtraction}\label{subtraction}
+
+\(z-w=(x + iy) - (u + iv) = (x-u) + i(y-v)\)
 
 \subsubsection{Multiplication}\label{multiplication}
 
@@ -157,34 +171,26 @@ is a one-to-one correspondence between complex numbers and points (or vectors) i
 \subsection{Complex Conjugate}\label{complex-conjugate}
 
 \begin{itemize}
-\tightlist
 \item
   The conjugate of \(z = a + ib\) is \(\bar{z} = a - ib\)
+  \pandocbounded{\includegraphics[keepaspectratio]{_main_files/_main_files/figure-latex/unnamed-chunk-3-1.pdf}}
 \item
-  Properties:
+  Properties: \(\text{For all } z,w \in \mathbb{C}:\)
 
   \begin{itemize}
   \tightlist
   \item
-    \(\overline{z_1 + z_2} = \bar{z}_1 + \bar{z}_2\)
+    \(\overline{z+w} = \bar{z} + \bar{w}\)\\
   \item
-    \(\overline{z_1 \cdot z_2} = \bar{z}_1 \cdot \bar{z}_2\)
+    \(\overline{zw} = \bar{z}\,\bar{w}\)\\
   \item
-    \(\overline{\left(\frac{z_1}{z_2}\right)} = \frac{\bar{z}_1}{\bar{z}_2}\)
+    \(\overline{(z/w)} = \frac{\bar{z}}{\bar{w}},\ w \neq 0\)\\
   \item
-    \(z\) is real if and only if \(z = \bar{z}\)
+    \(\frac{1}{z} = \frac{\bar{z}}{|z|^{2}},\ z \neq 0\)\\
   \item
-    \(z\) is purely imaginary if and only if \(z = -\bar{z}\)
-  \end{itemize}
-\item
-  Expressing real and imaginary parts using conjugate:
-
-  \begin{itemize}
-  \tightlist
+    \(z\) is real \(\Longleftrightarrow z = \bar{z}\)\\
   \item
-    \(\text{Re}(z) = \frac{z + \bar{z}}{2}\)
-  \item
-    \(\text{Im}(z) = \frac{z - \bar{z}}{2i}\)
+    \(z\) is purely imaginary \(\Longleftrightarrow z = -\bar{z}\)
   \end{itemize}
 \end{itemize}
 
@@ -199,6 +205,7 @@ is a one-to-one correspondence between complex numbers and points (or vectors) i
   \tightlist
   \item
     \(|z| = \sqrt{a^2 + b^2} = \sqrt{z\bar{z}}\)
+    \pandocbounded{\includegraphics[keepaspectratio]{_main_files/_main_files/figure-latex/unnamed-chunk-4-1.pdf}}
   \end{itemize}
 \item
   Properties:
@@ -207,6 +214,8 @@ is a one-to-one correspondence between complex numbers and points (or vectors) i
   \tightlist
   \item
     \(|z| \geq 0\) for all \(z\), with equality if and only if \(z = 0\)
+  \item
+    \(|zw|^{2} = (zw)(\overline{zw}) = (z\bar{z})(w\bar{w}) = |z|^{2}|w|^{2}\)\\
   \item
     \(|z_1 \cdot z_2| = |z_1| \cdot |z_2|\)
   \item
@@ -249,6 +258,52 @@ is a one-to-one correspondence between complex numbers and points (or vectors) i
     Equality holds if and only if the \(a_i\) are proportional to the \(b_i\)
   \end{itemize}
 \end{enumerate}
+
+\subsection{Fundamental Theorem of Algebra}\label{fundamental-theorem-of-algebra}
+
+A complex polynomial of degree \(n \ge 0\) is a function of the form
+
+\[
+p(z) = a_n z^n + a_{n-1} z^{\,n-1} + \cdots + a_1 z + a_0,
+\qquad z \in \mathbb{C},
+\]
+
+where \(a_0, a_1, \ldots, a_n\) are complex numbers and \(a_n \neq 0\).
+
+A fundamental property of the complex numbers is that every polynomial
+with complex coefficients can be factored completely into linear factors.
+
+\begin{theorem}[Fundamental Theorem of Algebra]
+\protect\hypertarget{thm:unnamed-chunk-5}{}\label{thm:unnamed-chunk-5}Every complex polynomial \(p(z)\) of degree \(n \ge 1\) admits a factorization
+
+\[
+p(z) = c\,(z - \zeta_1)^{m_1} (z - \zeta_2)^{m_2} \cdots (z - \zeta_k)^{m_k},
+\]
+
+where the numbers \(\zeta_1, \ldots, \zeta_k\) are distinct complex roots of \(p\),
+each multiplicity satisfies \(m_j \ge 1\), and \(m_1 + m_2 + \cdots + m_k = n.\)
+This factorization is \textbf{unique}, up to a permutation of the factors.
+\end{theorem}
+
+\begin{proof}
+\emph{Omitted.} Multiple complete and rigorous proofs are available at
+\href{https://proofwiki.org/wiki/Fundamental_Theorem_of_Algebra}{ProofWiki}.
+\end{proof}
+
+The uniqueness of the factorization is straightforward.
+The points \(\zeta_1, \ldots, \zeta_k\) are uniquely determined as the zeros of \(p(z)\),
+that is, the solutions of \(p(z)=0\). Each multiplicity \(m_j\) is the unique
+integer \(m \ge 1\) for which \(p(z)\) can be written in the form
+\((z-\zeta_j)^m q(z)\) with \(q(\zeta_j)\neq 0\).
+
+To prove that such a factorization exists, one uses induction on the degree
+\(n\) of the polynomial. The key step is to show that \(p(z)\) has at least one
+root \(\zeta_1\). Once a root is found, the polynomial can be factored as
+\(p(z) = (z-\zeta_1) q(z)\), where \(q(z)\) has degree \(n-1\). By the induction
+hypothesis, \(q(z)\) can be factored into linear factors, which completes the
+factorization of \(p(z)\). Thus, the Fundamental Theorem of Algebra is
+equivalent to the statement that every complex polynomial of degree
+\(n \ge 1\) has at least one zero.
 
 \section{Geometric Representation}\label{geometric-representation}
 
@@ -434,9 +489,7 @@ point at infinity. We denote the it by \(C^* = c\cup\{\infty\}\).
   The roots of unity: \(\omega^k\) where \(\omega = \cos\frac{2\pi}{n} + i\sin\frac{2\pi}{n}\) and \(k = 0, 1, \ldots, n-1\)
 \end{enumerate}
 
-\chapter{Complex Functions}\label{complex-functions}
-
-\chapter{Exercise}\label{exercise}
+\section{Exercise}\label{exercise}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -476,7 +529,7 @@ We have \(g_a(z)0\) on \(|z-a|=r\) for \(r\) small enough (then there exist \(R\
 \chapter{Riemann Surfaces.}\label{riemann-surfaces.}
 
 \begin{definition}[Riemann surface]
-\protect\hypertarget{def:unnamed-chunk-2}{}\label{def:unnamed-chunk-2}
+\protect\hypertarget{def:unnamed-chunk-8}{}\label{def:unnamed-chunk-8}
 
 A \textbf{Riemann surface} is a second‑countable, Hausdorff topological space \(X\) equipped with a \textbf{complex atlas} \(\mathcal{A} = \{(U_\alpha, \varphi_\alpha)\}\) satisfying the following properties:
 
@@ -515,7 +568,7 @@ A \textbf{Riemann surface} is a second‑countable, Hausdorff topological space 
 \end{remark}
 
 \begin{definition}
-\protect\hypertarget{def:unnamed-chunk-4}{}\label{def:unnamed-chunk-4}Let \(R_1\) and \(R_2\) be Riemann surfaces. A map \(f : R_1 \to R_2\)
+\protect\hypertarget{def:unnamed-chunk-10}{}\label{def:unnamed-chunk-10}Let \(R_1\) and \(R_2\) be Riemann surfaces. A map \(f : R_1 \to R_2\)
 is said to be \textbf{holomorphic} if for every pair of charts \((U, \varphi) \quad \text{on } R_1, \qquad (V, \psi) \quad \text{on } R_2,\) the map \(\psi \circ f \circ \varphi^{-1}\) is holomorphic on its domain (which may be empty).
 \end{definition}
 
@@ -541,13 +594,30 @@ Thus the notion of holomorphicity does \textbf{not} depend on the choice of char
 \pandocbounded{\includegraphics[keepaspectratio]{_main_files/fig/pic 2.jpeg}}
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-5}{}\label{exr:unnamed-chunk-5}Assume that for all \(p \in R_1\) there is a chart \((U,\phi)\) such that \(p \in U\) and a chart \((V,\psi)\) such that \(f(p) \in V\), so that \(\psi \circ f \circ \phi^{-1}\) is holomorphic (in the standard sense, as a complex analytic function on an open subset of the plane). Show that \(f\) is holomorphic.
+\protect\hypertarget{exr:unnamed-chunk-11}{}\label{exr:unnamed-chunk-11}Assume that for all \(p \in R_1\) there is a chart \((U,\phi)\) such that \(p \in U\) and a chart \((V,\psi)\) such that \(f(p) \in V\), so that \(\psi \circ f \circ \phi^{-1}\) is holomorphic (in the standard sense, as a complex analytic function on an open subset of the plane). Show that \(f\) is holomorphic.
 \end{exercise}
 
-\textbf{Solution}:I will update it later.
+\textbf{Solution}: We are given that for each \(p \in R_1\), there exist some charts \((U,\phi)\) at \(p\) and \((V,\psi)\) at \(f(p)\) such that \(\psi \circ f \circ \phi^{-1}\)is holomorphic.
+
+Now take any other charts \((U_1,\phi_1)\) at \(p\) and \((V_1,\psi_1)\) at \(f(p)\), with \(f(U_1) \subset V_1\). On overlaps, the transition maps \(\phi \circ \phi_1^{-1} \quad \text{and} \quad \psi_1 \circ \psi^{-1}\) are biholomorphic (holomorphic with holomorphic inverses), because they are chart transition maps on a Riemann surface.
+
+On the intersection where everything is defined, we can write \(\psi_1 \circ f \circ \phi_1^{-1}
+= (\psi_1 \circ \psi^{-1}) \circ (\psi \circ f \circ \phi^{-1}) \circ (\phi \circ \phi_1^{-1}).\)
+
+\begin{itemize}
+\tightlist
+\item
+  \(\psi \circ f \circ \phi^{-1}\) is holomorphic by assumption.
+\item
+  \(\phi \circ \phi_1^{-1}\) and \(\psi_1 \circ \psi^{-1}\) are holomorphic (indeed biholomorphic) transition maps.
+\end{itemize}
+
+A composition of holomorphic maps is holomorphic, so \(\psi_1 \circ f \circ \phi_1^{-1}\) is holomorphic.
+
+Since this holds for any charts \((U_1,\phi_1)\), \((V_1,\psi_1)\) around \(p\) and \(f(p)\), it follows that \(f\) is holomorphic by the definition of a holomorphic map between Riemann surfaces.
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-6}{}\label{exm:unnamed-chunk-6}
+\protect\hypertarget{exm:unnamed-chunk-12}{}\label{exm:unnamed-chunk-12}
 
 Define the equivalence relation on \(\mathbb{C}\) by \(z \sim w \quad \text{if and only if} \quad z = w + 2\pi i n \quad \text{for some } n \in \mathbb{Z}.\) Let \(R = \mathbb{C}/\!\sim\) as a topological space, with projection map \(\pi : \mathbb{C} \to R.\)
 
@@ -562,8 +632,138 @@ be the unique right inverse of \(\pi\) on \(U_{z_0,r}\) with image \(W_{z_0,r}\)
 \end{example}
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-7}{}\label{exr:unnamed-chunk-7}Show that for any \(p \in W\) and any \(q \in W\), the map \(\sigma(q) - \sigma(p) : U \longrightarrow \mathbb{C}\) is a \textbf{translation}, and in particular holomorphic.
+\protect\hypertarget{exr:unnamed-chunk-13}{}\label{exr:unnamed-chunk-13}Show that for any \(z_1, z_2\) and \(r_1, r_2\) the map \(\phi_{z_1, r_1} \circ \phi^{-1}_{z_2, r_2}\) is a translation, and in particular holomorphic. This shows that \(\left\{ (U_{z_0, r}, \phi_{z_0, r}) \right\}_{\{ z_0 \in \mathbb{C},\, r > 0 \}}\) is an atlas making \(R\) a Riemann surface.
 \end{exercise}
+
+\section{\texorpdfstring{\textbf{Solution}:}{Solution:}}\label{solution}
+
+\subsection{Functions defnied on the Riemann Surface.}\label{functions-defnied-on-the-riemann-surface.}
+
+\subsubsection{Exp function}\label{exp-function}
+
+We know that \(\exp z\) is a holomorphic function on \(\mathbb{C}\) which is periodic in the sense that \(\exp(z + 2\pi i n) = \exp(z)\) for all \(n \in \mathbb{Z}.\) Thus this passes to a well-defined function on \(R\). Namely,
+\begin{align}
+\operatorname{Exp} : R &\longrightarrow \mathbb{C}\\
+[z] &\longmapsto \exp(z)
+\end{align}
+
+where \([z]\) is the equivalence class of \(z\).
+
+\begin{exercise}
+\protect\hypertarget{exr:unnamed-chunk-14}{}\label{exr:unnamed-chunk-14}Verify that this is well-defined.
+\end{exercise}
+
+\textbf{Solution}: To see that \(\operatorname{Exp}\) is well-defined, assume \(z \sim w\).
+Then there is an integer \(n \in \mathbb{Z}\) such that \(z = w + 2\pi i\, n.\) Hence,
+
+\[
+\operatorname{Exp}([z]) = e^{z}
+= e^{\,w + 2\pi i n}
+= e^{w}\, e^{2\pi i n}
+= e^{w}
+= \operatorname{Exp}([w]).
+\]
+
+Thus the value of \(\operatorname{Exp}([z])\) depends only on the equivalence class \([z]\),
+so the function is well-defined.
+
+\medskip
+
+\textbf{Holomorphicity of \(\operatorname{Exp}\).}
+To see that \(\operatorname{Exp}\) is holomorphic, observe that for any chart
+\((U_{z_0,r}, \phi_{z_0,r})\) we have
+
+\[
+\operatorname{Id}\circ\operatorname{Exp} \circ \phi_{z_0,r}^{-1}(z)
+= e^{z},
+\]
+
+which is holomorphic on \(\mathbb{C}\).\\
+Thus \(\operatorname{Exp}\) is holomorphic by definition.
+
+\subsubsection{Sin function}\label{sin-function}
+
+\textbf{The sine function.}
+We may similarly define the function
+\(\operatorname{Sin}([z]) = \sin z,\)
+which is again well-defined and holomorphic.
+
+\medskip
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-15}{}\label{exm:unnamed-chunk-15}The complex plane \(\mathbb{C}\) is a Riemann surface if we choose the atlas
+\(\mathcal{A} = \{ (U_{z_0,r}, \phi_{z_0,r}) \}\).
+This was implicit in the previous example, where we composed by the identity
+map on the left.
+\end{example}
+
+\textbf{Idea 1}: Periodic functions are holomorphic functions on the Riemann surface obtained by taking quotients with respect to their periods.
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-16}{}\label{exm:unnamed-chunk-16}Let
+
+\[
+R = \{(r,\theta) : r > 0,\ \theta \in \mathbb{R}\}.
+\]
+
+This is trivially a topological space. We make it into a Riemann surface by
+defining charts as follows. For each \(\theta_0 \in \mathbb{R}\), set
+
+\[
+U_{\theta_0}
+= \{(r,\theta) : \theta_0 < \theta < \theta_0 + 2\pi,\ r > 0\},
+\]
+
+and define
+
+\[
+\phi_{\theta_0} : U_{\theta_0} \to \mathbb{C}, \qquad
+\phi_{\theta_0}(r,\theta) = r e^{i\theta}.
+\]
+\end{example}
+
+\medskip
+
+\begin{exercise}
+\protect\hypertarget{exr:unnamed-chunk-17}{}\label{exr:unnamed-chunk-17}Show that for any pair \(\theta_1, \theta_2\), the transition map
+
+\[
+\phi_{\theta_1} \circ \phi_{\theta_2}^{-1}
+\]
+
+is a biholomorphism.
+\end{exercise}
+
+\subsubsection{LOG function}\label{log-function}
+
+We then have a well-defined function
+
+\begin{align}
+\operatorname{LOG} : R &\to \mathbb{C}, \\
+\operatorname{LOG}(r,\theta) &= \log r + i\theta.
+\end{align}
+
+For any \(\theta_0\), the function
+
+\[
+\operatorname{LOG} \circ \phi_{\theta_0}^{-1}
+\]
+
+is a branch of the logarithm on the plane minus the slit
+\(\arg z = \theta_0\). Explicitly,
+
+\[
+\operatorname{LOG} \circ \phi_{\theta_0}^{-1}(z) = \log z,
+\]
+
+where the right-hand side denotes the branch of the logarithm whose domain
+is the plane slit along the ray of argument \(\theta_0\), and whose values lie in the strip
+
+\[
+\{ w \in \mathbb{C} : \theta_0 < \Im(w) < \theta_0 + 2\pi \}.
+\]
+
+\pandocbounded{\includegraphics[keepaspectratio]{_main_files/fig/pic 5.jpeg}}
 
 \section{The Riemann sphere}\label{the-riemann-sphere}
 
@@ -590,7 +790,7 @@ Equivalently, a set \(V \subset \widehat{\mathbb{C}}\) is open iff:
 \end{itemize}
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-8}{}\label{exr:unnamed-chunk-8}Show that \(\widehat{\mathbb{C}}\) is compact.
+\protect\hypertarget{exr:unnamed-chunk-18}{}\label{exr:unnamed-chunk-18}Show that \(\widehat{\mathbb{C}}\) is compact.
 \end{exercise}
 
 We define an atlas consisting of two charts:
