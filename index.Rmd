@@ -14,5 +14,21 @@ github-repo: rstudio/bookdown-demo
 
 # Introduction
 
+Ask someone what the square root of 4 is, and they will not hesitate: 2. Ask for the square root of −1, and something interesting happens. Most people pause, then say some version of the same thing: *that doesn't exist.*
+
+They are not wrong to hesitate. For over a thousand years, some of the sharpest minds in mathematics agreed with them. A number that, when multiplied by itself, gives a negative result seemed less like a number and more like a contradiction  a hole in the number line where nothing should be allowed to stand. When the number finally forced its way into mathematics, it did not arrive through some philosopher's curiosity about the impossible. It arrived because mathematicians doing ordinary, practical work  solving cubic equations with three perfectly good, perfectly real solutions  found that the only way to reach those real answers was to pass, briefly, through square roots of negative numbers. The imaginary was not a detour around the real. It turned out to be sewn into it.
+
+This book is about that number, and the strange, beautiful mathematics that grew up around it.
+
+I want to be honest about something before we start: I did not always find complex numbers beautiful. For a long time they felt like a trick  a symbol, $i$, invented so that certain equations would stop being unsolvable, defined by little more than the rule $i^2 = -1$ and otherwise left to behave like an ordinary number. It took years of study, first as a student and now as a researcher in complex analysis, before I understood what was actually being offered: not a patch, but a second dimension. The moment you accept $i$, the number line  which had felt complete, self-sufficient, the whole of arithmetic  turns out to have been only one axis of a much larger plane. Numbers stop being points on a line and become points in a plane, and multiplication, of all things, becomes rotation.
+
+If you grew up here in Sri Lanka, you may already have an intuition for this kind of shift in perspective, even if no one called it mathematics. Think of the geometric repetition in a batik pattern, or the way a *rasam pot's* shadow rotates through the day, or the careful symmetry worked into a *vesak koodu*. Rotation, reflection, repetition with variation  these are not decorations on top of mathematics. They are mathematics, and complex numbers turn out to be the precise language for describing them. By the time we reach the middle of this book, you will see multiplication by $i$ the way you already see a quarter-turn of a lantern: not as an abstract operation, but as a motion you can picture.
+
+We will take the historical route, because I think it is the honest one. Real numbers themselves  the ones you already trust  were not always on solid ground. The Pythagoreans were shaken to discover that $\sqrt{2}$ could not be written as a fraction. Indian mathematicians, including Brahmagupta in the seventh century, were the first to write down clear arithmetic rules for negative numbers and zero, centuries before Europe caught up. The Kerala school, working in South India in the 14th to 16th centuries, developed infinite series for trigonometric functions long before calculus had a name in the West. None of this was inevitable or obvious at the time. Every number system we now take for granted  negative, irrational, real, and eventually imaginary  was once controversial, resisted, or simply unnamed.
+
+So we will not start with a definition of $i$ and a list of rules to memorize. We will start with the crisis that made it necessary, follow the mathematicians who fought over what to make of it, and only then turn to the elegant plane, the rotations, and the surprising places  electrical engineering, quantum mechanics, the shape of fractals  where this once-imaginary number turns out to be indispensable.
+
+By the end, I hope $\sqrt{-1}$ will feel less like an exception to arithmetic and more like the moment arithmetic finally became honest about its own shape.
+
 ### Why Complex Numbers
 

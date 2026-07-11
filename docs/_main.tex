@@ -79,7 +79,7 @@
 
 \title{Complex Analysis}
 \author{Ashan Jayamal}
-\date{2026-07-09}
+\date{2026-07-11}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -106,6 +106,22 @@
 \tableofcontents
 }
 \chapter{Introduction}\label{introduction}
+
+Ask someone what the square root of 4 is, and they will not hesitate: 2. Ask for the square root of −1, and something interesting happens. Most people pause, then say some version of the same thing: \emph{that doesn't exist.}
+
+They are not wrong to hesitate. For over a thousand years, some of the sharpest minds in mathematics agreed with them. A number that, when multiplied by itself, gives a negative result seemed less like a number and more like a contradiction a hole in the number line where nothing should be allowed to stand. When the number finally forced its way into mathematics, it did not arrive through some philosopher's curiosity about the impossible. It arrived because mathematicians doing ordinary, practical work solving cubic equations with three perfectly good, perfectly real solutions found that the only way to reach those real answers was to pass, briefly, through square roots of negative numbers. The imaginary was not a detour around the real. It turned out to be sewn into it.
+
+This book is about that number, and the strange, beautiful mathematics that grew up around it.
+
+I want to be honest about something before we start: I did not always find complex numbers beautiful. For a long time they felt like a trick a symbol, \(i\), invented so that certain equations would stop being unsolvable, defined by little more than the rule \(i^2 = -1\) and otherwise left to behave like an ordinary number. It took years of study, first as a student and now as a researcher in complex analysis, before I understood what was actually being offered: not a patch, but a second dimension. The moment you accept \(i\), the number line which had felt complete, self-sufficient, the whole of arithmetic turns out to have been only one axis of a much larger plane. Numbers stop being points on a line and become points in a plane, and multiplication, of all things, becomes rotation.
+
+If you grew up here in Sri Lanka, you may already have an intuition for this kind of shift in perspective, even if no one called it mathematics. Think of the geometric repetition in a batik pattern, or the way a \emph{rasam pot's} shadow rotates through the day, or the careful symmetry worked into a \emph{vesak koodu}. Rotation, reflection, repetition with variation these are not decorations on top of mathematics. They are mathematics, and complex numbers turn out to be the precise language for describing them. By the time we reach the middle of this book, you will see multiplication by \(i\) the way you already see a quarter-turn of a lantern: not as an abstract operation, but as a motion you can picture.
+
+We will take the historical route, because I think it is the honest one. Real numbers themselves the ones you already trust were not always on solid ground. The Pythagoreans were shaken to discover that \(\sqrt{2}\) could not be written as a fraction. Indian mathematicians, including Brahmagupta in the seventh century, were the first to write down clear arithmetic rules for negative numbers and zero, centuries before Europe caught up. The Kerala school, working in South India in the 14th to 16th centuries, developed infinite series for trigonometric functions long before calculus had a name in the West. None of this was inevitable or obvious at the time. Every number system we now take for granted negative, irrational, real, and eventually imaginary was once controversial, resisted, or simply unnamed.
+
+So we will not start with a definition of \(i\) and a list of rules to memorize. We will start with the crisis that made it necessary, follow the mathematicians who fought over what to make of it, and only then turn to the elegant plane, the rotations, and the surprising places electrical engineering, quantum mechanics, the shape of fractals where this once-imaginary number turns out to be indispensable.
+
+By the end, I hope \(\sqrt{-1}\) will feel less like an exception to arithmetic and more like the moment arithmetic finally became honest about its own shape.
 
 \subsection{Why Complex Numbers}\label{why-complex-numbers}
 
@@ -589,7 +605,6 @@ Suppose \((U, \varphi)\), \((U', \varphi')\) are charts on \(R_1\), and \((V, \p
 \end{itemize}
 
 Thus the notion of holomorphicity does \textbf{not} depend on the choice of charts.
-```
 
 \pandocbounded{\includegraphics[keepaspectratio]{_main_files/fig/pic 2.jpeg}}
 
@@ -863,6 +878,218 @@ d_{\widehat{\mathbb{C}}}(z,w)|
 = \frac{2|z-w|}{\sqrt{(1+|z|^2)(1+|w|^2)}},
 \]
 with the natural extension when one point is \(\infty\).
+
+\chapter{Univalent Functions}\label{univalent-functions}
+
+\section{Basic Principles}\label{basic-principles}
+
+\subsection{Recalling stuff that we already know?}\label{recalling-stuff-that-we-already-know}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-19}{}\label{def:unnamed-chunk-19}\leavevmode
+
+\begin{itemize}
+\tightlist
+\item
+  A \emph{domain} = open connected subset of \(\mathbb{C}\).
+\item
+  \emph{Simply connected} is defined via the complement being connected (rather than ``no holes'' or ``every loop contractible'' these are equivalent for domains in \(\mathbb{C}\), but the complement-in-\(\hat{\mathbb{C}}\) characterization is the cleanest one to work with).
+\item
+  A \textbf{neighborhood of a set \(E \subset \mathbb{C}\)} is an open set which contains \(E\).
+\item
+  A \textbf{compact Set} is a \emph{closed} and \emph{bounded} subset of \(\mathbb{C}\).
+\item
+  The \textbf{closure} \(\overline{E}\) of a set \(E \subset \mathbb{C}\) is the smallest closed set that contains \(E\). Equivalently, \(\overline{E} = E \cup \{\text{limit points of } E\}.\)
+\item
+  The\textbf{Interior} \(E^\circ\) of a set \(E\) is the largest open set contained in \(E\). It may happen that \(E^\circ = \varnothing\).
+\item
+  The \textbf{boundary} of \(E\) is the set \(\partial E = \overline{E} - E^\circ,\) consisting of all points in the closure of \(E\) that are not interior points.
+\end{itemize}
+
+\end{definition}
+
+\emph{Notation}: The unit disk \(\mathbb{D} = \{|z|<1\}\) and its boundary circle \(\mathbb{T}= \{|z|=1\}\).
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-20}{}\label{def:unnamed-chunk-20}\leavevmode
+
+\begin{itemize}
+\tightlist
+\item
+  An \textbf{Arc} in the complex plane is the continuous image of a line segment.\\
+  Formally, an arc is a continuous mapping \(z = \varphi(t)\) of an interval \(a \le t \le b\) into \(\mathbb{C}\).
+\item
+  A \textbf{Rectifiable Arc} is an arc that has a finite length --- that is, the mapping function \(\varphi\) is of \emph{bounded variation}.
+\item
+  A \textbf{Jordan Arc} is an arc without self-intersections.
+\item
+  A \textbf{Closed Curve} is the continuous image of a circle, or equivalently, an arc whose endpoints coincide.
+\item
+  A \textbf{Simple Closed Curve (Jordan Curve)} is a closed curve without self-intersections.
+\item
+  The interior of a Jordan curve is called a \textbf{Jordan domain}.
+\end{itemize}
+
+\end{definition}
+
+\begin{theorem}[The Jordan Curve Theorem]
+\protect\hypertarget{thm:unnamed-chunk-21}{}\label{thm:unnamed-chunk-21}The Jordan curve theorem asserts that every Jordan curve divides the plane into two regions the \emph{interior} and the \emph{exterior} of the curve.
+\end{theorem}
+
+\textbf{Core complex analysis, compressed:}
+
+\begin{itemize}
+\tightlist
+\item
+  Analytic at \(z_0\) \(\Rightarrow\) infinitely differentiable there \(\Rightarrow\) local Taylor series. This equivalence (holomorphic = analytic) is ``one of the miracles'' it has no real-variable analogue.
+\item
+  Cauchy's integral formula \(f(z) = \frac{1}{2\pi i}\oint_C \frac{f(\zeta)}{\zeta - z}d\zeta\) generates the Taylor coefficients by differentiating under the integral sign.
+\item
+  \textbf{Uniqueness principle}: zeros of a nonzero analytic function are isolated (no accumulation point inside the domain).
+\item
+  \textbf{Morera's theorem}: the converse of Cauchy vanishing of all contour integrals \(\Rightarrow\) analytic. This is your go-to tool for proving analyticity of things defined by integrals (you'll see this trick again with Green's function below).
+\item
+  \textbf{Maximum modulus principle}: \(|f|\) has no interior local max unless \(f\) is constant ``a peakless landscape,'' as Duren nicely puts it.
+\item
+  \textbf{Schwarz lemma}: \(f:\mathbb{D}\to\mathbb{D}\), \(f(0)=0\) \(\Rightarrow\) \(|f(z)|\le |z|\) and \(|f'(0)|\le 1\), with equality only for rotations \(f(z)=e^{i\theta}z\). Proof is one line: apply max modulus to \(g(z) = f(z)/z\) (removable singularity at 0). This lemma is the seed of an enormous amount of univalent function theory half the book grows out of clever applications of it.
+\item
+  \textbf{Residue theorem} and its corollary the \textbf{argument principle}: the number of zeros of \(f\) inside \(C\) equals \(\frac{1}{2\pi i}\oint_C \frac{f'}{f}dz\), i.e.~the winding number of \(f(C)\) about \(0\). This is the ``count zeros by watching the image curve wind around the origin'' idea.
+\item
+  \textbf{Rouché's theorem}: if \(|g|<|f|\) on \(C\), then \(f\) and \(f+g\) have the same number of zeros inside \(C\). Proof is slick: \(\Delta_C \arg(f+g) = \Delta_C\arg f + \Delta_C \arg(1+g/f)\), and the second term is \(0\) because \(1+g/f\) stays in the right half-plane (never winds around 0) when \(|g/f|<1\).
+\item
+  \textbf{Hurwitz's theorem}: locally uniform limits of zero-free (or non-vanishing) analytic functions are either identically zero or zero-free themselves more precisely, zeros of the limit are limits of zeros of the \(f_n\). Proved directly from Rouché by shrinking a circle around a zero \(z_0\) of \(f\) and comparing \(f\) to \(f_n\) there.
+\item
+  \textbf{Univalence is essentially closed under locally-uniform limits}: if \(f_n\to f\) locally uniformly and each \(f_n\) is univalent, \(f\) is univalent \emph{or constant} (the ``or constant'' is unavoidable e.g.~\(f_n(z) = z/n \to 0\)). This single theorem is why families of univalent functions behave so well under limits, and it's the linchpin for the compactness argument used later to prove Riemann mapping.
+\end{itemize}
+
+\section{Local Mapping Properties}\label{local-mapping-properties}
+
+Since analytic \(f = u+iv\) satisfies Cauchy--Riemann, the real Jacobian of the map \((x,y)\mapsto(u,v)\) works out to be exactly \(|f'(z)|^2\). So:
+
+\begin{itemize}
+\tightlist
+\item
+  \(f'(z_0)\ne 0 \iff\) \(f\) locally univalent near \(z_0\) (inverse function theorem one way, Rouché the other way).
+\item
+  \textbf{Warning example}: local univalence everywhere does \emph{not} imply global univalence. \(f(z)=z^2\) on the annular sector \(1<|z|<2,\ 0<\arg z < 3\pi/2\) is locally univalent throughout but not globally (angle range exceeds \(\pi\), so some values get hit twice). This is exactly the kind of subtlety that matters for quadratic differentials and slit mappings local vs.~global univalence is a recurring theme in your own extremal-problem work.
+\end{itemize}
+
+\textbf{Geometric meaning of \(f'\):}
+
+\begin{itemize}
+\tightlist
+\item
+  \(|f'|^2\) = local area magnification \(\Rightarrow\) Area of \(f(D) = \iint_D |f'(z)|^2\,dx\,dy\).
+\item
+  \(|f'|\) = local arclength magnification \(\Rightarrow\) length of \(f(C) = \int_C |f'(z)|\,|dz|\).
+\item
+  \(\arg f'(z_0)\) = local rotation angle. This is why analytic univalent maps are called \textbf{conformal}: the rotation is the \emph{same} for every arc through \(z_0\), so the angle between two arcs is preserved.
+\end{itemize}
+
+Then: linear fractional (Möbius) transformations map ``circles'' (circles-or-lines) to ``circles,'' preserve inverse-point pairs, and the automorphisms of \(\mathbb{D}\) are exactly \(f(z) = e^{i\theta}\frac{z-\alpha}{1-\bar\alpha z}\), \(|\alpha|<1\) derived from the Schwarz lemma.
+
+\section{Normal Families}\label{normal-families}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Normal family}: every sequence has a locally-uniformly-convergent subsequence (this is the complex-analytic analogue of Bolzano--Weierstrass).
+\item
+  \textbf{Local boundedness} (uniformly bounded on compacts) \(\Rightarrow\) (via Cauchy's formula) the derivatives are also locally bounded.
+\item
+  \textbf{Montel's theorem}: locally bounded \(\Rightarrow\) normal. Proved by a diagonal argument: converge on a countable dense set, then use local boundedness (via the Cauchy estimate) to upgrade pointwise convergence on a dense set to uniform convergence on compacts essentially Arzelà--Ascoli done by hand.
+\item
+  Converse also holds: normal \(\Rightarrow\) locally bounded.
+\item
+  \textbf{Vitali's theorem}: for a normal family, convergence at just a set of points \emph{with an accumulation point} in \(D\) already forces full locally-uniform convergence. (Proof: any two subsequential limits must agree on the accumulation set, hence agree everywhere by uniqueness.)
+\end{itemize}
+
+\textbf{Punchline for the book}: the class \(S\) (univalent, \(f(0)=0\), \(f'(0)=1\) on \(\mathbb{D}\)) is locally bounded via the growth theorem \(|f(z)| \le |z|(1-|z|)^{-2}\) (proved later, in Ch. 2 in Duren{[}{]}), hence normal by Montel, hence (combining with the §1.1 univalence-limit theorem, ruling out the constant case since \(f_n'(0)=1\) forces \(f'(0)=1\ne 0\)) \textbf{\(S\) is a compact normal family}. This single fact is \emph{the} reason extremal problems over \(S\) (like the ones you've been chasing with the \(a_3 - \lambda a_2^2\) functional) are guaranteed to have solutions.
+
+\section{Extremal Problems}\label{extremal-problems}
+
+General machinery: a continuous functional \(\phi\) on a compact normal family \(\mathcal{F}\) always attains its supremum of \(\mathrm{Re}\,\phi\) take a maximizing sequence, extract a locally-uniformly-convergent subsequence (compactness), use continuity of \(\phi\) to pass to the limit. This is the abstract shape of \emph{every} extremal-function existence proof in the book (and, not coincidentally, of the Schiffer-variation existence arguments you've been working through for Pfluger's paper).
+
+Also: if \(\mathcal{G}\) is dense in \(\mathcal{F}\), sup over \(\mathcal{G}\) = sup over \(\mathcal{F}\) useful for restricting to ``nice'' functions (e.g.~slit mappings) without changing the extremal value.
+
+\section{The Riemann Mapping Theorem}\label{the-riemann-mapping-theorem}
+
+Koebe's compactness proof (not Riemann's original Dirichlet-principle argument, which had a gap Riemann didn't close):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Let \(\mathcal{F}\) = univalent \(f:D\to\mathbb{D}\) with \(f(\zeta)=0\), \(f'(\zeta)>0\). Show \(\mathcal{F}\ne\emptyset\) (using simple connectivity to take a square-root branch of \(z-\alpha\) for an omitted point \(\alpha\), then a Möbius map to squeeze into \(\mathbb{D}\)).
+\item
+  \(\mathcal{F}\) is normal (Montel, since it's bounded by 1).
+\item
+  Maximize \(f'(\zeta)\) over \(\mathcal{F}\) extremal function \(f\) exists by the §1.4 machinery, and it's not constant since \(f'(\zeta)=M>0\).
+\item
+  Show \(f\) must be \emph{onto} \(\mathbb{D}\): if it missed a point \(\omega\), you can construct (via a square root of a Möbius transform of \(f\)) another candidate \(G\in\mathcal{F}\) with \(G'(\zeta) > f'(\zeta)\) contradicting extremality. This is the clever ``square-root trick'' step; it's the crux of the whole proof.
+\item
+  Uniqueness: any two such maps differ by an automorphism of \(\mathbb{D}\) fixing \(0\) with positive derivative there, which is forced to be the identity.
+\end{enumerate}
+
+Plus \textbf{Carathéodory's extension theorem}: if \(D\) is a Jordan domain, the Riemann map extends to a homeomorphism of the closures stated without proof (referred to Goluzin).
+
+\section{Analytic Continuation}\label{analytic-continuation}
+
+\begin{itemize}
+\tightlist
+\item
+  Basic continuation across a shared boundary arc where two analytic functions agree proved via a clever splitting of the Cauchy integral into two pieces that overlap correctly on either side.
+\item
+  Upgraded version: continuity across the arc suffices, analyticity \emph{on} the arc isn't needed a priori (this is the more useful, harder version, proved via the same integral-splitting trick using an ``extended Cauchy theorem'' for continuous-on-boundary functions).
+\item
+  \textbf{Schwarz reflection principle} (special case): if \(f\) is analytic in \(\mathbb{D}\), continuous up to a boundary arc \(\Gamma\), and real on \(\Gamma\), then \(f(z) := \overline{f(1/\bar z)}\) for \(|z|>1\) analytically continues \(f\) across \(\Gamma\).
+\item
+  \textbf{General reflection} across analytic arcs mapping to analytic arcs: reduce to the real-line case via local analytic parametrizations of both arcs, conjugate by these parametrizations, apply the basic reflection principle, then transport back. Key upshot for univalent function theory: \textbf{a function in \(S\) mapping onto a Jordan domain with analytic boundary extends univalently across \(|z|=1\) to a slightly larger disk} this fact gets used constantly later (e.g.~to justify boundary behavior of extremal functions in coefficient problems).
+\end{itemize}
+
+\section{Harmonic and Subharmonic Functions}\label{harmonic-and-subharmonic-functions}
+
+\begin{itemize}
+\tightlist
+\item
+  States \textbf{Green's theorem/formula} \(\oint_C(\phi\,\partial\psi/\partial n - \psi\,\partial\phi/\partial n)\,ds = \iint_D(\phi\,\Delta\psi - \psi\,\Delta\phi)\,dx\,dy\) this is the workhorse used again in §1.8 to prove Green's function is symmetric.
+\item
+  Real/imaginary parts of analytic functions are harmonic (Cauchy--Riemann \(\Rightarrow\) Laplace's equation); harmonic conjugates exist locally (globally on simply connected domains, via a path integral that's path-independent by Green's theorem).
+\item
+  Harmonic \(\circ\) analytic = harmonic.
+\item
+  \textbf{Mean value property}: \(u(z_0) = \frac{1}{2\pi}\int_0^{2\pi} u(z_0+re^{i\theta})\,d\theta\), derived from Green's theorem applied to \(\nabla u\).
+\item
+  \textbf{Poisson formula}: reconstructs \(u\) inside a disk from boundary values, via the Poisson kernel \(P_r(\theta) = \frac{R^2-r^2}{R^2-2Rr\cos\theta+r^2}\).
+\item
+  \textbf{Maximum principle for harmonic functions}, and the \textbf{converse mean-value characterization}: continuous + local mean-value property \(\Rightarrow\) harmonic (proved by comparing \(u\) to its Poisson integral \(U\) and using the maximum principle on \(u - U\)).
+\item
+  \textbf{Subharmonic functions}: \(u \le U\) (Poisson integral) on every disk; equivalently, continuous + local \emph{sub}-mean-value property. Key facts: sums of subharmonic functions are subharmonic; \(\max(u,v)\) is subharmonic; convex increasing functions of subharmonic functions are subharmonic (via Jensen's inequality) this is exactly how you get \(|u|^p\) (\(p\ge 1\), \(u\) harmonic) and \(|f|^p\) (\(p>0\), \(f\) analytic) subharmonic, and \(\log|f|\) subharmonic in the generalized sense (allowing \(-\infty\)) facts used throughout the coefficient-estimate machinery in later chapters.
+\end{itemize}
+
+\section{Green's Functions}\label{greens-functions}
+
+For a finitely-connected domain \(D\) with smooth boundary, Green's function is
+\[g(z,\zeta) = h(z,\zeta) - \log|z-\zeta|,\]
+where \(h(\cdot,\zeta)\) is the harmonic function solving the Dirichlet problem with boundary data \(\log|z-\zeta|\) (so \(g=0\) on the boundary and \(g\) has the right log singularity at \(\zeta\)).
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Positivity}: \(g>0\) inside, by the maximum principle.
+\item
+  \textbf{Symmetry} \(g(z,\zeta)=g(\zeta,z)\): proved by excising small \(\epsilon\)-disks around two points \(\zeta_1,\zeta_2\), applying Green's formula to \(g(\cdot,\zeta_1)\) and \(g(\cdot,\zeta_2)\) on the resulting domain, and letting \(\epsilon\to 0\) the log singularities' normal derivatives blow up in exactly the right way (\(\sim 1/\epsilon\)) to produce the residue-like terms \(-2\pi g(\zeta_1,\zeta_2)+2\pi g(\zeta_2,\zeta_1) = 0\).
+\item
+  \textbf{Reproducing formula}: for harmonic \(u\),
+  \[u(\zeta) = -\frac{1}{2\pi}\int_C u\,\frac{\partial g}{\partial n}\,ds,\]
+  generalizing the Poisson formula to arbitrary domains same excise-and-let-\(\epsilon\to0\) technique.
+\item
+  \textbf{Connection to the Riemann map}: if \(f:D\to\mathbb{D}\) is the Riemann map with \(f(\zeta)=0\), then \(g(z,\zeta) = -\log|f(z)|\). Conversely, knowing \(g\) recovers \(f\) via \(f(z) = \exp\{-g(z,\zeta) - i\,\tilde g(z,\zeta)\}\) where \(\tilde g\) is the harmonic conjugate (well-defined mod \(2\pi\) around \(\zeta\), so \(f\) is still single-valued). This Green's-function \(\leftrightarrow\) conformal-map duality is precisely the language your Nehari/Schippers reading has been using (period matrices, canonical domains) it's the classical one-variable shadow of the multiply-connected constructions you've been chewing on.
+\end{itemize}
+
+\section{Positive Harmonic Functions (opening)}\label{positive-harmonic-functions-opening}
+
+Sets up motivation for Chapter 2's subclasses of \(S\) defined by \(\mathrm{Re}\,p(z)>0\), \(p(0)=1\) leading into the \textbf{Herglotz representation theorem} (1911): every positive harmonic function normalized at \(0\) is the Poisson integral of a positive measure. The file cuts off right as this is introduced.
 
 \bibliography{book.bib,packages.bib}
 

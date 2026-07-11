@@ -9,6 +9,11 @@ exm:unnamed-chunk-15
 exm:unnamed-chunk-16
 exr:unnamed-chunk-17
 exr:unnamed-chunk-18
+def:unnamed-chunk-19
+def:unnamed-chunk-20
+thm:unnamed-chunk-21
+introduction
+why-complex-numbers
 complex-numbers
 basic-definitions-and-algebra
 arithmetic-operations
@@ -29,7 +34,6 @@ roots-of-complex-numbers
 equations-in-the-complex-plane
 stereographic-projection-and-the-riemann-sphere
 key-formulas-and-results
-complex-functions
 exercise
 green-functions
 riemann-surfaces.
@@ -40,3 +44,14 @@ sin-function
 log-function
 the-riemann-sphere
 stereographic-projection-and-the-metric
+univalent-functions
+basic-principles
+recalling-stuff-that-we-already-know
+local-mapping-properties
+normal-families
+extremal-problems
+the-riemann-mapping-theorem
+analytic-continuation
+harmonic-and-subharmonic-functions
+greens-functions
+positive-harmonic-functions-opening

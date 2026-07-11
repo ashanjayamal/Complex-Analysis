@@ -48,7 +48,7 @@ Suppose \((U, \varphi)\), \((U', \varphi')\) are charts on \(R_1\), and \((V, \p
   \]   is holomorphic if and only if \(\psi \circ f \circ \varphi^{-1}\) is holomorphic.
 
 Thus the notion of holomorphicity does **not** depend on the choice of charts.
-```
+
 
 ![](fig/pic 2.jpeg)
 

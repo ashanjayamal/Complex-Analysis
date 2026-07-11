@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Univalent Functions | Complex Analysis</title>
+  <meta name="description" content="This is just a test" />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Univalent Functions | Complex Analysis" />
+  <meta property="og:type" content="book" />
+  <meta property="og:image" content="https://ashanjayamal.github.io/Complex-Analysis/fig/cover.png" />
+  <meta property="og:description" content="This is just a test" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Univalent Functions | Complex Analysis" />
+  
+  <meta name="twitter:description" content="This is just a test" />
+  <meta name="twitter:image" content="https://ashanjayamal.github.io/Complex-Analysis/fig/cover.png" />
+
+<meta name="author" content="Ashan Jayamal" />
+
+
+<meta name="date" content="2026-07-11" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="riemann-surfaces..html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Complex Analysis </a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="index.html"><a href="index.html#why-complex-numbers"><i class="fa fa-check"></i><b>1.0.1</b> Why Complex Numbers</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="complex-numbers.html"><a href="complex-numbers.html"><i class="fa fa-check"></i><b>2</b> Complex Numbers</a>
+<ul>
+<li class="chapter" data-level="2.0.1" data-path="complex-numbers.html"><a href="complex-numbers.html#basic-definitions-and-algebra"><i class="fa fa-check"></i><b>2.0.1</b> Basic Definitions and Algebra</a></li>
+<li class="chapter" data-level="2.0.2" data-path="complex-numbers.html"><a href="complex-numbers.html#arithmetic-operations"><i class="fa fa-check"></i><b>2.0.2</b> Arithmetic Operations</a></li>
+<li class="chapter" data-level="2.0.3" data-path="complex-numbers.html"><a href="complex-numbers.html#complex-conjugate"><i class="fa fa-check"></i><b>2.0.3</b> Complex Conjugate</a></li>
+<li class="chapter" data-level="2.0.4" data-path="complex-numbers.html"><a href="complex-numbers.html#absolute-value-modulus"><i class="fa fa-check"></i><b>2.0.4</b> Absolute Value (Modulus)</a></li>
+<li class="chapter" data-level="2.0.5" data-path="complex-numbers.html"><a href="complex-numbers.html#important-inequalities"><i class="fa fa-check"></i><b>2.0.5</b> Important Inequalities</a></li>
+<li class="chapter" data-level="2.0.6" data-path="complex-numbers.html"><a href="complex-numbers.html#fundamental-theorem-of-algebra"><i class="fa fa-check"></i><b>2.0.6</b> Fundamental Theorem of Algebra</a></li>
+<li class="chapter" data-level="2.1" data-path="complex-numbers.html"><a href="complex-numbers.html#geometric-representation"><i class="fa fa-check"></i><b>2.1</b> Geometric Representation</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="complex-numbers.html"><a href="complex-numbers.html#the-complex-plane"><i class="fa fa-check"></i><b>2.1.1</b> The Complex Plane</a></li>
+<li class="chapter" data-level="2.1.2" data-path="complex-numbers.html"><a href="complex-numbers.html#vector-interpretation"><i class="fa fa-check"></i><b>2.1.2</b> Vector Interpretation</a></li>
+<li class="chapter" data-level="2.1.3" data-path="complex-numbers.html"><a href="complex-numbers.html#polar-form"><i class="fa fa-check"></i><b>2.1.3</b> Polar Form</a></li>
+<li class="chapter" data-level="2.1.4" data-path="complex-numbers.html"><a href="complex-numbers.html#de-moivres-formula"><i class="fa fa-check"></i><b>2.1.4</b> De Moivre’s Formula</a></li>
+<li class="chapter" data-level="2.1.5" data-path="complex-numbers.html"><a href="complex-numbers.html#roots-of-complex-numbers"><i class="fa fa-check"></i><b>2.1.5</b> Roots of Complex Numbers</a></li>
+<li class="chapter" data-level="2.1.6" data-path="complex-numbers.html"><a href="complex-numbers.html#equations-in-the-complex-plane"><i class="fa fa-check"></i><b>2.1.6</b> Equations in the Complex Plane</a></li>
+<li class="chapter" data-level="2.1.7" data-path="complex-numbers.html"><a href="complex-numbers.html#stereographic-projection-and-the-riemann-sphere"><i class="fa fa-check"></i><b>2.1.7</b> Stereographic Projection and the Riemann Sphere</a></li>
+<li class="chapter" data-level="2.1.8" data-path="complex-numbers.html"><a href="complex-numbers.html#key-formulas-and-results"><i class="fa fa-check"></i><b>2.1.8</b> Key Formulas and Results</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="complex-numbers.html"><a href="complex-numbers.html#exercise"><i class="fa fa-check"></i><b>2.2</b> Exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="green-functions.html"><a href="green-functions.html"><i class="fa fa-check"></i><b>3</b> Green functions</a></li>
+<li class="chapter" data-level="4" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html"><i class="fa fa-check"></i><b>4</b> Riemann Surfaces.</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html#solution"><i class="fa fa-check"></i><b>4.1</b> <strong>Solution</strong>:</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html#functions-defnied-on-the-riemann-surface."><i class="fa fa-check"></i><b>4.1.1</b> Functions defnied on the Riemann Surface.</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html#the-riemann-sphere"><i class="fa fa-check"></i><b>4.2</b> The Riemann sphere</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html#stereographic-projection-and-the-metric"><i class="fa fa-check"></i><b>4.2.1</b> Stereographic Projection and the Metric</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="univalent-functions.html"><a href="univalent-functions.html"><i class="fa fa-check"></i><b>5</b> Univalent Functions</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="univalent-functions.html"><a href="univalent-functions.html#basic-principles"><i class="fa fa-check"></i><b>5.1</b> Basic Principles</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="univalent-functions.html"><a href="univalent-functions.html#recalling-stuff-that-we-already-know"><i class="fa fa-check"></i><b>5.1.1</b> Recalling stuff that we already know?</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="univalent-functions.html"><a href="univalent-functions.html#local-mapping-properties"><i class="fa fa-check"></i><b>5.2</b> Local Mapping Properties</a></li>
+<li class="chapter" data-level="5.3" data-path="univalent-functions.html"><a href="univalent-functions.html#normal-families"><i class="fa fa-check"></i><b>5.3</b> Normal Families</a></li>
+<li class="chapter" data-level="5.4" data-path="univalent-functions.html"><a href="univalent-functions.html#extremal-problems"><i class="fa fa-check"></i><b>5.4</b> Extremal Problems</a></li>
+<li class="chapter" data-level="5.5" data-path="univalent-functions.html"><a href="univalent-functions.html#the-riemann-mapping-theorem"><i class="fa fa-check"></i><b>5.5</b> The Riemann Mapping Theorem</a></li>
+<li class="chapter" data-level="5.6" data-path="univalent-functions.html"><a href="univalent-functions.html#analytic-continuation"><i class="fa fa-check"></i><b>5.6</b> Analytic Continuation</a></li>
+<li class="chapter" data-level="5.7" data-path="univalent-functions.html"><a href="univalent-functions.html#harmonic-and-subharmonic-functions"><i class="fa fa-check"></i><b>5.7</b> Harmonic and Subharmonic Functions</a></li>
+<li class="chapter" data-level="5.8" data-path="univalent-functions.html"><a href="univalent-functions.html#greens-functions"><i class="fa fa-check"></i><b>5.8</b> Green’s Functions</a></li>
+<li class="chapter" data-level="5.9" data-path="univalent-functions.html"><a href="univalent-functions.html#positive-harmonic-functions-opening"><i class="fa fa-check"></i><b>5.9</b> Positive Harmonic Functions (opening)</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://ashanjayamal.github.io/academicpages" target="blank">Property of Ashan Jayamal</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Complex Analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="univalent-functions" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Univalent Functions<a href="univalent-functions.html#univalent-functions" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="basic-principles" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Basic Principles<a href="univalent-functions.html#basic-principles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="recalling-stuff-that-we-already-know" class="section level3 hasAnchor" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Recalling stuff that we already know?<a href="univalent-functions.html#recalling-stuff-that-we-already-know" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="definition">
+<p><span id="def:unnamed-chunk-19" class="definition"><strong>Definition 5.1  </strong></span></p>
+<ul>
+<li>A <em>domain</em> = open connected subset of <span class="math inline">\(\mathbb{C}\)</span>.</li>
+<li><em>Simply connected</em> is defined via the complement being connected (rather than “no holes” or “every loop contractible” these are equivalent for domains in <span class="math inline">\(\mathbb{C}\)</span>, but the complement-in-<span class="math inline">\(\hat{\mathbb{C}}\)</span> characterization is the cleanest one to work with).</li>
+<li>A <strong>neighborhood of a set <span class="math inline">\(E \subset \mathbb{C}\)</span></strong> is an open set which contains <span class="math inline">\(E\)</span>.</li>
+<li>A <strong>compact Set</strong> is a <em>closed</em> and <em>bounded</em> subset of <span class="math inline">\(\mathbb{C}\)</span>.</li>
+<li>The <strong>closure</strong> <span class="math inline">\(\overline{E}\)</span> of a set <span class="math inline">\(E \subset \mathbb{C}\)</span> is the smallest closed set that contains <span class="math inline">\(E\)</span>. Equivalently, <span class="math inline">\(\overline{E} = E \cup \{\text{limit points of } E\}.\)</span></li>
+<li>The<strong>Interior</strong> <span class="math inline">\(E^\circ\)</span> of a set <span class="math inline">\(E\)</span> is the largest open set contained in <span class="math inline">\(E\)</span>. It may happen that <span class="math inline">\(E^\circ = \varnothing\)</span>.</li>
+<li>The <strong>boundary</strong> of <span class="math inline">\(E\)</span> is the set <span class="math inline">\(\partial E = \overline{E} - E^\circ,\)</span> consisting of all points in the closure of <span class="math inline">\(E\)</span> that are not interior points.</li>
+</ul>
+</div>
+<p><em>Notation</em>: The unit disk <span class="math inline">\(\mathbb{D} = \{|z|&lt;1\}\)</span> and its boundary circle <span class="math inline">\(\mathbb{T}= \{|z|=1\}\)</span>.</p>
+<div class="definition">
+<p><span id="def:unnamed-chunk-20" class="definition"><strong>Definition 5.2  </strong></span></p>
+<ul>
+<li>An <strong>Arc</strong> in the complex plane is the continuous image of a line segment.<br />
+Formally, an arc is a continuous mapping <span class="math inline">\(z = \varphi(t)\)</span> of an interval <span class="math inline">\(a \le t \le b\)</span> into <span class="math inline">\(\mathbb{C}\)</span>.</li>
+<li>A <strong>Rectifiable Arc</strong> is an arc that has a finite length — that is, the mapping function <span class="math inline">\(\varphi\)</span> is of <em>bounded variation</em>.</li>
+<li>A <strong>Jordan Arc</strong> is an arc without self-intersections.</li>
+<li>A <strong>Closed Curve</strong> is the continuous image of a circle, or equivalently, an arc whose endpoints coincide.</li>
+<li>A <strong>Simple Closed Curve (Jordan Curve)</strong> is a closed curve without self-intersections.</li>
+<li>The interior of a Jordan curve is called a <strong>Jordan domain</strong>.</li>
+</ul>
+</div>
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-21" class="theorem"><strong>Theorem 5.1  (The Jordan Curve Theorem) </strong></span>The Jordan curve theorem asserts that every Jordan curve divides the plane into two regions the <em>interior</em> and the <em>exterior</em> of the curve.</p>
+</div>
+<p><strong>Core complex analysis, compressed:</strong></p>
+<ul>
+<li>Analytic at <span class="math inline">\(z_0\)</span> <span class="math inline">\(\Rightarrow\)</span> infinitely differentiable there <span class="math inline">\(\Rightarrow\)</span> local Taylor series. This equivalence (holomorphic = analytic) is “one of the miracles” it has no real-variable analogue.</li>
+<li>Cauchy’s integral formula <span class="math inline">\(f(z) = \frac{1}{2\pi i}\oint_C \frac{f(\zeta)}{\zeta - z}d\zeta\)</span> generates the Taylor coefficients by differentiating under the integral sign.</li>
+<li><strong>Uniqueness principle</strong>: zeros of a nonzero analytic function are isolated (no accumulation point inside the domain).</li>
+<li><strong>Morera’s theorem</strong>: the converse of Cauchy vanishing of all contour integrals <span class="math inline">\(\Rightarrow\)</span> analytic. This is your go-to tool for proving analyticity of things defined by integrals (you’ll see this trick again with Green’s function below).</li>
+<li><strong>Maximum modulus principle</strong>: <span class="math inline">\(|f|\)</span> has no interior local max unless <span class="math inline">\(f\)</span> is constant “a peakless landscape,” as Duren nicely puts it.</li>
+<li><strong>Schwarz lemma</strong>: <span class="math inline">\(f:\mathbb{D}\to\mathbb{D}\)</span>, <span class="math inline">\(f(0)=0\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(|f(z)|\le |z|\)</span> and <span class="math inline">\(|f&#39;(0)|\le 1\)</span>, with equality only for rotations <span class="math inline">\(f(z)=e^{i\theta}z\)</span>. Proof is one line: apply max modulus to <span class="math inline">\(g(z) = f(z)/z\)</span> (removable singularity at 0). This lemma is the seed of an enormous amount of univalent function theory half the book grows out of clever applications of it.</li>
+<li><strong>Residue theorem</strong> and its corollary the <strong>argument principle</strong>: the number of zeros of <span class="math inline">\(f\)</span> inside <span class="math inline">\(C\)</span> equals <span class="math inline">\(\frac{1}{2\pi i}\oint_C \frac{f&#39;}{f}dz\)</span>, i.e. the winding number of <span class="math inline">\(f(C)\)</span> about <span class="math inline">\(0\)</span>. This is the “count zeros by watching the image curve wind around the origin” idea.</li>
+<li><strong>Rouché’s theorem</strong>: if <span class="math inline">\(|g|&lt;|f|\)</span> on <span class="math inline">\(C\)</span>, then <span class="math inline">\(f\)</span> and <span class="math inline">\(f+g\)</span> have the same number of zeros inside <span class="math inline">\(C\)</span>. Proof is slick: <span class="math inline">\(\Delta_C \arg(f+g) = \Delta_C\arg f + \Delta_C \arg(1+g/f)\)</span>, and the second term is <span class="math inline">\(0\)</span> because <span class="math inline">\(1+g/f\)</span> stays in the right half-plane (never winds around 0) when <span class="math inline">\(|g/f|&lt;1\)</span>.</li>
+<li><strong>Hurwitz’s theorem</strong>: locally uniform limits of zero-free (or non-vanishing) analytic functions are either identically zero or zero-free themselves more precisely, zeros of the limit are limits of zeros of the <span class="math inline">\(f_n\)</span>. Proved directly from Rouché by shrinking a circle around a zero <span class="math inline">\(z_0\)</span> of <span class="math inline">\(f\)</span> and comparing <span class="math inline">\(f\)</span> to <span class="math inline">\(f_n\)</span> there.</li>
+<li><strong>Univalence is essentially closed under locally-uniform limits</strong>: if <span class="math inline">\(f_n\to f\)</span> locally uniformly and each <span class="math inline">\(f_n\)</span> is univalent, <span class="math inline">\(f\)</span> is univalent <em>or constant</em> (the “or constant” is unavoidable e.g. <span class="math inline">\(f_n(z) = z/n \to 0\)</span>). This single theorem is why families of univalent functions behave so well under limits, and it’s the linchpin for the compactness argument used later to prove Riemann mapping.</li>
+</ul>
+</div>
+</div>
+<div id="local-mapping-properties" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Local Mapping Properties<a href="univalent-functions.html#local-mapping-properties" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Since analytic <span class="math inline">\(f = u+iv\)</span> satisfies Cauchy–Riemann, the real Jacobian of the map <span class="math inline">\((x,y)\mapsto(u,v)\)</span> works out to be exactly <span class="math inline">\(|f&#39;(z)|^2\)</span>. So:</p>
+<ul>
+<li><span class="math inline">\(f&#39;(z_0)\ne 0 \iff\)</span> <span class="math inline">\(f\)</span> locally univalent near <span class="math inline">\(z_0\)</span> (inverse function theorem one way, Rouché the other way).</li>
+<li><strong>Warning example</strong>: local univalence everywhere does <em>not</em> imply global univalence. <span class="math inline">\(f(z)=z^2\)</span> on the annular sector <span class="math inline">\(1&lt;|z|&lt;2,\ 0&lt;\arg z &lt; 3\pi/2\)</span> is locally univalent throughout but not globally (angle range exceeds <span class="math inline">\(\pi\)</span>, so some values get hit twice). This is exactly the kind of subtlety that matters for quadratic differentials and slit mappings local vs. global univalence is a recurring theme in your own extremal-problem work.</li>
+</ul>
+<p><strong>Geometric meaning of <span class="math inline">\(f&#39;\)</span>:</strong></p>
+<ul>
+<li><span class="math inline">\(|f&#39;|^2\)</span> = local area magnification <span class="math inline">\(\Rightarrow\)</span> Area of <span class="math inline">\(f(D) = \iint_D |f&#39;(z)|^2\,dx\,dy\)</span>.</li>
+<li><span class="math inline">\(|f&#39;|\)</span> = local arclength magnification <span class="math inline">\(\Rightarrow\)</span> length of <span class="math inline">\(f(C) = \int_C |f&#39;(z)|\,|dz|\)</span>.</li>
+<li><span class="math inline">\(\arg f&#39;(z_0)\)</span> = local rotation angle. This is why analytic univalent maps are called <strong>conformal</strong>: the rotation is the <em>same</em> for every arc through <span class="math inline">\(z_0\)</span>, so the angle between two arcs is preserved.</li>
+</ul>
+<p>Then: linear fractional (Möbius) transformations map “circles” (circles-or-lines) to “circles,” preserve inverse-point pairs, and the automorphisms of <span class="math inline">\(\mathbb{D}\)</span> are exactly <span class="math inline">\(f(z) = e^{i\theta}\frac{z-\alpha}{1-\bar\alpha z}\)</span>, <span class="math inline">\(|\alpha|&lt;1\)</span> derived from the Schwarz lemma.</p>
+</div>
+<div id="normal-families" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Normal Families<a href="univalent-functions.html#normal-families" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><strong>Normal family</strong>: every sequence has a locally-uniformly-convergent subsequence (this is the complex-analytic analogue of Bolzano–Weierstrass).</li>
+<li><strong>Local boundedness</strong> (uniformly bounded on compacts) <span class="math inline">\(\Rightarrow\)</span> (via Cauchy’s formula) the derivatives are also locally bounded.</li>
+<li><strong>Montel’s theorem</strong>: locally bounded <span class="math inline">\(\Rightarrow\)</span> normal. Proved by a diagonal argument: converge on a countable dense set, then use local boundedness (via the Cauchy estimate) to upgrade pointwise convergence on a dense set to uniform convergence on compacts essentially Arzelà–Ascoli done by hand.</li>
+<li>Converse also holds: normal <span class="math inline">\(\Rightarrow\)</span> locally bounded.</li>
+<li><strong>Vitali’s theorem</strong>: for a normal family, convergence at just a set of points <em>with an accumulation point</em> in <span class="math inline">\(D\)</span> already forces full locally-uniform convergence. (Proof: any two subsequential limits must agree on the accumulation set, hence agree everywhere by uniqueness.)</li>
+</ul>
+<p><strong>Punchline for the book</strong>: the class <span class="math inline">\(S\)</span> (univalent, <span class="math inline">\(f(0)=0\)</span>, <span class="math inline">\(f&#39;(0)=1\)</span> on <span class="math inline">\(\mathbb{D}\)</span>) is locally bounded via the growth theorem <span class="math inline">\(|f(z)| \le |z|(1-|z|)^{-2}\)</span> (proved later, in Ch. 2 in Duren[]), hence normal by Montel, hence (combining with the §1.1 univalence-limit theorem, ruling out the constant case since <span class="math inline">\(f_n&#39;(0)=1\)</span> forces <span class="math inline">\(f&#39;(0)=1\ne 0\)</span>) <strong><span class="math inline">\(S\)</span> is a compact normal family</strong>. This single fact is <em>the</em> reason extremal problems over <span class="math inline">\(S\)</span> (like the ones you’ve been chasing with the <span class="math inline">\(a_3 - \lambda a_2^2\)</span> functional) are guaranteed to have solutions.</p>
+</div>
+<div id="extremal-problems" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Extremal Problems<a href="univalent-functions.html#extremal-problems" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>General machinery: a continuous functional <span class="math inline">\(\phi\)</span> on a compact normal family <span class="math inline">\(\mathcal{F}\)</span> always attains its supremum of <span class="math inline">\(\mathrm{Re}\,\phi\)</span> take a maximizing sequence, extract a locally-uniformly-convergent subsequence (compactness), use continuity of <span class="math inline">\(\phi\)</span> to pass to the limit. This is the abstract shape of <em>every</em> extremal-function existence proof in the book (and, not coincidentally, of the Schiffer-variation existence arguments you’ve been working through for Pfluger’s paper).</p>
+<p>Also: if <span class="math inline">\(\mathcal{G}\)</span> is dense in <span class="math inline">\(\mathcal{F}\)</span>, sup over <span class="math inline">\(\mathcal{G}\)</span> = sup over <span class="math inline">\(\mathcal{F}\)</span> useful for restricting to “nice” functions (e.g. slit mappings) without changing the extremal value.</p>
+</div>
+<div id="the-riemann-mapping-theorem" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> The Riemann Mapping Theorem<a href="univalent-functions.html#the-riemann-mapping-theorem" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Koebe’s compactness proof (not Riemann’s original Dirichlet-principle argument, which had a gap Riemann didn’t close):</p>
+<ol style="list-style-type: decimal">
+<li>Let <span class="math inline">\(\mathcal{F}\)</span> = univalent <span class="math inline">\(f:D\to\mathbb{D}\)</span> with <span class="math inline">\(f(\zeta)=0\)</span>, <span class="math inline">\(f&#39;(\zeta)&gt;0\)</span>. Show <span class="math inline">\(\mathcal{F}\ne\emptyset\)</span> (using simple connectivity to take a square-root branch of <span class="math inline">\(z-\alpha\)</span> for an omitted point <span class="math inline">\(\alpha\)</span>, then a Möbius map to squeeze into <span class="math inline">\(\mathbb{D}\)</span>).</li>
+<li><span class="math inline">\(\mathcal{F}\)</span> is normal (Montel, since it’s bounded by 1).</li>
+<li>Maximize <span class="math inline">\(f&#39;(\zeta)\)</span> over <span class="math inline">\(\mathcal{F}\)</span> extremal function <span class="math inline">\(f\)</span> exists by the §1.4 machinery, and it’s not constant since <span class="math inline">\(f&#39;(\zeta)=M&gt;0\)</span>.</li>
+<li>Show <span class="math inline">\(f\)</span> must be <em>onto</em> <span class="math inline">\(\mathbb{D}\)</span>: if it missed a point <span class="math inline">\(\omega\)</span>, you can construct (via a square root of a Möbius transform of <span class="math inline">\(f\)</span>) another candidate <span class="math inline">\(G\in\mathcal{F}\)</span> with <span class="math inline">\(G&#39;(\zeta) &gt; f&#39;(\zeta)\)</span> contradicting extremality. This is the clever “square-root trick” step; it’s the crux of the whole proof.</li>
+<li>Uniqueness: any two such maps differ by an automorphism of <span class="math inline">\(\mathbb{D}\)</span> fixing <span class="math inline">\(0\)</span> with positive derivative there, which is forced to be the identity.</li>
+</ol>
+<p>Plus <strong>Carathéodory’s extension theorem</strong>: if <span class="math inline">\(D\)</span> is a Jordan domain, the Riemann map extends to a homeomorphism of the closures stated without proof (referred to Goluzin).</p>
+</div>
+<div id="analytic-continuation" class="section level2 hasAnchor" number="5.6">
+<h2><span class="header-section-number">5.6</span> Analytic Continuation<a href="univalent-functions.html#analytic-continuation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Basic continuation across a shared boundary arc where two analytic functions agree proved via a clever splitting of the Cauchy integral into two pieces that overlap correctly on either side.</li>
+<li>Upgraded version: continuity across the arc suffices, analyticity <em>on</em> the arc isn’t needed a priori (this is the more useful, harder version, proved via the same integral-splitting trick using an “extended Cauchy theorem” for continuous-on-boundary functions).</li>
+<li><strong>Schwarz reflection principle</strong> (special case): if <span class="math inline">\(f\)</span> is analytic in <span class="math inline">\(\mathbb{D}\)</span>, continuous up to a boundary arc <span class="math inline">\(\Gamma\)</span>, and real on <span class="math inline">\(\Gamma\)</span>, then <span class="math inline">\(f(z) := \overline{f(1/\bar z)}\)</span> for <span class="math inline">\(|z|&gt;1\)</span> analytically continues <span class="math inline">\(f\)</span> across <span class="math inline">\(\Gamma\)</span>.</li>
+<li><strong>General reflection</strong> across analytic arcs mapping to analytic arcs: reduce to the real-line case via local analytic parametrizations of both arcs, conjugate by these parametrizations, apply the basic reflection principle, then transport back. Key upshot for univalent function theory: <strong>a function in <span class="math inline">\(S\)</span> mapping onto a Jordan domain with analytic boundary extends univalently across <span class="math inline">\(|z|=1\)</span> to a slightly larger disk</strong> this fact gets used constantly later (e.g. to justify boundary behavior of extremal functions in coefficient problems).</li>
+</ul>
+</div>
+<div id="harmonic-and-subharmonic-functions" class="section level2 hasAnchor" number="5.7">
+<h2><span class="header-section-number">5.7</span> Harmonic and Subharmonic Functions<a href="univalent-functions.html#harmonic-and-subharmonic-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>States <strong>Green’s theorem/formula</strong> <span class="math inline">\(\oint_C(\phi\,\partial\psi/\partial n - \psi\,\partial\phi/\partial n)\,ds = \iint_D(\phi\,\Delta\psi - \psi\,\Delta\phi)\,dx\,dy\)</span> this is the workhorse used again in §1.8 to prove Green’s function is symmetric.</li>
+<li>Real/imaginary parts of analytic functions are harmonic (Cauchy–Riemann <span class="math inline">\(\Rightarrow\)</span> Laplace’s equation); harmonic conjugates exist locally (globally on simply connected domains, via a path integral that’s path-independent by Green’s theorem).</li>
+<li>Harmonic <span class="math inline">\(\circ\)</span> analytic = harmonic.</li>
+<li><strong>Mean value property</strong>: <span class="math inline">\(u(z_0) = \frac{1}{2\pi}\int_0^{2\pi} u(z_0+re^{i\theta})\,d\theta\)</span>, derived from Green’s theorem applied to <span class="math inline">\(\nabla u\)</span>.</li>
+<li><strong>Poisson formula</strong>: reconstructs <span class="math inline">\(u\)</span> inside a disk from boundary values, via the Poisson kernel <span class="math inline">\(P_r(\theta) = \frac{R^2-r^2}{R^2-2Rr\cos\theta+r^2}\)</span>.</li>
+<li><strong>Maximum principle for harmonic functions</strong>, and the <strong>converse mean-value characterization</strong>: continuous + local mean-value property <span class="math inline">\(\Rightarrow\)</span> harmonic (proved by comparing <span class="math inline">\(u\)</span> to its Poisson integral <span class="math inline">\(U\)</span> and using the maximum principle on <span class="math inline">\(u - U\)</span>).</li>
+<li><strong>Subharmonic functions</strong>: <span class="math inline">\(u \le U\)</span> (Poisson integral) on every disk; equivalently, continuous + local <em>sub</em>-mean-value property. Key facts: sums of subharmonic functions are subharmonic; <span class="math inline">\(\max(u,v)\)</span> is subharmonic; convex increasing functions of subharmonic functions are subharmonic (via Jensen’s inequality) this is exactly how you get <span class="math inline">\(|u|^p\)</span> (<span class="math inline">\(p\ge 1\)</span>, <span class="math inline">\(u\)</span> harmonic) and <span class="math inline">\(|f|^p\)</span> (<span class="math inline">\(p&gt;0\)</span>, <span class="math inline">\(f\)</span> analytic) subharmonic, and <span class="math inline">\(\log|f|\)</span> subharmonic in the generalized sense (allowing <span class="math inline">\(-\infty\)</span>) facts used throughout the coefficient-estimate machinery in later chapters.</li>
+</ul>
+</div>
+<div id="greens-functions" class="section level2 hasAnchor" number="5.8">
+<h2><span class="header-section-number">5.8</span> Green’s Functions<a href="univalent-functions.html#greens-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For a finitely-connected domain <span class="math inline">\(D\)</span> with smooth boundary, Green’s function is
+<span class="math display">\[g(z,\zeta) = h(z,\zeta) - \log|z-\zeta|,\]</span>
+where <span class="math inline">\(h(\cdot,\zeta)\)</span> is the harmonic function solving the Dirichlet problem with boundary data <span class="math inline">\(\log|z-\zeta|\)</span> (so <span class="math inline">\(g=0\)</span> on the boundary and <span class="math inline">\(g\)</span> has the right log singularity at <span class="math inline">\(\zeta\)</span>).</p>
+<ul>
+<li><strong>Positivity</strong>: <span class="math inline">\(g&gt;0\)</span> inside, by the maximum principle.</li>
+<li><strong>Symmetry</strong> <span class="math inline">\(g(z,\zeta)=g(\zeta,z)\)</span>: proved by excising small <span class="math inline">\(\epsilon\)</span>-disks around two points <span class="math inline">\(\zeta_1,\zeta_2\)</span>, applying Green’s formula to <span class="math inline">\(g(\cdot,\zeta_1)\)</span> and <span class="math inline">\(g(\cdot,\zeta_2)\)</span> on the resulting domain, and letting <span class="math inline">\(\epsilon\to 0\)</span> the log singularities’ normal derivatives blow up in exactly the right way (<span class="math inline">\(\sim 1/\epsilon\)</span>) to produce the residue-like terms <span class="math inline">\(-2\pi g(\zeta_1,\zeta_2)+2\pi g(\zeta_2,\zeta_1) = 0\)</span>.</li>
+<li><strong>Reproducing formula</strong>: for harmonic <span class="math inline">\(u\)</span>,
+<span class="math display">\[u(\zeta) = -\frac{1}{2\pi}\int_C u\,\frac{\partial g}{\partial n}\,ds,\]</span>
+generalizing the Poisson formula to arbitrary domains same excise-and-let-<span class="math inline">\(\epsilon\to0\)</span> technique.</li>
+<li><strong>Connection to the Riemann map</strong>: if <span class="math inline">\(f:D\to\mathbb{D}\)</span> is the Riemann map with <span class="math inline">\(f(\zeta)=0\)</span>, then <span class="math inline">\(g(z,\zeta) = -\log|f(z)|\)</span>. Conversely, knowing <span class="math inline">\(g\)</span> recovers <span class="math inline">\(f\)</span> via <span class="math inline">\(f(z) = \exp\{-g(z,\zeta) - i\,\tilde g(z,\zeta)\}\)</span> where <span class="math inline">\(\tilde g\)</span> is the harmonic conjugate (well-defined mod <span class="math inline">\(2\pi\)</span> around <span class="math inline">\(\zeta\)</span>, so <span class="math inline">\(f\)</span> is still single-valued). This Green’s-function <span class="math inline">\(\leftrightarrow\)</span> conformal-map duality is precisely the language your Nehari/Schippers reading has been using (period matrices, canonical domains) it’s the classical one-variable shadow of the multiply-connected constructions you’ve been chewing on.</li>
+</ul>
+</div>
+<div id="positive-harmonic-functions-opening" class="section level2 hasAnchor" number="5.9">
+<h2><span class="header-section-number">5.9</span> Positive Harmonic Functions (opening)<a href="univalent-functions.html#positive-harmonic-functions-opening" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Sets up motivation for Chapter 2’s subclasses of <span class="math inline">\(S\)</span> defined by <span class="math inline">\(\mathrm{Re}\,p(z)&gt;0\)</span>, <span class="math inline">\(p(0)=1\)</span> leading into the <strong>Herglotz representation theorem</strong> (1911): every positive harmonic function normalized at <span class="math inline">\(0\)</span> is the Poisson integral of a positive measure. The file cuts off right as this is introduced.</p>
+
+</div>
+</div>
+
+
+
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="riemann-surfaces..html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/ashanjaymal/Complex-Analysis/edit/main/04-Univalent.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["_main.pdf", "_main.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
