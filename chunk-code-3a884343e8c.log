@@ -1,0 +1,37 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=latex 2026.7.12)  12 JUL 2026 09:30
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**C:/Users/RIENZIE/AppData/Local/Temp/RtmpSYeEq1/chunk-code-3a884343e8c.txt
+(C:/Users/RIENZIE/AppData/Local/Temp/RtmpSYeEq1/chunk-code-3a884343e8c.txt
+LaTeX2e <2024-11-01> patch level 1
+L3 programming layer <2024-12-09>
+
+! LaTeX Error: Environment tikzpicture undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \begin{tikzpicture}
+                       [scale=2]
+? 
+! Emergency stop.
+ ...                                              
+                                                  
+l.1 \begin{tikzpicture}
+                       [scale=2]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+ 
+Here is how much of TeX's memory you used:
+ 18 strings out of 473575
+ 706 string characters out of 5715190
+ 390435 words of memory out of 5000000
+ 23300 multiletter control sequences out of 15000+600000
+ 558069 words of font info for 36 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 12i,0n,13p,134b,16s stack positions out of 10000i,1000n,20000p,200000b,200000s
+No pages of output.

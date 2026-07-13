@@ -79,7 +79,7 @@
 
 \title{Complex Analysis}
 \author{Ashan Jayamal}
-\date{2026-07-11}
+\date{2026-07-12}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -1087,9 +1087,41 @@ where \(h(\cdot,\zeta)\) is the harmonic function solving the Dirichlet problem 
   \textbf{Connection to the Riemann map}: if \(f:D\to\mathbb{D}\) is the Riemann map with \(f(\zeta)=0\), then \(g(z,\zeta) = -\log|f(z)|\). Conversely, knowing \(g\) recovers \(f\) via \(f(z) = \exp\{-g(z,\zeta) - i\,\tilde g(z,\zeta)\}\) where \(\tilde g\) is the harmonic conjugate (well-defined mod \(2\pi\) around \(\zeta\), so \(f\) is still single-valued). This Green's-function \(\leftrightarrow\) conformal-map duality is precisely the language your Nehari/Schippers reading has been using (period matrices, canonical domains) it's the classical one-variable shadow of the multiply-connected constructions you've been chewing on.
 \end{itemize}
 
-\section{Positive Harmonic Functions (opening)}\label{positive-harmonic-functions-opening}
+\begin{figure}
 
-Sets up motivation for Chapter 2's subclasses of \(S\) defined by \(\mathrm{Re}\,p(z)>0\), \(p(0)=1\) leading into the \textbf{Herglotz representation theorem} (1911): every positive harmonic function normalized at \(0\) is the Poisson integral of a positive measure. The file cuts off right as this is introduced.
+{\centering \includegraphics{_main_files/figure-latex/tikz-ex-1-1} 
+
+}
+
+\caption{A continuous arc in the complex plane.}\label{fig:tikz-ex-1}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics{_main_files/figure-latex/tikz-ex-2-1} 
+
+}
+
+\caption{Jordan arc (no self-intersections)}\label{fig:tikz-ex-2}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics{_main_files/figure-latex/tikz-ex-3-1} 
+
+}
+
+\caption{Closed curve (endpoints coincide)}\label{fig:tikz-ex-3}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics{_main_files/figure-latex/tikz-ex-4-1} 
+
+}
+
+\caption{Simple closed curve (Jordan curve) + Jordan domain}\label{fig:tikz-ex-4}
+\end{figure}
 
 \bibliography{book.bib,packages.bib}
 

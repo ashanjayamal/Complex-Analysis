@@ -12,6 +12,10 @@ exr:unnamed-chunk-18
 def:unnamed-chunk-19
 def:unnamed-chunk-20
 thm:unnamed-chunk-21
+fig:tikz-ex-1
+fig:tikz-ex-2
+fig:tikz-ex-3
+fig:tikz-ex-4
 introduction
 why-complex-numbers
 complex-numbers
@@ -54,4 +58,11 @@ the-riemann-mapping-theorem
 analytic-continuation
 harmonic-and-subharmonic-functions
 greens-functions
-positive-harmonic-functions-opening
+def:unnamed-chunk-2
+def:unnamed-chunk-3
+fig:curves-grid
+fig:tikz-ex-continuous
+fig:tikz-ex-jordan
+fig:tikz-ex-closed
+fig:tikz-ex-domain
+thm:unnamed-chunk-4

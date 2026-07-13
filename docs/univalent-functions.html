@@ -23,7 +23,7 @@
 <meta name="author" content="Ashan Jayamal" />
 
 
-<meta name="date" content="2026-07-11" />
+<meta name="date" content="2026-07-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -104,13 +104,10 @@
 <li class="chapter" data-level="3" data-path="green-functions.html"><a href="green-functions.html"><i class="fa fa-check"></i><b>3</b> Green functions</a></li>
 <li class="chapter" data-level="4" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html"><i class="fa fa-check"></i><b>4</b> Riemann Surfaces.</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html#solution"><i class="fa fa-check"></i><b>4.1</b> <strong>Solution</strong>:</a>
+<li class="chapter" data-level="4.0.1" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html#functions-defnied-on-the-riemann-surface."><i class="fa fa-check"></i><b>4.0.1</b> Functions defnied on the Riemann Surface.</a></li>
+<li class="chapter" data-level="4.1" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html#the-riemann-sphere"><i class="fa fa-check"></i><b>4.1</b> The Riemann sphere</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html#functions-defnied-on-the-riemann-surface."><i class="fa fa-check"></i><b>4.1.1</b> Functions defnied on the Riemann Surface.</a></li>
-</ul></li>
-<li class="chapter" data-level="4.2" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html#the-riemann-sphere"><i class="fa fa-check"></i><b>4.2</b> The Riemann sphere</a>
-<ul>
-<li class="chapter" data-level="4.2.1" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html#stereographic-projection-and-the-metric"><i class="fa fa-check"></i><b>4.2.1</b> Stereographic Projection and the Metric</a></li>
+<li class="chapter" data-level="4.1.1" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html#stereographic-projection-and-the-metric"><i class="fa fa-check"></i><b>4.1.1</b> Stereographic Projection and the Metric</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="univalent-functions.html"><a href="univalent-functions.html"><i class="fa fa-check"></i><b>5</b> Univalent Functions</a>
@@ -126,7 +123,6 @@
 <li class="chapter" data-level="5.6" data-path="univalent-functions.html"><a href="univalent-functions.html#analytic-continuation"><i class="fa fa-check"></i><b>5.6</b> Analytic Continuation</a></li>
 <li class="chapter" data-level="5.7" data-path="univalent-functions.html"><a href="univalent-functions.html#harmonic-and-subharmonic-functions"><i class="fa fa-check"></i><b>5.7</b> Harmonic and Subharmonic Functions</a></li>
 <li class="chapter" data-level="5.8" data-path="univalent-functions.html"><a href="univalent-functions.html#greens-functions"><i class="fa fa-check"></i><b>5.8</b> Green’s Functions</a></li>
-<li class="chapter" data-level="5.9" data-path="univalent-functions.html"><a href="univalent-functions.html#positive-harmonic-functions-opening"><i class="fa fa-check"></i><b>5.9</b> Positive Harmonic Functions (opening)</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://ashanjayamal.github.io/academicpages" target="blank">Property of Ashan Jayamal</a></li>
@@ -155,7 +151,7 @@
 <div id="recalling-stuff-that-we-already-know" class="section level3 hasAnchor" number="5.1.1">
 <h3><span class="header-section-number">5.1.1</span> Recalling stuff that we already know?<a href="univalent-functions.html#recalling-stuff-that-we-already-know" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="definition">
-<p><span id="def:unnamed-chunk-19" class="definition"><strong>Definition 5.1  </strong></span></p>
+<p><span id="def:unnamed-chunk-2" class="definition"><strong>Definition 5.1  </strong></span></p>
 <ul>
 <li>A <em>domain</em> = open connected subset of <span class="math inline">\(\mathbb{C}\)</span>.</li>
 <li><em>Simply connected</em> is defined via the complement being connected (rather than “no holes” or “every loop contractible” these are equivalent for domains in <span class="math inline">\(\mathbb{C}\)</span>, but the complement-in-<span class="math inline">\(\hat{\mathbb{C}}\)</span> characterization is the cleanest one to work with).</li>
@@ -168,19 +164,42 @@
 </div>
 <p><em>Notation</em>: The unit disk <span class="math inline">\(\mathbb{D} = \{|z|&lt;1\}\)</span> and its boundary circle <span class="math inline">\(\mathbb{T}= \{|z|=1\}\)</span>.</p>
 <div class="definition">
-<p><span id="def:unnamed-chunk-20" class="definition"><strong>Definition 5.2  </strong></span></p>
+<p><span id="def:unnamed-chunk-3" class="definition"><strong>Definition 5.2  </strong></span></p>
 <ul>
 <li>An <strong>Arc</strong> in the complex plane is the continuous image of a line segment.<br />
 Formally, an arc is a continuous mapping <span class="math inline">\(z = \varphi(t)\)</span> of an interval <span class="math inline">\(a \le t \le b\)</span> into <span class="math inline">\(\mathbb{C}\)</span>.</li>
 <li>A <strong>Rectifiable Arc</strong> is an arc that has a finite length — that is, the mapping function <span class="math inline">\(\varphi\)</span> is of <em>bounded variation</em>.</li>
 <li>A <strong>Jordan Arc</strong> is an arc without self-intersections.</li>
 <li>A <strong>Closed Curve</strong> is the continuous image of a circle, or equivalently, an arc whose endpoints coincide.</li>
-<li>A <strong>Simple Closed Curve (Jordan Curve)</strong> is a closed curve without self-intersections.</li>
-<li>The interior of a Jordan curve is called a <strong>Jordan domain</strong>.</li>
+<li>A <strong>Simple Closed Curve (Jordan Curve)</strong> is a closed curve without</li>
 </ul>
 </div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:tikz-ex-continuous"></span>
+<img src="_main_files/figure-html/tikz-ex-continuous-1.png" alt="A continuous arc in the complex plane." width="672" />
+<p class="caption">
+Figure 5.1: A continuous arc in the complex plane.
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:tikz-ex-jordan"></span>
+<img src="_main_files/figure-html/tikz-ex-jordan-1.png" alt="Jordan arc (no self-intersections)" width="672" />
+<p class="caption">
+Figure 5.2: Jordan arc (no self-intersections)
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:tikz-ex-closed"></span>
+<img src="_main_files/figure-html/tikz-ex-closed-1.png" alt="Closed curve (endpoints coincide)" width="672" />
+<p class="caption">
+Figure 5.3: Closed curve (endpoints coincide)
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:tikz-ex-domain"></span>
+<img src="_main_files/figure-html/tikz-ex-domain-1.png" alt="Simple closed curve (Jordan curve) + Jordan domain" width="672" />
+<p class="caption">
+Figure 5.4: Simple closed curve (Jordan curve) + Jordan domain
+</p>
+</div>
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-21" class="theorem"><strong>Theorem 5.1  (The Jordan Curve Theorem) </strong></span>The Jordan curve theorem asserts that every Jordan curve divides the plane into two regions the <em>interior</em> and the <em>exterior</em> of the curve.</p>
+<p><span id="thm:unnamed-chunk-4" class="theorem"><strong>Theorem 5.1  (The Jordan Curve Theorem) </strong></span>The Jordan curve theorem asserts that every Jordan curve divides the plane into two regions the <em>interior</em> and the <em>exterior</em> of the curve.</p>
 </div>
 <p><strong>Core complex analysis, compressed:</strong></p>
 <ul>
@@ -274,10 +293,6 @@ where <span class="math inline">\(h(\cdot,\zeta)\)</span> is the harmonic functi
 generalizing the Poisson formula to arbitrary domains same excise-and-let-<span class="math inline">\(\epsilon\to0\)</span> technique.</li>
 <li><strong>Connection to the Riemann map</strong>: if <span class="math inline">\(f:D\to\mathbb{D}\)</span> is the Riemann map with <span class="math inline">\(f(\zeta)=0\)</span>, then <span class="math inline">\(g(z,\zeta) = -\log|f(z)|\)</span>. Conversely, knowing <span class="math inline">\(g\)</span> recovers <span class="math inline">\(f\)</span> via <span class="math inline">\(f(z) = \exp\{-g(z,\zeta) - i\,\tilde g(z,\zeta)\}\)</span> where <span class="math inline">\(\tilde g\)</span> is the harmonic conjugate (well-defined mod <span class="math inline">\(2\pi\)</span> around <span class="math inline">\(\zeta\)</span>, so <span class="math inline">\(f\)</span> is still single-valued). This Green’s-function <span class="math inline">\(\leftrightarrow\)</span> conformal-map duality is precisely the language your Nehari/Schippers reading has been using (period matrices, canonical domains) it’s the classical one-variable shadow of the multiply-connected constructions you’ve been chewing on.</li>
 </ul>
-</div>
-<div id="positive-harmonic-functions-opening" class="section level2 hasAnchor" number="5.9">
-<h2><span class="header-section-number">5.9</span> Positive Harmonic Functions (opening)<a href="univalent-functions.html#positive-harmonic-functions-opening" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Sets up motivation for Chapter 2’s subclasses of <span class="math inline">\(S\)</span> defined by <span class="math inline">\(\mathrm{Re}\,p(z)&gt;0\)</span>, <span class="math inline">\(p(0)=1\)</span> leading into the <strong>Herglotz representation theorem</strong> (1911): every positive harmonic function normalized at <span class="math inline">\(0\)</span> is the Poisson integral of a positive measure. The file cuts off right as this is introduced.</p>
 
 </div>
 </div>
