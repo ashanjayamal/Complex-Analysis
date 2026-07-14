@@ -176,48 +176,6 @@ plot_ly(data = animated_data, x = ~x, y = ~y, frame = ~frame,
 
 
 
-```{r, animated-arc1, message=FALSE, warning=FALSE, eval=knitr::is_html_output(), fig.align="center"}
-library(plotly)
-
-# 1. Define the parameters and range for t
-t_max <- 4 * pi
-steps <- 100
-t_vals <- seq(0, t_max, length.out = steps)
-
-# 2. Build a cumulative dataset
-# To show the path "drawing", frame 5 needs to contain points 1 through 5, etc.
-df_list <- lapply(seq_along(t_vals), function(i) {
-  t_sub <- t_vals[1:i]
-  data.frame(
-    x = 0.1 * t_sub * cos(t_sub),  # Define your curve's real part
-    y = 0.1 * t_sub * sin(t_sub),  # Define your curve's imaginary part
-    frame = i                      # The current step of the slider
-  )
-})
-animated_data <- do.call(rbind, df_list)
-
-# 3. Create the interactive Plotly graphic
-plot_ly(data = animated_data, x = ~x, y = ~y, frame = ~frame,
-        type = 'scatter', mode = 'lines+markers',
-        line = list(color = '#1f77b4', width = 3),
-        marker = list(color = '#d62728', size = 4)) %>%
-  layout(
-    title = "Dynamic Visualization of an Arc",
-    xaxis = list(title = "Re(z)", range = c(-1.5, 1.5)),
-    yaxis = list(title = "Im(z)", range = c(-1.5, 1.5), scaleanchor = "x", scaleratio = 1),
-    showlegend = FALSE
-  ) %>%
-  animation_opts(
-    frame = 40,        # Speed of the drawing animation (in milliseconds)
-    transition = 0,     # Smooth transition timing between steps
-    redraw = FALSE
-  ) %>%
-  animation_slider(
-    currentvalue = list(prefix = "Parameter t step: ", font = list(color="darkblue"))
-  )
-
-
-```
 
 ```{theorem ,name= "The Jordan Curve Theorem"}   
    The Jordan curve theorem asserts that every Jordan curve divides the plane into two regions the *interior* and the *exterior* of the curve.
