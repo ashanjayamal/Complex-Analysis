@@ -69,7 +69,7 @@ plot_ly(data = animated_data, x = ~x, y = ~y, frame = ~frame,
   )
 ```
 
-```{tikz, comprehensive-curves-grid, fig.cap = "Comprehensive comparison of curves, arcs, and non-arc structures in the complex plane.", fig.align = "center", echo = FALSE}
+```{tikz, comprehensive-curves-grid, fig.cap = "Comprehensive comparison of curves, arcs, and non-arc structures in the complex plane.", fig.align = "center", echo = FALSE,fig.path = "fig/"}
 \begin{tikzpicture}[scale=1.4]
 
   % ====================================================
