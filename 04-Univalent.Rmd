@@ -269,4 +269,3 @@ where $h(\cdot,\zeta)$ is the harmonic function solving the Dirichlet problem wi
 $$u(\zeta) = -\frac{1}{2\pi}\int_C u\,\frac{\partial g}{\partial n}\,ds,$$
 generalizing the Poisson formula to arbitrary domains  same excise-and-let-$\epsilon\to0$ technique.
 - **Connection to the Riemann map**: if $f:D\to\mathbb{D}$ is the Riemann map with $f(\zeta)=0$, then $g(z,\zeta) = -\log|f(z)|$. Conversely, knowing $g$ recovers $f$ via $f(z) = \exp\{-g(z,\zeta) - i\,\tilde g(z,\zeta)\}$ where $\tilde g$ is the harmonic conjugate (well-defined mod $2\pi$ around $\zeta$, so $f$ is still single-valued). This Green's-function $\leftrightarrow$ conformal-map duality is precisely the language your Nehari/Schippers reading has been using (period matrices, canonical domains)  it's the classical one-variable shadow of the multiply-connected constructions you've been chewing on.
-
