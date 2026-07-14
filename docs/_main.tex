@@ -36,6 +36,46 @@
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
 \makeatother
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs,array}
 \newcounter{none} % for unnumbered tables
 \usepackage{calc} % for calculating minipage widths
@@ -79,7 +119,7 @@
 
 \title{Complex Analysis}
 \author{Ashan Jayamal}
-\date{2026-07-12}
+\date{2026-07-13}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -925,12 +965,62 @@ with the natural extension when one point is \(\infty\).
 \item
   A \textbf{Closed Curve} is the continuous image of a circle, or equivalently, an arc whose endpoints coincide.
 \item
-  A \textbf{Simple Closed Curve (Jordan Curve)} is a closed curve without self-intersections.
-\item
-  The interior of a Jordan curve is called a \textbf{Jordan domain}.
+  A \textbf{Simple Closed Curve (Jordan Curve)} is a closed curve without ```
 \end{itemize}
 
 \end{definition}
+
+\begin{figure}
+
+{\centering \includegraphics{_main_files/figure-latex/comprehensive-curves-grid-1} 
+
+}
+
+\caption{Comprehensive comparison of curves, arcs, and non-arc structures in the complex plane.}\label{fig:comprehensive-curves-grid}
+\end{figure}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(plotly)}
+
+\CommentTok{\# 1. Define the parameters and range for t}
+\NormalTok{t\_max }\OtherTok{\textless{}{-}} \DecValTok{4} \SpecialCharTok{*}\NormalTok{ pi}
+\NormalTok{steps }\OtherTok{\textless{}{-}} \DecValTok{100}
+\NormalTok{t\_vals }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, t\_max, }\AttributeTok{length.out =}\NormalTok{ steps)}
+
+\CommentTok{\# 2. Build a cumulative dataset}
+\CommentTok{\# To show the path "drawing", frame 5 needs to contain points 1 through 5, etc.}
+\NormalTok{df\_list }\OtherTok{\textless{}{-}} \FunctionTok{lapply}\NormalTok{(}\FunctionTok{seq\_along}\NormalTok{(t\_vals), }\ControlFlowTok{function}\NormalTok{(i) \{}
+\NormalTok{  t\_sub }\OtherTok{\textless{}{-}}\NormalTok{ t\_vals[}\DecValTok{1}\SpecialCharTok{:}\NormalTok{i]}
+  \FunctionTok{data.frame}\NormalTok{(}
+    \AttributeTok{x =} \FloatTok{0.1} \SpecialCharTok{*}\NormalTok{ t\_sub }\SpecialCharTok{*} \FunctionTok{cos}\NormalTok{(t\_sub),  }\CommentTok{\# Define your curve\textquotesingle{}s real part}
+    \AttributeTok{y =} \FloatTok{0.1} \SpecialCharTok{*}\NormalTok{ t\_sub }\SpecialCharTok{*} \FunctionTok{sin}\NormalTok{(t\_sub),  }\CommentTok{\# Define your curve\textquotesingle{}s imaginary part}
+    \AttributeTok{frame =}\NormalTok{ i                      }\CommentTok{\# The current step of the slider}
+\NormalTok{  )}
+\NormalTok{\})}
+\NormalTok{animated\_data }\OtherTok{\textless{}{-}} \FunctionTok{do.call}\NormalTok{(rbind, df\_list)}
+
+\CommentTok{\# 3. Create the interactive Plotly graphic}
+\FunctionTok{plot\_ly}\NormalTok{(}\AttributeTok{data =}\NormalTok{ animated\_data, }\AttributeTok{x =} \SpecialCharTok{\textasciitilde{}}\NormalTok{x, }\AttributeTok{y =} \SpecialCharTok{\textasciitilde{}}\NormalTok{y, }\AttributeTok{frame =} \SpecialCharTok{\textasciitilde{}}\NormalTok{frame,}
+        \AttributeTok{type =} \StringTok{\textquotesingle{}scatter\textquotesingle{}}\NormalTok{, }\AttributeTok{mode =} \StringTok{\textquotesingle{}lines+markers\textquotesingle{}}\NormalTok{,}
+        \AttributeTok{line =} \FunctionTok{list}\NormalTok{(}\AttributeTok{color =} \StringTok{\textquotesingle{}\#1f77b4\textquotesingle{}}\NormalTok{, }\AttributeTok{width =} \DecValTok{3}\NormalTok{),}
+        \AttributeTok{marker =} \FunctionTok{list}\NormalTok{(}\AttributeTok{color =} \StringTok{\textquotesingle{}\#d62728\textquotesingle{}}\NormalTok{, }\AttributeTok{size =} \DecValTok{4}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{layout}\NormalTok{(}
+    \AttributeTok{title =} \StringTok{"Dynamic Visualization of an Arc"}\NormalTok{,}
+    \AttributeTok{xaxis =} \FunctionTok{list}\NormalTok{(}\AttributeTok{title =} \StringTok{"Re(z)"}\NormalTok{, }\AttributeTok{range =} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\FloatTok{1.5}\NormalTok{, }\FloatTok{1.5}\NormalTok{)),}
+    \AttributeTok{yaxis =} \FunctionTok{list}\NormalTok{(}\AttributeTok{title =} \StringTok{"Im(z)"}\NormalTok{, }\AttributeTok{range =} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\FloatTok{1.5}\NormalTok{, }\FloatTok{1.5}\NormalTok{), }\AttributeTok{scaleanchor =} \StringTok{"x"}\NormalTok{, }\AttributeTok{scaleratio =} \DecValTok{1}\NormalTok{),}
+    \AttributeTok{showlegend =} \ConstantTok{FALSE}
+\NormalTok{  ) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{animation\_opts}\NormalTok{(}
+    \AttributeTok{frame =} \DecValTok{40}\NormalTok{,        }\CommentTok{\# Speed of the drawing animation (in milliseconds)}
+    \AttributeTok{transition =} \DecValTok{0}\NormalTok{,     }\CommentTok{\# Smooth transition timing between steps}
+    \AttributeTok{redraw =} \ConstantTok{FALSE}
+\NormalTok{  ) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{animation\_slider}\NormalTok{(}
+    \AttributeTok{currentvalue =} \FunctionTok{list}\NormalTok{(}\AttributeTok{prefix =} \StringTok{"Parameter t step: "}\NormalTok{, }\AttributeTok{font =} \FunctionTok{list}\NormalTok{(}\AttributeTok{color=}\StringTok{"darkblue"}\NormalTok{))}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
 
 \begin{theorem}[The Jordan Curve Theorem]
 \protect\hypertarget{thm:unnamed-chunk-21}{}\label{thm:unnamed-chunk-21}The Jordan curve theorem asserts that every Jordan curve divides the plane into two regions the \emph{interior} and the \emph{exterior} of the curve.
@@ -1086,42 +1176,6 @@ where \(h(\cdot,\zeta)\) is the harmonic function solving the Dirichlet problem 
 \item
   \textbf{Connection to the Riemann map}: if \(f:D\to\mathbb{D}\) is the Riemann map with \(f(\zeta)=0\), then \(g(z,\zeta) = -\log|f(z)|\). Conversely, knowing \(g\) recovers \(f\) via \(f(z) = \exp\{-g(z,\zeta) - i\,\tilde g(z,\zeta)\}\) where \(\tilde g\) is the harmonic conjugate (well-defined mod \(2\pi\) around \(\zeta\), so \(f\) is still single-valued). This Green's-function \(\leftrightarrow\) conformal-map duality is precisely the language your Nehari/Schippers reading has been using (period matrices, canonical domains) it's the classical one-variable shadow of the multiply-connected constructions you've been chewing on.
 \end{itemize}
-
-\begin{figure}
-
-{\centering \includegraphics{_main_files/figure-latex/tikz-ex-1-1} 
-
-}
-
-\caption{A continuous arc in the complex plane.}\label{fig:tikz-ex-1}
-\end{figure}
-
-\begin{figure}
-
-{\centering \includegraphics{_main_files/figure-latex/tikz-ex-2-1} 
-
-}
-
-\caption{Jordan arc (no self-intersections)}\label{fig:tikz-ex-2}
-\end{figure}
-
-\begin{figure}
-
-{\centering \includegraphics{_main_files/figure-latex/tikz-ex-3-1} 
-
-}
-
-\caption{Closed curve (endpoints coincide)}\label{fig:tikz-ex-3}
-\end{figure}
-
-\begin{figure}
-
-{\centering \includegraphics{_main_files/figure-latex/tikz-ex-4-1} 
-
-}
-
-\caption{Simple closed curve (Jordan curve) + Jordan domain}\label{fig:tikz-ex-4}
-\end{figure}
 
 \bibliography{book.bib,packages.bib}
 

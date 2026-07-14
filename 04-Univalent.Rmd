@@ -171,7 +171,12 @@ plot_ly(data = animated_data, x = ~x, y = ~y, frame = ~frame,
 
     \fill[purple] (0,0) circle (0.05) node[below left] {\footnotesize Split};
   \end{scope}
-```{r, animated-arc, message=FALSE, warning=FALSE, eval=knitr::is_html_output(), fig.align="center"}
+\end{tikzpicture} 
+```
+
+
+
+```{r, animated-arc1, message=FALSE, warning=FALSE, eval=knitr::is_html_output(), fig.align="center"}
 library(plotly)
 
 # 1. Define the parameters and range for t
@@ -211,7 +216,7 @@ plot_ly(data = animated_data, x = ~x, y = ~y, frame = ~frame,
     currentvalue = list(prefix = "Parameter t step: ", font = list(color="darkblue"))
   )
 
-\end{tikzpicture}
+
 ```
 
 ```{theorem ,name= "The Jordan Curve Theorem"}   
