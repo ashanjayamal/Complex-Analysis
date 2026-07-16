@@ -174,6 +174,49 @@
 #<img src="fig/pic%206%20(4).jpg" />
 #<img src="fig/pic%206%20(1).jpg" /></p>
 </div>
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-23" class="theorem"><strong>Theorem 7.2  </strong></span>Let <span class="math inline">\(D\)</span> and <span class="math inline">\(\Delta\)</span> be disjoint domains with a common rectifiable boundary arc <span class="math inline">\(\Gamma\)</span>.
+Let <span class="math inline">\(f\)</span> be analytic in <span class="math inline">\(D\)</span> and continuous in <span class="math inline">\(D \cup \Gamma\)</span>, and let <span class="math inline">\(g\)</span> be analytic in <span class="math inline">\(\Delta\)</span> and continuous in <span class="math inline">\(\Delta \cup \Gamma\)</span>.
+Suppose <span class="math inline">\(f(z) = g(z)\)</span> for all <span class="math inline">\(z \in \Gamma\)</span>.
+Then <span class="math inline">\(f\)</span> has an analytic continuation <span class="math inline">\(F\)</span> to <span class="math inline">\(D \cup \Gamma \cup \Delta\)</span> with <span class="math inline">\(F(z) = g(z)\)</span> in <span class="math inline">\(\Delta\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-4" class="proof"><em>Proof</em>. </span>It must be shown that the function <span class="math inline">\(F\)</span> defined as above is actually
+analytic on <span class="math inline">\(\Gamma\)</span>. Given a point <span class="math inline">\(z_{0} \in \Gamma\)</span>, choose
+Jordan arcs <span class="math inline">\(C_{1} \subset D\)</span> and <span class="math inline">\(C_{2} \subset \Delta\)</span> with
+common endpoints on <span class="math inline">\(\Gamma\)</span> whose union <span class="math inline">\(C = C_{1} \cup C_{2}\)</span>
+is a Jordan curve enclosing <span class="math inline">\(z_{0}\)</span>. Let <span class="math inline">\(\gamma\)</span> be the subarc
+of <span class="math inline">\(\Gamma\)</span> inside <span class="math inline">\(C\)</span>. Let <span class="math inline">\(D^{*}\)</span> and <span class="math inline">\(\Delta^{*}\)</span> be
+the subdomains of <span class="math inline">\(D\)</span> and <span class="math inline">\(\Delta\)</span> enclosed by the Jordan curves
+<span class="math inline">\(J_{1} = C_{1} \cup \gamma\)</span> and <span class="math inline">\(J_{2} = C_{2} \cup \gamma\)</span>,
+respectively.
+<img src="fig/pic%207.png" alt="Image Credit: Duren’s book" />
+By the extended version of Cauchy’s theorem,</p>
+<p><span class="math display">\[
+\frac{1}{2\pi i} \int_{J_{1}} \frac{f(\zeta)}{\zeta - z}\, d\zeta =
+\begin{cases}
+f(z), &amp; z \in D^{*},\\[6pt]
+0, &amp; z \in \Delta^{*}.
+\end{cases}
+\]</span></p>
+<p>Similarly,</p>
+<p><span class="math display">\[
+\frac{1}{2\pi i} \int_{J_{2}} \frac{g(\zeta)}{\zeta - z}\, d\zeta =
+\begin{cases}
+0, &amp; z \in D^{*},\\[6pt]
+g(z), &amp; z \in \Delta^{*}.
+\end{cases}
+\]</span></p>
+<p>Because <span class="math inline">\(f(\zeta) = g(\zeta)\)</span> on <span class="math inline">\(\Gamma\)</span>, the two integrals may
+be added to produce</p>
+<p><span class="math display">\[
+\frac{1}{2\pi i} \int_{C} \frac{F(\zeta)}{\zeta - z}\, d\zeta = F(z).
+\]</span></p>
+<p>for <span class="math inline">\(z \in D^{*} \cup \Delta^{*}\)</span>. But this last integral is analytic
+throughout the domain <span class="math inline">\(D^{*} \cup \gamma \cup \Delta^{*}\)</span> bounded by <span class="math inline">\(C\)</span>.
+In particular, <span class="math inline">\(F\)</span> is analytic at <span class="math inline">\(z_{0}\)</span>. Since <span class="math inline">\(z_{0}\)</span> was an
+arbitrary point of <span class="math inline">\(\Gamma\)</span>, this proves the theorem.</p>
+</div>
 
 </div>
 

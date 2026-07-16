@@ -14,6 +14,7 @@ def:unnamed-chunk-20
 fig:comprehensive-curves-grid
 thm:unnamed-chunk-21
 thm:montel
+thm:unnamed-chunk-23
 introduction
 why-complex-numbers
 complex-numbers
