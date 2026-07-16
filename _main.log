@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.1.22)  13 JUL 2026 23:13
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.1.22)  16 JUL 2026 09:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -847,15 +847,15 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 6.99925pt on input line 14.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 4.99947pt on input line 14.
-)
+[3])
 \tf@toc=\write4
 \openout4 = `_main.toc'.
 
-[3] [4
-
-]
+[4]
 Chapter 1.
-[5] [6]
+[5
+
+] [6]
 Chapter 2.
 File: _main_files/_main_files/figure-latex/unnamed-chunk-1-1.pdf Graphic file (type pdf)
 <use _main_files/_main_files/figure-latex/unnamed-chunk-1-1.pdf>
@@ -969,8 +969,8 @@ Chapter 5.
 [27
 
 ]
-File: _main_files/figure-latex/comprehensive-curves-grid-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/comprehensive-curves-grid-1.pdf>
+File: fig/comprehensive-curves-grid-1.pdf Graphic file (type pdf)
+<use fig/comprehensive-curves-grid-1.pdf>
 
 Overfull \hbox (13.16422pt too wide) in paragraph at lines 975--976
  [][] 
@@ -979,51 +979,81 @@ Overfull \hbox (13.16422pt too wide) in paragraph at lines 975--976
 
 LaTeX Warning: Float too large for page by 37.70303pt on input line 980.
 
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 984.
-[28] [29]
-Underfull \hbox (badness 1127) in paragraph at lines 1050--1052
+
+Underfull \hbox (badness 1127) in paragraph at lines 1007--1009
 []\TU/lmr/bx/n/10 Hurwitz’s theorem\TU/lmr/m/n/10 : locally uniform limits of zero-free (or non-
  []
 
-
-Underfull \vbox (badness 7796) has occurred while \output is active []
-
-[30] [31] [32]
-Underfull \hbox (badness 3049) in paragraph at lines 1145--1147
+[28] [29] [30] [31]
+Underfull \hbox (badness 3049) in paragraph at lines 1102--1104
 []\TU/lmr/m/n/10 States \TU/lmr/bx/n/10 Green’s theorem/formula $[][][][] [][][][][] [] [] [][][][][][] [][] []
  []
 
 
-Underfull \hbox (badness 1418) in paragraph at lines 1147--1149
+Underfull \hbox (badness 1418) in paragraph at lines 1104--1106
 []\TU/lmr/m/n/10 Real/imaginary parts of analytic functions are harmonic (Cauchy–
  []
 
 
-Underfull \hbox (badness 1142) in paragraph at lines 1147--1149
+Underfull \hbox (badness 1142) in paragraph at lines 1104--1106
 \TU/lmr/m/n/10 Riemann $[]$ Laplace’s equation); harmonic conjugates exist locally
  []
 
 
-Underfull \hbox (badness 1097) in paragraph at lines 1147--1149
+Underfull \hbox (badness 1097) in paragraph at lines 1104--1106
 \TU/lmr/m/n/10 (globally on simply connected domains, via a path integral that’s
  []
 
-[33]
+[32] [33] [34
+
+]
+Chapter 6.
+File: _main_files/fig/koebe_function_mapping.png Graphic file (type bmp)
+<_main_files/fig/koebe_function_mapping.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1139--1141
+[]
+ []
+
+[35] [36] [37] [38] [39] [40]
+Overfull \hbox (42.01826pt too wide) in paragraph at lines 1307--1308
+[]\TU/lmr/m/n/10 The proof rests on an integral-means lemma. Define $[][][][][] [][] [] [][]$. 
+ []
+
+[41]
+Overfull \hbox (25.3792pt too wide) detected at line 1335
+[][][][][] [] [] [][] [][][][][][][][] [][] [] [] [] [][][][][][][] [][] [] [] [] [][] [] [] [] [][]\U/msa/m/n/10 ^^D
+ []
+
+[42]
+Chapter 7.
+File: _main_files/fig/pic 6 (1).jpg Graphic file (type bmp)
+<_main_files/fig/pic 6 (1).jpg>
+
+Overfull \hbox (39.37547pt too wide) in paragraph at lines 1355--1356
+[][]\TU/lmr/m/n/10 “‘ 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[43
+
+]
 No file _main.bbl.
-[34] (./_main.aux)
+[44] (./_main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 17724 strings out of 470147
- 326158 string characters out of 5475586
- 884286 words of memory out of 5000000
- 46072 multiletter control sequences out of 15000+600000
- 634244 words of font info for 102 fonts, out of 8000000 for 9000
+ 17755 strings out of 470147
+ 326898 string characters out of 5475586
+ 888629 words of memory out of 5000000
+ 46104 multiletter control sequences out of 15000+600000
+ 634228 words of font info for 100 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 90i,9n,114p,843b,549s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,11n,114p,843b,549s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on _main.pdf (34 pages).
+Output written on _main.pdf (44 pages).

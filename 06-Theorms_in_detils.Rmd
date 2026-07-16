@@ -1,0 +1,12 @@
+# Important Theorems 
+
+```{theorem,name="Montel Theorem",label="montel"}
+Every locally bounded family of analytic functions is normal.
+```
+
+```{proof}
+![](fig\pic 6 (2).jpg)
+![](fig\pic 6 (3).jpg)
+#![](fig\pic 6 (4).jpg)
+#![](fig\pic 6 (1).jpg)
+```

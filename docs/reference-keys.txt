@@ -13,6 +13,7 @@ def:unnamed-chunk-19
 def:unnamed-chunk-20
 fig:comprehensive-curves-grid
 thm:unnamed-chunk-21
+thm:montel
 introduction
 why-complex-numbers
 complex-numbers
@@ -60,3 +61,4 @@ the-area-theorem
 growth-and-distortion-theorems
 coefficient-estimates
 where-the-excerpt-trails-off
+important-theorems

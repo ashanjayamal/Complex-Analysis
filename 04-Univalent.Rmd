@@ -216,7 +216,7 @@ Then: linear fractional (Möbius) transformations map "circles" (circles-or-line
 
 - **Normal family**: every sequence has a locally-uniformly-convergent subsequence (this is the complex-analytic analogue of Bolzano–Weierstrass).
 - **Local boundedness** (uniformly bounded on compacts) $\Rightarrow$ (via Cauchy's formula) the derivatives are also locally bounded.
-- **Montel's theorem**: locally bounded $\Rightarrow$ normal. Proved by a diagonal argument: converge on a countable dense set, then use local boundedness (via the Cauchy estimate) to upgrade pointwise convergence on a dense set to uniform convergence on compacts  essentially Arzelà–Ascoli done by hand.
+- **Montel's theorem**: locally bounded $\Rightarrow$ normal. (See \@ref(thm:montel))Proved by a diagonal argument: converge on a countable dense set, then use local boundedness (via the Cauchy estimate) to upgrade pointwise convergence on a dense set to uniform convergence on compacts  essentially Arzelà–Ascoli done by hand.
 - Converse also holds: normal $\Rightarrow$ locally bounded.
 - **Vitali's theorem**: for a normal family, convergence at just a set of points *with an accumulation point* in $D$ already forces full locally-uniform convergence. (Proof: any two subsequential limits must agree on the accumulation set, hence agree everywhere by uniqueness.)
 

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Complex Analysis</title>
+  <title>Chapter 7 Important Theorems | Complex Analysis</title>
   <meta name="description" content="This is just a test" />
   <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Complex Analysis" />
+  <meta property="og:title" content="Chapter 7 Important Theorems | Complex Analysis" />
   <meta property="og:type" content="book" />
   <meta property="og:image" content="https://ashanjayamal.github.io/Complex-Analysis/fig/cover.png" />
   <meta property="og:description" content="This is just a test" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Complex Analysis" />
+  <meta name="twitter:title" content="Chapter 7 Important Theorems | Complex Analysis" />
   
   <meta name="twitter:description" content="This is just a test" />
   <meta name="twitter:image" content="https://ashanjayamal.github.io/Complex-Analysis/fig/cover.png" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="elementary-theory-of-univalent-functions.html"/>
 
-<link rel="next" href="complex-numbers.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -163,33 +163,32 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Complex Analysis</h1>
-<p class="author"><em>Ashan Jayamal</em></p>
-<p class="date"><em>2026-07-16</em></p>
+<div id="important-theorems" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Important Theorems<a href="important-theorems.html#important-theorems" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="theorem">
+<p><span id="thm:montel" class="theorem"><strong>Theorem 7.1  (Montel Theorem) </strong></span>Every locally bounded family of analytic functions is normal.</p>
 </div>
-<div id="introduction" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction<a href="index.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Ask someone what the square root of 4 is, and they will not hesitate: 2. Ask for the square root of −1, and something interesting happens. Most people pause, then say some version of the same thing: <em>that doesn’t exist.</em></p>
-<p>They are not wrong to hesitate. For over a thousand years, some of the sharpest minds in mathematics agreed with them. A number that, when multiplied by itself, gives a negative result seemed less like a number and more like a contradiction a hole in the number line where nothing should be allowed to stand. When the number finally forced its way into mathematics, it did not arrive through some philosopher’s curiosity about the impossible. It arrived because mathematicians doing ordinary, practical work solving cubic equations with three perfectly good, perfectly real solutions found that the only way to reach those real answers was to pass, briefly, through square roots of negative numbers. The imaginary was not a detour around the real. It turned out to be sewn into it.</p>
-<p>This book is about that number, and the strange, beautiful mathematics that grew up around it.</p>
-<p>I want to be honest about something before we start: I did not always find complex numbers beautiful. For a long time they felt like a trick a symbol, <span class="math inline">\(i\)</span>, invented so that certain equations would stop being unsolvable, defined by little more than the rule <span class="math inline">\(i^2 = -1\)</span> and otherwise left to behave like an ordinary number. It took years of study, first as a student and now as a researcher in complex analysis, before I understood what was actually being offered: not a patch, but a second dimension. The moment you accept <span class="math inline">\(i\)</span>, the number line which had felt complete, self-sufficient, the whole of arithmetic turns out to have been only one axis of a much larger plane. Numbers stop being points on a line and become points in a plane, and multiplication, of all things, becomes rotation.</p>
-<p>If you grew up here in Sri Lanka, you may already have an intuition for this kind of shift in perspective, even if no one called it mathematics. Think of the geometric repetition in a batik pattern, or the way a <em>rasam pot’s</em> shadow rotates through the day, or the careful symmetry worked into a <em>vesak koodu</em>. Rotation, reflection, repetition with variation these are not decorations on top of mathematics. They are mathematics, and complex numbers turn out to be the precise language for describing them. By the time we reach the middle of this book, you will see multiplication by <span class="math inline">\(i\)</span> the way you already see a quarter-turn of a lantern: not as an abstract operation, but as a motion you can picture.</p>
-<p>We will take the historical route, because I think it is the honest one. Real numbers themselves the ones you already trust were not always on solid ground. The Pythagoreans were shaken to discover that <span class="math inline">\(\sqrt{2}\)</span> could not be written as a fraction. Indian mathematicians, including Brahmagupta in the seventh century, were the first to write down clear arithmetic rules for negative numbers and zero, centuries before Europe caught up. The Kerala school, working in South India in the 14th to 16th centuries, developed infinite series for trigonometric functions long before calculus had a name in the West. None of this was inevitable or obvious at the time. Every number system we now take for granted negative, irrational, real, and eventually imaginary was once controversial, resisted, or simply unnamed.</p>
-<p>So we will not start with a definition of <span class="math inline">\(i\)</span> and a list of rules to memorize. We will start with the crisis that made it necessary, follow the mathematicians who fought over what to make of it, and only then turn to the elegant plane, the rotations, and the surprising places electrical engineering, quantum mechanics, the shape of fractals where this once-imaginary number turns out to be indispensable.</p>
-<p>By the end, I hope <span class="math inline">\(\sqrt{-1}\)</span> will feel less like an exception to arithmetic and more like the moment arithmetic finally became honest about its own shape.</p>
-<div id="why-complex-numbers" class="section level3 hasAnchor" number="1.0.1">
-<h3><span class="header-section-number">1.0.1</span> Why Complex Numbers<a href="index.html#why-complex-numbers" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="proof">
+<p><span id="unlabeled-div-3" class="proof"><em>Proof</em>. </span><img src="fig/pic%206%20(2).jpg" />
+<img src="fig/pic%206%20(3).jpg" />
+#<img src="fig/pic%206%20(4).jpg" />
+#<img src="fig/pic%206%20(1).jpg" /></p>
+</div>
 
 </div>
-</div>
+
+
+
+
+
+
             </section>
 
           </div>
         </div>
       </div>
+<a href="elementary-theory-of-univalent-functions.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="complex-numbers.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -220,7 +219,7 @@ gitbook.start({
     "size": 2
   },
   "edit": {
-    "link": "https://github.com/ashanjaymal/Complex-Analysis/edit/main/index.Rmd",
+    "link": "https://github.com/ashanjaymal/Complex-Analysis/edit/main/06-Theorms_in_detils.Rmd",
     "text": "Edit"
   },
   "history": {
