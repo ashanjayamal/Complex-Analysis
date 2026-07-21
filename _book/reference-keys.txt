@@ -65,3 +65,5 @@ where-the-excerpt-trails-off
 important-theorems
 thm:unnamed-chunk-3
 introduction-the-class-s
+eq:e1
+eq:e2

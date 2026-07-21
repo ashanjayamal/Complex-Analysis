@@ -7,8 +7,6 @@ Every locally bounded family of analytic functions is normal.
 ```{proof}
 ![](fig\pic 6 (2).jpg)
 ![](fig\pic 6 (3).jpg)
-#![](fig\pic 6 (4).jpg)
-#![](fig\pic 6 (1).jpg)
 ```
 
 ```{theorem}
@@ -18,17 +16,16 @@ Suppose \( f(z) = g(z) \) for all \( z \in \Gamma \).
 Then \( f \) has an analytic continuation \( F \) to \( D \cup \Gamma \cup \Delta \) with \( F(z) = g(z) \) in \( \Delta \).
 ```
 ```{proof}
+<div style="display: flex; gap: 2px;">
+<div style="flex: 1;">
+It must be shown that the function \( F \) defined as above is actually analytic on \( \Gamma \). Given a point \( z_{0} \in \Gamma \), choose Jordan arcs \( C_{1} \subset D \) and \( C_{2} \subset \Delta \) with common endpoints on \( \Gamma \) whose union \( C = C_{1} \cup C_{2} \) is a Jordan curve enclosing \( z_{0} \). Let \( \gamma \) be the subarc of \( \Gamma \) inside \( C \). Let \( D^{*} \) and \( \Delta^{*} \) be the subdomains of \( D \) and \( \Delta \) enclosed by the Jordan curves \( J_{1} = C_{1} \cup \gamma \) and \( J_{2} = C_{2} \cup (-\gamma) \), respectively.
+</div>
+<div style="flex: 1;">
+![Image Credit: Duren's book](fig/pic 7.png){width=90%}
+</div>
+</div>
 
-It must be shown that the function \( F \) defined as above is actually
-analytic on \( \Gamma \). Given a point \( z_{0} \in \Gamma \), choose
-Jordan arcs \( C_{1} \subset D \) and \( C_{2} \subset \Delta \) with
-common endpoints on \( \Gamma \) whose union \( C = C_{1} \cup C_{2} \)
-is a Jordan curve enclosing \( z_{0} \). Let \( \gamma \) be the subarc
-of \( \Gamma \) inside \( C \). Let \( D^{*} \) and \( \Delta^{*} \) be
-the subdomains of \( D \) and \( \Delta \) enclosed by the Jordan curves
-\( J_{1} = C_{1} \cup \gamma \) and \( J_{2} = C_{2} \cup \gamma \),
-respectively.
-![Image Credit: Duren's book](fig/pic 7.png)
+
 By the extended version of Cauchy's theorem,
 
 
@@ -53,7 +50,29 @@ g(z), & z \in \Delta^{*}.
 \end{cases}
 \]
 
+- For $f(z)$:
+\begin{equation}
+\frac{1}{2\pi i} \int_{J_1} \frac{f(\zeta)}{\zeta - z} d\zeta = \frac{1}{2\pi i} \left( \int_{C_1} \frac{f(\zeta)}{\zeta - z} d\zeta + \int_{\gamma} \frac{f(\zeta)}{\zeta - z} d\zeta \right) (\#eq:e1)
+\end{equation}
 
+- For $g(z)$:
+  
+\begin{equation}
+\frac{1}{2\pi i} \int_{J_2} \frac{g(\zeta)}{\zeta - z} d\zeta
+= \frac{1}{2\pi i} \left( \int_{C_2} \frac{g(\zeta)}{\zeta - z} d\zeta
++ \int_{-\gamma} \frac{g(\zeta)}{\zeta - z} d\zeta \right)
+ (\#eq:e2)
+\end{equation}
+
+Then \@ref(eq:e1)+\@ref(eq:e1),
+
+\begin{eqnarray}
+& \frac{1}{2\pi i} \left(\int_{J_1} \frac{f(\zeta)}{\zeta - z} d\zeta
+  +\int_{J_2} \frac{g(\zeta)}{\zeta - z} d\zeta\right) \\
+&= \frac{1}{2\pi i} \left( \int_{C_1} \frac{f(\zeta)}{\zeta - z} d\zeta + \int_{\gamma} \frac{f(\zeta)}{\zeta - z} d\zeta + \int_{C_2} \frac{g(\zeta)}{\zeta - z} d\zeta + \int_{-\gamma} \frac{g(\zeta)}{\zeta - z} d\zeta \right)\\
+&= \frac{1}{2\pi i} \left( \int_{C_1} \frac{f(\zeta)}{\zeta - z} d\zeta + \int_{\gamma} \frac{f(\zeta)}{\zeta - z} d\zeta + \int_{C_2} \frac{g(\zeta)}{\zeta - z} d\zeta + \int_{-\gamma} \frac{g(\zeta)}{\zeta - z} d\zeta \right)\\
+
+\end{eqnarray}
 
 Because \( f(\zeta) = g(\zeta) \) on \( \Gamma \), the two integrals may
 be added to produce
@@ -69,6 +88,18 @@ throughout the domain \( D^{*} \cup \gamma \cup \Delta^{*} \) bounded by \( C \)
 In particular, \( F \) is analytic at \( z_{0} \). Since \( z_{0} \) was an
 arbitrary point of \( \Gamma \), this proves the theorem.
 
+\begin{eqnarray*}
+& = & \frac{1}{2\pi i} \left( \int_{J_1} \frac{f(\xi)}{(\xi - z)} \, d\xi + \int_{J_2} \frac{g(\xi)}{(\xi - z)} \, d\xi \right) \\
+& = & \frac{1}{2\pi i} \left( \int_{C_1} \frac{f(\xi)}{(\xi - z)} \, d\xi + \int_{\gamma} \frac{f(\xi)}{(\xi - z)} \, d\xi + \int_{C_2} \frac{g(\xi)}{(\xi - z)} \, d\xi + \int_{-\gamma} \frac{g(\xi)}{(\xi - z)} \, d\xi \right) \\
+& = & \frac{1}{2\pi i} \left( \int_{C_1} \frac{f(\xi)}{(\xi - z)} \, d\xi + \int_{C_2} \frac{g(\xi)}{(\xi - z)} \, d\xi + \int_{\gamma} \frac{f(\xi)}{(\xi - z)} \, d\xi - \int_{\gamma} \frac{g(\xi)}{(\xi - z)} \, d\xi \right) \quad \left( \because \int_{-\gamma} d\xi = -\int_{\gamma} d\xi \right) \\
+& = & \frac{1}{2\pi i} \left( \int_{C_1} \frac{f(\xi)}{(\xi - z)} \, d\xi + \int_{C_2} \frac{g(\xi)}{(\xi - z)} \, d\xi + \int_{\gamma} \frac{f(\xi)}{(\xi - z)} \, d\xi - \int_{\gamma} \frac{f(\xi)}{(\xi - z)} \, d\xi \right) \quad \left( \because f(\xi) = g(\xi) \text{ on } \gamma \right) \\
+& = & \frac{1}{2\pi i} \left( \int_{C_1} \frac{f(\xi)}{(\xi - z)} \, d\xi + \int_{C_2} \frac{g(\xi)}{(\xi - z)} \, d\xi \right) \\
+& = & \frac{1}{2\pi i} \int_{C} \frac{F(\xi)}{(\xi - z)} \, d\xi \quad \left( \because \begin{array}{ll} F(\xi) = f(\xi) & \text{on } C_1 \\ F(\xi) = g(\xi) & \text{on } C_2 \\ C_1 \cup C_2 = C & \end{array} \right) \\
+& = & F(\xi)\quad \text{ for } z \in D^* \cup \Delta^*.
+\end{eqnarray*}
+
+
+But this last integral is analytic throughout the domain $D^* \cup \gamma \cup \Delta^*$ bounded by $C$. In particular, $F$ is analytic at $z_0$. Since $z_0$ was an arbitrary point of $\Gamma$, this proves the theorem.
 
 
 ```

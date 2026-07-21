@@ -36,46 +36,6 @@
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
 \makeatother
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\usepackage{framed}
-\definecolor{shadecolor}{RGB}{248,248,248}
-\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\BuiltInTok}[1]{#1}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
-\newcommand{\ExtensionTok}[1]{#1}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\ImportTok}[1]{#1}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\NormalTok}[1]{#1}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs,array}
 \newcounter{none} % for unnumbered tables
 \usepackage{calc} % for calculating minipage widths
@@ -119,7 +79,7 @@
 
 \title{Complex Analysis}
 \author{Ashan Jayamal}
-\date{2026-07-16}
+\date{2026-07-19}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -1044,7 +1004,7 @@ Then: linear fractional (Möbius) transformations map ``circles'' (circles-or-li
 \item
   \textbf{Local boundedness} (uniformly bounded on compacts) \(\Rightarrow\) (via Cauchy's formula) the derivatives are also locally bounded.
 \item
-  \textbf{Montel's theorem}: locally bounded \(\Rightarrow\) normal. Proved by a diagonal argument: converge on a countable dense set, then use local boundedness (via the Cauchy estimate) to upgrade pointwise convergence on a dense set to uniform convergence on compacts essentially Arzelà--Ascoli done by hand.
+  \textbf{Montel's theorem}: locally bounded \(\Rightarrow\) normal. (See \ref{thm:montel})Proved by a diagonal argument: converge on a countable dense set, then use local boundedness (via the Cauchy estimate) to upgrade pointwise convergence on a dense set to uniform convergence on compacts essentially Arzelà--Ascoli done by hand.
 \item
   Converse also holds: normal \(\Rightarrow\) locally bounded.
 \item
@@ -1342,17 +1302,66 @@ This is again ``very nearly sharp'' but not sharp; using Baernstein's inequality
 
 The chapter then pivots (§2.5) into geometrically-defined subclasses --- \textbf{convex functions} \(C\) (image is a convex domain) and \textbf{starlike functions} \(S^*\) (image starlike w.r.t. \(0\)), with \(C \subset S^* \subset S\), and the Koebe function itself is starlike but not convex. This sets up the class \(P\) of functions with positive real part (Carathéodory functions) via the Herglotz/Poisson--Stieltjes representation --- the tool that will let you prove the Bieberbach conjecture \emph{sharply} within these two subclasses, which is presumably where the excerpt continues next.
 
-\chapter{06-Important Theorms}\label{important-theorms}
+\chapter{Important Theorems}\label{important-theorems}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{Every locally bounded family of analytic functions is normal.}
-\end{Highlighting}
-\end{Shaded}
+\begin{theorem}[Montel Theorem]
+\protect\hypertarget{thm:montel}{}\label{thm:montel}Every locally bounded family of analytic functions is normal.
+\end{theorem}
 
 \begin{proof}
+\pandocbounded{\includegraphics[keepaspectratio]{_main_files/fig/pic 6 (2).jpg}}
+\pandocbounded{\includegraphics[keepaspectratio]{_main_files/fig/pic 6 (3).jpg}}
+\end{proof}
 
-\pandocbounded{\includegraphics[keepaspectratio]{_main_files/fig/pic 6 (1).jpg}}```
+\begin{theorem}
+\protect\hypertarget{thm:unnamed-chunk-23}{}\label{thm:unnamed-chunk-23}Let \(D\) and \(\Delta\) be disjoint domains with a common rectifiable boundary arc \(\Gamma\).
+Let \(f\) be analytic in \(D\) and continuous in \(D \cup \Gamma\), and let \(g\) be analytic in \(\Delta\) and continuous in \(\Delta \cup \Gamma\).
+Suppose \(f(z) = g(z)\) for all \(z \in \Gamma\).
+Then \(f\) has an analytic continuation \(F\) to \(D \cup \Gamma \cup \Delta\) with \(F(z) = g(z)\) in \(\Delta\).
+\end{theorem}
+
+\begin{proof}
+\leavevmode
+
+It must be shown that the function \(F\) defined as above is actually analytic on \(\Gamma\). Given a point \(z_{0} \in \Gamma\), choose Jordan arcs \(C_{1} \subset D\) and \(C_{2} \subset \Delta\) with common endpoints on \(\Gamma\) whose union \(C = C_{1} \cup C_{2}\) is a Jordan curve enclosing \(z_{0}\). Let \(\gamma\) be the subarc of \(\Gamma\) inside \(C\). Let \(D^{*}\) and \(\Delta^{*}\) be the subdomains of \(D\) and \(\Delta\) enclosed by the Jordan curves \(J_{1} = C_{1} \cup \gamma\) and \(J_{2} = C_{2} \cup \gamma\), respectively.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.9\linewidth,height=\textheight,keepaspectratio,alt={Image Credit: Duren's book}]{_main_files/fig/pic 7.png}
+\caption{Image Credit: Duren's book}
+\end{figure}
+
+By the extended version of Cauchy's theorem,
+
+\[
+\frac{1}{2\pi i} \int_{J_{1}} \frac{f(\zeta)}{\zeta - z}\, d\zeta =
+\begin{cases}
+f(z), & z \in D^{*},\\[6pt]
+0, & z \in \Delta^{*}.
+\end{cases}
+\]
+
+Similarly,
+
+\[
+\frac{1}{2\pi i} \int_{J_{2}} \frac{g(\zeta)}{\zeta - z}\, d\zeta =
+\begin{cases}
+0, & z \in D^{*},\\[6pt]
+g(z), & z \in \Delta^{*}.
+\end{cases}
+\]
+
+Because \(f(\zeta) = g(\zeta)\) on \(\Gamma\), the two integrals may
+be added to produce
+
+\[
+\frac{1}{2\pi i} \int_{C} \frac{F(\zeta)}{\zeta - z}\, d\zeta = F(z).
+\]
+
+for \(z \in D^{*} \cup \Delta^{*}\). But this last integral is analytic
+throughout the domain \(D^{*} \cup \gamma \cup \Delta^{*}\) bounded by \(C\).
+In particular, \(F\) is analytic at \(z_{0}\). Since \(z_{0}\) was an
+arbitrary point of \(\Gamma\), this proves the theorem.
 
 \end{proof}
 

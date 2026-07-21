@@ -23,7 +23,7 @@
 <meta name="author" content="Ashan Jayamal" />
 
 
-<meta name="date" content="2026-07-16" />
+<meta name="date" content="2026-07-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -81,7 +81,7 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Complex Analysis </a></li>
+<li><a href="./">Complex Analysis</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
@@ -144,7 +144,8 @@
 </ul></li>
 <li class="chapter" data-level="7" data-path="important-theorems.html"><a href="important-theorems.html"><i class="fa fa-check"></i><b>7</b> Important Theorems</a></li>
 <li class="divider"></li>
-<li><a href="https://ashanjayamal.github.io/academicpages" target="blank">Property of Ashan Jayamal</a></li>
+<li><a href="https://ashanjayamal.github.io/academicpages" target="blank">
+Property of Ashan Jayamal</a></li>
 
 </ul>
 
@@ -170,9 +171,7 @@
 </div>
 <div class="proof">
 <p><span id="unlabeled-div-3" class="proof"><em>Proof</em>. </span><img src="fig/pic%206%20(2).jpg" />
-<img src="fig/pic%206%20(3).jpg" />
-#<img src="fig/pic%206%20(4).jpg" />
-#<img src="fig/pic%206%20(1).jpg" /></p>
+<img src="fig/pic%206%20(3).jpg" /></p>
 </div>
 <div class="theorem">
 <p><span id="thm:unnamed-chunk-23" class="theorem"><strong>Theorem 7.2  </strong></span>Let <span class="math inline">\(D\)</span> and <span class="math inline">\(\Delta\)</span> be disjoint domains with a common rectifiable boundary arc <span class="math inline">\(\Gamma\)</span>.
@@ -181,17 +180,19 @@ Suppose <span class="math inline">\(f(z) = g(z)\)</span> for all <span class="ma
 Then <span class="math inline">\(f\)</span> has an analytic continuation <span class="math inline">\(F\)</span> to <span class="math inline">\(D \cup \Gamma \cup \Delta\)</span> with <span class="math inline">\(F(z) = g(z)\)</span> in <span class="math inline">\(\Delta\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-4" class="proof"><em>Proof</em>. </span>It must be shown that the function <span class="math inline">\(F\)</span> defined as above is actually
-analytic on <span class="math inline">\(\Gamma\)</span>. Given a point <span class="math inline">\(z_{0} \in \Gamma\)</span>, choose
-Jordan arcs <span class="math inline">\(C_{1} \subset D\)</span> and <span class="math inline">\(C_{2} \subset \Delta\)</span> with
-common endpoints on <span class="math inline">\(\Gamma\)</span> whose union <span class="math inline">\(C = C_{1} \cup C_{2}\)</span>
-is a Jordan curve enclosing <span class="math inline">\(z_{0}\)</span>. Let <span class="math inline">\(\gamma\)</span> be the subarc
-of <span class="math inline">\(\Gamma\)</span> inside <span class="math inline">\(C\)</span>. Let <span class="math inline">\(D^{*}\)</span> and <span class="math inline">\(\Delta^{*}\)</span> be
-the subdomains of <span class="math inline">\(D\)</span> and <span class="math inline">\(\Delta\)</span> enclosed by the Jordan curves
-<span class="math inline">\(J_{1} = C_{1} \cup \gamma\)</span> and <span class="math inline">\(J_{2} = C_{2} \cup \gamma\)</span>,
-respectively.
-<img src="fig/pic%207.png" alt="Image Credit: Duren’s book" />
-By the extended version of Cauchy’s theorem,</p>
+<p><span id="unlabeled-div-4" class="proof"><em>Proof</em>. </span></p>
+<div style="display: flex; gap: 2px;">
+<div style="flex: 1;">
+<p>It must be shown that the function <span class="math inline">\(F\)</span> defined as above is actually analytic on <span class="math inline">\(\Gamma\)</span>. Given a point <span class="math inline">\(z_{0} \in \Gamma\)</span>, choose Jordan arcs <span class="math inline">\(C_{1} \subset D\)</span> and <span class="math inline">\(C_{2} \subset \Delta\)</span> with common endpoints on <span class="math inline">\(\Gamma\)</span> whose union <span class="math inline">\(C = C_{1} \cup C_{2}\)</span> is a Jordan curve enclosing <span class="math inline">\(z_{0}\)</span>. Let <span class="math inline">\(\gamma\)</span> be the subarc of <span class="math inline">\(\Gamma\)</span> inside <span class="math inline">\(C\)</span>. Let <span class="math inline">\(D^{*}\)</span> and <span class="math inline">\(\Delta^{*}\)</span> be the subdomains of <span class="math inline">\(D\)</span> and <span class="math inline">\(\Delta\)</span> enclosed by the Jordan curves <span class="math inline">\(J_{1} = C_{1} \cup \gamma\)</span> and <span class="math inline">\(J_{2} = C_{2} \cup (-\gamma)\)</span>, respectively.</p>
+</div>
+<div style="flex: 1;">
+<div class="float">
+<img src="fig/pic%207.png" style="width:90.0%" alt="Image Credit: Duren’s book" />
+<div class="figcaption">Image Credit: Duren’s book</div>
+</div>
+</div>
+</div>
+<p>By the extended version of Cauchy’s theorem,</p>
 <p><span class="math display">\[
 \frac{1}{2\pi i} \int_{J_{1}} \frac{f(\zeta)}{\zeta - z}\, d\zeta =
 \begin{cases}
@@ -207,6 +208,27 @@ f(z), &amp; z \in D^{*},\\[6pt]
 g(z), &amp; z \in \Delta^{*}.
 \end{cases}
 \]</span></p>
+<ul>
+<li><p>For <span class="math inline">\(f(z)\)</span>:
+<span class="math display" id="eq:e1">\[\begin{equation}
+\frac{1}{2\pi i} \int_{J_1} \frac{f(\zeta)}{\zeta - z} d\zeta = \frac{1}{2\pi i} \left( \int_{C_1} \frac{f(\zeta)}{\zeta - z} d\zeta + \int_{\gamma} \frac{f(\zeta)}{\zeta - z} d\zeta \right) \tag{7.1}
+\end{equation}\]</span></p></li>
+<li><p>For <span class="math inline">\(g(z)\)</span>:</p></li>
+</ul>
+<p><span class="math display" id="eq:e2">\[\begin{equation}
+\frac{1}{2\pi i} \int_{J_2} \frac{g(\zeta)}{\zeta - z} d\zeta
+= \frac{1}{2\pi i} \left( \int_{C_2} \frac{g(\zeta)}{\zeta - z} d\zeta
++ \int_{-\gamma} \frac{g(\zeta)}{\zeta - z} d\zeta \right)
+\tag{7.2}
+\end{equation}\]</span></p>
+<p>Then <a href="important-theorems.html#eq:e1">(7.1)</a>+<a href="important-theorems.html#eq:e1">(7.1)</a>,</p>
+<p><span class="math display">\[\begin{eqnarray}
+&amp; \frac{1}{2\pi i} \left(\int_{J_1} \frac{f(\zeta)}{\zeta - z} d\zeta
+  +\int_{J_2} \frac{g(\zeta)}{\zeta - z} d\zeta\right) \\
+&amp;= \frac{1}{2\pi i} \left( \int_{C_1} \frac{f(\zeta)}{\zeta - z} d\zeta + \int_{\gamma} \frac{f(\zeta)}{\zeta - z} d\zeta + \int_{C_2} \frac{g(\zeta)}{\zeta - z} d\zeta + \int_{-\gamma} \frac{g(\zeta)}{\zeta - z} d\zeta \right)\\
+&amp;= \frac{1}{2\pi i} \left( \int_{C_1} \frac{f(\zeta)}{\zeta - z} d\zeta + \int_{\gamma} \frac{f(\zeta)}{\zeta - z} d\zeta + \int_{C_2} \frac{g(\zeta)}{\zeta - z} d\zeta + \int_{-\gamma} \frac{g(\zeta)}{\zeta - z} d\zeta \right)\\
+
+\end{eqnarray}\]</span></p>
 <p>Because <span class="math inline">\(f(\zeta) = g(\zeta)\)</span> on <span class="math inline">\(\Gamma\)</span>, the two integrals may
 be added to produce</p>
 <p><span class="math display">\[
@@ -216,6 +238,16 @@ be added to produce</p>
 throughout the domain <span class="math inline">\(D^{*} \cup \gamma \cup \Delta^{*}\)</span> bounded by <span class="math inline">\(C\)</span>.
 In particular, <span class="math inline">\(F\)</span> is analytic at <span class="math inline">\(z_{0}\)</span>. Since <span class="math inline">\(z_{0}\)</span> was an
 arbitrary point of <span class="math inline">\(\Gamma\)</span>, this proves the theorem.</p>
+<p><span class="math display">\[\begin{eqnarray*}
+&amp; = &amp; \frac{1}{2\pi i} \left( \int_{J_1} \frac{f(\xi)}{(\xi - z)} \, d\xi + \int_{J_2} \frac{g(\xi)}{(\xi - z)} \, d\xi \right) \\
+&amp; = &amp; \frac{1}{2\pi i} \left( \int_{C_1} \frac{f(\xi)}{(\xi - z)} \, d\xi + \int_{\gamma} \frac{f(\xi)}{(\xi - z)} \, d\xi + \int_{C_2} \frac{g(\xi)}{(\xi - z)} \, d\xi + \int_{-\gamma} \frac{g(\xi)}{(\xi - z)} \, d\xi \right) \\
+&amp; = &amp; \frac{1}{2\pi i} \left( \int_{C_1} \frac{f(\xi)}{(\xi - z)} \, d\xi + \int_{C_2} \frac{g(\xi)}{(\xi - z)} \, d\xi + \int_{\gamma} \frac{f(\xi)}{(\xi - z)} \, d\xi - \int_{\gamma} \frac{g(\xi)}{(\xi - z)} \, d\xi \right) \quad \left( \because \int_{-\gamma} d\xi = -\int_{\gamma} d\xi \right) \\
+&amp; = &amp; \frac{1}{2\pi i} \left( \int_{C_1} \frac{f(\xi)}{(\xi - z)} \, d\xi + \int_{C_2} \frac{g(\xi)}{(\xi - z)} \, d\xi + \int_{\gamma} \frac{f(\xi)}{(\xi - z)} \, d\xi - \int_{\gamma} \frac{f(\xi)}{(\xi - z)} \, d\xi \right) \quad \left( \because f(\xi) = g(\xi) \text{ on } \gamma \right) \\
+&amp; = &amp; \frac{1}{2\pi i} \left( \int_{C_1} \frac{f(\xi)}{(\xi - z)} \, d\xi + \int_{C_2} \frac{g(\xi)}{(\xi - z)} \, d\xi \right) \\
+&amp; = &amp; \frac{1}{2\pi i} \int_{C} \frac{F(\xi)}{(\xi - z)} \, d\xi \quad \left( \because \begin{array}{ll} F(\xi) = f(\xi) &amp; \text{on } C_1 \\ F(\xi) = g(\xi) &amp; \text{on } C_2 \\ C_1 \cup C_2 = C &amp; \end{array} \right) \\
+&amp; = &amp; F(\xi)\quad \text{ for } z \in D^* \cup \Delta^*.
+\end{eqnarray*}\]</span></p>
+<p>But this last integral is analytic throughout the domain <span class="math inline">\(D^* \cup \gamma \cup \Delta^*\)</span> bounded by <span class="math inline">\(C\)</span>. In particular, <span class="math inline">\(F\)</span> is analytic at <span class="math inline">\(z_0\)</span>. Since <span class="math inline">\(z_0\)</span> was an arbitrary point of <span class="math inline">\(\Gamma\)</span>, this proves the theorem.</p>
 </div>
 
 </div>
