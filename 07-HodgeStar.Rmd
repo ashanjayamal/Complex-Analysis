@@ -1,0 +1,537 @@
+# Hodge Star and Differential Forms
+
+*Notes and Lecture Summaries*
+*Research Readings - 12 May, 2018*
+
+**Important**: This is not my original works, This is just a keep track of my readings**
+
+
+---
+
+## Basic $k$-Forms
+
+### Definitions and Structure
+
+```{definition,name="Basic One-Forms"}
+For each \( i \in \{1,\ldots,n\} \), the \emph{basic one-form} \( dx_i \) is the linear map \(dx_i : \mathbb{R}^n \longrightarrow \mathbb{R}\) defined by projecting a vector onto its \(i\)-th coordinate.  If \( \mathbf{u} = (u_1,\ldots,u_n) \in \mathbb{R}^n \), then
+\[
+dx_i(u_1,\ldots,u_n) = u_i.
+\]
+```
+
+### Basic $k$-Forms
+
+This algebraic understanding of the basic one-forms as linear maps allows us to define a natural generalization. Instead of looking only at linear maps, we now also define $k$-forms on $\mathbb{R}^n$. The definition relies on the determinant.
+
+```{definition,name="Basic Two-Form"}
+The basic two-form $dx_i \wedge dx_j$ takes two vectors $\mathbf{u}, \mathbf{v} \in \mathbb{R}^n$ and maps them to the following determinant:
+
+
+$$dx_i \wedge dx_j (\mathbf{u}, \mathbf{v}) = \det \begin{pmatrix} u_i & v_i \\ u_j & v_j \end{pmatrix} = u_i v_j - u_j v_i$$
+```
+
+```{definition,name="Basic Three-Forms"}
+The basic three-form $dx_i \wedge dx_j \wedge dx_k$ takes three vectors $\mathbf{u}, \mathbf{v}, \mathbf{w} \in \mathbb{R}^n$ and maps them to:
+
+
+$$dx_i \wedge dx_j \wedge dx_k (\mathbf{u}, \mathbf{v}, \mathbf{w}) = \det \begin{pmatrix} u_i & v_i & w_i \\ u_j & v_j & w_j \\ u_k & v_k & w_k \end{pmatrix}$$
+```
+
+```{definition,name="Basic $k$-Forms"}
+For $1 \le i_1 < i_2 < \dots < i_k \le n$, the basic $k$-form $dx_{i_1} \wedge \dots \wedge dx_{i_k}$ acts on $k$ vectors $\mathbf{u}^1, \dots, \mathbf{u}^k$ via:
+
+
+$$dx_{i_1} \wedge \dots \wedge dx_{i_k}(\mathbf{u}^1, \dots, \mathbf{u}^k) = \det \begin{pmatrix} u_{i_1}^1 & \dots & u_{i_1}^k \\ \vdots & \ddots & \vdots \\ u_{i_k}^1 & \dots & u_{i_k}^k \end{pmatrix}$$
+```
+
+```{lemma,name="Antisymmetry of Basic Form"}
+For any vectors $\mathbf{u}, \mathbf{v}$:
+  
+$$\begin{aligned} dx_i \wedge dx_j (\mathbf{u}, \mathbf{v}) &=-(dx_i \wedge dx_j (\mathbf{u}, \mathbf{v}))\\
+dx_i \wedge dx_i &=  0\end{aligned}$$
+```
+
+```{proof}
+For any vectors $\mathbf{u}, \mathbf{v}$:
+  
+$$\begin{aligned} dx_i \wedge dx_j (\mathbf{u}, \mathbf{v}) &= \begin{vmatrix} u_i & v_i \\ u_j & v_j \end{vmatrix} = u_i v_j - u_j v_i \\ dx_j \wedge dx_i (\mathbf{u}, \mathbf{v}) &= \begin{vmatrix} u_j & v_j \\ u_i & v_i \end{vmatrix} = u_j v_i - u_i v_j = -(dx_i \wedge dx_j (\mathbf{u}, \mathbf{v})) \end{aligned}$$
+  Thus, $dx_i \wedge dx_j = - dx_j \wedge dx_i$, which implies:
+  $$dx_i \wedge dx_i = \begin{vmatrix} u_i & v_i \\ u_i & v_i \end{vmatrix} = u_i v_i - u_i v_i = 0$$
+```
+
+### Exterior Derivative of a Function (0‑Forms)
+
+```{definition}
+Let \(f : U \subseteq \mathbb{R}^n \to \mathbb{R}\) be a smooth function.  
+Its **differential** (also called the exterior derivative of a 0‑form) is the 1‑form
+
+\[
+df = \sum_{i=1}^n \frac{\partial f}{\partial x_i}\, dx_i.
+\]
+
+In particular, for \(U \subseteq \mathbb{R}^3\),
+\[
+df = f_x\,dx + f_y\,dy + f_z\,dz.
+\]
+```
+
+
+
+### Differential Forms on Riemann Surfaces
+
+Let $M$ be a Riemann surface.
+
+* A $0$-form on $M$ is a function on $M$.
+* A $1$-form $\omega$ on $M$ is an assignment of two continuous functions $f$ and $g$ to each local coordinate $z = x + iy$ on $M$ such that $\omega = f\,dx + g\,dy$.
+* A $2$-form $\Omega$ on $M$ is an assignment of a continuous function $f$ to each local coordinate $z$ such that $f(z)\,dx \wedge dy$ is invariant under coordinate changes. That is, in terms of another local coordinate $\tilde{z}$ we have:
+
+$$\tilde{f}(\tilde{z}) = f(z(\tilde{z})) \frac{\partial(x,y)}{\partial(\tilde{x},\tilde{y})}$$
+
+
+
+where $\frac{\partial(x,y)}{\partial(\tilde{x},\tilde{y})}$ is the Jacobian determinant.
+
+```{definition,name="Exterior Derivative of a $k$-form)"}
+The exterior derivative of a $k$-form $\omega = \sum f_{i_1 \dots i_k} dx_{i_1} \wedge \dots \wedge dx_{i_k}$ on $U \subseteq \mathbb{R}^n$ is the $(k+1)$-form $d\omega$ given by:
+
+
+$$d\omega = \sum_{1 \le i_1 < \dots < i_k \le n} d(f_{i_1 \dots i_k}) \wedge dx_{i_1} \wedge \dots \wedge dx_{i_k}$$
+
+
+where $d(f_{i_1 \dots i_k})$ means the exterior derivative of the function ($0$-form).
+```
+
+### $k$-Forms in $\mathbb{R}^3$
+
+```{definition,name="Forms in R3"}
+Let $U \subseteq \mathbb{R}^3$ be an open subset.
+
+1. A **zero-form** is a smooth function $f: U \to \mathbb{R}$.
+2. A **one-form** is an expression $f\,dx + g\,dy + h\,dz$ for smooth functions $f,g,h: U \to \mathbb{R}$.
+3. A **two-form** is an expression $f\,dy \wedge dz + g\,dz \wedge dx + h\,dx \wedge dy$ for smooth functions $f,g,h: U \to \mathbb{R}$.
+4. A **three-form** is an expression $f\,dx \wedge dy \wedge dz$ for a smooth function $f: U \to \mathbb{R}$.
+```
+
+
+
+### $k$-Forms and Vector Calculus
+
+There is a natural correspondence between differential forms in $\mathbb{R}^3$ and concepts from vector calculus:
+
+| Form Degree | Differential Form | Vector Calculus Concept |
+| --- | --- | --- |
+| $0$-form | Function $f$ | Scalar Field $f$ |
+| $1$-form | $f\,dx + g\,dy + h\,dz$ | Vector Field $\mathbf{F} = (f,g,h)$ |
+| $2$-form | $f\,dy \wedge dz + g\,dz \wedge dx + h\,dx \wedge dy$ | Vector Field $\mathbf{F} = (f,g,h)$ |
+| $3$-form | $f\,dx \wedge dy \wedge dz$ | Scalar Field $f$ |
+
+
+```{example}
+Show that \(dz \wedge dx \wedge dy = dx \wedge dy \wedge dz.\)
+```
+
+**Solution**
+Using antisymmetry of the wedge product,
+
+
+\[
+dz \wedge dx = -\, dx \wedge dz,
+\qquad
+dz \wedge dy = -\, dy \wedge dz.
+\]
+
+
+Thus,
+
+
+\[
+dz \wedge dx \wedge dy
+= -\, dx \wedge dz \wedge dy
+= dx \wedge dy \wedge dz.
+\]
+
+```{example}
+List the independent non-vanishing basic $k$-forms in $\mathbb{R}^4$.
+```
+
+**Solution**: 
+Because of antisymmetry, the only non-vanishing basic $k$-forms in 
+$\mathbb{R}^4$ occur for $k \le 4$.
+
+- *Basic one-forms*:
+
+
+\[
+dx_1,\quad dx_2,\quad dx_3,\quad dx_4.
+\]
+
+
+- *Basic two-forms:*
+
+
+\[
+dx_1 \wedge dx_2,\quad
+dx_1 \wedge dx_3,\quad
+dx_1 \wedge dx_4,\quad
+dx_2 \wedge dx_3,\quad
+dx_2 \wedge dx_4,\quad
+dx_3 \wedge dx_4.
+\]
+
+- *Basic three-forms*:
+
+
+\[
+dx_1 \wedge dx_2 \wedge dx_3,\quad
+dx_1 \wedge dx_2 \wedge dx_4,\quad
+dx_1 \wedge dx_3 \wedge dx_4,\quad
+dx_2 \wedge dx_3 \wedge dx_4.
+\]
+
+
+
+- *Basic four-form*:
+
+
+\[
+dx_1 \wedge dx_2 \wedge dx_3 \wedge dx_4.
+\]
+
+
+
+There is only one independent basic four-form, since repeated factors 
+would make the wedge product vanish.
+
+```{example}
+Write down the vector field $F : \mathbb{R}^3 \to \mathbb{R}^3$ associated to the two-form
+
+
+\[
+\omega = xy\, dx \wedge dy + xyz\, dx \wedge dz + x^2\, dy \wedge dz.
+\]
+
+
+```
+
+**solution**:
+A general two-form in $\mathbb{R}^3$ can be written as
+
+
+\[
+\omega = f\, dy \wedge dz + g\, dz \wedge dx + h\, dx \wedge dy,
+\]
+
+
+and it corresponds to the vector field $(f, g, h)$.
+
+Rewrite $\omega$ in this order:
+
+
+\[
+\omega = x^2\, dy \wedge dz - xyz\, dz \wedge dx + xy\, dx \wedge dy.
+\]
+
+
+
+Thus the associated vector field is
+
+
+\[
+F(x,y,z) = (x^2,\; -xyz,\; xy).
+\]
+
+
+```{example}
+Let $\omega = dx \wedge dz$ be a basic two-form on $\mathbb{R}^3$, and let 
+$u = (1,2,3)$ and $v = (3,2,1)$. Evaluate $\omega(u,v)$.
+```
+
+**solution**: 
+We compute
+
+
+\[
+\omega(u,v) = (dx \wedge dz)(u,v)
+= 
+\begin{vmatrix}
+u_1 & v_1 \\
+u_3 & v_3
+\end{vmatrix}
+=
+\begin{vmatrix}
+1 & 3 \\
+3 & 1
+\end{vmatrix}
+= 1 - 9 = -8.
+\]
+
+
+```{example}
+Let $\omega = dx \wedge dy \wedge dz$ be the basic three-form on $\mathbb{R}^3$.
+
+a) Show that $\omega(u,v,w)=1$ for $u=(1,0,0)$, $v=(0,1,0)$, $w=(0,0,1)$.
+b) Show that $\omega(v,u,w)=-1$.
+c) Show that exactly three orderings of $(u,v,w)$ give $+1$ and three give $-1$.
+```
+
+**solution**
+(a) We compute
+
+
+\[
+\omega(u,v,w)
+=
+\begin{vmatrix}
+u_1 & v_1 & w_1 \\
+u_2 & v_2 & w_2 \\
+u_3 & v_3 & w_3
+\end{vmatrix}
+=
+\begin{vmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{vmatrix}
+= 1.
+\]
+
+
+
+(b) Swapping $u$ and $v$ exchanges two columns of the determinant:
+
+
+\[
+\omega(v,u,w)
+=
+\begin{vmatrix}
+v_1 & u_1 & w_1 \\
+v_2 & u_2 & w_2 \\
+v_3 & u_3 & w_3
+\end{vmatrix}
+=
+- 
+\begin{vmatrix}
+u_1 & v_1 & w_1 \\
+u_2 & v_2 & w_2 \\
+u_3 & v_3 & w_3
+\end{vmatrix}
+= -1.
+\]
+
+
+
+(c) Any permutation of $(u,v,w)$ corresponds to permuting the columns of the determinant.  
+An **even** number of column swaps preserves the sign; an **odd** number reverses it.
+
+Thus the following three orderings give $+1$:
+
+
+\[
+(u,v,w),\quad (w,u,v),\quad (v,w,u),
+\]
+
+
+and the following three give $-1$:
+
+
+\[
+(v,u,w),\quad (w,v,u),\quad (u,w,v).
+\]
+
+
+
+This follows from the fact that swapping two columns of a determinant multiplies it by $-1$.
+
+
+
+---
+
+## Wedge Product
+
+```{definition,name="Wedge Product"}
+Consider a simple $k$-form $\omega$ and a simple $m$-form $\eta$ on an open
+subset $U \subseteq \mathbb{R}^n$ of the form
+
+
+\[
+\omega = f\, dx_{i_1} \wedge \cdots \wedge dx_{i_k}, 
+\qquad
+\eta = g\, dx_{j_1} \wedge \cdots \wedge dx_{j_m},
+\]
+
+
+for smooth functions $f, g : U \to \mathbb{R}$.
+
+The \emph{wedge product} $\omega \wedge \eta$ is the $(k+m)$-form defined by
+
+
+\[
+\omega \wedge \eta
+= fg\, dx_{i_1} \wedge \cdots \wedge dx_{i_k}
+      \wedge dx_{j_1} \wedge \cdots \wedge dx_{j_m}.
+\]
+
+
+
+Note that the order of the $dx_i$'s is important, since exchanging two
+differentials introduces a sign by antisymmetry.
+
+The wedge product of arbitrary $k$- and $m$-forms is defined by linearity,
+i.e.\ by distributing the wedge product term-by-term over sums.
+```
+
+
+**Definition (Wedge Product):**
+The wedge product $\wedge$ combines a $k$-form and an $m$-form to yield a $(k+m)$-form. It is associative, bilinear, and satisfies graded commutativity:
+
+
+$$\omega \wedge \eta = (-1)^{km} \eta \wedge \omega$$
+
+### Examples of Wedge Product
+
+**Example (Wedge product of two 1-forms):**
+Let $\omega = x\,dx + x\,dy + e^z\,dz$ and $\eta = y\,dx + x\,dy + z\,dz$. Then:
+
+
+$$\begin{aligned} \omega \wedge \eta &= (x\,dx + x\,dy + e^z\,dz) \wedge (y\,dx + x\,dy + z\,dz) \\ &= (x^2 - xy)\,dx \wedge dy + (xz + e^z y)\,dz \wedge dx + (xz - e^z x)\,dz \wedge dy \end{aligned}$$
+
+**Example (Wedge product of a 1-form and a 2-form):**
+Let $\omega = xy\,dx + y\,dy$ and $\eta = z\,dy \wedge dz$. Then:
+
+
+$$\omega \wedge \eta = (xy\,dx + y\,dy) \wedge (z\,dy \wedge dz) = xyz\,dx \wedge dy \wedge dz$$
+
+**Lemma:**
+Let $\mathbf{F}, \mathbf{G}$ be vector fields associated with $1$-forms $\omega_1, \eta_2$ in $\mathbb{R}^3$:
+
+
+$$\begin{aligned} \omega_1 &= f_1\,dx + f_2\,dy + f_3\,dz \quad \longleftrightarrow \quad \mathbf{F} = (f_1, f_2, f_3) \\ \eta_2 &= g_1\,dx + g_2\,dy + g_3\,dz \quad \longleftrightarrow \quad \mathbf{G} = (g_1, g_2, g_3) \end{aligned}$$
+
+
+Then $\omega_1 \wedge \eta_2$ corresponds to the cross product $\mathbf{F} \times \mathbf{G}$.
+
+---
+
+## Exterior Derivative
+
+**Lemma (Graded Product Rule):**
+For a $k$-form $\omega$ and an $m$-form $\eta$:
+
+
+$$d(\omega \wedge \eta) = d\omega \wedge \eta + (-1)^k \omega \wedge d\eta$$
+
+**Theorem (Property $d^2 = 0$):**
+For any differential form $\omega$:
+
+
+$$d(d\omega) = d^2\omega = 0$$
+
+### Grad, Curl, and Div Connection
+
+**Definition (Gradient):**
+For a $0$-form $f$:
+
+
+$$df = \frac{\partial f}{\partial x}dx + \frac{\partial f}{\partial y}dy + \frac{\partial f}{\partial z}dz \quad \longleftrightarrow \quad \nabla f = \left(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z}\right)$$
+
+**Definition (Curl):**
+For a $1$-form $\omega = f_1\,dx + f_2\,dy + f_3\,dz$, the $2$-form $d\omega$ corresponds to $\nabla \times \mathbf{F}$:
+
+
+$$d\omega = \left(\frac{\partial f_3}{\partial y} - \frac{\partial f_2}{\partial z}\right)dy \wedge dz + \left(\frac{\partial f_1}{\partial z} - \frac{\partial f_3}{\partial x}\right)dz \wedge dx + \left(\frac{\partial f_2}{\partial x} - \frac{\partial f_1}{\partial y}\right)dx \wedge dy$$
+
+**Definition (Divergence):**
+For a $2$-form $\eta = f_1\,dy \wedge dz + f_2\,dz \wedge dx + f_3\,dx \wedge dy$, the $3$-form $d\eta$ corresponds to $\nabla \cdot \mathbf{F}$:
+
+
+$$d\eta = \left(\frac{\partial f_1}{\partial x} + \frac{\partial f_2}{\partial y} + \frac{\partial f_3}{\partial z}\right)dx \wedge dy \wedge dz$$
+
+---
+
+## The Hodge Star Operator
+
+**Definition (Hodge Star Dual):**
+Let $\omega = dx_{i_1} \wedge \dots \wedge dx_{i_k}$ be a basic $k$-form on $\mathbb{R}^n$. The **Hodge star dual** $*\omega$ is the unique basic $(n-k)$-form satisfying:
+
+
+$$\omega \wedge *\omega = dx_1 \wedge \dots \wedge dx_n$$
+
+
+Extended linearly, for a general $k$-form $\eta = \sum f_{i_1 \dots i_k} dx_{i_1} \wedge \dots \wedge dx_{i_k}$:
+
+
+$$*\eta = \sum f_{i_1 \dots i_k} *(dx_{i_1} \wedge \dots \wedge dx_{i_k})$$
+
+### Hodge Star in $\mathbb{R}^3$
+
+In $\mathbb{R}^3$ with standard Euclidean metric:
+
+
+$$\begin{aligned} *1 &= dx \wedge dy \wedge dz \\ *dx &= dy \wedge dz, \quad *dy = dz \wedge dx, \quad *dz = dx \wedge dy \\ *(dy \wedge dz) &= dx, \quad *(dz \wedge dx) = dy, \quad *(dx \wedge dy) = dz \\ *(dx \wedge dy \wedge dz) &= 1 \end{aligned}$$
+
+**Proposition:**
+On $k$-forms in $\mathbb{R}^n$, applying the Hodge star twice yields:
+
+
+$$**\omega = (-1)^{k(n-k)} \omega$$
+
+---
+
+## Integration, Chains, and Stokes' Theorem
+
+### Simplices and Chains
+
+* **$0$-simplex:** Point $P$.
+* **$1$-simplex:** Directed segment $\langle P_1, P_2 \rangle$.
+* **$2$-simplex:** Oriented triangle $\langle P_1, P_2, P_3 \rangle$.
+
+An $n$-chain $c$ is a formal integer linear combination of $n$-simplices:
+
+
+$$c = \sum_i m_i \sigma_i, \quad m_i \in \mathbb{Z}$$
+
+### Stokes' Theorem
+
+<div style="display: flex; align-items: center; gap: 20px;">
+
+<div style="flex: 1;">
+<strong>Theorem (Generalized Stokes' Theorem):</strong><br>
+If $\omega$ is a $C^1$ $k$-form and $D$ is a $(k+1)$-chain, then
+
+
+\[
+\int_{\partial D} \omega = \int_D d\omega.
+\]
+
+
+</div>
+
+<div style="flex: 1; text-align: center;">
+<img src="fig/LOTR.png" width="30%" alt="Image was generated by AI">
+</div>
+
+</div>
+
+---
+
+## Complex Operators and Harmonic Forms
+
+On a Riemann surface with complex coordinate $z = x + iy$:
+
+
+$$\begin{aligned} \partial f &= f_z\,dz = \frac{1}{2}(f_x - i f_y)\,dz \\ \bar{\partial} f &= f_{\bar{z}}\,d\bar{z} = \frac{1}{2}(f_x + i f_y)\,d\bar{z} \end{aligned}$$
+
+
+The exterior derivative decomposes as $d = \partial + \bar{\partial}$.
+
+**Definition (Laplacian and Harmonic Forms):**
+The Laplacian of a function $f$ is:
+
+
+$$\Delta f = (f_{xx} + f_{yy})\,dx \wedge dy = -2i\,\partial \bar{\partial} f$$
+
+
+A $1$-form $\omega$ is **harmonic** if it is locally given by $df$ where $\Delta f = 0$.
+
+**Proposition:**
+A differential form $\omega$ is harmonic if and only if it is both **closed** ($d\omega = 0$) and **co-closed** ($d*\omega = 0$).

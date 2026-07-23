@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 8 Hodge Star and Differential Forms | Complex Analysis</title>
+  <meta name="description" content="This is just a test" />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 8 Hodge Star and Differential Forms | Complex Analysis" />
+  <meta property="og:type" content="book" />
+  <meta property="og:image" content="https://ashanjayamal.github.io/Complex-Analysis/fig/cover.png" />
+  <meta property="og:description" content="This is just a test" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 8 Hodge Star and Differential Forms | Complex Analysis" />
+  
+  <meta name="twitter:description" content="This is just a test" />
+  <meta name="twitter:image" content="https://ashanjayamal.github.io/Complex-Analysis/fig/cover.png" />
+
+<meta name="author" content="Ashan Jayamal" />
+
+
+<meta name="date" content="2026-07-22" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="important-theorems.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.12.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.25.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.25.2/plotly-latest.min.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Complex Analysis</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="index.html"><a href="index.html#why-complex-numbers"><i class="fa fa-check"></i><b>1.0.1</b> Why Complex Numbers</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="complex-numbers.html"><a href="complex-numbers.html"><i class="fa fa-check"></i><b>2</b> Complex Numbers</a>
+<ul>
+<li class="chapter" data-level="2.0.1" data-path="complex-numbers.html"><a href="complex-numbers.html#basic-definitions-and-algebra"><i class="fa fa-check"></i><b>2.0.1</b> Basic Definitions and Algebra</a></li>
+<li class="chapter" data-level="2.0.2" data-path="complex-numbers.html"><a href="complex-numbers.html#arithmetic-operations"><i class="fa fa-check"></i><b>2.0.2</b> Arithmetic Operations</a></li>
+<li class="chapter" data-level="2.0.3" data-path="complex-numbers.html"><a href="complex-numbers.html#complex-conjugate"><i class="fa fa-check"></i><b>2.0.3</b> Complex Conjugate</a></li>
+<li class="chapter" data-level="2.0.4" data-path="complex-numbers.html"><a href="complex-numbers.html#absolute-value-modulus"><i class="fa fa-check"></i><b>2.0.4</b> Absolute Value (Modulus)</a></li>
+<li class="chapter" data-level="2.0.5" data-path="complex-numbers.html"><a href="complex-numbers.html#important-inequalities"><i class="fa fa-check"></i><b>2.0.5</b> Important Inequalities</a></li>
+<li class="chapter" data-level="2.0.6" data-path="complex-numbers.html"><a href="complex-numbers.html#fundamental-theorem-of-algebra"><i class="fa fa-check"></i><b>2.0.6</b> Fundamental Theorem of Algebra</a></li>
+<li class="chapter" data-level="2.1" data-path="complex-numbers.html"><a href="complex-numbers.html#geometric-representation"><i class="fa fa-check"></i><b>2.1</b> Geometric Representation</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="complex-numbers.html"><a href="complex-numbers.html#the-complex-plane"><i class="fa fa-check"></i><b>2.1.1</b> The Complex Plane</a></li>
+<li class="chapter" data-level="2.1.2" data-path="complex-numbers.html"><a href="complex-numbers.html#vector-interpretation"><i class="fa fa-check"></i><b>2.1.2</b> Vector Interpretation</a></li>
+<li class="chapter" data-level="2.1.3" data-path="complex-numbers.html"><a href="complex-numbers.html#polar-form"><i class="fa fa-check"></i><b>2.1.3</b> Polar Form</a></li>
+<li class="chapter" data-level="2.1.4" data-path="complex-numbers.html"><a href="complex-numbers.html#de-moivres-formula"><i class="fa fa-check"></i><b>2.1.4</b> De Moivre’s Formula</a></li>
+<li class="chapter" data-level="2.1.5" data-path="complex-numbers.html"><a href="complex-numbers.html#roots-of-complex-numbers"><i class="fa fa-check"></i><b>2.1.5</b> Roots of Complex Numbers</a></li>
+<li class="chapter" data-level="2.1.6" data-path="complex-numbers.html"><a href="complex-numbers.html#equations-in-the-complex-plane"><i class="fa fa-check"></i><b>2.1.6</b> Equations in the Complex Plane</a></li>
+<li class="chapter" data-level="2.1.7" data-path="complex-numbers.html"><a href="complex-numbers.html#stereographic-projection-and-the-riemann-sphere"><i class="fa fa-check"></i><b>2.1.7</b> Stereographic Projection and the Riemann Sphere</a></li>
+<li class="chapter" data-level="2.1.8" data-path="complex-numbers.html"><a href="complex-numbers.html#key-formulas-and-results"><i class="fa fa-check"></i><b>2.1.8</b> Key Formulas and Results</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="complex-numbers.html"><a href="complex-numbers.html#exercise"><i class="fa fa-check"></i><b>2.2</b> Exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="green-functions.html"><a href="green-functions.html"><i class="fa fa-check"></i><b>3</b> Green functions</a></li>
+<li class="chapter" data-level="4" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html"><i class="fa fa-check"></i><b>4</b> Riemann Surfaces.</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html#solution"><i class="fa fa-check"></i><b>4.1</b> <strong>Solution</strong>:</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html#functions-defnied-on-the-riemann-surface."><i class="fa fa-check"></i><b>4.1.1</b> Functions defnied on the Riemann Surface.</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html#the-riemann-sphere"><i class="fa fa-check"></i><b>4.2</b> The Riemann sphere</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="riemann-surfaces..html"><a href="riemann-surfaces..html#stereographic-projection-and-the-metric"><i class="fa fa-check"></i><b>4.2.1</b> Stereographic Projection and the Metric</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="univalent-functions.html"><a href="univalent-functions.html"><i class="fa fa-check"></i><b>5</b> Univalent Functions</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="univalent-functions.html"><a href="univalent-functions.html#basic-principles"><i class="fa fa-check"></i><b>5.1</b> Basic Principles</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="univalent-functions.html"><a href="univalent-functions.html#recalling-stuff-that-we-already-know"><i class="fa fa-check"></i><b>5.1.1</b> Recalling stuff that we already know?</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="univalent-functions.html"><a href="univalent-functions.html#local-mapping-properties"><i class="fa fa-check"></i><b>5.2</b> Local Mapping Properties</a></li>
+<li class="chapter" data-level="5.3" data-path="univalent-functions.html"><a href="univalent-functions.html#normal-families"><i class="fa fa-check"></i><b>5.3</b> Normal Families</a></li>
+<li class="chapter" data-level="5.4" data-path="univalent-functions.html"><a href="univalent-functions.html#extremal-problems"><i class="fa fa-check"></i><b>5.4</b> Extremal Problems</a></li>
+<li class="chapter" data-level="5.5" data-path="univalent-functions.html"><a href="univalent-functions.html#the-riemann-mapping-theorem"><i class="fa fa-check"></i><b>5.5</b> The Riemann Mapping Theorem</a></li>
+<li class="chapter" data-level="5.6" data-path="univalent-functions.html"><a href="univalent-functions.html#analytic-continuation"><i class="fa fa-check"></i><b>5.6</b> Analytic Continuation</a></li>
+<li class="chapter" data-level="5.7" data-path="univalent-functions.html"><a href="univalent-functions.html#harmonic-and-subharmonic-functions"><i class="fa fa-check"></i><b>5.7</b> Harmonic and Subharmonic Functions</a></li>
+<li class="chapter" data-level="5.8" data-path="univalent-functions.html"><a href="univalent-functions.html#greens-functions"><i class="fa fa-check"></i><b>5.8</b> Green’s Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="elementary-theory-of-univalent-functions.html"><a href="elementary-theory-of-univalent-functions.html"><i class="fa fa-check"></i><b>6</b> Elementary Theory of Univalent Functions</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="elementary-theory-of-univalent-functions.html"><a href="elementary-theory-of-univalent-functions.html#the-area-theorem"><i class="fa fa-check"></i><b>6.1</b> The Area Theorem</a></li>
+<li class="chapter" data-level="6.2" data-path="elementary-theory-of-univalent-functions.html"><a href="elementary-theory-of-univalent-functions.html#growth-and-distortion-theorems"><i class="fa fa-check"></i><b>6.2</b> Growth and Distortion Theorems</a></li>
+<li class="chapter" data-level="6.3" data-path="elementary-theory-of-univalent-functions.html"><a href="elementary-theory-of-univalent-functions.html#coefficient-estimates"><i class="fa fa-check"></i><b>6.3</b> Coefficient Estimates</a></li>
+<li class="chapter" data-level="6.4" data-path="elementary-theory-of-univalent-functions.html"><a href="elementary-theory-of-univalent-functions.html#where-the-excerpt-trails-off"><i class="fa fa-check"></i><b>6.4</b> Where the excerpt trails off</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="important-theorems.html"><a href="important-theorems.html"><i class="fa fa-check"></i><b>7</b> Important Theorems</a></li>
+<li class="chapter" data-level="8" data-path="hodge-star-and-differential-forms.html"><a href="hodge-star-and-differential-forms.html"><i class="fa fa-check"></i><b>8</b> Hodge Star and Differential Forms</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="hodge-star-and-differential-forms.html"><a href="hodge-star-and-differential-forms.html#basic-k-forms"><i class="fa fa-check"></i><b>8.1</b> Basic <span class="math inline">\(k\)</span>-Forms</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="hodge-star-and-differential-forms.html"><a href="hodge-star-and-differential-forms.html#definitions-and-structure"><i class="fa fa-check"></i><b>8.1.1</b> Definitions and Structure</a></li>
+<li class="chapter" data-level="8.1.2" data-path="hodge-star-and-differential-forms.html"><a href="hodge-star-and-differential-forms.html#basic-k-forms-1"><i class="fa fa-check"></i><b>8.1.2</b> Basic <span class="math inline">\(k\)</span>-Forms</a></li>
+<li class="chapter" data-level="8.1.3" data-path="hodge-star-and-differential-forms.html"><a href="hodge-star-and-differential-forms.html#exterior-derivative-of-a-function-0forms"><i class="fa fa-check"></i><b>8.1.3</b> Exterior Derivative of a Function (0‑Forms)</a></li>
+<li class="chapter" data-level="8.1.4" data-path="hodge-star-and-differential-forms.html"><a href="hodge-star-and-differential-forms.html#differential-forms-on-riemann-surfaces"><i class="fa fa-check"></i><b>8.1.4</b> Differential Forms on Riemann Surfaces</a></li>
+<li class="chapter" data-level="8.1.5" data-path="hodge-star-and-differential-forms.html"><a href="hodge-star-and-differential-forms.html#k-forms-in-mathbbr3"><i class="fa fa-check"></i><b>8.1.5</b> <span class="math inline">\(k\)</span>-Forms in <span class="math inline">\(\mathbb{R}^3\)</span></a></li>
+<li class="chapter" data-level="8.1.6" data-path="hodge-star-and-differential-forms.html"><a href="hodge-star-and-differential-forms.html#k-forms-and-vector-calculus"><i class="fa fa-check"></i><b>8.1.6</b> <span class="math inline">\(k\)</span>-Forms and Vector Calculus</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="hodge-star-and-differential-forms.html"><a href="hodge-star-and-differential-forms.html#wedge-product"><i class="fa fa-check"></i><b>8.2</b> Wedge Product</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="hodge-star-and-differential-forms.html"><a href="hodge-star-and-differential-forms.html#examples-of-wedge-product"><i class="fa fa-check"></i><b>8.2.1</b> Examples of Wedge Product</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="hodge-star-and-differential-forms.html"><a href="hodge-star-and-differential-forms.html#exterior-derivative"><i class="fa fa-check"></i><b>8.3</b> Exterior Derivative</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="hodge-star-and-differential-forms.html"><a href="hodge-star-and-differential-forms.html#grad-curl-and-div-connection"><i class="fa fa-check"></i><b>8.3.1</b> Grad, Curl, and Div Connection</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="hodge-star-and-differential-forms.html"><a href="hodge-star-and-differential-forms.html#the-hodge-star-operator"><i class="fa fa-check"></i><b>8.4</b> The Hodge Star Operator</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="hodge-star-and-differential-forms.html"><a href="hodge-star-and-differential-forms.html#hodge-star-in-mathbbr3"><i class="fa fa-check"></i><b>8.4.1</b> Hodge Star in <span class="math inline">\(\mathbb{R}^3\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="hodge-star-and-differential-forms.html"><a href="hodge-star-and-differential-forms.html#integration-chains-and-stokes-theorem"><i class="fa fa-check"></i><b>8.5</b> Integration, Chains, and Stokes’ Theorem</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="hodge-star-and-differential-forms.html"><a href="hodge-star-and-differential-forms.html#simplices-and-chains"><i class="fa fa-check"></i><b>8.5.1</b> Simplices and Chains</a></li>
+<li class="chapter" data-level="8.5.2" data-path="hodge-star-and-differential-forms.html"><a href="hodge-star-and-differential-forms.html#stokes-theorem"><i class="fa fa-check"></i><b>8.5.2</b> Stokes’ Theorem</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="hodge-star-and-differential-forms.html"><a href="hodge-star-and-differential-forms.html#complex-operators-and-harmonic-forms"><i class="fa fa-check"></i><b>8.6</b> Complex Operators and Harmonic Forms</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://ashanjayamal.github.io/academicpages" target="blank">
+Property of Ashan Jayamal</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Complex Analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="hodge-star-and-differential-forms" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Chapter 8</span> Hodge Star and Differential Forms<a href="hodge-star-and-differential-forms.html#hodge-star-and-differential-forms" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><em>Notes and Lecture Summaries</em>
+<em>Research Readings - 12 May, 2018</em></p>
+<p><strong>Important</strong>: This is not my original works, This is just a keep track of my readings**</p>
+<hr />
+<div id="basic-k-forms" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Basic <span class="math inline">\(k\)</span>-Forms<a href="hodge-star-and-differential-forms.html#basic-k-forms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="definitions-and-structure" class="section level3 hasAnchor" number="8.1.1">
+<h3><span class="header-section-number">8.1.1</span> Definitions and Structure<a href="hodge-star-and-differential-forms.html#definitions-and-structure" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="definition">
+<p><span id="def:unnamed-chunk-25" class="definition"><strong>Definition 8.1  (Basic One-Forms) </strong></span>For each <span class="math inline">\(i \in \{1,\ldots,n\}\)</span>, the <span class="math inline">\(dx_i\)</span> is the linear map <span class="math inline">\(dx_i : \mathbb{R}^n \longrightarrow \mathbb{R}\)</span> defined by projecting a vector onto its <span class="math inline">\(i\)</span>-th coordinate. If <span class="math inline">\(\mathbf{u} = (u_1,\ldots,u_n) \in \mathbb{R}^n\)</span>, then
+<span class="math display">\[
+dx_i(u_1,\ldots,u_n) = u_i.
+\]</span></p>
+</div>
+</div>
+<div id="basic-k-forms-1" class="section level3 hasAnchor" number="8.1.2">
+<h3><span class="header-section-number">8.1.2</span> Basic <span class="math inline">\(k\)</span>-Forms<a href="hodge-star-and-differential-forms.html#basic-k-forms-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This algebraic understanding of the basic one-forms as linear maps allows us to define a natural generalization. Instead of looking only at linear maps, we now also define <span class="math inline">\(k\)</span>-forms on <span class="math inline">\(\mathbb{R}^n\)</span>. The definition relies on the determinant.</p>
+<div class="definition">
+<p><span id="def:unnamed-chunk-26" class="definition"><strong>Definition 8.2  (Basic Two-Form) </strong></span>The basic two-form <span class="math inline">\(dx_i \wedge dx_j\)</span> takes two vectors <span class="math inline">\(\mathbf{u}, \mathbf{v} \in \mathbb{R}^n\)</span> and maps them to the following determinant:</p>
+<p><span class="math display">\[dx_i \wedge dx_j (\mathbf{u}, \mathbf{v}) = \det \begin{pmatrix} u_i &amp; v_i \\ u_j &amp; v_j \end{pmatrix} = u_i v_j - u_j v_i\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unnamed-chunk-27" class="definition"><strong>Definition 8.3  (Basic Three-Forms) </strong></span>The basic three-form <span class="math inline">\(dx_i \wedge dx_j \wedge dx_k\)</span> takes three vectors <span class="math inline">\(\mathbf{u}, \mathbf{v}, \mathbf{w} \in \mathbb{R}^n\)</span> and maps them to:</p>
+<p><span class="math display">\[dx_i \wedge dx_j \wedge dx_k (\mathbf{u}, \mathbf{v}, \mathbf{w}) = \det \begin{pmatrix} u_i &amp; v_i &amp; w_i \\ u_j &amp; v_j &amp; w_j \\ u_k &amp; v_k &amp; w_k \end{pmatrix}\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unnamed-chunk-28" class="definition"><strong>Definition 8.4  (Basic $k$-Forms) </strong></span>For <span class="math inline">\(1 \le i_1 &lt; i_2 &lt; \dots &lt; i_k \le n\)</span>, the basic <span class="math inline">\(k\)</span>-form <span class="math inline">\(dx_{i_1} \wedge \dots \wedge dx_{i_k}\)</span> acts on <span class="math inline">\(k\)</span> vectors <span class="math inline">\(\mathbf{u}^1, \dots, \mathbf{u}^k\)</span> via:</p>
+<p><span class="math display">\[dx_{i_1} \wedge \dots \wedge dx_{i_k}(\mathbf{u}^1, \dots, \mathbf{u}^k) = \det \begin{pmatrix} u_{i_1}^1 &amp; \dots &amp; u_{i_1}^k \\ \vdots &amp; \ddots &amp; \vdots \\ u_{i_k}^1 &amp; \dots &amp; u_{i_k}^k \end{pmatrix}\]</span></p>
+</div>
+<div class="lemma">
+<p><span id="lem:unnamed-chunk-29" class="lemma"><strong>Lemma 8.1  (Antisymmetry of Basic Form) </strong></span>For any vectors <span class="math inline">\(\mathbf{u}, \mathbf{v}\)</span>:</p>
+<p><span class="math display">\[\begin{aligned} dx_i \wedge dx_j (\mathbf{u}, \mathbf{v}) &amp;=-(dx_i \wedge dx_j (\mathbf{u}, \mathbf{v}))\\
+dx_i \wedge dx_i &amp;=  0\end{aligned}\]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-5" class="proof"><em>Proof</em>. </span>For any vectors <span class="math inline">\(\mathbf{u}, \mathbf{v}\)</span>:</p>
+<p><span class="math display">\[\begin{aligned} dx_i \wedge dx_j (\mathbf{u}, \mathbf{v}) &amp;= \begin{vmatrix} u_i &amp; v_i \\ u_j &amp; v_j \end{vmatrix} = u_i v_j - u_j v_i \\ dx_j \wedge dx_i (\mathbf{u}, \mathbf{v}) &amp;= \begin{vmatrix} u_j &amp; v_j \\ u_i &amp; v_i \end{vmatrix} = u_j v_i - u_i v_j = -(dx_i \wedge dx_j (\mathbf{u}, \mathbf{v})) \end{aligned}\]</span>
+Thus, <span class="math inline">\(dx_i \wedge dx_j = - dx_j \wedge dx_i\)</span>, which implies:
+<span class="math display">\[dx_i \wedge dx_i = \begin{vmatrix} u_i &amp; v_i \\ u_i &amp; v_i \end{vmatrix} = u_i v_i - u_i v_i = 0\]</span></p>
+</div>
+</div>
+<div id="exterior-derivative-of-a-function-0forms" class="section level3 hasAnchor" number="8.1.3">
+<h3><span class="header-section-number">8.1.3</span> Exterior Derivative of a Function (0‑Forms)<a href="hodge-star-and-differential-forms.html#exterior-derivative-of-a-function-0forms" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="definition">
+<p><span id="def:unnamed-chunk-31" class="definition"><strong>Definition 8.5  </strong></span>Let <span class="math inline">\(f : U \subseteq \mathbb{R}^n \to \mathbb{R}\)</span> be a smooth function.<br />
+Its <strong>differential</strong> (also called the exterior derivative of a 0‑form) is the 1‑form</p>
+<p><span class="math display">\[
+df = \sum_{i=1}^n \frac{\partial f}{\partial x_i}\, dx_i.
+\]</span></p>
+<p>In particular, for <span class="math inline">\(U \subseteq \mathbb{R}^3\)</span>,
+<span class="math display">\[
+df = f_x\,dx + f_y\,dy + f_z\,dz.
+\]</span></p>
+</div>
+</div>
+<div id="differential-forms-on-riemann-surfaces" class="section level3 hasAnchor" number="8.1.4">
+<h3><span class="header-section-number">8.1.4</span> Differential Forms on Riemann Surfaces<a href="hodge-star-and-differential-forms.html#differential-forms-on-riemann-surfaces" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let <span class="math inline">\(M\)</span> be a Riemann surface.</p>
+<ul>
+<li>A <span class="math inline">\(0\)</span>-form on <span class="math inline">\(M\)</span> is a function on <span class="math inline">\(M\)</span>.</li>
+<li>A <span class="math inline">\(1\)</span>-form <span class="math inline">\(\omega\)</span> on <span class="math inline">\(M\)</span> is an assignment of two continuous functions <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> to each local coordinate <span class="math inline">\(z = x + iy\)</span> on <span class="math inline">\(M\)</span> such that <span class="math inline">\(\omega = f\,dx + g\,dy\)</span>.</li>
+<li>A <span class="math inline">\(2\)</span>-form <span class="math inline">\(\Omega\)</span> on <span class="math inline">\(M\)</span> is an assignment of a continuous function <span class="math inline">\(f\)</span> to each local coordinate <span class="math inline">\(z\)</span> such that <span class="math inline">\(f(z)\,dx \wedge dy\)</span> is invariant under coordinate changes. That is, in terms of another local coordinate <span class="math inline">\(\tilde{z}\)</span> we have:</li>
+</ul>
+<p><span class="math display">\[\tilde{f}(\tilde{z}) = f(z(\tilde{z})) \frac{\partial(x,y)}{\partial(\tilde{x},\tilde{y})}\]</span></p>
+<p>where <span class="math inline">\(\frac{\partial(x,y)}{\partial(\tilde{x},\tilde{y})}\)</span> is the Jacobian determinant.</p>
+<div class="definition">
+<p><span id="def:unnamed-chunk-32" class="definition"><strong>Definition 8.6  (Exterior Derivative of a $k$-form)) </strong></span>The exterior derivative of a <span class="math inline">\(k\)</span>-form <span class="math inline">\(\omega = \sum f_{i_1 \dots i_k} dx_{i_1} \wedge \dots \wedge dx_{i_k}\)</span> on <span class="math inline">\(U \subseteq \mathbb{R}^n\)</span> is the <span class="math inline">\((k+1)\)</span>-form <span class="math inline">\(d\omega\)</span> given by:</p>
+<p><span class="math display">\[d\omega = \sum_{1 \le i_1 &lt; \dots &lt; i_k \le n} d(f_{i_1 \dots i_k}) \wedge dx_{i_1} \wedge \dots \wedge dx_{i_k}\]</span></p>
+<p>where <span class="math inline">\(d(f_{i_1 \dots i_k})\)</span> means the exterior derivative of the function (<span class="math inline">\(0\)</span>-form).</p>
+</div>
+</div>
+<div id="k-forms-in-mathbbr3" class="section level3 hasAnchor" number="8.1.5">
+<h3><span class="header-section-number">8.1.5</span> <span class="math inline">\(k\)</span>-Forms in <span class="math inline">\(\mathbb{R}^3\)</span><a href="hodge-star-and-differential-forms.html#k-forms-in-mathbbr3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="definition">
+<p><span id="def:unnamed-chunk-33" class="definition"><strong>Definition 8.7  (Forms in R3) </strong></span>Let <span class="math inline">\(U \subseteq \mathbb{R}^3\)</span> be an open subset.</p>
+<ol style="list-style-type: decimal">
+<li>A <strong>zero-form</strong> is a smooth function <span class="math inline">\(f: U \to \mathbb{R}\)</span>.</li>
+<li>A <strong>one-form</strong> is an expression <span class="math inline">\(f\,dx + g\,dy + h\,dz\)</span> for smooth functions <span class="math inline">\(f,g,h: U \to \mathbb{R}\)</span>.</li>
+<li>A <strong>two-form</strong> is an expression <span class="math inline">\(f\,dy \wedge dz + g\,dz \wedge dx + h\,dx \wedge dy\)</span> for smooth functions <span class="math inline">\(f,g,h: U \to \mathbb{R}\)</span>.</li>
+<li>A <strong>three-form</strong> is an expression <span class="math inline">\(f\,dx \wedge dy \wedge dz\)</span> for a smooth function <span class="math inline">\(f: U \to \mathbb{R}\)</span>.</li>
+</ol>
+</div>
+</div>
+<div id="k-forms-and-vector-calculus" class="section level3 hasAnchor" number="8.1.6">
+<h3><span class="header-section-number">8.1.6</span> <span class="math inline">\(k\)</span>-Forms and Vector Calculus<a href="hodge-star-and-differential-forms.html#k-forms-and-vector-calculus" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>There is a natural correspondence between differential forms in <span class="math inline">\(\mathbb{R}^3\)</span> and concepts from vector calculus:</p>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Form Degree</th>
+<th>Differential Form</th>
+<th>Vector Calculus Concept</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(0\)</span>-form</td>
+<td>Function <span class="math inline">\(f\)</span></td>
+<td>Scalar Field <span class="math inline">\(f\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(1\)</span>-form</td>
+<td><span class="math inline">\(f\,dx + g\,dy + h\,dz\)</span></td>
+<td>Vector Field <span class="math inline">\(\mathbf{F} = (f,g,h)\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(2\)</span>-form</td>
+<td><span class="math inline">\(f\,dy \wedge dz + g\,dz \wedge dx + h\,dx \wedge dy\)</span></td>
+<td>Vector Field <span class="math inline">\(\mathbf{F} = (f,g,h)\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(3\)</span>-form</td>
+<td><span class="math inline">\(f\,dx \wedge dy \wedge dz\)</span></td>
+<td>Scalar Field <span class="math inline">\(f\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="example">
+<p><span id="exm:unnamed-chunk-34" class="example"><strong>Example 8.1  </strong></span>Show that <span class="math inline">\(dz \wedge dx \wedge dy = dx \wedge dy \wedge dz.\)</span></p>
+</div>
+<p><strong>Solution</strong>
+Using antisymmetry of the wedge product,</p>
+<p><span class="math display">\[
+dz \wedge dx = -\, dx \wedge dz,
+\qquad
+dz \wedge dy = -\, dy \wedge dz.
+\]</span></p>
+<p>Thus,</p>
+<p><span class="math display">\[
+dz \wedge dx \wedge dy
+= -\, dx \wedge dz \wedge dy
+= dx \wedge dy \wedge dz.
+\]</span></p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-35" class="example"><strong>Example 8.2  </strong></span>List the independent non-vanishing basic <span class="math inline">\(k\)</span>-forms in <span class="math inline">\(\mathbb{R}^4\)</span>.</p>
+</div>
+<p><strong>Solution</strong>:
+Because of antisymmetry, the only non-vanishing basic <span class="math inline">\(k\)</span>-forms in
+<span class="math inline">\(\mathbb{R}^4\)</span> occur for <span class="math inline">\(k \le 4\)</span>.</p>
+<ul>
+<li><em>Basic one-forms</em>:</li>
+</ul>
+<p><span class="math display">\[
+dx_1,\quad dx_2,\quad dx_3,\quad dx_4.
+\]</span></p>
+<ul>
+<li><em>Basic two-forms:</em></li>
+</ul>
+<p><span class="math display">\[
+dx_1 \wedge dx_2,\quad
+dx_1 \wedge dx_3,\quad
+dx_1 \wedge dx_4,\quad
+dx_2 \wedge dx_3,\quad
+dx_2 \wedge dx_4,\quad
+dx_3 \wedge dx_4.
+\]</span></p>
+<ul>
+<li><em>Basic three-forms</em>:</li>
+</ul>
+<p><span class="math display">\[
+dx_1 \wedge dx_2 \wedge dx_3,\quad
+dx_1 \wedge dx_2 \wedge dx_4,\quad
+dx_1 \wedge dx_3 \wedge dx_4,\quad
+dx_2 \wedge dx_3 \wedge dx_4.
+\]</span></p>
+<ul>
+<li><em>Basic four-form</em>:</li>
+</ul>
+<p><span class="math display">\[
+dx_1 \wedge dx_2 \wedge dx_3 \wedge dx_4.
+\]</span></p>
+<p>There is only one independent basic four-form, since repeated factors
+would make the wedge product vanish.</p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-36" class="example"><strong>Example 8.3  </strong></span>Write down the vector field <span class="math inline">\(F : \mathbb{R}^3 \to \mathbb{R}^3\)</span> associated to the two-form</p>
+<p><span class="math display">\[
+\omega = xy\, dx \wedge dy + xyz\, dx \wedge dz + x^2\, dy \wedge dz.
+\]</span></p>
+</div>
+<p><strong>solution</strong>:
+A general two-form in <span class="math inline">\(\mathbb{R}^3\)</span> can be written as</p>
+<p><span class="math display">\[
+\omega = f\, dy \wedge dz + g\, dz \wedge dx + h\, dx \wedge dy,
+\]</span></p>
+<p>and it corresponds to the vector field <span class="math inline">\((f, g, h)\)</span>.</p>
+<p>Rewrite <span class="math inline">\(\omega\)</span> in this order:</p>
+<p><span class="math display">\[
+\omega = x^2\, dy \wedge dz - xyz\, dz \wedge dx + xy\, dx \wedge dy.
+\]</span></p>
+<p>Thus the associated vector field is</p>
+<p><span class="math display">\[
+F(x,y,z) = (x^2,\; -xyz,\; xy).
+\]</span></p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-37" class="example"><strong>Example 8.4  </strong></span>Let <span class="math inline">\(\omega = dx \wedge dz\)</span> be a basic two-form on <span class="math inline">\(\mathbb{R}^3\)</span>, and let
+<span class="math inline">\(u = (1,2,3)\)</span> and <span class="math inline">\(v = (3,2,1)\)</span>. Evaluate <span class="math inline">\(\omega(u,v)\)</span>.</p>
+</div>
+<p><strong>solution</strong>:
+We compute</p>
+<p><span class="math display">\[
+\omega(u,v) = (dx \wedge dz)(u,v)
+=
+\begin{vmatrix}
+u_1 &amp; v_1 \\
+u_3 &amp; v_3
+\end{vmatrix}
+=
+\begin{vmatrix}
+1 &amp; 3 \\
+3 &amp; 1
+\end{vmatrix}
+= 1 - 9 = -8.
+\]</span></p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-38" class="example"><strong>Example 8.5  </strong></span>Let <span class="math inline">\(\omega = dx \wedge dy \wedge dz\)</span> be the basic three-form on <span class="math inline">\(\mathbb{R}^3\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Show that <span class="math inline">\(\omega(u,v,w)=1\)</span> for <span class="math inline">\(u=(1,0,0)\)</span>, <span class="math inline">\(v=(0,1,0)\)</span>, <span class="math inline">\(w=(0,0,1)\)</span>.</li>
+<li>Show that <span class="math inline">\(\omega(v,u,w)=-1\)</span>.</li>
+<li>Show that exactly three orderings of <span class="math inline">\((u,v,w)\)</span> give <span class="math inline">\(+1\)</span> and three give <span class="math inline">\(-1\)</span>.</li>
+</ol>
+</div>
+<p><strong>solution</strong>
+(a) We compute</p>
+<p><span class="math display">\[
+\omega(u,v,w)
+=
+\begin{vmatrix}
+u_1 &amp; v_1 &amp; w_1 \\
+u_2 &amp; v_2 &amp; w_2 \\
+u_3 &amp; v_3 &amp; w_3
+\end{vmatrix}
+=
+\begin{vmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{vmatrix}
+= 1.
+\]</span></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Swapping <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> exchanges two columns of the determinant:</li>
+</ol>
+<p><span class="math display">\[
+\omega(v,u,w)
+=
+\begin{vmatrix}
+v_1 &amp; u_1 &amp; w_1 \\
+v_2 &amp; u_2 &amp; w_2 \\
+v_3 &amp; u_3 &amp; w_3
+\end{vmatrix}
+=
+-
+\begin{vmatrix}
+u_1 &amp; v_1 &amp; w_1 \\
+u_2 &amp; v_2 &amp; w_2 \\
+u_3 &amp; v_3 &amp; w_3
+\end{vmatrix}
+= -1.
+\]</span></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Any permutation of <span class="math inline">\((u,v,w)\)</span> corresponds to permuting the columns of the determinant.<br />
+An <strong>even</strong> number of column swaps preserves the sign; an <strong>odd</strong> number reverses it.</li>
+</ol>
+<p>Thus the following three orderings give <span class="math inline">\(+1\)</span>:</p>
+<p><span class="math display">\[
+(u,v,w),\quad (w,u,v),\quad (v,w,u),
+\]</span></p>
+<p>and the following three give <span class="math inline">\(-1\)</span>:</p>
+<p><span class="math display">\[
+(v,u,w),\quad (w,v,u),\quad (u,w,v).
+\]</span></p>
+<p>This follows from the fact that swapping two columns of a determinant multiplies it by <span class="math inline">\(-1\)</span>.</p>
+<hr />
+</div>
+</div>
+<div id="wedge-product" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Wedge Product<a href="hodge-star-and-differential-forms.html#wedge-product" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unnamed-chunk-39" class="definition"><strong>Definition 8.8  (Wedge Product) </strong></span>Consider a simple <span class="math inline">\(k\)</span>-form <span class="math inline">\(\omega\)</span> and a simple <span class="math inline">\(m\)</span>-form <span class="math inline">\(\eta\)</span> on an open
+subset <span class="math inline">\(U \subseteq \mathbb{R}^n\)</span> of the form</p>
+<p><span class="math display">\[
+\omega = f\, dx_{i_1} \wedge \cdots \wedge dx_{i_k},
+\qquad
+\eta = g\, dx_{j_1} \wedge \cdots \wedge dx_{j_m},
+\]</span></p>
+<p>for smooth functions <span class="math inline">\(f, g : U \to \mathbb{R}\)</span>.</p>
+<p>The <span class="math inline">\(\omega \wedge \eta\)</span> is the <span class="math inline">\((k+m)\)</span>-form defined by</p>
+<p><span class="math display">\[
+\omega \wedge \eta
+= fg\, dx_{i_1} \wedge \cdots \wedge dx_{i_k}
+      \wedge dx_{j_1} \wedge \cdots \wedge dx_{j_m}.
+\]</span></p>
+<p>Note that the order of the <span class="math inline">\(dx_i\)</span>’s is important, since exchanging two
+differentials introduces a sign by antisymmetry.</p>
+<p>The wedge product of arbitrary <span class="math inline">\(k\)</span>- and <span class="math inline">\(m\)</span>-forms is defined by linearity,
+i.e. by distributing the wedge product term-by-term over sums.</p>
+</div>
+<p><strong>Definition (Wedge Product):</strong>
+The wedge product <span class="math inline">\(\wedge\)</span> combines a <span class="math inline">\(k\)</span>-form and an <span class="math inline">\(m\)</span>-form to yield a <span class="math inline">\((k+m)\)</span>-form. It is associative, bilinear, and satisfies graded commutativity:</p>
+<p><span class="math display">\[\omega \wedge \eta = (-1)^{km} \eta \wedge \omega\]</span></p>
+<div id="examples-of-wedge-product" class="section level3 hasAnchor" number="8.2.1">
+<h3><span class="header-section-number">8.2.1</span> Examples of Wedge Product<a href="hodge-star-and-differential-forms.html#examples-of-wedge-product" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Example (Wedge product of two 1-forms):</strong>
+Let <span class="math inline">\(\omega = x\,dx + x\,dy + e^z\,dz\)</span> and <span class="math inline">\(\eta = y\,dx + x\,dy + z\,dz\)</span>. Then:</p>
+<p><span class="math display">\[\begin{aligned} \omega \wedge \eta &amp;= (x\,dx + x\,dy + e^z\,dz) \wedge (y\,dx + x\,dy + z\,dz) \\ &amp;= (x^2 - xy)\,dx \wedge dy + (xz + e^z y)\,dz \wedge dx + (xz - e^z x)\,dz \wedge dy \end{aligned}\]</span></p>
+<p><strong>Example (Wedge product of a 1-form and a 2-form):</strong>
+Let <span class="math inline">\(\omega = xy\,dx + y\,dy\)</span> and <span class="math inline">\(\eta = z\,dy \wedge dz\)</span>. Then:</p>
+<p><span class="math display">\[\omega \wedge \eta = (xy\,dx + y\,dy) \wedge (z\,dy \wedge dz) = xyz\,dx \wedge dy \wedge dz\]</span></p>
+<p><strong>Lemma:</strong>
+Let <span class="math inline">\(\mathbf{F}, \mathbf{G}\)</span> be vector fields associated with <span class="math inline">\(1\)</span>-forms <span class="math inline">\(\omega_1, \eta_2\)</span> in <span class="math inline">\(\mathbb{R}^3\)</span>:</p>
+<p><span class="math display">\[\begin{aligned} \omega_1 &amp;= f_1\,dx + f_2\,dy + f_3\,dz \quad \longleftrightarrow \quad \mathbf{F} = (f_1, f_2, f_3) \\ \eta_2 &amp;= g_1\,dx + g_2\,dy + g_3\,dz \quad \longleftrightarrow \quad \mathbf{G} = (g_1, g_2, g_3) \end{aligned}\]</span></p>
+<p>Then <span class="math inline">\(\omega_1 \wedge \eta_2\)</span> corresponds to the cross product <span class="math inline">\(\mathbf{F} \times \mathbf{G}\)</span>.</p>
+<hr />
+</div>
+</div>
+<div id="exterior-derivative" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> Exterior Derivative<a href="hodge-star-and-differential-forms.html#exterior-derivative" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Lemma (Graded Product Rule):</strong>
+For a <span class="math inline">\(k\)</span>-form <span class="math inline">\(\omega\)</span> and an <span class="math inline">\(m\)</span>-form <span class="math inline">\(\eta\)</span>:</p>
+<p><span class="math display">\[d(\omega \wedge \eta) = d\omega \wedge \eta + (-1)^k \omega \wedge d\eta\]</span></p>
+<p><strong>Theorem (Property <span class="math inline">\(d^2 = 0\)</span>):</strong>
+For any differential form <span class="math inline">\(\omega\)</span>:</p>
+<p><span class="math display">\[d(d\omega) = d^2\omega = 0\]</span></p>
+<div id="grad-curl-and-div-connection" class="section level3 hasAnchor" number="8.3.1">
+<h3><span class="header-section-number">8.3.1</span> Grad, Curl, and Div Connection<a href="hodge-star-and-differential-forms.html#grad-curl-and-div-connection" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Definition (Gradient):</strong>
+For a <span class="math inline">\(0\)</span>-form <span class="math inline">\(f\)</span>:</p>
+<p><span class="math display">\[df = \frac{\partial f}{\partial x}dx + \frac{\partial f}{\partial y}dy + \frac{\partial f}{\partial z}dz \quad \longleftrightarrow \quad \nabla f = \left(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z}\right)\]</span></p>
+<p><strong>Definition (Curl):</strong>
+For a <span class="math inline">\(1\)</span>-form <span class="math inline">\(\omega = f_1\,dx + f_2\,dy + f_3\,dz\)</span>, the <span class="math inline">\(2\)</span>-form <span class="math inline">\(d\omega\)</span> corresponds to <span class="math inline">\(\nabla \times \mathbf{F}\)</span>:</p>
+<p><span class="math display">\[d\omega = \left(\frac{\partial f_3}{\partial y} - \frac{\partial f_2}{\partial z}\right)dy \wedge dz + \left(\frac{\partial f_1}{\partial z} - \frac{\partial f_3}{\partial x}\right)dz \wedge dx + \left(\frac{\partial f_2}{\partial x} - \frac{\partial f_1}{\partial y}\right)dx \wedge dy\]</span></p>
+<p><strong>Definition (Divergence):</strong>
+For a <span class="math inline">\(2\)</span>-form <span class="math inline">\(\eta = f_1\,dy \wedge dz + f_2\,dz \wedge dx + f_3\,dx \wedge dy\)</span>, the <span class="math inline">\(3\)</span>-form <span class="math inline">\(d\eta\)</span> corresponds to <span class="math inline">\(\nabla \cdot \mathbf{F}\)</span>:</p>
+<p><span class="math display">\[d\eta = \left(\frac{\partial f_1}{\partial x} + \frac{\partial f_2}{\partial y} + \frac{\partial f_3}{\partial z}\right)dx \wedge dy \wedge dz\]</span></p>
+<hr />
+</div>
+</div>
+<div id="the-hodge-star-operator" class="section level2 hasAnchor" number="8.4">
+<h2><span class="header-section-number">8.4</span> The Hodge Star Operator<a href="hodge-star-and-differential-forms.html#the-hodge-star-operator" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Definition (Hodge Star Dual):</strong>
+Let <span class="math inline">\(\omega = dx_{i_1} \wedge \dots \wedge dx_{i_k}\)</span> be a basic <span class="math inline">\(k\)</span>-form on <span class="math inline">\(\mathbb{R}^n\)</span>. The <strong>Hodge star dual</strong> <span class="math inline">\(*\omega\)</span> is the unique basic <span class="math inline">\((n-k)\)</span>-form satisfying:</p>
+<p><span class="math display">\[\omega \wedge *\omega = dx_1 \wedge \dots \wedge dx_n\]</span></p>
+<p>Extended linearly, for a general <span class="math inline">\(k\)</span>-form <span class="math inline">\(\eta = \sum f_{i_1 \dots i_k} dx_{i_1} \wedge \dots \wedge dx_{i_k}\)</span>:</p>
+<p><span class="math display">\[*\eta = \sum f_{i_1 \dots i_k} *(dx_{i_1} \wedge \dots \wedge dx_{i_k})\]</span></p>
+<div id="hodge-star-in-mathbbr3" class="section level3 hasAnchor" number="8.4.1">
+<h3><span class="header-section-number">8.4.1</span> Hodge Star in <span class="math inline">\(\mathbb{R}^3\)</span><a href="hodge-star-and-differential-forms.html#hodge-star-in-mathbbr3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In <span class="math inline">\(\mathbb{R}^3\)</span> with standard Euclidean metric:</p>
+<p><span class="math display">\[\begin{aligned} *1 &amp;= dx \wedge dy \wedge dz \\ *dx &amp;= dy \wedge dz, \quad *dy = dz \wedge dx, \quad *dz = dx \wedge dy \\ *(dy \wedge dz) &amp;= dx, \quad *(dz \wedge dx) = dy, \quad *(dx \wedge dy) = dz \\ *(dx \wedge dy \wedge dz) &amp;= 1 \end{aligned}\]</span></p>
+<p><strong>Proposition:</strong>
+On <span class="math inline">\(k\)</span>-forms in <span class="math inline">\(\mathbb{R}^n\)</span>, applying the Hodge star twice yields:</p>
+<p><span class="math display">\[**\omega = (-1)^{k(n-k)} \omega\]</span></p>
+<hr />
+</div>
+</div>
+<div id="integration-chains-and-stokes-theorem" class="section level2 hasAnchor" number="8.5">
+<h2><span class="header-section-number">8.5</span> Integration, Chains, and Stokes’ Theorem<a href="hodge-star-and-differential-forms.html#integration-chains-and-stokes-theorem" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="simplices-and-chains" class="section level3 hasAnchor" number="8.5.1">
+<h3><span class="header-section-number">8.5.1</span> Simplices and Chains<a href="hodge-star-and-differential-forms.html#simplices-and-chains" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><strong><span class="math inline">\(0\)</span>-simplex:</strong> Point <span class="math inline">\(P\)</span>.</li>
+<li><strong><span class="math inline">\(1\)</span>-simplex:</strong> Directed segment <span class="math inline">\(\langle P_1, P_2 \rangle\)</span>.</li>
+<li><strong><span class="math inline">\(2\)</span>-simplex:</strong> Oriented triangle <span class="math inline">\(\langle P_1, P_2, P_3 \rangle\)</span>.</li>
+</ul>
+<p>An <span class="math inline">\(n\)</span>-chain <span class="math inline">\(c\)</span> is a formal integer linear combination of <span class="math inline">\(n\)</span>-simplices:</p>
+<p><span class="math display">\[c = \sum_i m_i \sigma_i, \quad m_i \in \mathbb{Z}\]</span></p>
+</div>
+<div id="stokes-theorem" class="section level3 hasAnchor" number="8.5.2">
+<h3><span class="header-section-number">8.5.2</span> Stokes’ Theorem<a href="hodge-star-and-differential-forms.html#stokes-theorem" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div style="display: flex; align-items: center; gap: 20px;">
+<div style="flex: 1;">
+<p><strong>Theorem (Generalized Stokes’ Theorem):</strong><br>
+If <span class="math inline">\(\omega\)</span> is a <span class="math inline">\(C^1\)</span> <span class="math inline">\(k\)</span>-form and <span class="math inline">\(D\)</span> is a <span class="math inline">\((k+1)\)</span>-chain, then</p>
+<p><span class="math display">\[
+\int_{\partial D} \omega = \int_D d\omega.
+\]</span></p>
+</div>
+<div style="flex: 1; text-align: center;">
+<p><img src="fig/LOTR.png" width="30%" alt="Image was generated by AI"></p>
+</div>
+</div>
+<hr />
+</div>
+</div>
+<div id="complex-operators-and-harmonic-forms" class="section level2 hasAnchor" number="8.6">
+<h2><span class="header-section-number">8.6</span> Complex Operators and Harmonic Forms<a href="hodge-star-and-differential-forms.html#complex-operators-and-harmonic-forms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>On a Riemann surface with complex coordinate <span class="math inline">\(z = x + iy\)</span>:</p>
+<p><span class="math display">\[\begin{aligned} \partial f &amp;= f_z\,dz = \frac{1}{2}(f_x - i f_y)\,dz \\ \bar{\partial} f &amp;= f_{\bar{z}}\,d\bar{z} = \frac{1}{2}(f_x + i f_y)\,d\bar{z} \end{aligned}\]</span></p>
+<p>The exterior derivative decomposes as <span class="math inline">\(d = \partial + \bar{\partial}\)</span>.</p>
+<p><strong>Definition (Laplacian and Harmonic Forms):</strong>
+The Laplacian of a function <span class="math inline">\(f\)</span> is:</p>
+<p><span class="math display">\[\Delta f = (f_{xx} + f_{yy})\,dx \wedge dy = -2i\,\partial \bar{\partial} f\]</span></p>
+<p>A <span class="math inline">\(1\)</span>-form <span class="math inline">\(\omega\)</span> is <strong>harmonic</strong> if it is locally given by <span class="math inline">\(df\)</span> where <span class="math inline">\(\Delta f = 0\)</span>.</p>
+<p><strong>Proposition:</strong>
+A differential form <span class="math inline">\(\omega\)</span> is harmonic if and only if it is both <strong>closed</strong> (<span class="math inline">\(d\omega = 0\)</span>) and <strong>co-closed</strong> (<span class="math inline">\(d*\omega = 0\)</span>).</p>
+
+</div>
+</div>
+
+
+
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="important-theorems.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/ashanjaymal/Complex-Analysis/edit/main/07-HodgeStar.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["_main.pdf", "_main.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

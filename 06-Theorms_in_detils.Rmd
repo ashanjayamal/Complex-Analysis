@@ -66,30 +66,8 @@ g(z), & z \in \Delta^{*}.
 
 Then \@ref(eq:e1)+\@ref(eq:e1),
 
-\begin{eqnarray}
-& \frac{1}{2\pi i} \left(\int_{J_1} \frac{f(\zeta)}{\zeta - z} d\zeta
-  +\int_{J_2} \frac{g(\zeta)}{\zeta - z} d\zeta\right) \\
-&= \frac{1}{2\pi i} \left( \int_{C_1} \frac{f(\zeta)}{\zeta - z} d\zeta + \int_{\gamma} \frac{f(\zeta)}{\zeta - z} d\zeta + \int_{C_2} \frac{g(\zeta)}{\zeta - z} d\zeta + \int_{-\gamma} \frac{g(\zeta)}{\zeta - z} d\zeta \right)\\
-&= \frac{1}{2\pi i} \left( \int_{C_1} \frac{f(\zeta)}{\zeta - z} d\zeta + \int_{\gamma} \frac{f(\zeta)}{\zeta - z} d\zeta + \int_{C_2} \frac{g(\zeta)}{\zeta - z} d\zeta + \int_{-\gamma} \frac{g(\zeta)}{\zeta - z} d\zeta \right)\\
-
-\end{eqnarray}
-
-Because \( f(\zeta) = g(\zeta) \) on \( \Gamma \), the two integrals may
-be added to produce
-
-
-\[
-\frac{1}{2\pi i} \int_{C} \frac{F(\zeta)}{\zeta - z}\, d\zeta = F(z).
-\]
-
-
-for \( z \in D^{*} \cup \Delta^{*} \). But this last integral is analytic
-throughout the domain \( D^{*} \cup \gamma \cup \Delta^{*} \) bounded by \( C \).
-In particular, \( F \) is analytic at \( z_{0} \). Since \( z_{0} \) was an
-arbitrary point of \( \Gamma \), this proves the theorem.
-
 \begin{eqnarray*}
-& = & \frac{1}{2\pi i} \left( \int_{J_1} \frac{f(\xi)}{(\xi - z)} \, d\xi + \int_{J_2} \frac{g(\xi)}{(\xi - z)} \, d\xi \right) \\
+&  & \frac{1}{2\pi i} \left( \int_{J_1} \frac{f(\xi)}{(\xi - z)} \, d\xi + \int_{J_2} \frac{g(\xi)}{(\xi - z)} \, d\xi \right) \\
 & = & \frac{1}{2\pi i} \left( \int_{C_1} \frac{f(\xi)}{(\xi - z)} \, d\xi + \int_{\gamma} \frac{f(\xi)}{(\xi - z)} \, d\xi + \int_{C_2} \frac{g(\xi)}{(\xi - z)} \, d\xi + \int_{-\gamma} \frac{g(\xi)}{(\xi - z)} \, d\xi \right) \\
 & = & \frac{1}{2\pi i} \left( \int_{C_1} \frac{f(\xi)}{(\xi - z)} \, d\xi + \int_{C_2} \frac{g(\xi)}{(\xi - z)} \, d\xi + \int_{\gamma} \frac{f(\xi)}{(\xi - z)} \, d\xi - \int_{\gamma} \frac{g(\xi)}{(\xi - z)} \, d\xi \right) \quad \left( \because \int_{-\gamma} d\xi = -\int_{\gamma} d\xi \right) \\
 & = & \frac{1}{2\pi i} \left( \int_{C_1} \frac{f(\xi)}{(\xi - z)} \, d\xi + \int_{C_2} \frac{g(\xi)}{(\xi - z)} \, d\xi + \int_{\gamma} \frac{f(\xi)}{(\xi - z)} \, d\xi - \int_{\gamma} \frac{f(\xi)}{(\xi - z)} \, d\xi \right) \quad \left( \because f(\xi) = g(\xi) \text{ on } \gamma \right) \\
@@ -98,8 +76,5 @@ arbitrary point of \( \Gamma \), this proves the theorem.
 & = & F(\xi)\quad \text{ for } z \in D^* \cup \Delta^*.
 \end{eqnarray*}
 
-
 But this last integral is analytic throughout the domain $D^* \cup \gamma \cup \Delta^*$ bounded by $C$. In particular, $F$ is analytic at $z_0$. Since $z_0$ was an arbitrary point of $\Gamma$, this proves the theorem.
-
-
 ```
