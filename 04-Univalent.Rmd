@@ -253,8 +253,69 @@ Plus **Carathéodory's extension theorem**: if $D$ is a Jordan domain, the Riema
 - Real/imaginary parts of analytic functions are harmonic (Cauchy–Riemann $\Rightarrow$ Laplace's equation); harmonic conjugates exist locally (globally on simply connected domains, via a path integral that's path-independent by Green's theorem).
 - Harmonic $\circ$ analytic = harmonic.
 - **Mean value property**: $u(z_0) = \frac{1}{2\pi}\int_0^{2\pi} u(z_0+re^{i\theta})\,d\theta$, derived from Green's theorem applied to $\nabla u$.
+
+
+<div style="display: flex; align-items: flex-start; gap: 1em;">
+
+<div style="flex: 2;">
+
+```{theorem, name="Mean value property (Holomorphic version)"}
+Let $f: \Omega \to \mathbb{C}$ be holomorphic on an open set $\Omega \subseteq \mathbb{C}$.
+If $\overline{D(z_0, R)} \subset \Omega$, then:
+$$
+f(z_0) = \frac{1}{2\pi} \int_0^{2\pi} f(z_0 + R e^{i\theta}) \, d\theta
+$$
+```
+
+```{theorem, name="Mean value property (Harmonic function version)"}
+Let $\Omega \subseteq \mathbb{C}$ be an open set, and let $u: \Omega \to \mathbb{R}$ be harmonic.
+If $\overline{D(z_0, R)} \subset \Omega$, then:
+$$
+u(z_0) = \frac{1}{2\pi} \int_0^{2\pi} u(z_0 + R e^{i\theta}) \, d\theta
+$$
+```
+</div>
+
+<div style="flex: 1;">
+<img src="fig/pic 8.png" width="100%">
+</div>
+
+</div>
+
+```{proof}
+*(Proof of the Holomorphic version)*
+  Quick Proof via Cauchy's Integral FormulaThis follows directly from Cauchy's Integral Formula evaluated along the circular contour $\gamma(\theta) = z_0 + R e^{i\theta}$ for $\theta \in [0, 2\pi]$:Cauchy's Formula:
+  $$f(z_0) = \frac{1}{2\pi i} \int_\gamma \frac{f(z)}{z - z_0} \, dz$$
+  Parametrize $z = z_0 + R e^{i\theta}$ (so $dz = i R e^{i\theta} d\theta$ and $z - z_0 = R e^{i\theta}$):
+
+\begin{eqnarray}
+f(z_0) &=& \frac{1}{2\pi i} \int_0^{2\pi} \frac{f(z_0 + R e^{i\theta})}{R e^{i\theta}} \, (i R e^{i\theta} \, d\theta)\\
+ &=& \frac{1}{2\pi} \int_0^{2\pi} f(z_0 + R e^{i\theta}) \, d\theta
+\end{eqnarray}
+
+```
+
+```{proof}
+*(Proof of the Harmonic Version version)*
+<center>
+![](fig/pic 9.jpg){width=70%}
+![](fig/pic 10.jpg){width=70%}
+</center>
+```
+
 - **Poisson formula**: reconstructs $u$ inside a disk from boundary values, via the Poisson kernel $P_r(\theta) = \frac{R^2-r^2}{R^2-2Rr\cos\theta+r^2}$.
+
+```{proof}
+<center>
+![](fig/pic 11.jpeg){width=50%}
+![](fig/pic 12.jpeg){width=50%}
+![](fig/pic 13.jpeg){width=50%}
+![](fig/pic 14.jpeg){width=50%}
+</center>
+```
 - **Maximum principle for harmonic functions**, and the **converse mean-value characterization**: continuous + local mean-value property $\Rightarrow$ harmonic (proved by comparing $u$ to its Poisson integral $U$ and using the maximum principle on $u - U$).
+
+
 - **Subharmonic functions**: $u \le U$ (Poisson integral) on every disk; equivalently, continuous + local *sub*-mean-value property. Key facts: sums of subharmonic functions are subharmonic; $\max(u,v)$ is subharmonic; convex increasing functions of subharmonic functions are subharmonic (via Jensen's inequality)  this is exactly how you get $|u|^p$ ($p\ge 1$, $u$ harmonic) and $|f|^p$ ($p>0$, $f$ analytic) subharmonic, and $\log|f|$ subharmonic in the generalized sense (allowing $-\infty$)  facts used throughout the coefficient-estimate machinery in later chapters.
 
 ## Green's Functions

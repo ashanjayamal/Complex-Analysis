@@ -78,3 +78,37 @@ Then \@ref(eq:e1)+\@ref(eq:e1),
 
 But this last integral is analytic throughout the domain $D^* \cup \gamma \cup \Delta^*$ bounded by $C$. In particular, $F$ is analytic at $z_0$. Since $z_0$ was an arbitrary point of $\Gamma$, this proves the theorem.
 ```
+
+```{theorem}
+If a function \(u\) is continuous and has the local ```
+
+<center>
+![](fig/pic 15.jpg){width=50%}
+</center>
+  
+```{theorem}
+If a function \(u\) is continuous and has the local sub-mean-value property in a domain \(D\), then \(u\) ```
+
+<center>
+![](fig/pic 16.jpg){width=70%}
+</center>
+  
+```{corollary}
+A subharmonic function which is not identically constant cannot have a local maximum at an interior point.
+```
+
+```{proof}
+<center>
+![](fig/pic 17.png){width=70%}
+</center>
+```
+
+```{proposition}
+The sum of two subharmonic functions is subharmonic.
+```
+
+```{proof}
+<center>
+![](fig/pic 18.jpeg){width=70%}
+</center>
+```
