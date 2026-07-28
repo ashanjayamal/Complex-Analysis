@@ -318,6 +318,8 @@ f(z_0) &=& \frac{1}{2\pi i} \int_0^{2\pi} \frac{f(z_0 + R e^{i\theta})}{R e^{i\t
 
 - **Subharmonic functions**: $u \le U$ (Poisson integral) on every disk; equivalently, continuous + local *sub*-mean-value property. Key facts: sums of subharmonic functions are subharmonic; $\max(u,v)$ is subharmonic; convex increasing functions of subharmonic functions are subharmonic (via Jensen's inequality)  this is exactly how you get $|u|^p$ ($p\ge 1$, $u$ harmonic) and $|f|^p$ ($p>0$, $f$ analytic) subharmonic, and $\log|f|$ subharmonic in the generalized sense (allowing $-\infty$)  facts used throughout the coefficient-estimate machinery in later chapters.
 
+- **Super-harmonic functions**: A function $u$ is said to be super-harmonic if $-u$ is sub-harmonic.
+
 ## Green's Functions
 
 For a finitely-connected domain $D$ with smooth boundary, Green's function is

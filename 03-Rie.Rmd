@@ -1,4 +1,6 @@
-# Riemann Surfaces. 
+# Riemann Surfaces
+
+
 ```{definition,name="Riemann surface"}
 A **Riemann surface** is a second‑countable, Hausdorff topological space \(X\) equipped with a **complex atlas**  \(\mathcal{A} = \{(U_\alpha, \varphi_\alpha)\}\) satisfying the following properties:
 
