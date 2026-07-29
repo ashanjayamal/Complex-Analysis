@@ -54,7 +54,7 @@ knitr::opts_chunk$set(
 ```
 
 
-```{tikz map-identity, echo=FALSE, fig.ext='png', fig.width=5, fig.height=2, engine.opts=list(extra.preamble=c('\\usepackage{amsmath}', '\\usepackage{amssymb}', '\\usepackage{xcolor}', '\\usetikzlibrary{positioning, calc}'))}
+```{tikz map-identity, echo=FALSE, fig.ext='png', fig.width=5,fig.path = "fig/", fig.height=2, engine.opts=list(extra.preamble=c('\\usepackage{amsmath}', '\\usepackage{amssymb}', '\\usepackage{xcolor}', '\\usetikzlibrary{positioning, calc}'))}
 \begin{tikzpicture}[scale=0.7, every node/.style={transform shape}, region/.style={fill=cyan!20}, arrow/.style={->, >=stealth, thick, blue!80!black}]
   \begin{scope}[shift={(0,0)}]
     \fill[region] (0,0) circle (1);
@@ -93,7 +93,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{tikz map-halfplane, echo=FALSE, fig.ext='png', fig.width=5, fig.height=2}
+```{tikz map-halfplane,fig.path = "fig/", echo=FALSE, fig.ext='png', fig.width=5, fig.height=2}
 \begin{tikzpicture}[scale=0.7, every node/.style={transform shape}, region/.style={fill=cyan!20}, arrow/.style={->, >=stealth, thick, blue!80!black}]
   \begin{scope}[shift={(0,0)}]
     \fill[region] (0,0) circle (1);
@@ -117,7 +117,7 @@ knitr::opts_chunk$set(
 ```
 
 
-```{r map-tworays, echo=FALSE, engine='tikz', fig.ext='png', fig.show='hide', fig.width=5, fig.height=2, engine.opts=list(extra.preamble=c('\\usepackage{amsmath}', '\\usepackage{amssymb}', '\\usepackage{xcolor}', '\\usetikzlibrary{positioning, calc}'))}
+```{r map-tworays,fig.path = "fig/", echo=FALSE, engine='tikz', fig.ext='png', fig.show='hide', fig.width=5, fig.height=2, engine.opts=list(extra.preamble=c('\\usepackage{amsmath}', '\\usepackage{amssymb}', '\\usepackage{xcolor}', '\\usetikzlibrary{positioning, calc}'))}
 \begin{tikzpicture}[scale=0.7, every node/.style={transform shape}, region/.style={fill=cyan!20}, slit/.style={ultra thick, red!80!black}, arrow/.style={->, >=stealth, thick, blue!80!black}]
   \begin{scope}[shift={(0,0)}]
     \fill[region] (0,0) circle (1);
@@ -137,7 +137,7 @@ knitr::opts_chunk$set(
 \end{tikzpicture}
 ```
 
-```{r map-strip, echo=FALSE, engine='tikz', fig.ext='png', fig.show='hide', fig.width=5, fig.height=2, engine.opts=list(extra.preamble=c('\\usepackage{amsmath}', '\\usepackage{amssymb}', '\\usepackage{xcolor}', '\\usetikzlibrary{positioning, calc}'))}
+```{r map-strip, echo=FALSE,fig.path = "fig/", engine='tikz', fig.ext='png', fig.show='hide', fig.width=5, fig.height=2, engine.opts=list(extra.preamble=c('\\usepackage{amsmath}', '\\usepackage{amssymb}', '\\usepackage{xcolor}', '\\usetikzlibrary{positioning, calc}'))}
 \begin{tikzpicture}[scale=0.7, every node/.style={transform shape}, region/.style={fill=cyan!20}, arrow/.style={->, >=stealth, thick, blue!80!black}]
   \begin{scope}[shift={(0,0)}]
     \fill[region] (0,0) circle (1);
@@ -157,7 +157,7 @@ knitr::opts_chunk$set(
 \end{tikzpicture}
 ```
 
-```{r map-cardioid, echo=FALSE, engine='tikz', fig.ext='png', fig.show='hide', fig.width=5, fig.height=2, engine.opts=list(extra.preamble=c('\\usepackage{amsmath}', '\\usepackage{amssymb}', '\\usepackage{xcolor}', '\\usetikzlibrary{positioning, calc}'))}
+```{r map-cardioid, echo=FALSE,fig.path = "fig/", engine='tikz', fig.ext='png', fig.show='hide', fig.width=5, fig.height=2, engine.opts=list(extra.preamble=c('\\usepackage{amsmath}', '\\usepackage{amssymb}', '\\usepackage{xcolor}', '\\usetikzlibrary{positioning, calc}'))}
 \begin{tikzpicture}[scale=0.7, every node/.style={transform shape}, region/.style={fill=cyan!20}, arrow/.style={->, >=stealth, thick, blue!80!black}]
   \begin{scope}[shift={(0,0)}]
     \fill[region] (0,0) circle (1);
@@ -178,11 +178,11 @@ knitr::opts_chunk$set(
 ```{r render-mapping-table, echo=FALSE}
 library(knitr)
 
-img1 <- fig_chunk('map-identity', 'png')
-img2 <- fig_chunk('map-halfplane', 'png')
-img3 <- fig_chunk('map-tworays', 'png')
-img4 <- fig_chunk('map-strip', 'png')
-img5 <- fig_chunk('map-cardioid', 'png')
+img1 <- "fig/map-identity-1.png"
+img2 <- "fig/map-halfplane-1.png"
+img3 <- "fig/map-tworays-1.png"
+img4 <- "fig/map-strip-1.png"
+img5 <- "fig/map-cardioid-1.png"
 
 df <- data.frame(
   Function = c(
@@ -200,12 +200,12 @@ df <- data.frame(
     "Interior of a cardioid"
   ),
   Diagram = c(
-    paste0("![](", img1, "){width=220px}"),
-    paste0("![](", img2, "){width=220px}"),
-    paste0("![](", img3, "){width=220px}"),
-    paste0("![](", img4, "){width=220px}"),
-    paste0("![](", img5, "){width=220px}")
-  )
+  paste0("![](", img1, "){width=220px}"),
+  paste0("![](", img2, "){width=220px}"),
+  paste0("![](", img3, "){width=220px}"),
+  paste0("![](", img4, "){width=220px}"),
+  paste0("![](", img5, "){width=220px}")
+)
 )
 
 kable(df, format = "html", escape = FALSE,
