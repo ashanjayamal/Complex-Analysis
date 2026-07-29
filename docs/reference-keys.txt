@@ -112,4 +112,8 @@ growth-and-distortion-theorems
 coefficient-estimates
 where-the-excerpt-trails-off
 important-results
+n-dimensional-lebesgue-measure-theory
+interpretation-by-dimension
+lower-dimensional-sets-have-measure-zero
+visualizing-lebesgue-measure-and-rectangle-covers
 some-diagrams

@@ -23,7 +23,7 @@
 <meta name="author" content="Ashan Jayamal" />
 
 
-<meta name="date" content="2026-07-27" />
+<meta name="date" content="2026-07-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -172,7 +172,15 @@
 <li class="chapter" data-level="6.4" data-path="elementary-theory-of-univalent-functions.html"><a href="elementary-theory-of-univalent-functions.html#coefficient-estimates"><i class="fa fa-check"></i><b>6.4</b> Coefficient Estimates</a></li>
 <li class="chapter" data-level="6.5" data-path="elementary-theory-of-univalent-functions.html"><a href="elementary-theory-of-univalent-functions.html#where-the-excerpt-trails-off"><i class="fa fa-check"></i><b>6.5</b> Where the excerpt trails off</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="important-results.html"><a href="important-results.html"><i class="fa fa-check"></i><b>7</b> Important Results</a></li>
+<li class="chapter" data-level="7" data-path="important-results.html"><a href="important-results.html"><i class="fa fa-check"></i><b>7</b> Important Results</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="important-results.html"><a href="important-results.html#n-dimensional-lebesgue-measure-theory"><i class="fa fa-check"></i><b>7.1</b> <span class="math inline">\(n\)</span>-Dimensional Lebesgue Measure Theory</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="important-results.html"><a href="important-results.html#interpretation-by-dimension"><i class="fa fa-check"></i><b>7.1.1</b> Interpretation by Dimension</a></li>
+<li class="chapter" data-level="7.1.2" data-path="important-results.html"><a href="important-results.html#lower-dimensional-sets-have-measure-zero"><i class="fa fa-check"></i><b>7.1.2</b> Lower-dimensional sets have measure zero</a></li>
+<li class="chapter" data-level="7.1.3" data-path="important-results.html"><a href="important-results.html#visualizing-lebesgue-measure-and-rectangle-covers"><i class="fa fa-check"></i><b>7.1.3</b> Visualizing Lebesgue Measure and Rectangle Covers</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="8" data-path="some-diagrams.html"><a href="some-diagrams.html"><i class="fa fa-check"></i><b>8</b> Some Diagrams</a></li>
 <li class="divider"></li>
 <li><a href="https://ashanjayamal.github.io/academicpages" target="blank">
@@ -235,43 +243,74 @@ The Möbius map <span class="math inline">\(\zeta = \dfrac{1+z}{1-z}\)</span> se
 <p><img src="_main_files/figure-html/map-strip-1.png" alt="" width="480" /></p>
 <p><img src="_main_files/figure-html/map-cardioid-1.png" alt="" width="480" /></p>
 <table>
-<colgroup>
-<col width="28%" />
-<col width="38%" />
-<col width="33%" />
-</colgroup>
 <thead>
-<tr class="header">
-<th align="left"><span class="math inline">\(f(z)\)</span></th>
-<th align="left">Image Domain</th>
-<th align="center">Diagram</th>
+<tr>
+<th style="text-align:left;">
+<span class="math inline">\(f(z)\)</span>
+</th>
+<th style="text-align:left;">
+Image Domain
+</th>
+<th style="text-align:center;">
+Diagram
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left"><span class="math inline">\(z\)</span></td>
-<td align="left"><span class="math inline">\(\mathbb{D}\)</span> itself</td>
-<td align="center"><img src="_main_files/figure-html/map-identity-1.png" width="220" /></td>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(z\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\mathbb{D}\)</span> itself
+</td>
+<td style="text-align:center;">
+<img src="_main_files/figure-html/map-identity-1.png" width="220" />
+</td>
 </tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(z(1-z)^{-1}\)</span></td>
-<td align="left">Half-plane <span class="math inline">\(\operatorname{Re} w &gt; -\frac{1}{2}\)</span></td>
-<td align="center"><img src="_main_files/figure-html/map-halfplane-1.png" width="220" /></td>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(z(1-z)^{-1}\)</span>
+</td>
+<td style="text-align:left;">
+Half-plane <span class="math inline">\(\operatorname{Re} w &gt; -\frac{1}{2}\)</span>
+</td>
+<td style="text-align:center;">
+<img src="_main_files/figure-html/map-halfplane-1.png" width="220" />
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(z(1-z^2)^{-1}\)</span></td>
-<td align="left">Plane minus two rays <span class="math inline">\([\frac{1}{2},\infty)\)</span> and <span class="math inline">\((-\infty,-\frac{1}{2}]\)</span></td>
-<td align="center"><img src="_main_files/figure-html/map-tworays-1.png" width="220" /></td>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(z(1-z^2)^{-1}\)</span>
+</td>
+<td style="text-align:left;">
+Plane minus two rays <span class="math inline">\([\frac{1}{2},\infty)\)</span> and <span class="math inline">\((-\infty,-\frac{1}{2}]\)</span>
+</td>
+<td style="text-align:center;">
+<img src="_main_files/figure-html/map-tworays-1.png" width="220" />
+</td>
 </tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(\frac{1}{4}\log\frac{1+z}{1-z}\)</span></td>
-<td align="left">Horizontal strip <span class="math inline">\(\lvert\operatorname{Im} w\rvert &lt; \pi/4\)</span></td>
-<td align="center"><img src="_main_files/figure-html/map-strip-1.png" width="220" /></td>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(\frac{1}{4}\log\frac{1+z}{1-z}\)</span>
+</td>
+<td style="text-align:left;">
+Horizontal strip <span class="math inline">\(\lvert\operatorname{Im} w\rvert &lt; \pi/4\)</span>
+</td>
+<td style="text-align:center;">
+<img src="_main_files/figure-html/map-strip-1.png" width="220" />
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(z - \frac{1}{2}z^2 = \frac{1}{4}\big(1-(1-z)^2\big)\)</span></td>
-<td align="left">Interior of a cardioid</td>
-<td align="center"><img src="_main_files/figure-html/map-cardioid-1.png" width="220" /></td>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(z - \frac{1}{2}z^2 = \frac{1}{4}\big(1-(1-z)^2\big)\)</span>
+</td>
+<td style="text-align:left;">
+Interior of a cardioid
+</td>
+<td style="text-align:center;">
+<img src="_main_files/figure-html/map-cardioid-1.png" width="220" />
+</td>
 </tr>
 </tbody>
 </table>

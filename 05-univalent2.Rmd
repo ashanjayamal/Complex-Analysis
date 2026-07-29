@@ -208,7 +208,9 @@ df <- data.frame(
   )
 )
 
-kable(df, col.names = c("$f(z)$", "Image Domain", "Diagram"), align = c("l", "l", "c"))
+kable(df, format = "html", escape = FALSE,
+      col.names = c("$f(z)$", "Image Domain", "Diagram"),
+      align = c("l", "l", "c"))
 ```
 
 

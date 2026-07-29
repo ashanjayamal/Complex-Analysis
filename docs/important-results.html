@@ -23,7 +23,7 @@
 <meta name="author" content="Ashan Jayamal" />
 
 
-<meta name="date" content="2026-07-27" />
+<meta name="date" content="2026-07-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -172,7 +172,15 @@
 <li class="chapter" data-level="6.4" data-path="elementary-theory-of-univalent-functions.html"><a href="elementary-theory-of-univalent-functions.html#coefficient-estimates"><i class="fa fa-check"></i><b>6.4</b> Coefficient Estimates</a></li>
 <li class="chapter" data-level="6.5" data-path="elementary-theory-of-univalent-functions.html"><a href="elementary-theory-of-univalent-functions.html#where-the-excerpt-trails-off"><i class="fa fa-check"></i><b>6.5</b> Where the excerpt trails off</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="important-results.html"><a href="important-results.html"><i class="fa fa-check"></i><b>7</b> Important Results</a></li>
+<li class="chapter" data-level="7" data-path="important-results.html"><a href="important-results.html"><i class="fa fa-check"></i><b>7</b> Important Results</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="important-results.html"><a href="important-results.html#n-dimensional-lebesgue-measure-theory"><i class="fa fa-check"></i><b>7.1</b> <span class="math inline">\(n\)</span>-Dimensional Lebesgue Measure Theory</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="important-results.html"><a href="important-results.html#interpretation-by-dimension"><i class="fa fa-check"></i><b>7.1.1</b> Interpretation by Dimension</a></li>
+<li class="chapter" data-level="7.1.2" data-path="important-results.html"><a href="important-results.html#lower-dimensional-sets-have-measure-zero"><i class="fa fa-check"></i><b>7.1.2</b> Lower-dimensional sets have measure zero</a></li>
+<li class="chapter" data-level="7.1.3" data-path="important-results.html"><a href="important-results.html#visualizing-lebesgue-measure-and-rectangle-covers"><i class="fa fa-check"></i><b>7.1.3</b> Visualizing Lebesgue Measure and Rectangle Covers</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="8" data-path="some-diagrams.html"><a href="some-diagrams.html"><i class="fa fa-check"></i><b>8</b> Some Diagrams</a></li>
 <li class="divider"></li>
 <li><a href="https://ashanjayamal.github.io/academicpages" target="blank">
@@ -357,7 +365,125 @@ subharmonic on <span class="math inline">\(\Omega\)</span>.</p>
 |f(z)|^{p} = e^{p\log|f(z)|}
 \]</span></p>
 <p>is <strong>subharmonic for every <span class="math inline">\(p&gt;0\)</span></strong>.</p>
+<div id="n-dimensional-lebesgue-measure-theory" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> <span class="math inline">\(n\)</span>-Dimensional Lebesgue Measure Theory<a href="important-results.html#n-dimensional-lebesgue-measure-theory" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Since I am familiar with <span class="math inline">\(n\)</span>-dimensional measure theory, I will go through the following steps.</p>
+<p>The <strong><span class="math inline">\(n\)</span>-dimensional Lebesgue outer measure</strong> of a set <span class="math inline">\(E \subset \mathbb{R}^n\)</span> is</p>
+<p><span class="math display">\[m_n^*(E) = \inf \left\{ \sum_{k=1}^{\infty} \operatorname{vol}_n(R_k) : E \subset \bigcup_{k=1}^{\infty} R_k \right\},\]</span></p>
+<p>where the <span class="math inline">\(R_k\)</span> are <span class="math inline">\(n\)</span>-dimensional rectangles (boxes)</p>
+<p><span class="math display">\[R_k = [a_1,b_1] \times \cdots \times [a_n,b_n].\]</span></p>
+<p>Their <span class="math inline">\(n\)</span>-dimensional volume is</p>
+<p><span class="math display">\[\operatorname{vol}_n(R_k) = \prod_{j=1}^{n}(b_j-a_j).\]</span></p>
+<p>For measurable sets, the <span class="math inline">\(n\)</span>-dimensional Lebesgue measure is</p>
+<p><span class="math display">\[m_n(E) = m_n^*(E).\]</span></p>
+<hr />
+<div id="interpretation-by-dimension" class="section level3 hasAnchor" number="7.1.1">
+<h3><span class="header-section-number">7.1.1</span> Interpretation by Dimension<a href="important-results.html#interpretation-by-dimension" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Space</th>
+<th align="center">Lebesgue measure</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\mathbb{R}\)</span></td>
+<td align="center">length</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\mathbb{R}^2\)</span></td>
+<td align="center">area</td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\mathbb{R}^3\)</span></td>
+<td align="center">volume</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\mathbb{R}^n\)</span></td>
+<td align="center"><span class="math inline">\(n\)</span>-dimensional volume</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Dimension <span class="math inline">\(n\)</span></th>
+<th align="center">Set</th>
+<th align="center">Measure</th>
+<th align="center">Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center"><span class="math inline">\([0,1]\)</span></td>
+<td align="center"><span class="math inline">\(m_1([0,1]) = 1\)</span></td>
+<td align="center">Length</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">Unit disk</td>
+<td align="center"><span class="math inline">\(m_2(\text{unit disk}) = \pi\)</span></td>
+<td align="center">Area</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">Unit ball</td>
+<td align="center"><span class="math inline">\(m_3(\text{unit ball}) = \frac{4\pi}{3}\)</span></td>
+<td align="center">Volume</td>
+</tr>
+</tbody>
+</table>
+<p><em>Table 1: Examples of Lebesgue measure in different dimensions.</em></p>
+<hr />
+</div>
+<div id="lower-dimensional-sets-have-measure-zero" class="section level3 hasAnchor" number="7.1.2">
+<h3><span class="header-section-number">7.1.2</span> Lower-dimensional sets have measure zero<a href="important-results.html#lower-dimensional-sets-have-measure-zero" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A useful rule is:</p>
+<blockquote>
+<p>A <span class="math inline">\(k\)</span>-dimensional object inside <span class="math inline">\(\mathbb{R}^n\)</span> has <span class="math inline">\(n\)</span>-dimensional measure zero whenever <span class="math inline">\(k &lt; n\)</span>.</p>
+</blockquote>
+<p><strong>Examples:</strong></p>
+<ul>
+<li><p><strong>In <span class="math inline">\(\mathbb{R}^2\)</span>:</strong></p>
+<ul>
+<li>A line segment <span class="math inline">\([-2,2] \times \{0\}\)</span> has <span class="math inline">\(m_2 = 0\)</span>. It has length, but no area.</li>
+</ul></li>
+<li><p><strong>In <span class="math inline">\(\mathbb{R}^3\)</span>:</strong></p>
+<ul>
+<li>A line has <span class="math inline">\(m_3 = 0\)</span>.</li>
+<li>A plane has <span class="math inline">\(m_3 = 0\)</span>.</li>
+</ul>
+<p>They are too thin to have volume.</p></li>
+<li><p><strong>In <span class="math inline">\(\mathbb{R}^n\)</span>:</strong></p>
+<ul>
+<li>Any smooth curve or surface has <span class="math inline">\(m_n = 0\)</span> unless its dimension is actually <span class="math inline">\(n\)</span>.</li>
+</ul></li>
+</ul>
+<hr />
+</div>
+<div id="visualizing-lebesgue-measure-and-rectangle-covers" class="section level3 hasAnchor" number="7.1.3">
+<h3><span class="header-section-number">7.1.3</span> Visualizing Lebesgue Measure and Rectangle Covers<a href="important-results.html#visualizing-lebesgue-measure-and-rectangle-covers" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="float">
+<img src="figure_1.png" alt="An irregular measurable set E in R^2" />
+<div class="figcaption">An irregular measurable set E in R^2</div>
+</div>
+<p><em>Figure 1: An irregular measurable set <span class="math inline">\(E \subset \mathbb{R}^2\)</span>. Its Lebesgue measure <span class="math inline">\(m_2(E)\)</span> is the area of the shaded region.</em></p>
+<div class="float">
+<img src="figure_2.png" alt="A set E covered by three rectangles" />
+<div class="figcaption">A set E covered by three rectangles</div>
+</div>
+<p><em>Figure 2: Covering the set <span class="math inline">\(E\)</span> with rectangles <span class="math inline">\(R_1, R_2, R_3\)</span>.</em></p>
+<p>Then</p>
+<p><span class="math display">\[\sum_{k=1}^{3}\operatorname{vol}_2(R_k) = \operatorname{vol}_2(R_1) + \operatorname{vol}_2(R_2) + \operatorname{vol}_2(R_3)\]</span></p>
+<p>is the total area of the three rectangles covering <span class="math inline">\(E\)</span>. Taking the infimum over all possible countable rectangle coverings gives</p>
+<p><span class="math display">\[m_2(E) = \inf \left\{ \sum_{k=1}^{\infty}\operatorname{vol}_2(R_k) : E \subset \bigcup_{k=1}^{\infty} R_k \right\}.\]</span></p>
+<p>Thus <span class="math inline">\(m_2(E)\)</span> is the smallest total covering area achievable, and this construction defines the <span class="math inline">\(2\)</span>-dimensional Lebesgue measure.</p>
 
+</div>
+</div>
 </div>
             </section>
 
