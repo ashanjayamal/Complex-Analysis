@@ -278,21 +278,73 @@ which is exactly the theorem. Equality $m(E)=0$ is precisely membership in $\til
 ![](fig/pic 29.jpeg)
 ![](fig/pic 34.png)
 ![](fig/pic 33.jpeg)
+![](fig/pic 35 (1).jpg)
 ```
 This is a genuinely lovely argument: you get a *coefficient inequality* out of nothing but "area can't be negative."
+
+```{corollary}
+An immediate corollary is the inequality
+
+
+\[
+|b_n| \le n - \tfrac{1}{2}, \qquad n = 1, 2, \ldots
+\]
+
+
+This inequality is not sharp if \( n \ge 2 \), since the function
+
+
+\[
+g(z) = z + n - \tfrac{1}{2} z^{-n}
+\]
+
+
+is not univalent. Indeed, its derivative
+
+
+\[
+g'(z) = 1 - n \tfrac{1}{2} z^{-n-1}
+\]
+
+
+vanishes at certain points in \( \mathbb{A} \) if \( n \ge 2 \).
+However, the inequality \( |b_1| \le 1 \) is sharp and has important consequences.
+
+```
+
+```{proof}
+![](fig/pic 35 (2).jpg)
+```
+
+```{example}
+![](fig/pic 35 (2-1).jpg)
+![](fig/pic 35 (3).jpg)
+```
+
 
 
 ```{corollary}
 $|b_1|\le 1$, with equality iff $g(z) = z+b_0+b_1/z$, $|b_1|=1$  mapping $\Delta$ onto the complement of a line segment of length $4$. (Equality in $|b_1|^2 \le \sum n|b_n|^2 \le 1$ forces all other $b_n=0$ and $|b_1|=1$.)
 ```
 
+```{proof}
+![](fig/pic 35 (4).jpg)
+![](fig/pic 35 (5).jpg)
+```
 
 ```{theorem,name="Bieberbach's Theorem (1916), via the corollary"}
 If $f\in S$, then $|a_2|\le 2$, with equality iff $f$ is a rotation of the Koebe function.
 ```
 
+
 ```{proof}
 Chain the square-root transform and inversion: $g(z) = \{f(1/z^2)\}^{-1/2} = z - \tfrac12 a_2 z^{-1} + \cdots \in \Sigma$. Its $b_1$ coefficient is $-a_2/2$, so the corollary gives $|a_2/2|\le 1$, i.e. $|a_2|\le 2$. Equality forces $g(z) = z + b_0 + \frac{b_1}{z}$ with $|b_1|=1$, and unwinding the transform shows this corresponds to $f$ being a rotation $e^{-i\theta}k(e^{i\theta}z)$ of the Koebe function. 
+```
+
+```{proof}
+![](fig/pic 35 (6).jpg)
+![](fig/pic 35 (7).jpg)
+![](fig/pic 35 (8).jpg)
 ```
 
 ```{theorem ,name="Koebe's One-Quarter Theorem"}
