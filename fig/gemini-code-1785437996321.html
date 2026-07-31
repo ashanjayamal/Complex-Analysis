@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Growth Theorem Interactive Widget</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; background: #f8fafc; color: #1e293b; text-align: center; margin: 0; padding: 20px; }
+  h2 { margin-bottom: 4px; color: #0f172a; }
+  p.subtitle { margin-top: 0; color: #64748b; font-size: 0.95rem; }
+  
+  .card { background: #ffffff; max-width: 800px; margin: 15px auto; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+  .control { display: flex; align-items: center; justify-content: space-between; margin: 12px 0; }
+  label { font-weight: 600; width: 220px; text-align: left; }
+  input[type=range] { flex-grow: 1; margin: 0 15px; cursor: pointer; }
+  select { flex-grow: 1; margin: 0 15px; padding: 6px 10px; border-radius: 6px; border: 1px solid #cbd5e1; font-size: 0.95rem; background: #fff; cursor: pointer; }
+  .val { font-family: monospace; width: 60px; font-weight: bold; text-align: right; }
+  
+  .stats { background: #f1f5f9; border-left: 4px solid #2563eb; padding: 12px; border-radius: 6px; text-align: left; margin-top: 15px; font-size: 0.9rem; line-height: 1.6; }
+  
+  #container { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
+  .panel { background: #ffffff; padding: 15px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+  canvas { background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; display: block; margin-top: 10px; }
+</style>
+</head>
+<body>
+
+<h2>Growth Theorem Interactive Widget</h2>
+<p class="subtitle">For univalent functions: <b>r / (1 + r)² ≤ |f(z)| ≤ r / (1 − r)²</b></p>
+
+<div class="card">
+  <div class="control">
+    <label for="funcSelect">Select Function f(z):</label>
+    <select id="funcSelect">
+      <option value="koebe">Koebe: z / (1 - z)² [Upper Bound Extremal]</option>
+      <option value="koebeRot">Rotated Koebe: z / (1 + z)² [Lower Bound Extremal]</option>
+      <option value="identity">Identity: z</option>
+      <option value="strip">Strip Map: (1/2) * ln((1+z)/(1-z))</option>
+    </select>
+  </div>
+  <div class="control">
+    <label for="rSlider">r (radius, |z|):</label>
+    <input id="rSlider" type="range" min="0.05" max="0.85" step="0.01" value="0.50">
+    <span id="rVal" class="val">0.50</span>
+  </div>
+  <div class="control">
+    <label for="tSlider">θ (angle):</label>
+    <input id="tSlider" type="range" min="0" max="6.28318" step="0.01" value="0.79">
+    <span id="tVal" class="val">0.79 rad</span>
+  </div>
+
+  <div class="stats">
+    <div><b>Lower Bound:</b> r / (1 + r)² = <span id="lowerVal">0.2222</span></div>
+    <div><b>Current |f(z)|:</b> <span id="modVal">0.5714</span></div>
+    <div><b>Upper Bound:</b> r / (1 − r)² = <span id="upperVal">2.0000</span></div>
+  </div>
+</div>
+
+<div id="container">
+  <div class="panel">
+    <h3>Unit Disk (z-plane)</h3>
+    <canvas id="zCanvas" width="360" height="360"></canvas>
+  </div>
+  <div class="panel">
+    <h3>Image (f(z)-plane)</h3>
+    <canvas id="wCanvas" width="360" height="360"></canvas>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const funcSelect = document.getElementById('funcSelect');
+  const rSlider = document.getElementById('rSlider');
+  const tSlider = document.getElementById('tSlider');
+
+  function evalFunction(type, r, theta) {
+    const x = r * Math.cos(theta);
+    const y = r * Math.sin(theta);
+
+    if (type === 'identity') {
+      return { re: x, im: y, mod: Math.hypot(x, y) };
+    } 
+    else if (type === 'koebe') {
+      const denomRe = 1 - x;
+      const denomIm = -y;
+      const sqRe = denomRe * denomRe - denomIm * denomIm;
+      const sqIm = 2 * denomRe * denomIm;
+      const modSq = sqRe * sqRe + sqIm * sqIm;
+      const re = (x * sqRe + y * sqIm) / modSq;
+      const im = (y * sqRe - x * sqIm) / modSq;
+      return { re, im, mod: Math.hypot(re, im) };
+    } 
+    else if (type === 'koebeRot') {
+      const denomRe = 1 + x;
+      const denomIm = y;
+      const sqRe = denomRe * denomRe - denomIm * denomIm;
+      const sqIm = 2 * denomRe * denomIm;
+      const modSq = sqRe * sqRe + sqIm * sqIm;
+      const re = (x * sqRe + y * sqIm) / modSq;
+      const im = (y * sqRe - x * sqIm) / modSq;
+      return { re, im, mod: Math.hypot(re, im) };
+    } 
+    else if (type === 'strip') {
+      // (1/2) * ln((1+z)/(1-z))
+      const numRe = 1 + x, numIm = y;
+      const denRe = 1 - x, denIm = -y;
+      const denModSq = denRe * denRe + denIm * denIm;
+      const ratioRe = (numRe * denRe + numIm * denIm) / denModSq;
+      const ratioIm = (numIm * denRe - numRe * denIm) / denModSq;
+      
+      const logMod = Math.log(Math.hypot(ratioRe, ratioIm));
+      const logArg = Math.atan2(ratioIm, ratioRe);
+      
+      const re = 0.5 * logMod;
+      const im = 0.5 * logArg;
+      return { re, im, mod: Math.hypot(re, im) };
+    }
+  }
+
+  function draw() {
+    const funcType = funcSelect.value;
+    const r = parseFloat(rSlider.value);
+    const theta = parseFloat(tSlider.value);
+
+    const lower = r / Math.pow(1 + r, 2);
+    const upper = r / Math.pow(1 - r, 2);
+    const currentPt = evalFunction(funcType, r, theta);
+
+    document.getElementById('rVal').textContent = r.toFixed(2);
+    document.getElementById('tVal').textContent = theta.toFixed(2) + " rad";
+    document.getElementById('lowerVal').textContent = lower.toFixed(4);
+    document.getElementById('upperVal').textContent = upper.toFixed(4);
+    document.getElementById('modVal').textContent = currentPt.mod.toFixed(4);
+
+    // --- Draw Z-Plane ---
+    const zCanvas = document.getElementById('zCanvas');
+    const zCtx = zCanvas.getContext('2d');
+    const zCx = zCanvas.width / 2;
+    const zCy = zCanvas.height / 2;
+    const zScale = 140;
+
+    zCtx.clearRect(0, 0, zCanvas.width, zCanvas.height);
+
+    zCtx.strokeStyle = "#e2e8f0";
+    zCtx.lineWidth = 1;
+    zCtx.beginPath();
+    zCtx.moveTo(0, zCy); zCtx.lineTo(zCanvas.width, zCy);
+    zCtx.moveTo(zCx, 0); zCtx.lineTo(zCx, zCanvas.height);
+    zCtx.stroke();
+
+    zCtx.strokeStyle = "#2563eb";
+    zCtx.lineWidth = 2;
+    zCtx.beginPath();
+    zCtx.arc(zCx, zCy, zScale, 0, 2 * Math.PI);
+    zCtx.stroke();
+
+    zCtx.strokeStyle = "#ef4444";
+    zCtx.setLineDash([4, 4]);
+    zCtx.beginPath();
+    zCtx.arc(zCx, zCy, r * zScale, 0, 2 * Math.PI);
+    zCtx.stroke();
+    zCtx.setLineDash([]);
+
+    const zx = zCx + r * zScale * Math.cos(theta);
+    const zy = zCy - r * zScale * Math.sin(theta);
+
+    zCtx.strokeStyle = "#ef4444";
+    zCtx.lineWidth = 1.5;
+    zCtx.beginPath();
+    zCtx.moveTo(zCx, zCy);
+    zCtx.lineTo(zx, zy);
+    zCtx.stroke();
+
+    zCtx.fillStyle = "#ef4444";
+    zCtx.beginPath();
+    zCtx.arc(zx, zy, 5, 0, 2 * Math.PI);
+    zCtx.fill();
+
+    zCtx.fillStyle = "#334155";
+    zCtx.font = "12px sans-serif";
+    zCtx.fillText("|z|=1", zCx + zScale - 30, zCy + 15);
+    zCtx.fillText("z", zx + 8, zy - 8);
+
+    // --- Draw W-Plane ---
+    const wCanvas = document.getElementById('wCanvas');
+    const wCtx = wCanvas.getContext('2d');
+    const wCx = wCanvas.width / 2;
+    const wCy = wCanvas.height / 2;
+    const wScale = 140 / Math.max(upper, 2.0);
+
+    wCtx.clearRect(0, 0, wCanvas.width, wCanvas.height);
+
+    wCtx.strokeStyle = "#e2e8f0";
+    wCtx.lineWidth = 1;
+    wCtx.beginPath();
+    wCtx.moveTo(0, wCy); wCtx.lineTo(wCanvas.width, wCy);
+    wCtx.moveTo(wCx, 0); wCtx.lineTo(wCx, wCanvas.height);
+    wCtx.stroke();
+
+    // Bounding Annulus Fill
+    wCtx.fillStyle = "rgba(241, 245, 249, 0.75)";
+    wCtx.beginPath();
+    wCtx.arc(wCx, wCy, upper * wScale, 0, 2 * Math.PI);
+    wCtx.arc(wCx, wCy, lower * wScale, 0, 2 * Math.PI, true);
+    wCtx.fill();
+
+    // Bounds
+    wCtx.strokeStyle = "#f97316";
+    wCtx.lineWidth = 1.5;
+    wCtx.beginPath();
+    wCtx.arc(wCx, wCy, upper * wScale, 0, 2 * Math.PI);
+    wCtx.stroke();
+
+    wCtx.strokeStyle = "#14b8a6";
+    wCtx.lineWidth = 1.5;
+    wCtx.beginPath();
+    wCtx.arc(wCx, wCy, lower * wScale, 0, 2 * Math.PI);
+    wCtx.stroke();
+
+    // Mapped boundary curve f(|z|=r)
+    wCtx.strokeStyle = "#8b5cf6";
+    wCtx.lineWidth = 2;
+    wCtx.beginPath();
+    for (let a = 0; a <= 2 * Math.PI + 0.02; a += 0.02) {
+      const pt = evalFunction(funcType, r, a);
+      const wx = wCx + pt.re * wScale;
+      const wy = wCy - pt.im * wScale;
+      if (a === 0) wCtx.moveTo(wx, wy);
+      else wCtx.lineTo(wx, wy);
+    }
+    wCtx.stroke();
+
+    // Mapped Point f(z)
+    const px = wCx + currentPt.re * wScale;
+    const py = wCy - currentPt.im * wScale;
+
+    wCtx.strokeStyle = "#8b5cf6";
+    wCtx.lineWidth = 1;
+    wCtx.beginPath();
+    wCtx.moveTo(wCx, wCy);
+    wCtx.lineTo(px, py);
+    wCtx.stroke();
+
+    wCtx.fillStyle = "#8b5cf6";
+    wCtx.beginPath();
+    wCtx.arc(px, py, 5, 0, 2 * Math.PI);
+    wCtx.fill();
+
+    wCtx.fillStyle = "#334155";
+    wCtx.font = "12px sans-serif";
+    wCtx.fillText("f(z)", px + 8, py - 8);
+  }
+
+  funcSelect.addEventListener('change', draw);
+  rSlider.addEventListener('input', draw);
+  tSlider.addEventListener('input', draw);
+
+  draw();
+});
+</script>
+
+</body>
+</html>

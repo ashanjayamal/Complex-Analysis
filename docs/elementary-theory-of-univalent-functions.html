@@ -23,7 +23,7 @@
 <meta name="author" content="Ashan Jayamal" />
 
 
-<meta name="date" content="2026-07-29" />
+<meta name="date" content="2026-07-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -326,13 +326,16 @@ Interior of a cardioid
 <li><strong>Range transformation:</strong> if <span class="math inline">\(\psi\)</span> is univalent on <span class="math inline">\(f(\mathbb D)\)</span> with <span class="math inline">\(\psi(0)=0,\psi&#39;(0)=1\)</span>, then <span class="math inline">\(\psi\circ f \in S\)</span>.</li>
 <li><strong>Omitted-value transformation:</strong> if <span class="math inline">\(f\)</span> omits the value <span class="math inline">\(w\)</span>, then <span class="math inline">\(g = \dfrac{wf}{w-f} \in S\)</span> (this is used directly in the Koebe <span class="math inline">\(1/4\)</span> theorem below).</li>
 <li><strong>Square-root transformation:</strong> if <span class="math inline">\(f\in S\)</span>, then
-<span class="math display">\[g(z) = \sqrt{f(z^2)} = z + \tfrac12 a_2 z^3 + \cdots \in S.\]</span></li>
+<span class="math display">\[g(z) = \sqrt{f(z^2)} = z + \tfrac12 a_2 z^3 + \cdots \in S.\]</span>
+<img src="fig/pic%2030.jpeg" /></li>
 </ol>
 <p><strong>Why (7) is univalent a nice small argument.</strong> Since <span class="math inline">\(f(w)=0\)</span> only at <span class="math inline">\(w=0\)</span>, we can pick a single-valued branch <span class="math inline">\(g(z) = \sqrt{f(z^2)}\)</span>; <span class="math inline">\(g\)</span> is automatically <em>odd</em>, <span class="math inline">\(g(-z)=-g(z)\)</span>. If <span class="math inline">\(g(z_1)=g(z_2)\)</span>, squaring gives <span class="math inline">\(f(z_1^2)=f(z_2^2)\)</span>, so <span class="math inline">\(z_1^2=z_2^2\)</span> (univalence of <span class="math inline">\(f\)</span>), i.e. <span class="math inline">\(z_1 = \pm z_2\)</span>. If <span class="math inline">\(z_1=-z_2\)</span>, then <span class="math inline">\(g(z_1) = g(z_2) = g(-z_1) = -g(z_1)\)</span>, forcing <span class="math inline">\(g(z_1)=0\)</span>, hence <span class="math inline">\(z_1=0=z_2\)</span>. Either way <span class="math inline">\(z_1=z_2\)</span>. <span class="math inline">\(\blacksquare\)</span></p>
 <p><strong><span class="math inline">\(m\)</span>-fold symmetric functions.</strong> <span class="math inline">\(S^{(m)}\subset S\)</span> consists of functions with <span class="math inline">\(m\)</span>-fold symmetry, <span class="math inline">\(f(z) = z + \sum_{k\ge1} a_{mk+1}z^{mk+1}\)</span>. The <span class="math inline">\(m\)</span>-th root transform <span class="math inline">\(g(z) = \{f(z^m)\}^{1/m}\)</span> sends <span class="math inline">\(S \to S^{(m)}\)</span>, and this correspondence is onto: every <span class="math inline">\(g\in S^{(m)}\)</span> arises this way. (The square-root transformation above is the case <span class="math inline">\(m=2\)</span>.)</p>
 <p><strong>The exterior class <span class="math inline">\(\Sigma\)</span>.</strong> This is the natural companion class: functions
 <span class="math display">\[g(z) = z + b_0 + \frac{b_1}{z} + \frac{b_2}{z^2}+\cdots\]</span>
 univalent on <span class="math inline">\(\Delta = \{|z|&gt;1\}\)</span> except for a simple pole at <span class="math inline">\(\infty\)</span> (residue <span class="math inline">\(1\)</span>). Each <span class="math inline">\(g\in\Sigma\)</span> maps <span class="math inline">\(\Delta\)</span> onto the complement of some compact connected set <span class="math inline">\(E\)</span>.</p>
+<p>Each function <span class="math inline">\(g \in \Sigma\)</span> maps <span class="math inline">\(\delta\)</span> onto the complement of a compact connected set <span class="math inline">\(E\)</span>.
+<img src="fig/pic%2031.jpeg" /></p>
 <ul>
 <li><span class="math inline">\(\Sigma&#39;\subset\Sigma\)</span>: those <span class="math inline">\(g\)</span> with <span class="math inline">\(0 \notin g(\Delta)\)</span>, i.e. <span class="math inline">\(g\)</span> never vanishes. Any <span class="math inline">\(g\in\Sigma\)</span> can be shifted into <span class="math inline">\(\Sigma&#39;\)</span> by adjusting <span class="math inline">\(b_0\)</span> (a translation, which preserves univalence).</li>
 <li><strong>Inversion</strong>, <span class="math inline">\(f\mapsto g\)</span>: for <span class="math inline">\(f\in S\)</span>,
@@ -358,21 +361,27 @@ Since area is <span class="math inline">\(\ge 0\)</span> for every <span class="
 <span class="math display">\[m(E) = \pi\Big(1 - \sum n|b_n|^2\Big) \ge 0,\]</span>
 which is exactly the theorem. Equality <span class="math inline">\(m(E)=0\)</span> is precisely membership in <span class="math inline">\(\tilde\Sigma\)</span>.</p>
 </div>
+<div class="proof">
+<p><span id="unlabeled-div-8" class="proof"><em>Proof</em>. </span><img src="fig/pic%2028.jpeg" />
+<img src="fig/pic%2029.jpeg" />
+<img src="fig/pic%2034.png" />
+<img src="fig/pic%2033.jpeg" /></p>
+</div>
 <p>This is a genuinely lovely argument: you get a <em>coefficient inequality</em> out of nothing but “area can’t be negative.”</p>
 <div class="corollary">
-<p><span id="cor:unnamed-chunk-46" class="corollary"><strong>Corollary 6.1  </strong></span><span class="math inline">\(|b_1|\le 1\)</span>, with equality iff <span class="math inline">\(g(z) = z+b_0+b_1/z\)</span>, <span class="math inline">\(|b_1|=1\)</span> mapping <span class="math inline">\(\Delta\)</span> onto the complement of a line segment of length <span class="math inline">\(4\)</span>. (Equality in <span class="math inline">\(|b_1|^2 \le \sum n|b_n|^2 \le 1\)</span> forces all other <span class="math inline">\(b_n=0\)</span> and <span class="math inline">\(|b_1|=1\)</span>.)</p>
+<p><span id="cor:unnamed-chunk-47" class="corollary"><strong>Corollary 6.1  </strong></span><span class="math inline">\(|b_1|\le 1\)</span>, with equality iff <span class="math inline">\(g(z) = z+b_0+b_1/z\)</span>, <span class="math inline">\(|b_1|=1\)</span> mapping <span class="math inline">\(\Delta\)</span> onto the complement of a line segment of length <span class="math inline">\(4\)</span>. (Equality in <span class="math inline">\(|b_1|^2 \le \sum n|b_n|^2 \le 1\)</span> forces all other <span class="math inline">\(b_n=0\)</span> and <span class="math inline">\(|b_1|=1\)</span>.)</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-47" class="theorem"><strong>Theorem 6.2  (Bieberbach's Theorem (1916), via the corollary) </strong></span>If <span class="math inline">\(f\in S\)</span>, then <span class="math inline">\(|a_2|\le 2\)</span>, with equality iff <span class="math inline">\(f\)</span> is a rotation of the Koebe function.</p>
+<p><span id="thm:unnamed-chunk-48" class="theorem"><strong>Theorem 6.2  (Bieberbach's Theorem (1916), via the corollary) </strong></span>If <span class="math inline">\(f\in S\)</span>, then <span class="math inline">\(|a_2|\le 2\)</span>, with equality iff <span class="math inline">\(f\)</span> is a rotation of the Koebe function.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-8" class="proof"><em>Proof</em>. </span>Chain the square-root transform and inversion: <span class="math inline">\(g(z) = \{f(1/z^2)\}^{-1/2} = z - \tfrac12 a_2 z^{-1} + \cdots \in \Sigma\)</span>. Its <span class="math inline">\(b_1\)</span> coefficient is <span class="math inline">\(-a_2/2\)</span>, so the corollary gives <span class="math inline">\(|a_2/2|\le 1\)</span>, i.e. <span class="math inline">\(|a_2|\le 2\)</span>. Equality forces <span class="math inline">\(g(z) = z + b_0 + \frac{b_1}{z}\)</span> with <span class="math inline">\(|b_1|=1\)</span>, and unwinding the transform shows this corresponds to <span class="math inline">\(f\)</span> being a rotation <span class="math inline">\(e^{-i\theta}k(e^{i\theta}z)\)</span> of the Koebe function.</p>
+<p><span id="unlabeled-div-9" class="proof"><em>Proof</em>. </span>Chain the square-root transform and inversion: <span class="math inline">\(g(z) = \{f(1/z^2)\}^{-1/2} = z - \tfrac12 a_2 z^{-1} + \cdots \in \Sigma\)</span>. Its <span class="math inline">\(b_1\)</span> coefficient is <span class="math inline">\(-a_2/2\)</span>, so the corollary gives <span class="math inline">\(|a_2/2|\le 1\)</span>, i.e. <span class="math inline">\(|a_2|\le 2\)</span>. Equality forces <span class="math inline">\(g(z) = z + b_0 + \frac{b_1}{z}\)</span> with <span class="math inline">\(|b_1|=1\)</span>, and unwinding the transform shows this corresponds to <span class="math inline">\(f\)</span> being a rotation <span class="math inline">\(e^{-i\theta}k(e^{i\theta}z)\)</span> of the Koebe function.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-49" class="theorem"><strong>Theorem 6.3  (Koebe's One-Quarter Theorem) </strong></span>Every <span class="math inline">\(f\in S\)</span> has range containing the disk <span class="math inline">\(|w|&lt;\tfrac14\)</span>.</p>
+<p><span id="thm:unnamed-chunk-50" class="theorem"><strong>Theorem 6.3  (Koebe's One-Quarter Theorem) </strong></span>Every <span class="math inline">\(f\in S\)</span> has range containing the disk <span class="math inline">\(|w|&lt;\tfrac14\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-9" class="proof"><em>Proof</em>. </span>Suppose <span class="math inline">\(f\)</span> omits a value <span class="math inline">\(w\)</span>. Apply the omitted-value transformation:
+<p><span id="unlabeled-div-10" class="proof"><em>Proof</em>. </span>Suppose <span class="math inline">\(f\)</span> omits a value <span class="math inline">\(w\)</span>. Apply the omitted-value transformation:
 <span class="math display">\[g(z) = \frac{wf(z)}{w-f(z)} = z + \left(a_2+\frac1w\right)z^2+\cdots \in S.\]</span>
 Bieberbach’s theorem applied to <span class="math inline">\(g\)</span> gives <span class="math inline">\(\left|a_2+\dfrac1w\right|\le 2\)</span>. Combined with <span class="math inline">\(|a_2|\le 2\)</span> (triangle inequality: <span class="math inline">\(\left|\frac1w\right| \le \left|a_2+\frac1w\right|+|a_2| \le 4\)</span>), we get <span class="math inline">\(|w|\ge \tfrac14\)</span>. $<br />
 </p>
@@ -381,24 +390,34 @@ Bieberbach’s theorem applied to <span class="math inline">\(g\)</span> gives <
 </div>
 <div id="growth-and-distortion-theorems" class="section level2 hasAnchor" number="6.3">
 <h2><span class="header-section-number">6.3</span> Growth and Distortion Theorems<a href="elementary-theory-of-univalent-functions.html#growth-and-distortion-theorems" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>These translate the coefficient bound <span class="math inline">\(|a_2|\le2\)</span> into pointwise geometric control on <span class="math inline">\(f\)</span> itself.</p>
-<pre class="theorem"><code>For $f\in S$, $|z|=r&lt;1$,
-$$\left|\frac{zf&#39;&#39;(z)}{f&#39;(z)} - \frac{2r^2}{1-r^2}\right| \le \frac{4r}{1-r^2}.$$</code></pre>
+<p>These translate the coefficient bound <span class="math inline">\(|a_2|\le2\)</span> into point-wise geometric control on <span class="math inline">\(f\)</span> itself.</p>
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-52" class="theorem"><strong>Theorem 6.4  (the key technical estimate) </strong></span>For <span class="math inline">\(f\in S\)</span>, <span class="math inline">\(|z|=r&lt;1\)</span>,
+<span class="math display">\[\left|\frac{zf&#39;&#39;(z)}{f&#39;(z)} - \frac{2r^2}{1-r^2}\right| \le \frac{4r}{1-r^2}.\]</span></p>
+</div>
 <p><em>Proof sketch.</em> Fix <span class="math inline">\(\zeta\in\mathbb D\)</span> and apply the disk-automorphism symmetry (item 4 above) to build <span class="math inline">\(F\in S\)</span> re-centered at <span class="math inline">\(\zeta\)</span>. Expanding <span class="math inline">\(F\)</span>’s second Taylor coefficient in terms of <span class="math inline">\(f\)</span>’s Taylor coefficients at <span class="math inline">\(\zeta\)</span> gives an expression <span class="math inline">\(A_2(\zeta) = \frac12(1-|\zeta|^2)\dfrac{f&#39;&#39;(\zeta)}{f&#39;(\zeta)} - \bar\zeta\)</span>. Bieberbach’s theorem bounds <span class="math inline">\(|A_2(\zeta)|\le2\)</span>; simplifying and relabeling <span class="math inline">\(\zeta \to z\)</span> gives the stated inequality. <span class="math inline">\(\blacksquare\)</span></p>
 <p>Splitting into real/imaginary parts of this one inequality produces <em>three</em> classical theorems by integrating along radii this is a nice piece of technique worth internalizing (it’s a recurring move in the subject: one sharp pointwise bound on a logarithmic-derivative-type quantity, then radial integration, gives sharp global bounds).</p>
-<p><strong>Distortion Theorem 2.5.</strong> Take real parts: <span class="math inline">\(\operatorname{Re}\left(\dfrac{zf&#39;&#39;}{f&#39;}\right)\)</span> is sandwiched, and since <span class="math inline">\(\operatorname{Re}\dfrac{zf&#39;&#39;}{f&#39;} = r\dfrac{\partial}{\partial r}\log|f&#39;(re^{i\theta})|\)</span> (using a branch of <span class="math inline">\(\log f&#39;\)</span> vanishing at <span class="math inline">\(0\)</span>), integrating in <span class="math inline">\(r\)</span> gives
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-53" class="theorem"><strong>Theorem 6.5  (Distortion Theorem) </strong></span>Take real parts: <span class="math inline">\(\operatorname{Re}\left(\dfrac{zf&#39;&#39;}{f&#39;}\right)\)</span> is sandwiched, and since <span class="math inline">\(\operatorname{Re}\dfrac{zf&#39;&#39;}{f&#39;} = r\dfrac{\partial}{\partial r}\log|f&#39;(re^{i\theta})|\)</span> (using a branch of <span class="math inline">\(\log f&#39;\)</span> vanishing at <span class="math inline">\(0\)</span>), integrating in <span class="math inline">\(r\)</span> gives
 <span class="math display">\[\frac{1-r}{(1+r)^3} \le |f&#39;(z)| \le \frac{1+r}{(1-r)^3}, \qquad |z|=r,\]</span>
 with equality (for <span class="math inline">\(z\ne0\)</span>) iff <span class="math inline">\(f\)</span> is a rotation of <span class="math inline">\(k\)</span>. Both bounds are attained by <span class="math inline">\(k&#39;(z) = \dfrac{1+z}{(1-z)^3}\)</span> itself.</p>
-<p><strong>Growth Theorem 2.6.</strong> Integrating <span class="math inline">\(f(z) = \int_0^z f&#39;\)</span> radially and applying the distortion theorem along the way:
+</div>
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-54" class="theorem"><strong>Theorem 6.6  (Growth Theorem) </strong></span>Integrating <span class="math inline">\(f(z) = \int_0^z f&#39;\)</span> radially and applying the distortion theorem along the way:
 <span class="math display">\[\frac{r}{(1+r)^2} \le |f(z)| \le \frac{r}{(1-r)^2}, \qquad |z|=r,\]</span>
 again with equality only for rotations of the Koebe function. The <em>lower</em> bound is the subtler direction: if <span class="math inline">\(|f(z)|&lt;\tfrac14\)</span>, the Koebe <span class="math inline">\(1/4\)</span> theorem guarantees the whole segment from <span class="math inline">\(0\)</span> to <span class="math inline">\(f(z)\)</span> lies in <span class="math inline">\(f(\mathbb D)\)</span>, so you can integrate <span class="math inline">\(f&#39;\)</span> along its (univalent) preimage arc and apply the distortion theorem there.</p>
-<p><strong>Rotation theorem (imaginary part).</strong> Taking imaginary parts of Theorem 2.4 instead and integrating gives the (non-sharp) bound
+</div>
+<iframe src="https://growththerom.netlify.app/" width="800" height="1500">
+</iframe>
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-55" class="theorem"><strong>Theorem 6.7  (Rotation theorem (imaginary part)) </strong></span>Taking imaginary parts of Theorem 2.4 instead and integrating gives the (non-sharp) bound
 <span class="math display">\[|\arg f&#39;(z)| \le 2\log\frac{1+r}{1-r}.\]</span>
 The genuinely <strong>sharp</strong> rotation theorem,
 <span class="math display">\[|\arg f&#39;(z)| \le \begin{cases} 4\arcsin r, &amp; r\le 1/\sqrt2,\\[4pt] \pi + \log\dfrac{r^2}{1-r^2}, &amp; r&gt;1/\sqrt2,\end{cases}\]</span>
 lies much deeper (needs Loewner’s method, Chapter 3) and the fact that the sharp bound has <em>different functional forms</em> on either side of <span class="math inline">\(r=1/\sqrt2\)</span> is flagged as one of the striking phenomena of the theory.</p>
+</div>
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-52" class="theorem"><strong>Theorem 6.4  </strong></span>For <span class="math inline">\(f\in S\)</span>,
+<p><span id="thm:unnamed-chunk-56" class="theorem"><strong>Theorem 6.8  (combined growth/distortion, for $zf'/f$) </strong></span>For <span class="math inline">\(f\in S\)</span>,
 <span class="math display">\[\frac{1-r}{1+r} \le \left|\frac{zf&#39;(z)}{f(z)}\right| \le \frac{1+r}{1-r}.\]</span></p>
 </div>
 <p>Note this does <strong>not</strong> follow by naively dividing the growth and distortion bounds the proof has to go back to the auxiliary function <span class="math inline">\(F\)</span> from Theorem 2.4’s construction and use the growth theorem on <span class="math inline">\(F\)</span> at the point <span class="math inline">\(-\zeta\)</span>. Equality, again, only for rotations of <span class="math inline">\(k\)</span>, for which <span class="math inline">\(\dfrac{zk&#39;(z)}{k(z)} = \dfrac{1+z}{1-z}\)</span> exactly.</p>
@@ -410,10 +429,10 @@ lies much deeper (needs Loewner’s method, Chapter 3) and the fact that the sha
 <pre class="theorem"><code>$|a_n| \le en$ for all $f\in S$, $n\ge2$  the correct *order of magnitude*, proved by completely elementary means.</code></pre>
 <p>The proof rests on an integral-means lemma. Define <span class="math inline">\(M_p(r,f) = \left(\dfrac{1}{2\pi}\int_0^{2\pi}|f(re^{i\theta})|^p\,d\theta\right)^{1/p}\)</span>.</p>
 <div class="lemma">
-<p><span id="lem:unnamed-chunk-54" class="lemma"><strong>Lemma 6.1  </strong></span>For` <span class="math inline">\(f\in S\)</span>, <span class="math inline">\(\;M_1(r,f) \le \dfrac{r}{1-r}\)</span>, <span class="math inline">\(0&lt;r&lt;1\)</span>.</p>
+<p><span id="lem:unnamed-chunk-58" class="lemma"><strong>Lemma 6.1  </strong></span>For` <span class="math inline">\(f\in S\)</span>, <span class="math inline">\(\;M_1(r,f) \le \dfrac{r}{1-r}\)</span>, <span class="math inline">\(0&lt;r&lt;1\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-10" class="proof"><em>Proof</em>. </span>Let <span class="math inline">\(h(z) = \sqrt{f(z^2)} = z + e_3z^3+e_5z^5+\cdots\)</span> (the square-root transform, an odd function in <span class="math inline">\(S\)</span>). By the growth theorem applied to <span class="math inline">\(f\)</span> at the point <span class="math inline">\(z^2\)</span> (modulus <span class="math inline">\(r^2\)</span>), <span class="math inline">\(|f(z^2)| \le r^2/(1-r^2)^2\)</span>, so
+<p><span id="unlabeled-div-11" class="proof"><em>Proof</em>. </span>Let <span class="math inline">\(h(z) = \sqrt{f(z^2)} = z + e_3z^3+e_5z^5+\cdots\)</span> (the square-root transform, an odd function in <span class="math inline">\(S\)</span>). By the growth theorem applied to <span class="math inline">\(f\)</span> at the point <span class="math inline">\(z^2\)</span> (modulus <span class="math inline">\(r^2\)</span>), <span class="math inline">\(|f(z^2)| \le r^2/(1-r^2)^2\)</span>, so
 <span class="math display">\[|h(z)| \le \frac{r}{1-r^2}, \qquad |z|=r.\]</span>
 So <span class="math inline">\(h\)</span> maps <span class="math inline">\(|z|&lt;r\)</span> into the disk <span class="math inline">\(|w| &lt; r/(1-r^2)\)</span>; the (multiplicity-weighted) area of the image is
 <span class="math display">\[A_r = \iint_{|z|&lt;r} |h&#39;(z)|^2\,dA = \pi\sum_n n|e_n|^2 r^{2n} \;\le\; \pi \frac{r^2}{(1-r^2)^2}.\]</span>
@@ -422,7 +441,7 @@ Dividing by <span class="math inline">\(r\)</span> and integrating from <span cl
 By Parseval, the left side is <span class="math inline">\(M_2(r,h)^2\)</span>, and since <span class="math inline">\(|h(z)|^2=|f(z^2)|\)</span>, a change of variable shows <span class="math inline">\(M_2(r,h)^2 = M_1(r^2,f)\)</span>. Relabeling <span class="math inline">\(r^2\to r\)</span> gives <span class="math inline">\(M_1(r,f)\le r/(1-r)\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-11" class="proof"><em>Proof</em>. </span><strong>Deriving Littlewood’s theorem from the lemma.</strong> Cauchy’s formula gives <span class="math inline">\(|a_n| \le r^{-n}M_1(r,f) \le \dfrac{r^{1-n}}{1-r}\)</span>. Minimizing over <span class="math inline">\(r\)</span> at <span class="math inline">\(r=1-1/n\)</span>:
+<p><span id="unlabeled-div-12" class="proof"><em>Proof</em>. </span><strong>Deriving Littlewood’s theorem from the lemma.</strong> Cauchy’s formula gives <span class="math inline">\(|a_n| \le r^{-n}M_1(r,f) \le \dfrac{r^{1-n}}{1-r}\)</span>. Minimizing over <span class="math inline">\(r\)</span> at <span class="math inline">\(r=1-1/n\)</span>:
 <span class="math display">\[|a_n| \le n\left(1-\frac1n\right)^{1-n} \longrightarrow en \quad\text{(since $(1-1/n)^{-n}\to e$).}\]</span></p>
 </div>
 <p><strong>How sharp is this?</strong> Not very even in principle, this <em>method</em> (Cauchy estimate + integral means) can’t beat <span class="math inline">\(\tfrac e2 n\)</span>, because the true extremal is the Koebe function, whose own integral mean can be computed in closed form:
@@ -430,10 +449,10 @@ By Parseval, the left side is <span class="math inline">\(M_2(r,h)^2\)</span>, a
 (a Poisson-kernel identity), which is smaller than Littlewood’s elementary bound <span class="math inline">\(r/(1-r)\)</span> by essentially a factor of <span class="math inline">\(2\)</span> near <span class="math inline">\(r=1\)</span> (since <span class="math inline">\(1-r^2\approx 2(1-r)\)</span>). It took until <strong>Baernstein (1973)</strong> using his theory of “star-functions” to prove the <em>sharp</em> statement <span class="math inline">\(M_p(r,f)\le M_p(r,k)\)</span> for <strong>all</strong> <span class="math inline">\(f\in S\)</span> and all <span class="math inline">\(0&lt;p&lt;\infty\)</span>, matching the Koebe function exactly. That recovers the optimal constant <span class="math inline">\(\tfrac e2\)</span> from this style of argument (though it still falls short of de Branges’s exact <span class="math inline">\(n\)</span>).</p>
 <p><strong>Application: arclength of image circles.</strong> Let <span class="math inline">\(L_r(f)\)</span> be the length of the image of <span class="math inline">\(|z|=r\)</span> under <span class="math inline">\(f\)</span>, i.e. <span class="math inline">\(L_r(f)=\int_0^{2\pi}|f&#39;(re^{i\theta})|\,r\,d\theta\)</span>.</p>
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-57" class="theorem"><strong>Theorem 6.5  </strong></span><span class="math inline">\(L_r(f) \le \dfrac{2\pi r(1+r)}{(1-r)^2}\)</span>.</p>
+<p><span id="thm:unnamed-chunk-61" class="theorem"><strong>Theorem 6.9  </strong></span><span class="math inline">\(L_r(f) \le \dfrac{2\pi r(1+r)}{(1-r)^2}\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-12" class="proof"><em>Proof</em>. </span>Write <span class="math inline">\(|f&#39;(z)|\,r = \left|\dfrac{zf&#39;(z)}{f(z)}\right|\cdot|f(z)|\)</span> (using <span class="math inline">\(|z|=r\)</span>), bound the first factor by Theorem 2.7’s upper bound <span class="math inline">\(\tfrac{1+r}{1-r}\)</span>, and integrate:
+<p><span id="unlabeled-div-13" class="proof"><em>Proof</em>. </span>Write <span class="math inline">\(|f&#39;(z)|\,r = \left|\dfrac{zf&#39;(z)}{f(z)}\right|\cdot|f(z)|\)</span> (using <span class="math inline">\(|z|=r\)</span>), bound the first factor by Theorem 2.7’s upper bound <span class="math inline">\(\tfrac{1+r}{1-r}\)</span>, and integrate:
 <span class="math display">\[L_r(f) \le \frac{1+r}{1-r}\int_0^{2\pi}|f(re^{i\theta})|\,d\theta = \frac{1+r}{1-r}\cdot 2\pi M_1(r,f) \le \frac{1+r}{1-r}\cdot 2\pi\cdot\frac{r}{1-r} = \frac{2\pi r(1+r)}{(1-r)^2}.\]</span></p>
 </div>
 <p>This is again “very nearly sharp” but not sharp; using Baernstein’s inequality <span class="math inline">\(M_1(r,f)\le \frac{r}{1-r^2}\)</span> in place of the elementary lemma improves it to

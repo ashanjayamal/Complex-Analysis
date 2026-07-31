@@ -233,6 +233,7 @@ kable(df, format = "html", escape = FALSE,
 6. **Omitted-value transformation:** if $f$ omits the value $w$, then $g = \dfrac{wf}{w-f} \in S$ (this is used directly in the Koebe $1/4$ theorem below).
 7. **Square-root transformation:** if $f\in S$, then
 $$g(z) = \sqrt{f(z^2)} = z + \tfrac12 a_2 z^3 + \cdots \in S.$$
+![](fig/pic 30.jpeg)
 
 **Why (7) is univalent  a nice small argument.** Since $f(w)=0$ only at $w=0$, we can pick a single-valued branch $g(z) = \sqrt{f(z^2)}$; $g$ is automatically *odd*, $g(-z)=-g(z)$. If $g(z_1)=g(z_2)$, squaring gives $f(z_1^2)=f(z_2^2)$, so $z_1^2=z_2^2$ (univalence of $f$), i.e. $z_1 = \pm z_2$. If $z_1=-z_2$, then $g(z_1) = g(z_2) = g(-z_1) = -g(z_1)$, forcing $g(z_1)=0$, hence $z_1=0=z_2$. Either way $z_1=z_2$. $\blacksquare$
 
@@ -241,6 +242,10 @@ $$g(z) = \sqrt{f(z^2)} = z + \tfrac12 a_2 z^3 + \cdots \in S.$$
 **The exterior class $\Sigma$.** This is the natural companion class: functions
 $$g(z) = z + b_0 + \frac{b_1}{z} + \frac{b_2}{z^2}+\cdots$$
 univalent on $\Delta = \{|z|>1\}$ except for a simple pole at $\infty$ (residue $1$). Each $g\in\Sigma$ maps $\Delta$ onto the complement of some compact connected set $E$.
+
+Each function $g \in \Sigma$ maps $\delta$ onto the complement of a compact connected set $E$.
+![](fig/pic 31.jpeg)
+
 
 - $\Sigma'\subset\Sigma$: those $g$ with $0 \notin g(\Delta)$, i.e. $g$ never vanishes. Any $g\in\Sigma$ can be shifted into $\Sigma'$ by adjusting $b_0$ (a translation, which preserves univalence).
 - **Inversion**, $f\mapsto g$: for $f\in S$,
@@ -268,6 +273,12 @@ $$m(E) = \pi\Big(1 - \sum n|b_n|^2\Big) \ge 0,$$
 which is exactly the theorem. Equality $m(E)=0$ is precisely membership in $\tilde\Sigma$. 
 ```
 
+```{proof}
+![](fig/pic 28.jpeg)
+![](fig/pic 29.jpeg)
+![](fig/pic 34.png)
+![](fig/pic 33.jpeg)
+```
 This is a genuinely lovely argument: you get a *coefficient inequality* out of nothing but "area can't be negative."
 
 
@@ -298,9 +309,9 @@ The proof shows more: **only** the Koebe function and its rotations actually ach
 
 ## Growth and Distortion Theorems
 
-These translate the coefficient bound $|a_2|\le2$ into pointwise geometric control on $f$ itself.
+These translate the coefficient bound $|a_2|\le2$ into point-wise geometric control on $f$ itself.
 
-```{Theorem,name="the key technical estimate"}
+```{theorem,name="the key technical estimate"}
 For $f\in S$, $|z|=r<1$,
 $$\left|\frac{zf''(z)}{f'(z)} - \frac{2r^2}{1-r^2}\right| \le \frac{4r}{1-r^2}.$$
 ```
@@ -309,21 +320,32 @@ $$\left|\frac{zf''(z)}{f'(z)} - \frac{2r^2}{1-r^2}\right| \le \frac{4r}{1-r^2}.$
 
 Splitting into real/imaginary parts of this one inequality produces *three* classical theorems by integrating along radii  this is a nice piece of technique worth internalizing (it's a recurring move in the subject: one sharp pointwise bound on a logarithmic-derivative-type quantity, then radial integration, gives sharp global bounds).
 
-**Distortion Theorem 2.5.** Take real parts: $\operatorname{Re}\left(\dfrac{zf''}{f'}\right)$ is sandwiched, and since $\operatorname{Re}\dfrac{zf''}{f'} = r\dfrac{\partial}{\partial r}\log|f'(re^{i\theta})|$ (using a branch of $\log f'$ vanishing at $0$), integrating in $r$ gives
+```{theorem,name="Distortion Theorem"}
+Take real parts: $\operatorname{Re}\left(\dfrac{zf''}{f'}\right)$ is sandwiched, and since $\operatorname{Re}\dfrac{zf''}{f'} = r\dfrac{\partial}{\partial r}\log|f'(re^{i\theta})|$ (using a branch of $\log f'$ vanishing at $0$), integrating in $r$ gives
 $$\frac{1-r}{(1+r)^3} \le |f'(z)| \le \frac{1+r}{(1-r)^3}, \qquad |z|=r,$$
 with equality (for $z\ne0$) iff $f$ is a rotation of $k$. Both bounds are attained by $k'(z) = \dfrac{1+z}{(1-z)^3}$ itself.
+```
 
-**Growth Theorem 2.6.** Integrating $f(z) = \int_0^z f'$ radially and applying the distortion theorem along the way:
+
+
+```{theorem,name="Growth Theorem"}
+Integrating $f(z) = \int_0^z f'$ radially and applying the distortion theorem along the way:
 $$\frac{r}{(1+r)^2} \le |f(z)| \le \frac{r}{(1-r)^2}, \qquad |z|=r,$$
 again with equality only for rotations of the Koebe function. The *lower* bound is the subtler direction: if $|f(z)|<\tfrac14$, the Koebe $1/4$ theorem guarantees the whole segment from $0$ to $f(z)$ lies in $f(\mathbb D)$, so you can integrate $f'$ along its (univalent) preimage arc and apply the distortion theorem there.
+```
 
-**Rotation theorem (imaginary part).** Taking imaginary parts of Theorem 2.4 instead and integrating gives the (non-sharp) bound
+<iframe src="https://growththerom.netlify.app/" width="800" height="1500"></iframe>   
+
+```{theorem,name="Rotation theorem (imaginary part)"}
+Taking imaginary parts of Theorem 2.4 instead and integrating gives the (non-sharp) bound
 $$|\arg f'(z)| \le 2\log\frac{1+r}{1-r}.$$
 The genuinely **sharp** rotation theorem,
 $$|\arg f'(z)| \le \begin{cases} 4\arcsin r, & r\le 1/\sqrt2,\\[4pt] \pi + \log\dfrac{r^2}{1-r^2}, & r>1/\sqrt2,\end{cases}$$
 lies much deeper (needs Loewner's method, Chapter 3)  and the fact that the sharp bound has *different functional forms* on either side of $r=1/\sqrt2$ is flagged as one of the striking phenomena of the theory.
+```
 
-```{theorem,nmae="combined growth/distortion, for $zf'/f$"}
+
+```{theorem,name="combined growth/distortion, for $zf'/f$"}
 For $f\in S$,
 $$\frac{1-r}{1+r} \le \left|\frac{zf'(z)}{f(z)}\right| \le \frac{1+r}{1-r}.$$
 ```
