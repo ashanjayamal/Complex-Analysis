@@ -354,23 +354,46 @@ Every $f\in S$ has range containing the disk $|w|<\tfrac14$.
 ```{proof}
 Suppose $f$ omits a value $w$. Apply the omitted-value transformation:
 $$g(z) = \frac{wf(z)}{w-f(z)} = z + \left(a_2+\frac1w\right)z^2+\cdots \in S.$$
-Bieberbach's theorem applied to $g$ gives $\left|a_2+\dfrac1w\right|\le 2$. Combined with $|a_2|\le 2$ (triangle inequality: $\left|\frac1w\right| \le \left|a_2+\frac1w\right|+|a_2| \le 4$), we get $|w|\ge \tfrac14$. $\
+Bieberbach's theorem applied to $g$ gives $\left|a_2+\dfrac1w\right|\le 2$. Combined with $|a_2|\le 2$ (triangle inequality: $\left|\frac1w\right| \le \left|a_2+\frac1w\right|+|a_2| \le 4$), we get $|w|\ge \tfrac14$. 
 ```
 
-The proof shows more: **only** the Koebe function and its rotations actually achieve $|w|=\tfrac14$ (they're the ones omitting a boundary point of the disk $|w|<1/4$ exactly)  every other $f\in S$ covers a strictly larger disk. Also worth noting: univalence is essential here, not just $f(0)=0, f'(0)=1$  $f_n(z) = z(1+z/n)^2$ satisfies the normalization but omits values arbitrarily close to $0$, since it's not univalent.
+```{proof}
+![](fig/pic 35 (9).jpg)
+![](fig/pic 35 (10).jpg)
+```
+
+```{remark}
+The proof shows more: **only** the Koebe function and its rotations actually achieve $|w|=\tfrac14$ (they're the ones omitting a boundary point of the disk $|w|<1/4$ exactly)  every other $f\in S$ covers a strictly larger disk.
+
+```
+
+```{remark}
+Also worth noting: univalence is **essential** here, not just $f(0)=0, f'(0)=1$  
+- $f_n(z) = z(1+z/n)^2 \quad n = 1, 2, \ldots$
+- $f_n(z) = \frac{1}{n}(e^{nz} - 1), \quad n = 1, 2, \ldots$
+satisfies the normalization but omits values arbitrarily close to $0$, since it's not univalent.
+```
 
 ## Growth and Distortion Theorems
 
 These translate the coefficient bound $|a_2|\le2$ into point-wise geometric control on $f$ itself.
 
-```{theorem,name="the key technical estimate"}
-For $f\in S$, $|z|=r<1$,
+```{theorem}
+*(The key technical estimate)* For $f\in S$, $|z|=r<1$,
 $$\left|\frac{zf''(z)}{f'(z)} - \frac{2r^2}{1-r^2}\right| \le \frac{4r}{1-r^2}.$$
 ```
 
-*Proof sketch.* Fix $\zeta\in\mathbb D$ and apply the disk-automorphism symmetry (item 4 above) to build $F\in S$ re-centered at $\zeta$. Expanding $F$'s second Taylor coefficient in terms of $f$'s Taylor coefficients at $\zeta$ gives an expression $A_2(\zeta) = \frac12(1-|\zeta|^2)\dfrac{f''(\zeta)}{f'(\zeta)} - \bar\zeta$. Bieberbach's theorem bounds $|A_2(\zeta)|\le2$; simplifying and relabeling $\zeta \to z$ gives the stated inequality. $\blacksquare$
+```{proof}
+*(Proof sketch)* Fix $\zeta\in\mathbb D$ and apply the disk-automorphism symmetry (item 4 above) to build $F\in S$ re-centered at $\zeta$. Expanding $F$'s second Taylor coefficient in terms of $f$'s Taylor coefficients at $\zeta$ gives an expression $A_2(\zeta) = \frac12(1-|\zeta|^2)\dfrac{f''(\zeta)}{f'(\zeta)} - \bar\zeta$. Bieberbach's theorem bounds ```
 
-Splitting into real/imaginary parts of this one inequality produces *three* classical theorems by integrating along radii  this is a nice piece of technique worth internalizing (it's a recurring move in the subject: one sharp pointwise bound on a logarithmic-derivative-type quantity, then radial integration, gives sharp global bounds).
+```{proof}
+![](fig/pic 35.png)
+![](fig/pic 35 (11).jpg)
+![](fig/pic 35-11.1.jpeg)
+![](fig/pic 35-11.2.jpeg)
+```
+
+Splitting into real/imaginary parts of this one inequality produces *three* classical theorems by integrating along radii  this is a nice piece of technique worth internalizing (it's a recurring move in the subject: one sharp point-wise bound on a logarithmic-derivative-type quantity, then radial integration, gives sharp global bounds).
 
 ```{theorem,name="Distortion Theorem"}
 Take real parts: $\operatorname{Re}\left(\dfrac{zf''}{f'}\right)$ is sandwiched, and since $\operatorname{Re}\dfrac{zf''}{f'} = r\dfrac{\partial}{\partial r}\log|f'(re^{i\theta})|$ (using a branch of $\log f'$ vanishing at $0$), integrating in $r$ gives
@@ -378,11 +401,22 @@ $$\frac{1-r}{(1+r)^3} \le |f'(z)| \le \frac{1+r}{(1-r)^3}, \qquad |z|=r,$$
 with equality (for $z\ne0$) iff $f$ is a rotation of $k$. Both bounds are attained by $k'(z) = \dfrac{1+z}{(1-z)^3}$ itself.
 ```
 
-
+```{proof}
+![](fig/pic 35 (12).jpg)
+![](fig/pic 35 (13).jpg)
+![](fig/pic 35 (14).jpg)
+![](fig/pic 35 (15).jpg)
+![](fig/pic 35 (16).jpg)
+![](fig/pic 35 (18).jpg)
+![](fig/pic 35 (17).jpg)
+![](fig/up.png)
+![](fig/pic 35 (19).jpg)
+![](fig/pic 35 (22).jpg)
+```
 
 ```{theorem,name="Growth Theorem"}
 Integrating $f(z) = \int_0^z f'$ radially and applying the distortion theorem along the way:
-$$\frac{r}{(1+r)^2} \le |f(z)| \le \frac{r}{(1-r)^2}, \qquad |z|=r,$$
+$$\frac{r}{(1+r)^2} \le |f(z)| \le \frac{r}{(1-r)^2}, \qquad |z|=r<1,$$
 again with equality only for rotations of the Koebe function. The *lower* bound is the subtler direction: if $|f(z)|<\tfrac14$, the Koebe $1/4$ theorem guarantees the whole segment from $0$ to $f(z)$ lies in $f(\mathbb D)$, so you can integrate $f'$ along its (univalent) preimage arc and apply the distortion theorem there.
 ```
 
