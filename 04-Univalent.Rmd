@@ -313,6 +313,7 @@ f(z_0) &=& \frac{1}{2\pi i} \int_0^{2\pi} \frac{f(z_0 + R e^{i\theta})}{R e^{i\t
 ![](fig/pic 14.jpeg){width=50%}
 </center>
 ```
+
 - **Maximum principle for harmonic functions**, and the **converse mean-value characterization**: continuous + local mean-value property $\Rightarrow$ harmonic (proved by comparing $u$ to its Poisson integral $U$ and using the maximum principle on $u - U$).
 
 

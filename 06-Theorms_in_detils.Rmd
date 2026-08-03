@@ -195,6 +195,7 @@ is **subharmonic for every \(p>0\)**.
 
 Since I am familiar with $n$-dimensional measure theory, I will go through the following steps.
 
+```{definition}
 The **$n$-dimensional Lebesgue outer measure** of a set $E \subset \mathbb{R}^n$ is
 
 $$m_n^*(E) = \inf \left\{ \sum_{k=1}^{\infty} \operatorname{vol}_n(R_k) : E \subset \bigcup_{k=1}^{\infty} R_k \right\},$$
@@ -210,8 +211,8 @@ $$\operatorname{vol}_n(R_k) = \prod_{j=1}^{n}(b_j-a_j).$$
 For measurable sets, the $n$-dimensional Lebesgue measure is
 
 $$m_n(E) = m_n^*(E).$$
+```
 
----
 
 ### Interpretation by Dimension
 
@@ -222,17 +223,17 @@ $$m_n(E) = m_n^*(E).$$
 | $\mathbb{R}^3$ | volume |
 | $\mathbb{R}^n$ | $n$-dimensional volume |
 
-<br>
 
+```{example}
 | Dimension $n$ | Set | Measure | Interpretation |
 | :---: | :---: | :---: | :---: |
 | 1 | $[0,1]$ | $m_1([0,1]) = 1$ | Length |
 | 2 | Unit disk | $m_2(\text{unit disk}) = \pi$ | Area |
 | 3 | Unit ball | $m_3(\text{unit ball}) = \frac{4\pi}{3}$ | Volume |
-
 *Table 1: Examples of Lebesgue measure in different dimensions.*
+```
 
----
+
 
 ### Lower-dimensional sets have measure zero
 
@@ -240,7 +241,7 @@ A useful rule is:
 
 > A $k$-dimensional object inside $\mathbb{R}^n$ has $n$-dimensional measure zero whenever $k < n$.
 
-**Examples:**
+```{example}
 
 - **In $\mathbb{R}^2$:**
   - A line segment $[-2,2] \times \{0\}$ has $m_2 = 0$. It has length, but no area.
@@ -253,18 +254,92 @@ A useful rule is:
 
 - **In $\mathbb{R}^n$:**
   - Any smooth curve or surface has $m_n = 0$ unless its dimension is actually $n$.
+```
 
----
 
 ### Visualizing Lebesgue Measure and Rectangle Covers
 
-![An irregular measurable set E in R^2](figure_1.png)
+```{r setup-tikz-table1, include=FALSE}
+# Global setup to ensure TikZ chunks load required math packages
+knitr::opts_chunk$set(
+  tikz.preamble = c(
+    "\\usepackage{amsmath}",
+    "\\usepackage{amssymb}",
+    "\\usepackage{xcolor}",
+    "\\usetikzlibrary{positioning, calc}"
+  )
+)
+```
 
-*Figure 1: An irregular measurable set $E \subset \mathbb{R}^2$. Its Lebesgue measure $m_2(E)$ is the area of the shaded region.*
+```{tikz, label="irregularset", fig.path="fig/", echo=FALSE, fig.ext="png", fig.width=5, fig.height=2, fig.cap="An irregular measurable set $E\\subset\\mathbb{R}^2$. Its Lebesgue measure $m_2(E)$ is the area of the shaded region."}
+\begin{tikzpicture}[scale=1]
 
-![A set E covered by three rectangles](figure_2.png)
+    % Axes
+    \draw[->] (-0.5,0) -- (5.5,0) node[right] {$x$};
+    \draw[->] (0,-0.5) -- (0,4.5) node[above] {$y$};
 
-*Figure 2: Covering the set $E$ with rectangles $R_1, R_2, R_3$.*
+    % Irregular shape
+    \fill[blue!20]
+      (0.8,1.2)
+      .. controls (1.2,3.5) and (2.5,3.8) ..
+      (3.5,3.0)
+      .. controls (5.0,2.2) and (4.8,0.8) ..
+      (3.6,0.5)
+      .. controls (2.8,0.1) and (1.8,0.3) ..
+      (0.8,1.2);
+
+    \draw[thick]
+      (0.8,1.2)
+      .. controls (1.2,3.5) and (2.5,3.8) ..
+      (3.5,3.0)
+      .. controls (5.0,2.2) and (4.8,0.8) ..
+      (3.6,0.5)
+      .. controls (2.8,0.1) and (1.8,0.3) ..
+      (0.8,1.2);
+
+    \node at (2.8,2.0) {$E$};
+
+\end{tikzpicture}
+```
+
+```{tikz, label="open-cover-set", fig.path="fig/", echo=FALSE, fig.ext="png", fig.width=6, fig.height=5, fig.cap="An open cover covering the set $E$."}
+\begin{tikzpicture}[scale=1]
+
+    % Shaded set E
+    \fill[blue!15]
+      (0.8,1.2)
+      .. controls (1.2,3.5) and (2.5,3.8) ..
+      (3.5,3.0)
+      .. controls (5.0,2.2) and (4.8,0.8) ..
+      (3.6,0.5)
+      .. controls (2.8,0.1) and (1.8,0.3) ..
+      (0.8,1.2);
+
+    % Boundary of set E
+    \draw[thick]
+      (0.8,1.2)
+      .. controls (1.2,3.5) and (2.5,3.8) ..
+      (3.5,3.0)
+      .. controls (5.0,2.2) and (4.8,0.8) ..
+      (3.6,0.5)
+      .. controls (2.8,0.1) and (1.8,0.3) ..
+      (0.8,1.2);
+
+    % Covering rectangles
+    \draw[red] (0.5,0.5) rectangle (2.0,3.2);
+    \draw[red] (1.5,1.5) rectangle (4.0,3.8);
+    \draw[red] (1.8,0.2) rectangle (5.0,2.8);
+
+    % Label for E
+    \node at (2.7,2.0) {$E$};
+
+    % Axes
+    \draw[->] (-0.5,0) -- (5.5,0) node[right] {$x$};
+    \draw[->] (0,-0.5) -- (0,4.5) node[above] {$y$};
+
+\end{tikzpicture}
+```
+
 
 Then
 

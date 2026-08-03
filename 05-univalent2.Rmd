@@ -348,7 +348,8 @@ Chain the square-root transform and inversion: $g(z) = \{f(1/z^2)\}^{-1/2} = z -
 ```
 
 ```{theorem ,name="Koebe's One-Quarter Theorem"}
-Every $f\in S$ has range containing the disk $|w|<\tfrac14$.
+Every $f\in S$ has range containing the disk $|w|<\tfrac14$. i.e.:
+  $$\left\{w:|w|<\tfrac14\right\}\subset f(\mathbb{D})$$
 ```
 
 ```{proof}
@@ -430,11 +431,19 @@ $$|\arg f'(z)| \le \begin{cases} 4\arcsin r, & r\le 1/\sqrt2,\\[4pt] \pi + \log\
 lies much deeper (needs Loewner's method, Chapter 3)  and the fact that the sharp bound has *different functional forms* on either side of $r=1/\sqrt2$ is flagged as one of the striking phenomena of the theory.
 ```
 
+```{proof}
+![](fig/pic 36.jpeg)
+![](fig/pic 37.jpeg)
+![](fig/pic 38.jpeg) 
+```
+
 
 ```{theorem,name="combined growth/distortion, for $zf'/f$"}
 For $f\in S$,
 $$\frac{1-r}{1+r} \le \left|\frac{zf'(z)}{f(z)}\right| \le \frac{1+r}{1-r}.$$
 ```
+
+
 Note this does **not** follow by naively dividing the growth and distortion bounds  the proof has to go back to the auxiliary function $F$ from Theorem 2.4's construction and use the growth theorem on $F$ at the point $-\zeta$. Equality, again, only for rotations of $k$, for which $\dfrac{zk'(z)}{k(z)} = \dfrac{1+z}{1-z}$ exactly.
 
 ## Coefficient Estimates
@@ -443,7 +452,7 @@ Note this does **not** follow by naively dividing the growth and distortion boun
 
 **Finiteness of $A_n = \sup_{f\in S}|a_n|$** follows either from compactness of $S$ in the topology of locally uniform convergence (Montel-type argument, plus continuity of $a_n$ as a functional), or crudely from Cauchy's estimate combined with the growth theorem, giving $A_n \le Cn^2$.
 
-```{Theorem,name="**Littlewood's Theorem (1925)"}
+```{theorem,name="Littlewood's Theorem (1925)"}
 $|a_n| \le en$ for all $f\in S$, $n\ge2$  the correct *order of magnitude*, proved by completely elementary means.
 ```
 

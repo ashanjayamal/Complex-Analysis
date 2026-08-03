@@ -3,7 +3,7 @@
 *Notes and Lecture Summaries*
 *Research Readings - 12 May, 2018*
 
-**Important**: This is not my original works, This is just a keep track of my readings**
+**Important**: This is not my original works(), This is just a keep track of my readings**
 
 
 ---
@@ -330,7 +330,13 @@ Thus the following three orderings give $+1$:
 (u,v,w),\quad (w,u,v),\quad (v,w,u),
 \]
 
-
+i.e. 
+\[
+dx \wedge dy \wedge dz(\mathbf{u},\mathbf{v},\mathbf{w})
+= dx \wedge dy \wedge dz(\mathbf{w},\mathbf{u},\mathbf{v})
+= dx \wedge dy \wedge dz(\mathbf{v},\mathbf{w},\mathbf{u})
+= 1,
+\]
 and the following three give $-1$:
 
 
@@ -338,10 +344,19 @@ and the following three give $-1$:
 (v,u,w),\quad (w,v,u),\quad (u,w,v).
 \]
 
+i.e.
+
+\[
+dx \wedge dy \wedge dz(\mathbf{v},\mathbf{u},\mathbf{w})
+= dx \wedge dy \wedge dz(\mathbf{w},\mathbf{v},\mathbf{u})
+= dx \wedge dy \wedge dz(\mathbf{u},\mathbf{w},\mathbf{v})
+= -1.
+\]
 
 
-This follows from the fact that swapping two columns of a determinant multiplies it by $-1$.
 
+
+The reason is that permuting two basis vectors corresponds to swapping two columns of the matrix whose determinant defines the value of the $3$‑form. Since exchanging two columns changes the determinant by a factor of $-1$, any even number of such swaps leaves the determinant unchanged, whereas any odd number of swaps multiplies it by $-1$.
 
 
 ---
@@ -371,60 +386,564 @@ The \emph{wedge product} $\omega \wedge \eta$ is the $(k+m)$-form defined by
       \wedge dx_{j_1} \wedge \cdots \wedge dx_{j_m}.
 \]
 
-
+```
 
 Note that the order of the $dx_i$'s is important, since exchanging two
 differentials introduces a sign by antisymmetry.
 
 The wedge product of arbitrary $k$- and $m$-forms is defined by linearity,
 i.e.\ by distributing the wedge product term-by-term over sums.
-```
 
 
-**Definition (Wedge Product):**
+
+```{definition ,name="Wedge Product"}
 The wedge product $\wedge$ combines a $k$-form and an $m$-form to yield a $(k+m)$-form. It is associative, bilinear, and satisfies graded commutativity:
 
 
 $$\omega \wedge \eta = (-1)^{km} \eta \wedge \omega$$
+```
 
 ### Examples of Wedge Product
 
-**Example (Wedge product of two 1-forms):**
+```{example,name="Wedge product of two 1-forms"}
 Let $\omega = x\,dx + x\,dy + e^z\,dz$ and $\eta = y\,dx + x\,dy + z\,dz$. Then:
 
 
 $$\begin{aligned} \omega \wedge \eta &= (x\,dx + x\,dy + e^z\,dz) \wedge (y\,dx + x\,dy + z\,dz) \\ &= (x^2 - xy)\,dx \wedge dy + (xz + e^z y)\,dz \wedge dx + (xz - e^z x)\,dz \wedge dy \end{aligned}$$
+```
 
-**Example (Wedge product of a 1-form and a 2-form):**
+```{example,name="Wedge product of a 1-form and a 2-form"}
 Let $\omega = xy\,dx + y\,dy$ and $\eta = z\,dy \wedge dz$. Then:
 
 
 $$\omega \wedge \eta = (xy\,dx + y\,dy) \wedge (z\,dy \wedge dz) = xyz\,dx \wedge dy \wedge dz$$
+```
 
-**Lemma:**
+```{lemma}
 Let $\mathbf{F}, \mathbf{G}$ be vector fields associated with $1$-forms $\omega_1, \eta_2$ in $\mathbb{R}^3$:
 
 
-$$\begin{aligned} \omega_1 &= f_1\,dx + f_2\,dy + f_3\,dz \quad \longleftrightarrow \quad \mathbf{F} = (f_1, f_2, f_3) \\ \eta_2 &= g_1\,dx + g_2\,dy + g_3\,dz \quad \longleftrightarrow \quad \mathbf{G} = (g_1, g_2, g_3) \end{aligned}$$
+$$\begin{aligned} \omega &= f_1\,dx + f_2\,dy + f_3\,dz \quad \longleftrightarrow \quad \mathbf{F} = (f_1, f_2, f_3) \\ \eta &= g_1\,dx + g_2\,dy + g_3\,dz \quad \longleftrightarrow \quad \mathbf{G} = (g_1, g_2, g_3) \end{aligned}$$
 
 
 Then $\omega_1 \wedge \eta_2$ corresponds to the cross product $\mathbf{F} \times \mathbf{G}$.
+```
+
+```{proof}
+![](fig/pic 39.png)
+```
 
 ---
 
-## Exterior Derivative
 
-**Lemma (Graded Product Rule):**
+
+```{lemma,name="Graded Product Rule"}
 For a $k$-form $\omega$ and an $m$-form $\eta$:
 
 
-$$d(\omega \wedge \eta) = d\omega \wedge \eta + (-1)^k \omega \wedge d\eta$$
+$$d(\omega \wedge \eta) = d\omega \wedge \eta+ (-1)^k \omega \wedge d\eta$$
+```
 
-**Theorem (Property $d^2 = 0$):**
-For any differential form $\omega$:
+```{proof}
+![](fig/pic 38.png)
+```
+
+```{lemma}
+Let $\omega$ be a one-form and $\eta$ a two\hyp{}form on an open set $U \subseteq \mathbb{R}^3$. Suppose these forms correspond to vector fields $\mathbf{F}$ and $\mathbf{G}$.
+$$\begin{aligned} 
+\omega &= f_1\,dx + f_2\,dy + f_3\,dz \quad
+&\longleftrightarrow \quad \mathbf{F}=(f_1,f_2,f_3) \\ 
+\eta &= g_{1}\, dy \wedge dz + g_{2}\, dz \wedge dx
++ g_{3}\, dx \wedge dy, \quad &\longleftrightarrow \quad \mathbf{G} = (g_1, g_2, g_3) \end{aligned}$$
+Then the three-form $\omega \wedge \eta$ corresponds to the scalar function 
+given by the dot product $\mathbf{F} \cdot \mathbf{G}$.
+```
+
+```{proof}
+![](fig/pic 40.png)
+```
+As a summary,
+
+| Differential Form Concept | Vector Calculus Concept |
+| --- | --- |
+| 1‑form \(\omega\) | vector field **F** |
+| 1‑form \(\eta\) | vector field **G** || 2‑form \(\omega \wedge \eta\) | cross product **F × G** |
+
+| Differential Form Concept | Vector Calculus Concept |
+| --- | --- |
+| 1‑form \(\omega\), 2‑form \(\eta\) | vector fields **F**, **G** |
+| 3‑form \(\omega \wedge \eta\) | dot product **F · G** |
+
+```{example} 
+Let \(\omega = x\,dy \wedge dz + y\,dz \wedge dx + z\,dx \wedge dy\) and \(\eta = x\,dx + y\,dy + z\,dz.\)
+```
+
+**Solution**: We compute the wedge product, noting that any term containing a repeated
+\(dx, dy,\) or \(dz\) vanishes:
+\begin{align*}
+\omega \wedge \eta
+&= (x\,dy \wedge dz + y\,dz \wedge dx + z\,dx \wedge dy)
+   \wedge (x\,dx + y\,dy + z\,dz) \\[4pt]
+&= x^{2}\,dy \wedge dz \wedge dx
+   + y^{2}\,dz \wedge dx \wedge dy
+   + z^{2}\,dx \wedge dy \wedge dz.
+\end{align*}
+
+Since
 
 
+\[
+dy \wedge dz \wedge dx
+= dz \wedge dx \wedge dy
+= dx \wedge dy \wedge dz,
+\]
+
+
+we obtain the standard form:
+
+
+\[
+\omega \wedge \eta
+= (x^{2} + y^{2} + z^{2})\,dx \wedge dy \wedge dz.
+\]
+
+
+```{example}
+Let \(\omega = f_{1}\,dx + f_{2}\,dy\) and \(\eta = g_{1}\,dx + g_{2}\,dy\) be one\hyp{}forms on \(\mathbb{R}^{2}\), with associated vector fields
+
+
+\[
+\mathbf{F} = (f_{1}, f_{2}), \qquad \mathbf{G} = (g_{1}, g_{2}).
+\]
+
+
+Then
+
+
+\[
+\omega \wedge \eta
+= \det\!\begin{pmatrix}
+f_{1} & g_{1} \\
+f_{2} & g_{2}
+\end{pmatrix}
+\, dx \wedge dy.
+\]
+```
+
+**Solution**:
+![](fig/pic 41.png)
+
+
+
+
+
+
+
+```{example}
+Let $\omega = f\,dx + g\,dy + h\,dz$ be an arbitrary one-form on  $\mathbb{R}^3.$
+Show that $\omega \wedge \omega = 0.$
+
+```
+
+**Solution**: We compute directly,
+\begin{align*}
+\omega \wedge \omega
+&= (f\,dx + g\,dy + h\,dz) \wedge (f\,dx + g\,dy + h\,dz) \\[4pt]
+&= fg\,dx \wedge dy + fh\,dx \wedge dz + gf\,dy \wedge dx
+   + gh\,dy \wedge dz + hf\,dz \wedge dx + hg\,dz \wedge dy.
+\end{align*}
+
+Grouping terms and using the antisymmetry of the wedge product,
+
+
+\[
+dy \wedge dx = -dx \wedge dy, \quad
+dz \wedge dx = -dx \wedge dz, \quad
+dz \wedge dy = -dy \wedge dz,
+\]
+
+
+we obtain
+
+
+\[
+\omega \wedge \omega
+= (gh - hg)\,dy \wedge dz
++ (hf - fh)\,dz \wedge dx
++ (fg - gf)\,dx \wedge dy.
+\]
+
+
+
+Since scalar functions commute, i.e. \( gh = hg, \ hf = fh, \ fg = gf \),
+it follows that
+
+
+\[
+\omega \wedge \omega = 0
+\]
+
+
+
+```{example}
+Find the cross-product of the vectors $\mathbf{F} = (1,1,0)$  and $\mathbf{G} = (0,2,3)$ in $\mathbb{R}^3$  by computing the wedge product of the associated one-forms.
+```
+
+
+
+**Solution** : The one-forms associated to \(\mathbf{F}\) and \(\mathbf{G}\) are
+
+
+\[
+\omega = dx + dy, \qquad \eta = 2\,dy + 3\,dz.
+\]
+
+
+
+Compute the wedge product:
+\begin{align*}
+\omega \wedge \eta
+&= (dx + dy) \wedge (2\,dy + 3\,dz) \\[4pt]
+&= 2\,dx \wedge dy + 3\,dx \wedge dz + 3\,dy \wedge dz.
+\end{align*}
+
+Rewriting in standard orientation,
+
+
+\[
+\omega \wedge \eta
+= 3\,dy \wedge dz - 3\,dz \wedge dx + 2\,dx \wedge dy.
+\]
+
+
+
+By the dictionary between two-forms and vector fields,
+
+
+\[
+\mathbf{F} \times \mathbf{G}
+= (3,\,-3,\,2).
+\]
+
+
+
+Thus the wedge product correctly reproduces the cross-product.
+
+```{example}
+Let $\mathbf{A},\, \mathbf{B},\, \mathbf{C} \in\mathbb{R}^3.$ Show that $$\mathbf{A}\cdot(\mathbf{B}\times\mathbf{C})
+=\mathbf{B}\cdot(\mathbf{C}\times\mathbf{A})
+=\mathbf{C}\cdot(\mathbf{A}\times\mathbf{B})$$
+using wedge products of the associated one-forms.
+```
+
+**Solution**: Let \(\omega, \eta, \lambda\) be the one-forms associated to
+\(\mathbf{A}, \mathbf{B}, \mathbf{C}\).  
+From the dictionary for one-forms and vector fields,
+
+
+\[
+\omega \wedge \eta \wedge \lambda
+= (\mathbf{A}\cdot(\mathbf{B}\times\mathbf{C}))\, dx\wedge dy\wedge dz,
+\]
+
+
+
+
+\[
+\eta \wedge \lambda \wedge \omega
+= (\mathbf{B}\cdot(\mathbf{C}\times\mathbf{A}))\, dx\wedge dy\wedge dz,
+\]
+
+
+
+
+\[
+\lambda \wedge \omega \wedge \eta
+= (\mathbf{C}\cdot(\mathbf{A}\times\mathbf{B}))\, dx\wedge dy\wedge dz.
+\]
+
+
+
+Since all three are one-forms, wedge products anticommute:
+
+
+\[
+\omega \wedge \eta = -\,\eta \wedge \omega, \qquad
+\eta \wedge \lambda = -\,\lambda \wedge \eta, \qquad
+\omega \wedge \lambda = -\,\lambda \wedge \omega.
+\]
+
+
+
+Thus,
+
+
+\[
+\omega \wedge \eta \wedge \lambda
+= \eta \wedge \lambda \wedge \omega
+= \lambda \wedge \omega \wedge \eta.
+\]
+
+
+
+Therefore,
+
+
+\[
+\mathbf{A}\cdot(\mathbf{B}\times\mathbf{C})
+=
+\mathbf{B}\cdot(\mathbf{C}\times\mathbf{A})
+=
+\mathbf{C}\cdot(\mathbf{A}\times\mathbf{B}),
+\]
+
+
+which follows directly from the antisymmetry of the wedge product.
+
+
+
+## Exterior Derivative
+
+```{definition,name="Exterior Derivative of a k-Form"}
+
+The **exterior derivative of a zero‑form** \(f\) on \(U \subset \mathbb{R}^n\) is the one‑form  
+\[
+df = \sum_{i=1}^{n} \frac{\partial f}{\partial x_i}\, dx_i,
+\]
+which coincides with the differential introduced earlier.
+
+The **exterior derivative of a \(k\)-form**  
+\[
+\omega = \sum_{1 \le i_1 < \cdots < i_k \le n}
+f_{i_1 \cdots i_k}\,
+dx_{i_1} \wedge \cdots \wedge dx_{i_k}
+\]
+on \(U \subset \mathbb{R}^n\) is the \((k+1)\)-form  
+\[
+d\omega
+= \sum_{1 \le i_1 < \cdots < i_k \le n}
+d(f_{i_1 \cdots i_k}) \wedge
+dx_{i_1} \wedge \cdots \wedge dx_{i_k},
+\]
+where \(d(f_{i_1 \cdots i_k})\) is the exterior derivative of the scalar function \(f_{i_1 \cdots i_k}\).  
+In other words, the operator \(d\) is applied to the component functions of \(\omega\).
+```
+
+```{lemma,name="Exterior Derivative in R^3"}
+
+1. Zero‑forms: If \(f\) is a zero‑form on \(U \subset \mathbb{R}^3\), then 
+
+\[df= \frac{\partial f}{\partial x}\, dx
++ \frac{\partial f}{\partial y}\, dy
++ \frac{\partial f}{\partial z}\, dz.\]
+
+2. One‑forms If  \(\omega = f\, dx + g\, dy + h\, dz,\) then  
+
+\begin{align}
+d\omega
+&= d(f) \wedge dx + d(g) \wedge dy + d(h) \wedge dz \\[4pt]
+&= \left( \frac{\partial h}{\partial y} - \frac{\partial g}{\partial z} \right) dy \wedge dz
+ + \left( \frac{\partial f}{\partial z} - \frac{\partial h}{\partial x} \right) dz \wedge dx
+ + \left( \frac{\partial g}{\partial x} - \frac{\partial f}{\partial y} \right) dx \wedge dy.
+\end{align}
+
+
+3. Two‑forms: If  \(\eta = f\, dy \wedge dz + g\, dz \wedge dx + h\, dx \wedge dy,\) then  
+
+\begin{align}
+d\eta &= d(f) \wedge dy \wedge dz+ d(g) \wedge dz \wedge dx+ d(h) \wedge dx \wedge dy,\\
+&= \left(\frac{\partial f}{\partial x}+ \frac{\partial g}{\partial y}+ \frac{\partial h}{\partial z}\right)dx \wedge dy \wedge dz.
+\end{align}
+
+Finally, the exterior derivative of any three‑form in \(\mathbb{R}^3\) must vanish, since it would produce a four‑form, and all \(k\)-forms with \(k \ge 4\) are identically zero in \(\mathbb{R}^3\).
+
+```
+
+```{proof}
+1. ![](fig/pic 42.png)
+1. ![](fig/pic 43.png)
+1. ![](fig/pic 44.png)
+```
+
+```{example}
+Let \(f(x,y,z) = y \ln(x) + z\) be a smooth function on  \(U = \{(x,y,z) \in \mathbb{R}^3 \mid x > 0\}.\) 
+Its exterior derivative is the one‑form  $df$ on $U$ is 
+![](fig/pic 45.png)
+```
+
+
+```{example}
+Let  \(\omega = xy\, dx + (z + y)\, dy + xyz\, dz
+\) be a one‑form on \(\mathbb{R}^3\).Its exterior derivative is the two‑form \(d\omega\) on \(\mathbb{R}^3\) given by:
+
+![](fig/pic 46.png)
+
+```
+
+```{example,name="Linearity of the Exterior Derivative"}
+
+If \(\omega\) and \(\eta\) are two \(k\)-forms, and \(a, b \in \mathbb{R}\), then  
+\[
+d(a\omega + b\eta) = a\, d\omega + b\, d\eta.
+\]
+
+![](fig/pic 47.png)
+![](fig/pic 48.png)
+
+```
+
+
+### Graded Product Rule
+
+The usual product rule from calculus is  
+\[
+\frac{d}{dx}(fg)
+= \frac{df}{dx}\, g + f\, \frac{dg}{dx}.
+\]
+
+```{lemma,name="Graded Product Rule for the Exterior Derivative"}
+
+Let \(\omega\) be a \(k\)-form and \(\eta\) be an \(l\)-form on \(U \subseteq \mathbb{R}^n\). Then  
+\[
+d(\omega \wedge \eta)
+= d(\omega) \wedge \eta
++ (-1)^k\, \omega \wedge d(\eta).
+\]
+
+```
+
+```{proof}
+![](fig/pic 49.png)
+
+**General Case**
+  
+
+Write \(\omega\) and \(\eta\) in local coordinates as
+\[
+\omega = \sum_{I} f_I\, dx_{i_1} \wedge \cdots \wedge dx_{i_k},
+\qquad
+\eta = \sum_{J} g_J\, dx_{j_1} \wedge \cdots \wedge dx_{j_l},
+\]
+where \(I = (i_1 < \cdots < i_k)\), \(J = (j_1 < \cdots < j_l)\), and \(f_I, g_J\) are smooth functions.
+
+Their wedge product is
+\[
+\omega \wedge \eta
+= \sum_{I,J} f_I g_J\,
+dx_{i_1} \wedge \cdots \wedge dx_{i_k}
+\wedge
+dx_{j_1} \wedge \cdots \wedge dx_{j_l}.
+\]
+
+Applying the exterior derivative and using linearity,
+\[
+d(\omega \wedge \eta)
+= \sum_{I,J} d(f_I g_J) \wedge
+dx_{i_1} \wedge \cdots \wedge dx_{i_k}
+\wedge
+dx_{j_1} \wedge \cdots \wedge dx_{j_l}.
+\]
+
+By the product rule for functions (the 0‑form case you already proved),
+\[
+d(f_I g_J) = df_I\, g_J + f_I\, dg_J.
+\]
+Hence
+\[
+d(\omega \wedge \eta)
+= \sum_{I,J} df_I\, g_J \wedge dx_I \wedge dx_J
++ \sum_{I,J} f_I\, dg_J \wedge dx_I \wedge dx_J,
+\]
+where \(dx_I = dx_{i_1} \wedge \cdots \wedge dx_{i_k}\) and \(dx_J = dx_{j_1} \wedge \cdots \wedge dx_{j_l}\).
+
+For the first sum,
+\[
+\sum_{I,J} df_I\, g_J \wedge dx_I \wedge dx_J
+= \left(\sum_I df_I \wedge dx_I\right)
+\wedge
+\left(\sum_J g_J dx_J\right)
+= d\omega \wedge \eta.
+\]
+
+For the second sum, note that \(dg_J\) is a 1‑form and \(dx_I\) is a \(k\)-form, so
+\[
+dg_J \wedge dx_I = (-1)^k\, dx_I \wedge dg_J.
+\]
+Thus
+\[
+\sum_{I,J} f_I\, dg_J \wedge dx_I \wedge dx_J
+= (-1)^k \sum_{I,J} f_I\, dx_I \wedge dg_J \wedge dx_J
+= (-1)^k\, \omega \wedge d\eta.
+\]
+
+Combining both parts,
+\[
+d(\omega \wedge \eta)
+= d\omega \wedge \eta + (-1)^k\, \omega \wedge d\eta,
+\]
+which proves the lemma. 
+```
+
+```{example}
+Let \(\omega = xy\,dz\) and \(\eta = (y+z)\,dx + 2\,dy\) be two one-forms on \(\mathbb{R}^3\).
+![](fig/pic 50.png)
+![](fig/pic 51.png)
+![](fig/pic 52.png)
+```
+
+```{remark}
+**Graded product rule in \(\mathbb{R}^3\)**
+  
+In \(\mathbb{R}^3\), the graded product rule splits into the following
+non-vanishing cases.
+
+
+- If \(\omega = f\) is a zero-form and \(\eta = g\) is a zero-form, then
+    
+
+\[
+        d(fg) = d(f)\,g + f\,d(g).
+    \]
+
+
+
+- If \(\omega = f\) is a zero-form and \(\eta\) is a one-form, then
+    
+
+\[
+        d(f\eta) = d(f) \wedge \eta + f\, d(\eta).
+    \]
+
+
+
+- If \(\omega = f\) is a zero-form and \(\eta\) is a two-form, then
+    
+
+\[
+        d(f\eta) = d(f) \wedge \eta + f\, d(\eta).
+    \]
+
+
+
+- If \(\omega\) is a one-form and \(\eta\) is a one-form, then
+    
+
+\[
+        d(\omega \wedge \eta)
+        = d(\omega) \wedge \eta - \omega \wedge d(\eta).
+    \]
+```
+
+```{theorem,name="Property $d^2 = 0$)"}
+For any differential form $\omega$: 
 $$d(d\omega) = d^2\omega = 0$$
+```
+
+```{proof}
+![](fig/pic 53.png)
+![](fig/pic 54.png)
+
+```
 
 ### Grad, Curl, and Div Connection
 
@@ -445,6 +964,8 @@ For a $2$-form $\eta = f_1\,dy \wedge dz + f_2\,dz \wedge dx + f_3\,dx \wedge dy
 
 
 $$d\eta = \left(\frac{\partial f_1}{\partial x} + \frac{\partial f_2}{\partial y} + \frac{\partial f_3}{\partial z}\right)dx \wedge dy \wedge dz$$
+
+
 
 ---
 
