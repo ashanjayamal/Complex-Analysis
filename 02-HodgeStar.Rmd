@@ -949,40 +949,306 @@ $$d(d\omega) = d^2\omega = 0$$
 Let \(\omega = xy\,dx + \frac{y}{x}\,dy + \frac{z}{x}\,dz\) on \(U = \{(x,y,z) \in \mathbb{R}^3 \mid x \neq 0\}\). Find the two-form \(d\omega\) and write your result in standard form. What is the vector field associated to \(d\omega\)?
 ![](fig/pic 56.png)
 ```
+
 ```{example}
 Find the three-form dw if $w =xyz(dy \wedge  dz+dz \wedge  dx + dx \wedge dy)$, and write 
 your result in standard form. 
 ![](fig/pic 57.png)
 ```
 
+```{example}
+Let $\omega = x e^{y}\, dx + z\, dy + y e^{x}\, dz.$ Show by explicit calculation that $d^{2}\omega = 0$
+
+
+**Solution**: We know that \(d^{2}\omega = 0\) for any differential form \(\omega\). But let us verify this directly for the given one-form.
+
+We first compute the two-form \(d\omega\):
+
+
+\[
+d\omega 
+= d(xe^{y}) \wedge dx + dz \wedge dy + d(ye^{x}) \wedge dz.
+\]
+
+
+
+Compute each term:
+
+
+\[
+d(xe^{y}) = e^{y}\, dx + x e^{y}\, dy,
+\qquad
+d(ye^{x}) = e^{x}\, dy + y e^{x}\, dx.
+\]
+
+
+
+Thus,
+
+
+\[
+\begin{aligned}
+d\omega
+&= (e^{y}\, dx + x e^{y}\, dy)\wedge dx 
+    + dz \wedge dy
+    + (e^{x}\, dy + y e^{x}\, dx)\wedge dz \\[6pt]
+&= x e^{y}\, dy \wedge dx 
+    + dz \wedge dy
+    + y e^{x}\, dx \wedge dz
+    + e^{x}\, dy \wedge dz.
+\end{aligned}
+\]
+
+
+
+Reordering wedge products:
+
+
+\[
+d\omega
+= (e^{x} - 1)\, dy \wedge dz
+  - y e^{x}\, dz \wedge dx
+  - x e^{y}\, dx \wedge dy.
+\]
+
+
+
+Now compute the three-form \(d^{2}\omega = d(d\omega)\):
+
+
+\[
+d^{2}\omega
+= d(e^{x} - 1)\wedge dy \wedge dz
+  - d(ye^{x})\wedge dz \wedge dx
+  - d(xe^{y})\wedge dx \wedge dy.
+\]
+
+
+
+Compute derivatives:
+
+
+\[
+d(e^{x}-1) = e^{x}\, dx,
+\qquad
+d(ye^{x}) = e^{x}\, dy + y e^{x}\, dx,
+\qquad
+d(xe^{y}) = e^{y}\, dx + x e^{y}\, dy.
+\]
+
+
+
+Substitute:
+
+
+\[
+\begin{aligned}
+d^{2}\omega
+&= e^{x}\, dx \wedge dy \wedge dz
+   - (e^{x}\, dy + y e^{x}\, dx)\wedge dz \wedge dx \\
+&\quad - (e^{y}\, dx + x e^{y}\, dy)\wedge dx \wedge dy.
+\end{aligned}
+\]
+
+
+
+All terms containing repeated wedge factors vanish, leaving:
+
+
+\[
+d^{2}\omega
+= (e^{x} - e^{x})\, dx \wedge dy \wedge dz
+= 0.
+\]
+
+
+
+Thus, \(d^{2}\omega = 0,\) as expected.
+```
+
+```{example}
+Let  \(\omega = (x^{2} - y^{2})\, dx + y\, dz,
+\qquad \eta = (x^{2} + y^{2})\, dy + y\, dz.\)
+
+
+
+Show by explicit calculation that  
+
+
+\[
+d(\omega \wedge \eta) = d\omega \wedge \eta - \omega \wedge d\eta,
+\]
+which is consistent with the graded product rule since \(\omega\) is a one‑form.
+```
+
+![](fig/pic 58.png)
+![](fig/pic 59.png)
+![](fig/pic 60.png)
+![](fig/pic 61.png)
+![](fig/pic 62.png)
+
+
+```{example}
+Let \(\omega = (x + y)\, dx + xy\, dy\)
+be a one‑form on \(\mathbb{R}^2\), and let  
+\(\varphi(u, v) = \big(e^{u+v},\, e^{u-v}\big)\) be a smooth map \(\varphi : \mathbb{R}^2 \to \mathbb{R}^2\).  
+
+Find the two‑form \(d(\varphi^{*}\omega).\)
+
+![](fig/pic 66.png)
+```
+
+```{example} 
+Let $\omega$ be a *$k$*-form, η an *m*-form, and $\lambda$ an *$l$*-form on \(U \subseteq \mathbb{R}^n\).  Show that
+
+\[
+d(\omega \wedge \eta \wedge \lambda)
+= d\omega \wedge \eta \wedge \lambda
+  + (-1)^{k}\, \omega \wedge d\eta \wedge \lambda
+  + (-1)^{k+m}\, \omega \wedge \eta \wedge d\lambda.
+\]
+
+This is the graded Leibniz rule for the exterior derivative applied to a triple wedge product.
+
+![](fig/pic 63.jpg)
+```
+
+
+```{example}
+Let \(f, g : U \to \mathbb{R}\) be smooth functions with \(U \subseteq \mathbb{R}^n\), and let \(\alpha : [a,b] \to \mathbb{R}^n\) be a parametric curve whose image lies in \(U\).  
+Using the product rule for the exterior derivative \(d(fg)\), show that
+
+\[\int_{\alpha} f\, dg= f(\alpha(b))\, g(\alpha(b))  - f(\alpha(a))\, g(\alpha(a))  - \int_{\alpha} g\, df.\]
+
+This identity is the natural generalization of integration by parts to line integrals of one‑forms.  When the curve is an interval in \(\mathbb{R}\), it reduces to the usual integration‑by‑parts formula.
+
+![](fig/pic 65.jpg)
+![](fig/pic 64.png)
+```
+
+```{example}
+Let \(\omega\) and \(\eta\) be one‑forms that differ by the exterior derivative of a \(0\)-form, i.e. \(\eta = \omega + df\) for some smooth function \(f\).  Show that 
+\(d(\omega \wedge \eta) = d\omega \wedge df.\)
+![](fig/pic 63.png)
+```
+
+
 
 ### Grad, Curl, and Div Connection
 
-**Definition (Gradient):**
+```{definition,name="Gradient"}
 For a $0$-form $f$:
-
-
 $$df = \frac{\partial f}{\partial x}dx + \frac{\partial f}{\partial y}dy + \frac{\partial f}{\partial z}dz \quad \longleftrightarrow \quad \nabla f = \left(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z}\right)$$
+```
 
-**Definition (Curl):**
+```{definition,name="Curl"}
 For a $1$-form $\omega = f_1\,dx + f_2\,dy + f_3\,dz$, the $2$-form $d\omega$ corresponds to $\nabla \times \mathbf{F}$:
 
 
 $$d\omega = \left(\frac{\partial f_3}{\partial y} - \frac{\partial f_2}{\partial z}\right)dy \wedge dz + \left(\frac{\partial f_1}{\partial z} - \frac{\partial f_3}{\partial x}\right)dz \wedge dx + \left(\frac{\partial f_2}{\partial x} - \frac{\partial f_1}{\partial y}\right)dx \wedge dy$$
+```
 
-**Definition (Divergence):**
+
+```{definition,name="Divergence"}
 For a $2$-form $\eta = f_1\,dy \wedge dz + f_2\,dz \wedge dx + f_3\,dx \wedge dy$, the $3$-form $d\eta$ corresponds to $\nabla \cdot \mathbf{F}$:
 
 
 $$d\eta = \left(\frac{\partial f_1}{\partial x} + \frac{\partial f_2}{\partial y} + \frac{\partial f_3}{\partial z}\right)dx \wedge dy \wedge dz$$
 
+```
+
+```{example,name="Maxwell’s equations"}
+
+Here you can write whatever explanation, derivation, or equations you want.
 
 
+
+\begin{align}
+\nabla \cdot \mathbf{E} &= \frac{\rho}{\varepsilon_0}, \\[6pt]
+\nabla \cdot \mathbf{B} &= 0, \\[12pt]
+\nabla \times \mathbf{E} &= -\,\frac{\partial \mathbf{B}}{\partial t}, \\[6pt]
+\nabla \times \mathbf{B} &= \mu_0 \mathbf{J} + \mu_0 \varepsilon_0\, \frac{\partial \mathbf{E}}{\partial t}.
+\end{align}
+
+where 
+
+- **\(\mathbf{E}\)** — electric field  
+- **\(\mathbf{B}\)** — magnetic field  
+- **\(\rho\)** — charge density (charge per unit volume)  
+- **\(\mathbf{J}\)** — current density (current per unit area)  
+- **\(\varepsilon_0\)** — permittivity of free space  
+- **\(\mu_0\)** — permeability of free space  
+- **\(\nabla \cdot\)** — divergence operator  
+- **\(\nabla \times\)** — curl operator  
+- **\(\frac{\partial}{\partial t}\)** — time derivative  
+
+
+*I'm not intersetted in physics staff so I slip*
+
+```
+
+
+**Dictionary between the exterior derivative in \(\mathbb{R}^3\) and vector calculus concepts.**
+
+| Differential form concept            | Vector calculus concept            |
+|-------------------------------------|------------------------------------|
+| \(d\) of a 0‑form \(df\)            | gradient \(\nabla f\)              |
+| \(d\) of a 1‑form \(d\omega\)       | curl \(\nabla \times \mathbf{F}\)  |
+| \(d\) of a 2‑form \(d\eta\)         | divergence \(\nabla \cdot \mathbf{F}\) |
+
+
+```{lemma,name="Vector calculus identities"}
+Let \(f, g\) be smooth functions on \(U \subseteq \mathbb{R}^3\), and let  
+\(\mathbf{F}, \mathbf{G}\) be smooth vector fields on \(U\).  
+Then the following identities hold:
+
+1. 
+
+\[
+   \nabla(fg) = (\nabla f)\, g + f\, (\nabla g).
+   \]
+
+
+
+2. 
+
+\[
+   \nabla \times (f\mathbf{F})
+   = (\nabla f) \times \mathbf{F}
+     + f\, (\nabla \times \mathbf{F}).
+   \]
+
+
+
+3. 
+
+\[
+   \nabla \cdot (f\mathbf{F})
+   = (\nabla f) \cdot \mathbf{F}
+     + f\, (\nabla \cdot \mathbf{F}).
+   \]
+
+
+
+4. 
+
+\[
+   \nabla \cdot (\mathbf{F} \times \mathbf{G})
+   = (\nabla \times \mathbf{F}) \cdot \mathbf{G}
+     - \mathbf{F} \cdot (\nabla \times \mathbf{G}).
+   \]
+
+
+```
+
+```{proof}
+Omitted
+```
 ---
 
 ## The Hodge Star Operator
 
-**Definition (Hodge Star Dual):**
+```{definition,name="Hodge Star Dual"}
 Let $\omega = dx_{i_1} \wedge \dots \wedge dx_{i_k}$ be a basic $k$-form on $\mathbb{R}^n$. The **Hodge star dual** $*\omega$ is the unique basic $(n-k)$-form satisfying:
 
 
@@ -993,34 +1259,440 @@ Extended linearly, for a general $k$-form $\eta = \sum f_{i_1 \dots i_k} dx_{i_1
 
 
 $$*\eta = \sum f_{i_1 \dots i_k} *(dx_{i_1} \wedge \dots \wedge dx_{i_k})$$
+```
 
-### Hodge Star in $\mathbb{R}^3$
+```{example,name="The action of the Hodge star in R"}
+![](fig/pic 67.png)
+```
 
-In $\mathbb{R}^3$ with standard Euclidean metric:
+```{example,name="The action of the Hodge star in R^2"}
+![](fig/pic 68.png)
+```
 
+```{example,name="The action of the Hodge star in R^3"}
+![](fig/pic 69.png)
+```
 
-$$\begin{aligned} *1 &= dx \wedge dy \wedge dz \\ *dx &= dy \wedge dz, \quad *dy = dz \wedge dx, \quad *dz = dx \wedge dy \\ *(dy \wedge dz) &= dx, \quad *(dz \wedge dx) = dy, \quad *(dx \wedge dy) = dz \\ *(dx \wedge dy \wedge dz) &= 1 \end{aligned}$$
+```{example,name="An example the Hodge star in R^3"}
+Consider the two‑form  \(\omega = xyz\, dy \wedge dz \;+\; e^{x}\, dx \wedge dy.\) Find Its Hodge star dual is the one‑form.
+![](fig/pic 70.jpg)
+```
 
-**Proposition:**
+```{example,name="Another example the Hodge star in R^3"}
+Let $w = fdx+gdy+h dz$ be a one form on $\mathbb{R}^3$. Find Its Hodge star dual is the one‑form.
+
+![](fig/pic 71.jpg)
+```
+
+```{example}
+![](fig/pic 72.png)
+```
+
+```{proposition}
 On $k$-forms in $\mathbb{R}^n$, applying the Hodge star twice yields:
 
+$$**\alpha = (-1)^{k(n-k)} \alpha$$
+![](fig/pic 73.jpg)
+![](fig/pic 74.jpg)
+```
 
-$$**\omega = (-1)^{k(n-k)} \omega$$
+
+```{example}
+Let \(\omega\) and \(\eta\) be one‑forms on \(\mathbb{R}^n\), and let  \(\mathbf{F}\) and \(\mathbf{G}\) be the associated vector fields.  Show that
+\[\star(\omega \wedge \star \eta) = \mathbf{F} \cdot \mathbf{G}.\]
+
+![](fig/pic 75.jpg)
+![](fig/pic 76.jpg)
+```
+
+
+```{example}
+Let \(\omega\) and \(\eta\) be \(k\)-forms on \(\mathbb{R}^n\).  Show that 
+\[\omega \wedge \star \eta = (-1)^{k(n-k)}\, \star \omega \wedge \eta.\]
+
+![](fig/pic 77.png)
+![](fig/pic 78.png)
+```
+
+As a summary,
+Let \(M\) be a Riemann surface.
+
+| General (real coordinates)        | Complex coordinates                     | Comparison / relations |
+|----------------------------------|------------------------------------------|-------------------------|
+| **0‑forms**                      | Function                                 | —                       |
+| **1‑forms**                      | \(f\,dx + g\,dy\)                        | \(u(z)\,dz + v(z)\,d\bar{z}\) |
+|                                  |                                          | \(dz = dx + i\,dy,\quad d\bar{z} = dx - i\,dy\) |
+|                                  |                                          | \(f = u + v,\quad g = i(u - v)\) |
+| **2‑forms**                      | \(f\, dx \wedge dy\)                     | \(g(z)\, dz \wedge d\bar{z}\) |
+|                                  |                                          | \(dz \wedge d\bar{z} = -2i\, dx \wedge dy\) |
+
+
+
+
+
 
 ---
 
 ## Integration, Chains, and Stokes' Theorem
 
+Recall chains in  Manifolds For that I need Triangulation. 
+Wikipedia says, *In mathematics, triangulation describes the replacement of topological spaces with simplicial complexes by the choice of an appropriate homeomorphism. A space that admits such a homeomorphism is called a triangulable space. Triangulations can also be used to define a piecewise linear structure for a space, if one exists. Triangulation has various applications both in and outside of mathematics, for instance in algebraic topology, in complex analysis, and in modeling.*
+
+<div>
+<div style="text-align: center;">
+<img src="fig/pic 79.png" width="33%">
+<img src="fig/pic 80.png" width="33%">
+<img src="fig/pic 81.png" width="33%">
+<p><em>Source: Wikipedia</em></p>
+</div>
+
+
+
 ### Simplices and Chains
 
-* **$0$-simplex:** Point $P$.
-* **$1$-simplex:** Directed segment $\langle P_1, P_2 \rangle$.
-* **$2$-simplex:** Oriented triangle $\langle P_1, P_2, P_3 \rangle$.
+<table>
+<tr>
+<td style="width:40%; vertical-align:top;">
 
-An $n$-chain $c$ is a formal integer linear combination of $n$-simplices:
+<img src="fig/pic 82.png" width="100%">
+
+<p><em>Source: Wikipedia</em></p>
+
+</td>
+
+<td style="width:60%; vertical-align:top;">
+
+* **0‑simplex:** Point \(P\).  
+* **1‑simplex:** Directed segment \(\langle P_1, P_2 \rangle\).  
+* **2‑simplex:** Oriented triangle \(\langle P_1, P_2, P_3 \rangle\).
+
+An \(n\)-chain \(c\) is a formal integer linear combination of \(n\)-simplices:
 
 
-$$c = \sum_i m_i \sigma_i, \quad m_i \in \mathbb{Z}$$
+
+\[
+c = \sum_i m_i \sigma_i, \qquad m_i \in \mathbb{Z}.
+\]
+
+
+
+</td>
+</tr>
+</table>
+
+### Geometric simplices
+
+Take \(p_0, \ldots, p_n\) as \(n+1\) affinely independent points in \(\mathbb{R}^n\).  
+This means the vectors  \(p_1 - p_0,\; p_2 - p_0,\; \ldots,\; p_n - p_0
+\) are linearly independent.
+
+The **simplex determined by** these points is the set
+
+
+\[
+\Delta
+= \left\{
+\sum_{i=0}^{n} t_i p_i
+\;\middle|\;
+t_i \in [0,1],\;
+\sum_{i=0}^{n} t_i = 1
+\right\}.
+\]
+
+
+
+By definition, \(\Delta\) has dimension \(n\).
+
+The points \(p_0, \ldots, p_n\) are its **vertices**, and the simplices formed by any \(n\) of these vertices are its **faces**.  
+The **boundary** \(\partial \Delta\) is the union of all faces. 
+The **standard \(n\)-simplex** is the simplex generated by the unit vectors \(e_0, e_1, \ldots, e_n. \)
+
+---
+
+To understand chain I had to go back Holmoloygy classes
+
+###  Homology Groups
+
+In a triangulation of a manifold, the triangles are called **two‑simplices**,  
+the edges are **one‑simplices**,  
+and the vertices are **zero‑simplices**.
+
+Orientation on the manifold induces orientation on each triangle and on each edge.  
+An edge receives **opposite orientations** from the two triangles that share it.
+
+Let the vertices be labeled \(P_1, P_2, P_3, \ldots\).  We write
+
+- \(\langle P_1, P_2 \rangle\) for the **oriented edge** from \(P_1\) to \(P_2\),
+- \(\langle P_1, P_2, P_3 \rangle\) for the **oriented triangle** bounded by    \(\langle P_1, P_2 \rangle\), \(\langle P_2, P_3 \rangle\), \(\langle P_3, P_1 \rangle\).
+
+Reversing orientation changes the sign:
+
+
+
+\[
+\langle P_1, P_2, P_3 \rangle = -\,\langle P_3, P_2, P_1 \rangle,
+\qquad
+\langle P_1, P_2 \rangle = -\,\langle P_2, P_1 \rangle.
+\]
+
+![](fig/pic 83.png)
+For a simplicial complex \(X\), the group \(C_n(X)\) of \(n\)-chains is
+
+
+
+\[
+C_n(X)
+= \left\{
+\sum_i m_i \sigma_i \;\middle|\; m_i \in \mathbb{Z}
+\right\},
+\]
+
+
+
+where each \(\sigma_i\) is a singular \(n\)-simplex of \(X\).  
+An element of \(C_n(X)\) need not form a connected simplicial complex.
+
+An \(n\)-chain is a formal integer linear combination of oriented \(n\)-simplices.
+
+Any \(n\)-chain \(c \in C_n(X)\) can be written uniquely as a finite sum
+
+
+
+\[
+c = \sum_i a_i \sigma_i,
+\]
+
+
+
+where:
+
+- \(a_i \in \mathbb{Z}\) are the integer coefficients,
+- \(\sigma_i\) are the \(n\)-simplices  
+  (points for \(n=0\), directed edges for \(n=1\), triangles for \(n=2\), tetrahedra for \(n=3\)),
+- and \(a_i = 0\) for all but finitely many indices.
+
+![Source: Wikipedia](fig/pic 84.jpg){width=50%}
+
+Now let's see some concreate examples.
+
+```{example}
+<table>
+<tr>
+<th>k</th>
+<th>simplices</th>
+<th>chains</th>
+</tr>
+
+<!-- k = 0 -->
+<tr>
+<td>0</td>
+<td>
+<strong>0-simplex</strong><br>
+Just points (A, B, C)<br>
+Discrete locations<br>
+<img src="fig/picA.png" width="60%">
+</td>
+<td>
+<strong>0-chains</strong><br>
+\(c_0 = k_1A + k_2B + k_3C,\; k_i \in \mathbb{Z}\)<br>
+\(c_0 = 3A - 2B + 1C\)
+</td>
+</tr>
+
+<!-- k = 1 -->
+<tr>
+<td>1</td>
+<td>
+<strong>1-simplex</strong><br>
+Directed segments<br>
+\(\sigma_1 = A \to B\)<br>
+\(\sigma_2 = B \to C\)<br>
+\(\sigma_3 = C \to A\)<br>
+<img src="fig/picB.png" width="60%">
+</td>
+<td>
+<strong>1-chains</strong><br>
+\(c_1 = k_1\sigma_1 + k_2\sigma_2 + k_3\sigma_3,\; k_i \in \mathbb{Z}\)<br>
+\(c_1 = 3\sigma_1 - 1\sigma_2 + 2\sigma_3\)
+</td>
+</tr>
+
+<!-- k = 2 -->
+<tr>
+<td>2</td>
+<td>
+<strong>2-simplex</strong><br>
+\(\tau_1\): triangle (A, B, C), CCW oriented<br>
+\(\tau_2\): triangle (A, C, D), CCW oriented<br>
+<img src="fig/picC.png" width="60%">
+</td>
+<td>
+<strong>2-chains</strong><br>
+\(c_2 = k_1\tau_1 + k_2\tau_2,\; k_i \in \mathbb{Z}\)<br>
+\(c_2 = 1\tau_1 + 3\tau_2\)<br>
+<ul>
+<li>1τ₁: one layer of the first triangular patch</li>
+<li>3τ₂: triple layer of the second triangular patch</li>
+</ul>
+</td>
+</tr>
+
+<!-- k = 3 -->
+<tr>
+<td>3</td>
+<td>
+<strong>3-simplex</strong><br>
+A cube in \(\mathbb{R}^3\) triangulated into six tetrahedra<br>
+\(\Delta_1, \Delta_2, \ldots, \Delta_6\)<br>
+<img src="fig/picD.png" width="60%">
+</td>
+<td>
+<strong>3-chains</strong><br>
+\(c_3 = 1\Delta_1 + 1\Delta_2 + 1\Delta_3 + 1\Delta_4 + 1\Delta_5 + 1\Delta_6\)<br>
+If we write:<br>
+\(c_3 = 2\Delta_1 - 5\Delta_2\)<br>
+it means:<br>
+<ul>
+<li>count Δ₁ twice</li>
+<li>count Δ₂ five times with reversed orientation</li>
+</ul>
+</td>
+</tr>
+
+</table>
+
+```
+
+```{definition,name="Boundary operator"}
+
+\[
+\delta(\langle P_0, \ldots, P_n \rangle)
+=
+\begin{cases}
+0, 
+& n = 0, \\[6pt]
+\langle P_2 \rangle - \langle P_1 \rangle,
+& n = 1,\ \text{where } \langle P_1, P_2 \rangle, \\[10pt]
+\langle P_2, P_3 \rangle
+- \langle P_1, P_3 \rangle
++ \langle P_1, P_2 \rangle,
+& n = 2,\ \text{where } \langle P_1, P_2, P_3 \rangle.
+\end{cases}
+\]
+
+In general
+
+
+\[
+\delta(\langle P_0, \ldots, P_n \rangle)
+=
+\sum_{i=0}^{n}
+(-1)^i
+\langle P_0, \ldots, \widehat{P_i}, \ldots, P_n \rangle,
+\]
+
+```
+ Chains and the Boundary Map
+
+The collection of \(n\)-chains forms an abelian group under addition, and the
+boundary operator
+
+
+\[
+\delta : C_n \longrightarrow C_{n-1}
+\]
+
+
+is a group homomorphism.  
+We denote the group of \(n\)-chains by \(C_n\).  
+(For \(n > 2\), one typically has \(C_n = \{0\}\) in a 2‑dimensional manifold.)
+
+---
+
+Integrating 0‑forms over 0‑chains
+
+A 0‑form is simply a function, and it can be evaluated on 0‑chains (finite sums of points).  
+For a 0‑chain
+
+
+\[
+\sum_{\alpha} n_\alpha P_\alpha,
+\qquad n_\alpha \in \mathbb{Z},
+\]
+
+
+the integral of a function \(f\) over this chain is
+
+
+\[
+\sum_{\alpha} n_\alpha\, f(P_\alpha).
+\]
+
+
+
+---
+
+Integrating 1‑forms over 1‑chains
+
+A 1‑form \(\omega\) can be integrated over 1‑chains, which are finite unions of oriented paths.  
+If a path \(c : [0,1] \to M\) lies inside a coordinate chart \(z = x + iy\), and
+
+
+\[
+\omega = f(x,y)\,dx + g(x,y)\,dy,
+\]
+
+
+then the integral along \(c\) is
+
+
+\[
+\int_c \omega
+= \int_0^1 \left[
+f(x(t),y(t))\,\frac{dx}{dt}
++ g(x(t),y(t))\,\frac{dy}{dt}
+\right] dt.
+\]
+
+
+
+---
+
+Integrating 2‑forms over 2‑chains
+
+A 2‑form \(\Omega\) can be integrated over 2‑chains.  
+If \(D\) lies in a coordinate chart and
+
+
+\[
+\Omega = f(x,y)\, dx \wedge dy,
+\]
+
+
+then
+
+
+\[
+\iint_D \Omega
+= \iint_D f(x,y)\, dx \wedge dy.
+\]
+
+
+
+This definition extends naturally to arbitrary 2‑chains.
+
+
+#### Summary
+
+**Integration of differential forms over chains**
+
+| Dim(n) | Geometric n‑Chain (Domain) | Differential n‑Form (Integrand) | “Integral” | Geometric Meaning |
+|-------|-----------------------------|----------------------------------|------------|-------------------|
+| **0** | Points: \(\sum n_\alpha P_\alpha\) | Function \(f(x,y)\) | \(\sum n_\alpha f(P_\alpha)\) | Evaluating a function at weighted points. |
+| **1** | Paths / curves: \(c(t) = (x(t), y(t))\) | \(1\)-form \(\omega = f\,dx + g\,dy\) | \(\displaystyle \int_0^1 \big( f(x(t),y(t))\,\frac{dx}{dt} + g(x(t),y(t))\,\frac{dy}{dt} \big)\, dt\) | Line integral (circulation, work along a path). |
+| **2** | Regions / surfaces \(D\) | \(2\)-form \(\Omega = f(x,y)\, dx \wedge dy\) | \(\displaystyle \iint_D f(x,y)\, dx \wedge dy\) | Double integral (signed area, flux over a region). |
+| **3** | Volumes / 3‑chains (e.g., tetrahedra filling a region) | \(3\)-form \(\Phi = f(x,y,z)\, dx \wedge dy \wedge dz\) | \(\displaystyle \iiint_{V} f(x,y,z)\, dx \wedge dy \wedge dz\) | Triple integral (volume, mass, flux through a 3‑dimensional region). |
+
 
 ### Stokes' Theorem
 
