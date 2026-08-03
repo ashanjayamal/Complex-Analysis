@@ -942,8 +942,19 @@ $$d(d\omega) = d^2\omega = 0$$
 ```{proof}
 ![](fig/pic 53.png)
 ![](fig/pic 54.png)
-
+![](fig/pic 55.png)
 ```
+
+```{example}
+Let \(\omega = xy\,dx + \frac{y}{x}\,dy + \frac{z}{x}\,dz\) on \(U = \{(x,y,z) \in \mathbb{R}^3 \mid x \neq 0\}\). Find the two-form \(d\omega\) and write your result in standard form. What is the vector field associated to \(d\omega\)?
+![](fig/pic 56.png)
+```
+```{example}
+Find the three-form dw if $w =xyz(dy \wedge  dz+dz \wedge  dx + dx \wedge dy)$, and write 
+your result in standard form. 
+![](fig/pic 57.png)
+```
+
 
 ### Grad, Curl, and Div Connection
 
