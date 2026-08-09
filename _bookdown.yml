@@ -6,3 +6,4 @@ output_dir: "docs"
 header-includes:
   - \usepackage{amsmath}
   - \usepackage{cancel}
+  - \usepackage{pgfplots}

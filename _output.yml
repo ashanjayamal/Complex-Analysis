@@ -9,7 +9,6 @@ output:
           <li><a href="https://ashanjayamal.github.io/academicpages" target="blank">
           Property of Ashan Jayamal</a></li>
       edit: https://github.com/ashanjaymal/Complex-Analysis/edit/main/%s
-      download: ["pdf", "epub"]
 
   bookdown::pdf_book:
     includes:

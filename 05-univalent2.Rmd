@@ -386,6 +386,7 @@ $$\left|\frac{zf''(z)}{f'(z)} - \frac{2r^2}{1-r^2}\right| \le \frac{4r}{1-r^2}.$
 
 ```{proof}
 *(Proof sketch)* Fix $\zeta\in\mathbb D$ and apply the disk-automorphism symmetry (item 4 above) to build $F\in S$ re-centered at $\zeta$. Expanding $F$'s second Taylor coefficient in terms of $f$'s Taylor coefficients at $\zeta$ gives an expression $A_2(\zeta) = \frac12(1-|\zeta|^2)\dfrac{f''(\zeta)}{f'(\zeta)} - \bar\zeta$. Bieberbach's theorem bounds ```
+```
 
 ```{proof}
 ![](fig/pic 35.png)
@@ -421,21 +422,45 @@ $$\frac{r}{(1+r)^2} \le |f(z)| \le \frac{r}{(1-r)^2}, \qquad |z|=r<1,$$
 again with equality only for rotations of the Koebe function. The *lower* bound is the subtler direction: if $|f(z)|<\tfrac14$, the Koebe $1/4$ theorem guarantees the whole segment from $0$ to $f(z)$ lies in $f(\mathbb D)$, so you can integrate $f'$ along its (univalent) preimage arc and apply the distortion theorem there.
 ```
 
-<iframe src="https://growththerom.netlify.app/" width="800" height="1500"></iframe>   
-
-```{theorem,name="Rotation theorem (imaginary part)"}
-Taking imaginary parts of Theorem 2.4 instead and integrating gives the (non-sharp) bound
-$$|\arg f'(z)| \le 2\log\frac{1+r}{1-r}.$$
-The genuinely **sharp** rotation theorem,
-$$|\arg f'(z)| \le \begin{cases} 4\arcsin r, & r\le 1/\sqrt2,\\[4pt] \pi + \log\dfrac{r^2}{1-r^2}, & r>1/\sqrt2,\end{cases}$$
-lies much deeper (needs Loewner's method, Chapter 3)  and the fact that the sharp bound has *different functional forms* on either side of $r=1/\sqrt2$ is flagged as one of the striking phenomena of the theory.
-```
-
 ```{proof}
 ![](fig/pic 36.jpeg)
 ![](fig/pic 37.jpeg)
 ![](fig/pic 38.jpeg) 
+![](fig/pic 87.jpg)
+![](fig/pic 89.jpeg)
+![](fig/pic 90.jpeg)
+![](fig/pic 91.jpeg)
+![](fig/pic 92.jpeg)
+![](fig/pic 93.jpeg)
+![](fig/pic 94.jpeg)
+![](fig/pic 95.jpeg)
+![](fig/pic 96.jpeg)
+![](fig/pic 97.jpeg)
+![](fig/pic 98.jpeg)
+![](fig/pic 99.jpeg)
+![](fig/pic 100.jpeg)
+![](fig/pic 101.jpeg)
+![](fig/pic 102.jpeg)
 ```
+
+<iframe src="https://growththerom.netlify.app/" width="800" height="1500"></iframe>   
+
+```{theorem,name="Rotation theorem (imaginary part)"}
+Taking imaginary parts of Theorem  instead and integrating gives the (non-sharp) bound
+$$|\arg f'(z)| \le 2\log\frac{1+r}{1-r}.$$
+```
+
+
+```{theorem,name="The genuinely **sharp** rotation theorem"}
+$$|\arg f'(z)| \le \begin{cases} 4\arcsin r, & r\le 1/\sqrt2,\\[4pt] \pi + \log\dfrac{r^2}{1-r^2}, & r>1/\sqrt2,\end{cases}$$
+lies much deeper (needs Loewner's method)  and the fact that the sharp bound has *different functional forms* on either side of $r=1/\sqrt2$ is flagged as one of the striking phenomena of the theory.
+```
+
+```{proof}
+Ommited (needs Loewner's method)
+```
+
+
 
 
 ```{theorem,name="combined growth/distortion, for $zf'/f$"}
@@ -493,6 +518,6 @@ $$L_r(f) \le \frac{1+r}{1-r}\int_0^{2\pi}|f(re^{i\theta})|\,d\theta = \frac{1+r}
 
 This is again "very nearly sharp" but not sharp; using Baernstein's inequality $M_1(r,f)\le \frac{r}{1-r^2}$ in place of the elementary lemma improves it to
 $$L_r(f) \le \frac{2\pi r}{(1-r)^2}.$$
-(The $(1+r)$ factor cancels exactly against the extra factor gained from the sharper $M_1$ bound.) The genuinely sharp bound for $L_r(f)$ over all of $S$ is still **unknown** in general; Clunie and Duren later showed $L_r(f)\le L_r(k)$ holds within the subclass of *close-to-convex* functions (§2.6).
+(The $(1+r)$ factor cancels exactly against the extra factor gained from the sharper $M_1$ bound.) The genuinely sharp bound for $L_r(f)$ over all of $S$ is still **unknown** in general; Clunie and Duren later showed $L_r(f)\le L_r(k)$ holds within the subclass of *close-to-convex* functions .
 
 

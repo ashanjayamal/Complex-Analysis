@@ -1,6 +1,5 @@
 # Riemann Surfaces
 
-
 ```{definition,name="Riemann surface"}
 A **Riemann surface** is a second‑countable, Hausdorff topological space \(X\) equipped with a **complex atlas**  \(\mathcal{A} = \{(U_\alpha, \varphi_\alpha)\}\) satisfying the following properties:
 
@@ -57,6 +56,7 @@ Thus the notion of holomorphicity does **not** depend on the choice of charts.
 ```{exercise}
 Assume that for all \( p \in R_1 \) there is a chart \((U,\phi)\) such that \( p \in U \) and a chart \((V,\psi)\) such that \( f(p) \in V \), so that \(\psi \circ f \circ \phi^{-1}\) is holomorphic (in the standard sense, as a complex analytic function on an open subset of the plane). Show that \( f \) is holomorphic.
 ```
+
 **Solution**: We are given that for each \( p \in R_1 \), there exist some charts \((U,\phi)\) at \(p\) and \((V,\psi)\) at \(f(p)\) such that \(
 \psi \circ f \circ \phi^{-1}
 \)is holomorphic. 
@@ -100,6 +100,8 @@ Show that for any \( z_1, z_2 \) and \( r_1, r_2 \) the map \(\phi_{z_1, r_1} \c
 ```
 
 **Solution**: 
+
+
 ---
 
 ### Functions defnied on the Riemann Surface.
@@ -200,7 +202,7 @@ and define
 ```
 
 
-\medskip
+
 
 ```{exercise}
 Show that for any pair \(\theta_1, \theta_2\), the transition map
