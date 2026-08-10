@@ -429,18 +429,7 @@ again with equality only for rotations of the Koebe function. The *lower* bound 
 ![](fig/pic 87.jpg)
 ![](fig/pic 89.jpeg)
 ![](fig/pic 90.jpeg)
-![](fig/pic 91.jpeg)
-![](fig/pic 92.jpeg)
-![](fig/pic 93.jpeg)
-![](fig/pic 94.jpeg)
-![](fig/pic 95.jpeg)
-![](fig/pic 96.jpeg)
-![](fig/pic 97.jpeg)
-![](fig/pic 98.jpeg)
-![](fig/pic 99.jpeg)
-![](fig/pic 100.jpeg)
-![](fig/pic 101.jpeg)
-![](fig/pic 102.jpeg)
+
 ```
 
 <iframe src="https://growththerom.netlify.app/" width="800" height="1500"></iframe>   
@@ -450,8 +439,15 @@ Taking imaginary parts of Theorem  instead and integrating gives the (non-sharp)
 $$|\arg f'(z)| \le 2\log\frac{1+r}{1-r}.$$
 ```
 
+```{proof}
+![](fig/pic 91.jpeg)
+![](fig/pic 92.jpeg)
+![](fig/pic 93.jpeg)
+![](fig/pic 94.jpeg)
+![](fig/up.png)
+```
 
-```{theorem,name="The genuinely **sharp** rotation theorem"}
+```{theorem,name="The genuinely sharp rotation theorem"}
 $$|\arg f'(z)| \le \begin{cases} 4\arcsin r, & r\le 1/\sqrt2,\\[4pt] \pi + \log\dfrac{r^2}{1-r^2}, & r>1/\sqrt2,\end{cases}$$
 lies much deeper (needs Loewner's method)  and the fact that the sharp bound has *different functional forms* on either side of $r=1/\sqrt2$ is flagged as one of the striking phenomena of the theory.
 ```
@@ -468,6 +464,17 @@ For $f\in S$,
 $$\frac{1-r}{1+r} \le \left|\frac{zf'(z)}{f(z)}\right| \le \frac{1+r}{1-r}.$$
 ```
 
+```{proof}
+![](fig/pic 95.jpeg)
+![](fig/pic 96.jpeg)
+![](fig/pic 97.jpeg)
+![](fig/pic 98.jpeg)
+![](fig/pic 99.jpeg)
+![](fig/pic 100.jpeg)
+![](fig/pic 101.jpeg)
+![](fig/pic 102.jpeg)
+![](fig/up.png)
+```
 
 Note this does **not** follow by naively dividing the growth and distortion bounds  the proof has to go back to the auxiliary function $F$ from Theorem 2.4's construction and use the growth theorem on $F$ at the point $-\zeta$. Equality, again, only for rotations of $k$, for which $\dfrac{zk'(z)}{k(z)} = \dfrac{1+z}{1-z}$ exactly.
 

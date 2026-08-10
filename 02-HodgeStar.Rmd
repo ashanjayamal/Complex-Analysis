@@ -3,7 +3,7 @@
 *Notes and Lecture Summaries*
 *Research Readings - 12 May, 2018*
 
-**Important**: This is not my original works(), This is just a keep track of my readings**
+**Important**: This is not my original works(), This is just a keep track of my readings
 
 ## Basic k-Forms
 
@@ -44,7 +44,7 @@ $$dx_{i_1} \wedge \dots \wedge dx_{i_k}(\mathbf{u}^1, \dots, \mathbf{u}^k) = \de
 ```{lemma,name="Antisymmetry of Basic Form"}
 For any vectors $\mathbf{u}, \mathbf{v}$:
   
-$$\begin{aligned} dx_i \wedge dx_j (\mathbf{u}, \mathbf{v}) &=-(dx_i \wedge dx_j (\mathbf{u}, \mathbf{v}))\\
+$$\begin{aligned} dx_i \wedge dx_j (\mathbf{u}, \mathbf{v}) &=-(dx_j \wedge dx_i (\mathbf{u}, \mathbf{v}))\\
 dx_i \wedge dx_i &=  0\end{aligned}$$
 ```
 
@@ -464,7 +464,7 @@ As a summary,
 | Differential Form Concept | Vector Calculus Concept |
 | --- | --- |
 | 1‑form \(\omega\) | vector field **F** |
-| 1‑form \(\eta\) | vector field **G** || 2‑form \(\omega \wedge \eta\) | cross product **F × G** |
+| 1‑form \(\eta\) | vector field **G** | 2‑form \(\omega \wedge \eta\) | cross product **F × G** |
 
 | Differential Form Concept | Vector Calculus Concept |
 | --- | --- |
@@ -1346,7 +1346,7 @@ Wikipedia says, *In mathematics, triangulation describes the replacement of topo
 <img src="fig/pic 81.png" width="33%">
 <p><em>Source: Wikipedia</em></p>
 </div>
-
+</div>
 
 
 ### Simplices and Chains
@@ -1717,7 +1717,7 @@ If $\omega$ is a $C^1$ $k$-form and $D$ is a $(k+1)$-chain, then
 
 </div>
 
-- **k=0**  This is trivial (This is very similar to Fundamental therom of calculus
+- **k=0**  This is trivial (This is very similar to Fundamental therom of calculus)
 
 ![](fig/pic 85.jpg)
 
@@ -1725,7 +1725,7 @@ If $\omega$ is a $C^1$ $k$-form and $D$ is a $(k+1)$-chain, then
 ![](fig/pic 86.jpg)
 - **k=2**
 
-![](https://imgs.search.brave.com/iQs0PRLqzFiVF-V58PMh7PTcg715LHK5q2G0scvOLy4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTcx/MjkzOTA5L3Bob3Rv/L2NvbmZ1c2VkLXF1/c2V0aW9uLW1hcmsu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PU54ZEJYWFNqLXF1/RGQ5cDQzZUZfcktk/c3JkbEV6Q3ZrNnJm/LXNaQzZtSWc9)
+![](fig/q.png)
 
 
 ## Complex Operators and Harmonic Forms

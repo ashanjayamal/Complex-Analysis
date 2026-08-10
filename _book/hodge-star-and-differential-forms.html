@@ -52,14 +52,6 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<link href="libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.12.0/plotly.js"></script>
-<script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-2.25.2/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-2.25.2/plotly-latest.min.js"></script>
 
 
 
@@ -163,7 +155,7 @@ Property of Ashan Jayamal</a></li>
 <div id="definitions-and-structure" class="section level3 hasAnchor" number="3.1.1">
 <h3><span class="header-section-number">3.1.1</span> Definitions and Structure<a href="hodge-star-and-differential-forms.html#definitions-and-structure" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="definition">
-<p><span id="def:unnamed-chunk-7" class="definition"><strong>Definition 3.1  (Basic One-Forms) </strong></span>For each <span class="math inline">\(i \in \{1,\ldots,n\}\)</span>, the <span class="math inline">\(dx_i\)</span> is the linear map <span class="math inline">\(dx_i : \mathbb{R}^n \longrightarrow \mathbb{R}\)</span> defined by projecting a vector onto its <span class="math inline">\(i\)</span>-th coordinate. If <span class="math inline">\(\mathbf{u} = (u_1,\ldots,u_n) \in \mathbb{R}^n\)</span>, then
+<p><span id="def:unnamed-chunk-1" class="definition"><strong>Definition 3.1  (Basic One-Forms) </strong></span>For each <span class="math inline">\(i \in \{1,\ldots,n\}\)</span>, the <span class="math inline">\(dx_i\)</span> is the linear map <span class="math inline">\(dx_i : \mathbb{R}^n \longrightarrow \mathbb{R}\)</span> defined by projecting a vector onto its <span class="math inline">\(i\)</span>-th coordinate. If <span class="math inline">\(\mathbf{u} = (u_1,\ldots,u_n) \in \mathbb{R}^n\)</span>, then
 <span class="math display">\[
 dx_i(u_1,\ldots,u_n) = u_i.
 \]</span></p>
@@ -173,24 +165,24 @@ dx_i(u_1,\ldots,u_n) = u_i.
 <h3><span class="header-section-number">3.1.2</span> Basic k-Forms<a href="hodge-star-and-differential-forms.html#basic-k-forms-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This algebraic understanding of the basic one-forms as linear maps allows us to define a natural generalization. Instead of looking only at linear maps, we now also define <span class="math inline">\(k\)</span>-forms on <span class="math inline">\(\mathbb{R}^n\)</span>. The definition relies on the determinant.</p>
 <div class="definition">
-<p><span id="def:unnamed-chunk-8" class="definition"><strong>Definition 3.2  (Basic Two-Form) </strong></span>The basic two-form <span class="math inline">\(dx_i \wedge dx_j\)</span> takes two vectors <span class="math inline">\(\mathbf{u}, \mathbf{v} \in \mathbb{R}^n\)</span> and maps them to the following determinant:</p>
+<p><span id="def:unnamed-chunk-2" class="definition"><strong>Definition 3.2  (Basic Two-Form) </strong></span>The basic two-form <span class="math inline">\(dx_i \wedge dx_j\)</span> takes two vectors <span class="math inline">\(\mathbf{u}, \mathbf{v} \in \mathbb{R}^n\)</span> and maps them to the following determinant:</p>
 <p><span class="math display">\[dx_i \wedge dx_j (\mathbf{u}, \mathbf{v}) = \det \begin{pmatrix} u_i &amp; v_i \\ u_j &amp; v_j \end{pmatrix} = u_i v_j - u_j v_i\]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unnamed-chunk-9" class="definition"><strong>Definition 3.3  (Basic Three-Forms) </strong></span>The basic three-form <span class="math inline">\(dx_i \wedge dx_j \wedge dx_k\)</span> takes three vectors <span class="math inline">\(\mathbf{u}, \mathbf{v}, \mathbf{w} \in \mathbb{R}^n\)</span> and maps them to:</p>
+<p><span id="def:unnamed-chunk-3" class="definition"><strong>Definition 3.3  (Basic Three-Forms) </strong></span>The basic three-form <span class="math inline">\(dx_i \wedge dx_j \wedge dx_k\)</span> takes three vectors <span class="math inline">\(\mathbf{u}, \mathbf{v}, \mathbf{w} \in \mathbb{R}^n\)</span> and maps them to:</p>
 <p><span class="math display">\[dx_i \wedge dx_j \wedge dx_k (\mathbf{u}, \mathbf{v}, \mathbf{w}) = \det \begin{pmatrix} u_i &amp; v_i &amp; w_i \\ u_j &amp; v_j &amp; w_j \\ u_k &amp; v_k &amp; w_k \end{pmatrix}\]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unnamed-chunk-10" class="definition"><strong>Definition 3.4  (Basic $k$-Forms) </strong></span>For <span class="math inline">\(1 \le i_1 &lt; i_2 &lt; \dots &lt; i_k \le n\)</span>, the basic <span class="math inline">\(k\)</span>-form <span class="math inline">\(dx_{i_1} \wedge \dots \wedge dx_{i_k}\)</span> acts on <span class="math inline">\(k\)</span> vectors <span class="math inline">\(\mathbf{u}^1, \dots, \mathbf{u}^k\)</span> via:</p>
+<p><span id="def:unnamed-chunk-4" class="definition"><strong>Definition 3.4  (Basic $k$-Forms) </strong></span>For <span class="math inline">\(1 \le i_1 &lt; i_2 &lt; \dots &lt; i_k \le n\)</span>, the basic <span class="math inline">\(k\)</span>-form <span class="math inline">\(dx_{i_1} \wedge \dots \wedge dx_{i_k}\)</span> acts on <span class="math inline">\(k\)</span> vectors <span class="math inline">\(\mathbf{u}^1, \dots, \mathbf{u}^k\)</span> via:</p>
 <p><span class="math display">\[dx_{i_1} \wedge \dots \wedge dx_{i_k}(\mathbf{u}^1, \dots, \mathbf{u}^k) = \det \begin{pmatrix} u_{i_1}^1 &amp; \dots &amp; u_{i_1}^k \\ \vdots &amp; \ddots &amp; \vdots \\ u_{i_k}^1 &amp; \dots &amp; u_{i_k}^k \end{pmatrix}\]</span></p>
 </div>
 <div class="lemma">
-<p><span id="lem:unnamed-chunk-11" class="lemma"><strong>Lemma 3.1  (Antisymmetry of Basic Form) </strong></span>For any vectors <span class="math inline">\(\mathbf{u}, \mathbf{v}\)</span>:</p>
+<p><span id="lem:unnamed-chunk-5" class="lemma"><strong>Lemma 3.1  (Antisymmetry of Basic Form) </strong></span>For any vectors <span class="math inline">\(\mathbf{u}, \mathbf{v}\)</span>:</p>
 <p><span class="math display">\[\begin{aligned} dx_i \wedge dx_j (\mathbf{u}, \mathbf{v}) &amp;=-(dx_i \wedge dx_j (\mathbf{u}, \mathbf{v}))\\
 dx_i \wedge dx_i &amp;=  0\end{aligned}\]</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-2" class="proof"><em>Proof</em>. </span>For any vectors <span class="math inline">\(\mathbf{u}, \mathbf{v}\)</span>:</p>
+<p><span id="unlabeled-div-1" class="proof"><em>Proof</em>. </span>For any vectors <span class="math inline">\(\mathbf{u}, \mathbf{v}\)</span>:</p>
 <p><span class="math display">\[\begin{aligned} dx_i \wedge dx_j (\mathbf{u}, \mathbf{v}) &amp;= \begin{vmatrix} u_i &amp; v_i \\ u_j &amp; v_j \end{vmatrix} = u_i v_j - u_j v_i \\ dx_j \wedge dx_i (\mathbf{u}, \mathbf{v}) &amp;= \begin{vmatrix} u_j &amp; v_j \\ u_i &amp; v_i \end{vmatrix} = u_j v_i - u_i v_j = -(dx_i \wedge dx_j (\mathbf{u}, \mathbf{v})) \end{aligned}\]</span>
 Thus, <span class="math inline">\(dx_i \wedge dx_j = - dx_j \wedge dx_i\)</span>, which implies:
 <span class="math display">\[dx_i \wedge dx_i = \begin{vmatrix} u_i &amp; v_i \\ u_i &amp; v_i \end{vmatrix} = u_i v_i - u_i v_i = 0\]</span></p>
@@ -199,7 +191,7 @@ Thus, <span class="math inline">\(dx_i \wedge dx_j = - dx_j \wedge dx_i\)</span>
 <div id="exterior-derivative-of-a-function-0forms" class="section level3 hasAnchor" number="3.1.3">
 <h3><span class="header-section-number">3.1.3</span> Exterior Derivative of a Function (0‑Forms)<a href="hodge-star-and-differential-forms.html#exterior-derivative-of-a-function-0forms" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="definition">
-<p><span id="def:unnamed-chunk-13" class="definition"><strong>Definition 3.5  </strong></span>Let <span class="math inline">\(f : U \subseteq \mathbb{R}^n \to \mathbb{R}\)</span> be a smooth function.<br />
+<p><span id="def:unnamed-chunk-7" class="definition"><strong>Definition 3.5  </strong></span>Let <span class="math inline">\(f : U \subseteq \mathbb{R}^n \to \mathbb{R}\)</span> be a smooth function.<br />
 Its <strong>differential</strong> (also called the exterior derivative of a 0‑form) is the 1‑form</p>
 <p><span class="math display">\[
 df = \sum_{i=1}^n \frac{\partial f}{\partial x_i}\, dx_i.
@@ -221,7 +213,7 @@ df = f_x\,dx + f_y\,dy + f_z\,dz.
 <p><span class="math display">\[\tilde{f}(\tilde{z}) = f(z(\tilde{z})) \frac{\partial(x,y)}{\partial(\tilde{x},\tilde{y})}\]</span></p>
 <p>where <span class="math inline">\(\frac{\partial(x,y)}{\partial(\tilde{x},\tilde{y})}\)</span> is the Jacobian determinant.</p>
 <div class="definition">
-<p><span id="def:unnamed-chunk-14" class="definition"><strong>Definition 3.6  (Exterior Derivative of a k-form) </strong></span>The exterior derivative of a <span class="math inline">\(k\)</span>-form <span class="math inline">\(\omega = \sum f_{i_1 \dots i_k} dx_{i_1} \wedge \dots \wedge dx_{i_k}\)</span> on <span class="math inline">\(U \subseteq \mathbb{R}^n\)</span> is the <span class="math inline">\((k+1)\)</span>-form <span class="math inline">\(d\omega\)</span> given by:</p>
+<p><span id="def:unnamed-chunk-8" class="definition"><strong>Definition 3.6  (Exterior Derivative of a k-form) </strong></span>The exterior derivative of a <span class="math inline">\(k\)</span>-form <span class="math inline">\(\omega = \sum f_{i_1 \dots i_k} dx_{i_1} \wedge \dots \wedge dx_{i_k}\)</span> on <span class="math inline">\(U \subseteq \mathbb{R}^n\)</span> is the <span class="math inline">\((k+1)\)</span>-form <span class="math inline">\(d\omega\)</span> given by:</p>
 <p><span class="math display">\[d\omega = \sum_{1 \le i_1 &lt; \dots &lt; i_k \le n} d(f_{i_1 \dots i_k}) \wedge dx_{i_1} \wedge \dots \wedge dx_{i_k}\]</span></p>
 <p>where <span class="math inline">\(d(f_{i_1 \dots i_k})\)</span> means the exterior derivative of the function (<span class="math inline">\(0\)</span>-form).</p>
 </div>
@@ -229,7 +221,7 @@ df = f_x\,dx + f_y\,dy + f_z\,dz.
 <div id="k-forms-in-r3" class="section level3 hasAnchor" number="3.1.5">
 <h3><span class="header-section-number">3.1.5</span> k-Forms in R^3<a href="hodge-star-and-differential-forms.html#k-forms-in-r3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="definition">
-<p><span id="def:unnamed-chunk-15" class="definition"><strong>Definition 3.7  (Forms in R3) </strong></span>Let <span class="math inline">\(U \subseteq \mathbb{R}^3\)</span> be an open subset.</p>
+<p><span id="def:unnamed-chunk-9" class="definition"><strong>Definition 3.7  (Forms in R3) </strong></span>Let <span class="math inline">\(U \subseteq \mathbb{R}^3\)</span> be an open subset.</p>
 <ol style="list-style-type: decimal">
 <li>A <strong>zero-form</strong> is a smooth function <span class="math inline">\(f: U \to \mathbb{R}\)</span>.</li>
 <li>A <strong>one-form</strong> is an expression <span class="math inline">\(f\,dx + g\,dy + h\,dz\)</span> for smooth functions <span class="math inline">\(f,g,h: U \to \mathbb{R}\)</span>.</li>
@@ -278,7 +270,7 @@ df = f_x\,dx + f_y\,dy + f_z\,dz.
 </tbody>
 </table>
 <div class="example">
-<p><span id="exm:unnamed-chunk-16" class="example"><strong>Example 3.1  </strong></span>Show that <span class="math inline">\(dz \wedge dx \wedge dy = dx \wedge dy \wedge dz.\)</span></p>
+<p><span id="exm:unnamed-chunk-10" class="example"><strong>Example 3.1  </strong></span>Show that <span class="math inline">\(dz \wedge dx \wedge dy = dx \wedge dy \wedge dz.\)</span></p>
 </div>
 <p><strong>Solution</strong>
 Using antisymmetry of the wedge product,</p>
@@ -294,7 +286,7 @@ dz \wedge dx \wedge dy
 = dx \wedge dy \wedge dz.
 \]</span></p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-17" class="example"><strong>Example 3.2  </strong></span>List the independent non-vanishing basic <span class="math inline">\(k\)</span>-forms in <span class="math inline">\(\mathbb{R}^4\)</span>.</p>
+<p><span id="exm:unnamed-chunk-11" class="example"><strong>Example 3.2  </strong></span>List the independent non-vanishing basic <span class="math inline">\(k\)</span>-forms in <span class="math inline">\(\mathbb{R}^4\)</span>.</p>
 </div>
 <p><strong>Solution</strong>:
 Because of antisymmetry, the only non-vanishing basic <span class="math inline">\(k\)</span>-forms in
@@ -334,7 +326,7 @@ dx_1 \wedge dx_2 \wedge dx_3 \wedge dx_4.
 <p>There is only one independent basic four-form, since repeated factors
 would make the wedge product vanish.</p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-18" class="example"><strong>Example 3.3  </strong></span>Write down the vector field <span class="math inline">\(F : \mathbb{R}^3 \to \mathbb{R}^3\)</span> associated to the two-form</p>
+<p><span id="exm:unnamed-chunk-12" class="example"><strong>Example 3.3  </strong></span>Write down the vector field <span class="math inline">\(F : \mathbb{R}^3 \to \mathbb{R}^3\)</span> associated to the two-form</p>
 <p><span class="math display">\[
 \omega = xy\, dx \wedge dy + xyz\, dx \wedge dz + x^2\, dy \wedge dz.
 \]</span></p>
@@ -354,7 +346,7 @@ A general two-form in <span class="math inline">\(\mathbb{R}^3\)</span> can be w
 F(x,y,z) = (x^2,\; -xyz,\; xy).
 \]</span></p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-19" class="example"><strong>Example 3.4  </strong></span>Let <span class="math inline">\(\omega = dx \wedge dz\)</span> be a basic two-form on <span class="math inline">\(\mathbb{R}^3\)</span>, and let
+<p><span id="exm:unnamed-chunk-13" class="example"><strong>Example 3.4  </strong></span>Let <span class="math inline">\(\omega = dx \wedge dz\)</span> be a basic two-form on <span class="math inline">\(\mathbb{R}^3\)</span>, and let
 <span class="math inline">\(u = (1,2,3)\)</span> and <span class="math inline">\(v = (3,2,1)\)</span>. Evaluate <span class="math inline">\(\omega(u,v)\)</span>.</p>
 </div>
 <p><strong>solution</strong>:
@@ -374,7 +366,7 @@ u_3 &amp; v_3
 = 1 - 9 = -8.
 \]</span></p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-20" class="example"><strong>Example 3.5  </strong></span>Let <span class="math inline">\(\omega = dx \wedge dy \wedge dz\)</span> be the basic three-form on <span class="math inline">\(\mathbb{R}^3\)</span>.</p>
+<p><span id="exm:unnamed-chunk-14" class="example"><strong>Example 3.5  </strong></span>Let <span class="math inline">\(\omega = dx \wedge dy \wedge dz\)</span> be the basic three-form on <span class="math inline">\(\mathbb{R}^3\)</span>.</p>
 <ol style="list-style-type: lower-alpha">
 <li>Show that <span class="math inline">\(\omega(u,v,w)=1\)</span> for <span class="math inline">\(u=(1,0,0)\)</span>, <span class="math inline">\(v=(0,1,0)\)</span>, <span class="math inline">\(w=(0,0,1)\)</span>.</li>
 <li>Show that <span class="math inline">\(\omega(v,u,w)=-1\)</span>.</li>
@@ -451,7 +443,7 @@ dx \wedge dy \wedge dz(\mathbf{v},\mathbf{u},\mathbf{w})
 <div id="wedge-product" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> Wedge Product<a href="hodge-star-and-differential-forms.html#wedge-product" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="definition">
-<p><span id="def:unnamed-chunk-21" class="definition"><strong>Definition 3.8  (Wedge Product) </strong></span>Consider a simple <span class="math inline">\(k\)</span>-form <span class="math inline">\(\omega\)</span> and a simple <span class="math inline">\(m\)</span>-form <span class="math inline">\(\eta\)</span> on an open
+<p><span id="def:unnamed-chunk-15" class="definition"><strong>Definition 3.8  (Wedge Product) </strong></span>Consider a simple <span class="math inline">\(k\)</span>-form <span class="math inline">\(\omega\)</span> and a simple <span class="math inline">\(m\)</span>-form <span class="math inline">\(\eta\)</span> on an open
 subset <span class="math inline">\(U \subseteq \mathbb{R}^n\)</span> of the form</p>
 <p><span class="math display">\[
 \omega = f\, dx_{i_1} \wedge \cdots \wedge dx_{i_k},
@@ -471,37 +463,37 @@ differentials introduces a sign by antisymmetry.</p>
 <p>The wedge product of arbitrary <span class="math inline">\(k\)</span>- and <span class="math inline">\(m\)</span>-forms is defined by linearity,
 i.e. by distributing the wedge product term-by-term over sums.</p>
 <div class="definition">
-<p><span id="def:unnamed-chunk-22" class="definition"><strong>Definition 3.9  (Wedge Product) </strong></span>The wedge product <span class="math inline">\(\wedge\)</span> combines a <span class="math inline">\(k\)</span>-form and an <span class="math inline">\(m\)</span>-form to yield a <span class="math inline">\((k+m)\)</span>-form. It is associative, bilinear, and satisfies graded commutativity:</p>
+<p><span id="def:unnamed-chunk-16" class="definition"><strong>Definition 3.9  (Wedge Product) </strong></span>The wedge product <span class="math inline">\(\wedge\)</span> combines a <span class="math inline">\(k\)</span>-form and an <span class="math inline">\(m\)</span>-form to yield a <span class="math inline">\((k+m)\)</span>-form. It is associative, bilinear, and satisfies graded commutativity:</p>
 <p><span class="math display">\[\omega \wedge \eta = (-1)^{km} \eta \wedge \omega\]</span></p>
 </div>
 <div id="examples-of-wedge-product" class="section level3 hasAnchor" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> Examples of Wedge Product<a href="hodge-star-and-differential-forms.html#examples-of-wedge-product" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="example">
-<p><span id="exm:unnamed-chunk-23" class="example"><strong>Example 3.6  (Wedge product of two 1-forms) </strong></span>Let <span class="math inline">\(\omega = x\,dx + x\,dy + e^z\,dz\)</span> and <span class="math inline">\(\eta = y\,dx + x\,dy + z\,dz\)</span>. Then:</p>
+<p><span id="exm:unnamed-chunk-17" class="example"><strong>Example 3.6  (Wedge product of two 1-forms) </strong></span>Let <span class="math inline">\(\omega = x\,dx + x\,dy + e^z\,dz\)</span> and <span class="math inline">\(\eta = y\,dx + x\,dy + z\,dz\)</span>. Then:</p>
 <p><span class="math display">\[\begin{aligned} \omega \wedge \eta &amp;= (x\,dx + x\,dy + e^z\,dz) \wedge (y\,dx + x\,dy + z\,dz) \\ &amp;= (x^2 - xy)\,dx \wedge dy + (xz + e^z y)\,dz \wedge dx + (xz - e^z x)\,dz \wedge dy \end{aligned}\]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-24" class="example"><strong>Example 3.7  (Wedge product of a 1-form and a 2-form) </strong></span>Let <span class="math inline">\(\omega = xy\,dx + y\,dy\)</span> and <span class="math inline">\(\eta = z\,dy \wedge dz\)</span>. Then:</p>
+<p><span id="exm:unnamed-chunk-18" class="example"><strong>Example 3.7  (Wedge product of a 1-form and a 2-form) </strong></span>Let <span class="math inline">\(\omega = xy\,dx + y\,dy\)</span> and <span class="math inline">\(\eta = z\,dy \wedge dz\)</span>. Then:</p>
 <p><span class="math display">\[\omega \wedge \eta = (xy\,dx + y\,dy) \wedge (z\,dy \wedge dz) = xyz\,dx \wedge dy \wedge dz\]</span></p>
 </div>
 <div class="lemma">
-<p><span id="lem:unnamed-chunk-25" class="lemma"><strong>Lemma 3.2  </strong></span>Let <span class="math inline">\(\mathbf{F}, \mathbf{G}\)</span> be vector fields associated with <span class="math inline">\(1\)</span>-forms <span class="math inline">\(\omega_1, \eta_2\)</span> in <span class="math inline">\(\mathbb{R}^3\)</span>:</p>
+<p><span id="lem:unnamed-chunk-19" class="lemma"><strong>Lemma 3.2  </strong></span>Let <span class="math inline">\(\mathbf{F}, \mathbf{G}\)</span> be vector fields associated with <span class="math inline">\(1\)</span>-forms <span class="math inline">\(\omega_1, \eta_2\)</span> in <span class="math inline">\(\mathbb{R}^3\)</span>:</p>
 <p><span class="math display">\[\begin{aligned} \omega &amp;= f_1\,dx + f_2\,dy + f_3\,dz \quad \longleftrightarrow \quad \mathbf{F} = (f_1, f_2, f_3) \\ \eta &amp;= g_1\,dx + g_2\,dy + g_3\,dz \quad \longleftrightarrow \quad \mathbf{G} = (g_1, g_2, g_3) \end{aligned}\]</span></p>
 <p>Then <span class="math inline">\(\omega_1 \wedge \eta_2\)</span> corresponds to the cross product <span class="math inline">\(\mathbf{F} \times \mathbf{G}\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-3" class="proof"><em>Proof</em>. </span><img src="fig/pic%2039.png" /></p>
+<p><span id="unlabeled-div-2" class="proof"><em>Proof</em>. </span><img src="fig/pic%2039.png" /></p>
 </div>
 <hr />
 <div class="lemma">
-<p><span id="lem:unnamed-chunk-27" class="lemma"><strong>Lemma 3.3  (Graded Product Rule) </strong></span>For a <span class="math inline">\(k\)</span>-form <span class="math inline">\(\omega\)</span> and an <span class="math inline">\(m\)</span>-form <span class="math inline">\(\eta\)</span>:</p>
+<p><span id="lem:unnamed-chunk-21" class="lemma"><strong>Lemma 3.3  (Graded Product Rule) </strong></span>For a <span class="math inline">\(k\)</span>-form <span class="math inline">\(\omega\)</span> and an <span class="math inline">\(m\)</span>-form <span class="math inline">\(\eta\)</span>:</p>
 <p><span class="math display">\[d(\omega \wedge \eta) = d\omega \wedge \eta+ (-1)^k \omega \wedge d\eta\]</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-4" class="proof"><em>Proof</em>. </span><img src="fig/pic%2038.png" /></p>
+<p><span id="unlabeled-div-3" class="proof"><em>Proof</em>. </span><img src="fig/pic%2038.png" /></p>
 </div>
 <div class="lemma">
-<p><span id="lem:unnamed-chunk-29" class="lemma"><strong>Lemma 3.4  </strong></span>Let <span class="math inline">\(\omega\)</span> be a one-form and <span class="math inline">\(\eta\)</span> a twoform on an open set <span class="math inline">\(U \subseteq \mathbb{R}^3\)</span>. Suppose these forms correspond to vector fields <span class="math inline">\(\mathbf{F}\)</span> and <span class="math inline">\(\mathbf{G}\)</span>.
+<p><span id="lem:unnamed-chunk-23" class="lemma"><strong>Lemma 3.4  </strong></span>Let <span class="math inline">\(\omega\)</span> be a one-form and <span class="math inline">\(\eta\)</span> a twoform on an open set <span class="math inline">\(U \subseteq \mathbb{R}^3\)</span>. Suppose these forms correspond to vector fields <span class="math inline">\(\mathbf{F}\)</span> and <span class="math inline">\(\mathbf{G}\)</span>.
 <span class="math display">\[\begin{aligned}
 \omega &amp;= f_1\,dx + f_2\,dy + f_3\,dz \quad
 &amp;\longleftrightarrow \quad \mathbf{F}=(f_1,f_2,f_3) \\
@@ -511,7 +503,7 @@ Then the three-form <span class="math inline">\(\omega \wedge \eta\)</span> corr
 given by the dot product <span class="math inline">\(\mathbf{F} \cdot \mathbf{G}\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-5" class="proof"><em>Proof</em>. </span><img src="fig/pic%2040.png" /></p>
+<p><span id="unlabeled-div-4" class="proof"><em>Proof</em>. </span><img src="fig/pic%2040.png" /></p>
 </div>
 <p>As a summary,</p>
 <table>
@@ -551,7 +543,7 @@ given by the dot product <span class="math inline">\(\mathbf{F} \cdot \mathbf{G}
 </tbody>
 </table>
 <div class="example">
-<p><span id="exm:unnamed-chunk-31" class="example"><strong>Example 3.8  </strong></span>Let <span class="math inline">\(\omega = x\,dy \wedge dz + y\,dz \wedge dx + z\,dx \wedge dy\)</span> and <span class="math inline">\(\eta = x\,dx + y\,dy + z\,dz.\)</span></p>
+<p><span id="exm:unnamed-chunk-25" class="example"><strong>Example 3.8  </strong></span>Let <span class="math inline">\(\omega = x\,dy \wedge dz + y\,dz \wedge dx + z\,dx \wedge dy\)</span> and <span class="math inline">\(\eta = x\,dx + y\,dy + z\,dz.\)</span></p>
 </div>
 <p><strong>Solution</strong>: We compute the wedge product, noting that any term containing a repeated
 <span class="math inline">\(dx, dy,\)</span> or <span class="math inline">\(dz\)</span> vanishes:
@@ -575,7 +567,7 @@ dy \wedge dz \wedge dx
 = (x^{2} + y^{2} + z^{2})\,dx \wedge dy \wedge dz.
 \]</span></p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-32" class="example"><strong>Example 3.9  </strong></span>Let <span class="math inline">\(\omega = f_{1}\,dx + f_{2}\,dy\)</span> and <span class="math inline">\(\eta = g_{1}\,dx + g_{2}\,dy\)</span> be oneforms on <span class="math inline">\(\mathbb{R}^{2}\)</span>, with associated vector fields</p>
+<p><span id="exm:unnamed-chunk-26" class="example"><strong>Example 3.9  </strong></span>Let <span class="math inline">\(\omega = f_{1}\,dx + f_{2}\,dy\)</span> and <span class="math inline">\(\eta = g_{1}\,dx + g_{2}\,dy\)</span> be oneforms on <span class="math inline">\(\mathbb{R}^{2}\)</span>, with associated vector fields</p>
 <p><span class="math display">\[
 \mathbf{F} = (f_{1}, f_{2}), \qquad \mathbf{G} = (g_{1}, g_{2}).
 \]</span></p>
@@ -592,7 +584,7 @@ f_{2} &amp; g_{2}
 <p><strong>Solution</strong>:
 <img src="fig/pic%2041.png" /></p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-33" class="example"><strong>Example 3.10  </strong></span>Let <span class="math inline">\(\omega = f\,dx + g\,dy + h\,dz\)</span> be an arbitrary one-form on <span class="math inline">\(\mathbb{R}^3.\)</span>
+<p><span id="exm:unnamed-chunk-27" class="example"><strong>Example 3.10  </strong></span>Let <span class="math inline">\(\omega = f\,dx + g\,dy + h\,dz\)</span> be an arbitrary one-form on <span class="math inline">\(\mathbb{R}^3.\)</span>
 Show that <span class="math inline">\(\omega \wedge \omega = 0.\)</span></p>
 </div>
 <p><strong>Solution</strong>: We compute directly,
@@ -621,7 +613,7 @@ it follows that</p>
 \omega \wedge \omega = 0
 \]</span></p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-34" class="example"><strong>Example 3.11  </strong></span>Find the cross-product of the vectors <span class="math inline">\(\mathbf{F} = (1,1,0)\)</span> and <span class="math inline">\(\mathbf{G} = (0,2,3)\)</span> in <span class="math inline">\(\mathbb{R}^3\)</span> by computing the wedge product of the associated one-forms.</p>
+<p><span id="exm:unnamed-chunk-28" class="example"><strong>Example 3.11  </strong></span>Find the cross-product of the vectors <span class="math inline">\(\mathbf{F} = (1,1,0)\)</span> and <span class="math inline">\(\mathbf{G} = (0,2,3)\)</span> in <span class="math inline">\(\mathbb{R}^3\)</span> by computing the wedge product of the associated one-forms.</p>
 </div>
 <p><strong>Solution</strong> : The one-forms associated to <span class="math inline">\(\mathbf{F}\)</span> and <span class="math inline">\(\mathbf{G}\)</span> are</p>
 <p><span class="math display">\[
@@ -645,7 +637,7 @@ it follows that</p>
 \]</span></p>
 <p>Thus the wedge product correctly reproduces the cross-product.</p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-35" class="example"><strong>Example 3.12  </strong></span>Let <span class="math inline">\(\mathbf{A},\, \mathbf{B},\, \mathbf{C} \in\mathbb{R}^3.\)</span> Show that <span class="math display">\[\mathbf{A}\cdot(\mathbf{B}\times\mathbf{C})
+<p><span id="exm:unnamed-chunk-29" class="example"><strong>Example 3.12  </strong></span>Let <span class="math inline">\(\mathbf{A},\, \mathbf{B},\, \mathbf{C} \in\mathbb{R}^3.\)</span> Show that <span class="math display">\[\mathbf{A}\cdot(\mathbf{B}\times\mathbf{C})
 =\mathbf{B}\cdot(\mathbf{C}\times\mathbf{A})
 =\mathbf{C}\cdot(\mathbf{A}\times\mathbf{B})\]</span>
 using wedge products of the associated one-forms.</p>
@@ -691,7 +683,7 @@ From the dictionary for one-forms and vector fields,</p>
 <div id="exterior-derivative" class="section level2 hasAnchor" number="3.3">
 <h2><span class="header-section-number">3.3</span> Exterior Derivative<a href="hodge-star-and-differential-forms.html#exterior-derivative" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="definition">
-<p><span id="def:unnamed-chunk-36" class="definition"><strong>Definition 3.10  (Exterior Derivative of a k-Form) </strong></span>The <strong>exterior derivative of a zero‑form</strong> <span class="math inline">\(f\)</span> on <span class="math inline">\(U \subset \mathbb{R}^n\)</span> is the one‑form<br />
+<p><span id="def:unnamed-chunk-30" class="definition"><strong>Definition 3.10  (Exterior Derivative of a k-Form) </strong></span>The <strong>exterior derivative of a zero‑form</strong> <span class="math inline">\(f\)</span> on <span class="math inline">\(U \subset \mathbb{R}^n\)</span> is the one‑form<br />
 <span class="math display">\[
 df = \sum_{i=1}^{n} \frac{\partial f}{\partial x_i}\, dx_i,
 \]</span>
@@ -713,7 +705,7 @@ where <span class="math inline">\(d(f_{i_1 \cdots i_k})\)</span> is the exterior
 In other words, the operator <span class="math inline">\(d\)</span> is applied to the component functions of <span class="math inline">\(\omega\)</span>.</p>
 </div>
 <div class="lemma">
-<p><span id="lem:unnamed-chunk-37" class="lemma"><strong>Lemma 3.5  (Exterior Derivative in R^3) </strong></span></p>
+<p><span id="lem:unnamed-chunk-31" class="lemma"><strong>Lemma 3.5  (Exterior Derivative in R^3) </strong></span></p>
 <ol style="list-style-type: decimal">
 <li>Zero‑forms: If <span class="math inline">\(f\)</span> is a zero‑form on <span class="math inline">\(U \subset \mathbb{R}^3\)</span>, then</li>
 </ol>
@@ -740,7 +732,7 @@ d\eta &amp;= d(f) \wedge dy \wedge dz+ d(g) \wedge dz \wedge dx+ d(h) \wedge dx 
 <p>Finally, the exterior derivative of any three‑form in <span class="math inline">\(\mathbb{R}^3\)</span> must vanish, since it would produce a four‑form, and all <span class="math inline">\(k\)</span>-forms with <span class="math inline">\(k \ge 4\)</span> are identically zero in <span class="math inline">\(\mathbb{R}^3\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-6" class="proof"><em>Proof</em>. </span></p>
+<p><span id="unlabeled-div-5" class="proof"><em>Proof</em>. </span></p>
 <ol style="list-style-type: decimal">
 <li><img src="fig/pic%2042.png" /></li>
 <li><img src="fig/pic%2043.png" /></li>
@@ -748,16 +740,16 @@ d\eta &amp;= d(f) \wedge dy \wedge dz+ d(g) \wedge dz \wedge dx+ d(h) \wedge dx 
 </ol>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-39" class="example"><strong>Example 3.13  </strong></span>Let <span class="math inline">\(f(x,y,z) = y \ln(x) + z\)</span> be a smooth function on <span class="math inline">\(U = \{(x,y,z) \in \mathbb{R}^3 \mid x &gt; 0\}.\)</span>
+<p><span id="exm:unnamed-chunk-33" class="example"><strong>Example 3.13  </strong></span>Let <span class="math inline">\(f(x,y,z) = y \ln(x) + z\)</span> be a smooth function on <span class="math inline">\(U = \{(x,y,z) \in \mathbb{R}^3 \mid x &gt; 0\}.\)</span>
 Its exterior derivative is the one‑form <span class="math inline">\(df\)</span> on <span class="math inline">\(U\)</span> is
 <img src="fig/pic%2045.png" /></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-40" class="example"><strong>Example 3.14  </strong></span>Let <span class="math inline">\(\omega = xy\, dx + (z + y)\, dy + xyz\, dz\)</span> be a one‑form on <span class="math inline">\(\mathbb{R}^3\)</span>.Its exterior derivative is the two‑form <span class="math inline">\(d\omega\)</span> on <span class="math inline">\(\mathbb{R}^3\)</span> given by:</p>
+<p><span id="exm:unnamed-chunk-34" class="example"><strong>Example 3.14  </strong></span>Let <span class="math inline">\(\omega = xy\, dx + (z + y)\, dy + xyz\, dz\)</span> be a one‑form on <span class="math inline">\(\mathbb{R}^3\)</span>.Its exterior derivative is the two‑form <span class="math inline">\(d\omega\)</span> on <span class="math inline">\(\mathbb{R}^3\)</span> given by:</p>
 <p><img src="fig/pic%2046.png" /></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-41" class="example"><strong>Example 3.15  (Linearity of the Exterior Derivative) </strong></span>If <span class="math inline">\(\omega\)</span> and <span class="math inline">\(\eta\)</span> are two <span class="math inline">\(k\)</span>-forms, and <span class="math inline">\(a, b \in \mathbb{R}\)</span>, then<br />
+<p><span id="exm:unnamed-chunk-35" class="example"><strong>Example 3.15  (Linearity of the Exterior Derivative) </strong></span>If <span class="math inline">\(\omega\)</span> and <span class="math inline">\(\eta\)</span> are two <span class="math inline">\(k\)</span>-forms, and <span class="math inline">\(a, b \in \mathbb{R}\)</span>, then<br />
 <span class="math display">\[
 d(a\omega + b\eta) = a\, d\omega + b\, d\eta.
 \]</span></p>
@@ -772,7 +764,7 @@ d(a\omega + b\eta) = a\, d\omega + b\, d\eta.
 = \frac{df}{dx}\, g + f\, \frac{dg}{dx}.
 \]</span></p>
 <div class="lemma">
-<p><span id="lem:unnamed-chunk-42" class="lemma"><strong>Lemma 3.6  (Graded Product Rule for the Exterior Derivative) </strong></span>Let <span class="math inline">\(\omega\)</span> be a <span class="math inline">\(k\)</span>-form and <span class="math inline">\(\eta\)</span> be an <span class="math inline">\(l\)</span>-form on <span class="math inline">\(U \subseteq \mathbb{R}^n\)</span>. Then<br />
+<p><span id="lem:unnamed-chunk-36" class="lemma"><strong>Lemma 3.6  (Graded Product Rule for the Exterior Derivative) </strong></span>Let <span class="math inline">\(\omega\)</span> be a <span class="math inline">\(k\)</span>-form and <span class="math inline">\(\eta\)</span> be an <span class="math inline">\(l\)</span>-form on <span class="math inline">\(U \subseteq \mathbb{R}^n\)</span>. Then<br />
 <span class="math display">\[
 d(\omega \wedge \eta)
 = d(\omega) \wedge \eta
@@ -780,7 +772,7 @@ d(\omega \wedge \eta)
 \]</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-7" class="proof"><em>Proof</em>. </span><img src="fig/pic%2049.png" /></p>
+<p><span id="unlabeled-div-6" class="proof"><em>Proof</em>. </span><img src="fig/pic%2049.png" /></p>
 <p><strong>General Case</strong></p>
 <p>Write <span class="math inline">\(\omega\)</span> and <span class="math inline">\(\eta\)</span> in local coordinates as
 <span class="math display">\[
@@ -842,13 +834,13 @@ d(\omega \wedge \eta)
 which proves the lemma.</p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-44" class="example"><strong>Example 3.16  </strong></span>Let <span class="math inline">\(\omega = xy\,dz\)</span> and <span class="math inline">\(\eta = (y+z)\,dx + 2\,dy\)</span> be two one-forms on <span class="math inline">\(\mathbb{R}^3\)</span>.
+<p><span id="exm:unnamed-chunk-38" class="example"><strong>Example 3.16  </strong></span>Let <span class="math inline">\(\omega = xy\,dz\)</span> and <span class="math inline">\(\eta = (y+z)\,dx + 2\,dy\)</span> be two one-forms on <span class="math inline">\(\mathbb{R}^3\)</span>.
 <img src="fig/pic%2050.png" />
 <img src="fig/pic%2051.png" />
 <img src="fig/pic%2052.png" /></p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-8" class="remark"><em>Remark</em>. </span><strong>Graded product rule in <span class="math inline">\(\mathbb{R}^3\)</span></strong></p>
+<p><span id="unlabeled-div-7" class="remark"><em>Remark</em>. </span><strong>Graded product rule in <span class="math inline">\(\mathbb{R}^3\)</span></strong></p>
 <p>In <span class="math inline">\(\mathbb{R}^3\)</span>, the graded product rule splits into the following
 non-vanishing cases.</p>
 <ul>
@@ -878,25 +870,25 @@ non-vanishing cases.</p>
     \]</span></p>
 </div>
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-46" class="theorem"><strong>Theorem 3.1  (Property $d^2 = 0$) </strong></span>For any differential form <span class="math inline">\(\omega\)</span>:
+<p><span id="thm:unnamed-chunk-40" class="theorem"><strong>Theorem 3.1  (Property $d^2 = 0$) </strong></span>For any differential form <span class="math inline">\(\omega\)</span>:
 <span class="math display">\[d(d\omega) = d^2\omega = 0\]</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-9" class="proof"><em>Proof</em>. </span><img src="fig/pic%2053.png" />
+<p><span id="unlabeled-div-8" class="proof"><em>Proof</em>. </span><img src="fig/pic%2053.png" />
 <img src="fig/pic%2054.png" />
 <img src="fig/pic%2055.png" /></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-48" class="example"><strong>Example 3.17  </strong></span>Let <span class="math inline">\(\omega = xy\,dx + \frac{y}{x}\,dy + \frac{z}{x}\,dz\)</span> on <span class="math inline">\(U = \{(x,y,z) \in \mathbb{R}^3 \mid x \neq 0\}\)</span>. Find the two-form <span class="math inline">\(d\omega\)</span> and write your result in standard form. What is the vector field associated to <span class="math inline">\(d\omega\)</span>?
+<p><span id="exm:unnamed-chunk-42" class="example"><strong>Example 3.17  </strong></span>Let <span class="math inline">\(\omega = xy\,dx + \frac{y}{x}\,dy + \frac{z}{x}\,dz\)</span> on <span class="math inline">\(U = \{(x,y,z) \in \mathbb{R}^3 \mid x \neq 0\}\)</span>. Find the two-form <span class="math inline">\(d\omega\)</span> and write your result in standard form. What is the vector field associated to <span class="math inline">\(d\omega\)</span>?
 <img src="fig/pic%2056.png" /></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-49" class="example"><strong>Example 3.18  </strong></span>Find the three-form dw if <span class="math inline">\(w =xyz(dy \wedge  dz+dz \wedge  dx + dx \wedge dy)\)</span>, and write
+<p><span id="exm:unnamed-chunk-43" class="example"><strong>Example 3.18  </strong></span>Find the three-form dw if <span class="math inline">\(w =xyz(dy \wedge  dz+dz \wedge  dx + dx \wedge dy)\)</span>, and write
 your result in standard form.
 <img src="fig/pic%2057.png" /></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-50" class="example"><strong>Example 3.19  </strong></span>Let <span class="math inline">\(\omega = x e^{y}\, dx + z\, dy + y e^{x}\, dz.\)</span> Show by explicit calculation that <span class="math inline">\(d^{2}\omega = 0\)</span></p>
+<p><span id="exm:unnamed-chunk-44" class="example"><strong>Example 3.19  </strong></span>Let <span class="math inline">\(\omega = x e^{y}\, dx + z\, dy + y e^{x}\, dz.\)</span> Show by explicit calculation that <span class="math inline">\(d^{2}\omega = 0\)</span></p>
 <p><strong>Solution</strong>: We know that <span class="math inline">\(d^{2}\omega = 0\)</span> for any differential form <span class="math inline">\(\omega\)</span>. But let us verify this directly for the given one-form.</p>
 <p>We first compute the two-form <span class="math inline">\(d\omega\)</span>:</p>
 <p><span class="math display">\[
@@ -962,7 +954,7 @@ d^{2}\omega
 <p>Thus, <span class="math inline">\(d^{2}\omega = 0,\)</span> as expected.</p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-51" class="example"><strong>Example 3.20  </strong></span>Let <span class="math inline">\(\omega = (x^{2} - y^{2})\, dx + y\, dz,
+<p><span id="exm:unnamed-chunk-45" class="example"><strong>Example 3.20  </strong></span>Let <span class="math inline">\(\omega = (x^{2} - y^{2})\, dx + y\, dz,
 \qquad \eta = (x^{2} + y^{2})\, dy + y\, dz.\)</span></p>
 <p>Show by explicit calculation that</p>
 <p><span class="math display">\[
@@ -976,14 +968,14 @@ which is consistent with the graded product rule since <span class="math inline"
 <img src="fig/pic%2061.png" />
 <img src="fig/pic%2062.png" /></p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-52" class="example"><strong>Example 3.21  </strong></span>Let <span class="math inline">\(\omega = (x + y)\, dx + xy\, dy\)</span>
+<p><span id="exm:unnamed-chunk-46" class="example"><strong>Example 3.21  </strong></span>Let <span class="math inline">\(\omega = (x + y)\, dx + xy\, dy\)</span>
 be a one‑form on <span class="math inline">\(\mathbb{R}^2\)</span>, and let<br />
 <span class="math inline">\(\varphi(u, v) = \big(e^{u+v},\, e^{u-v}\big)\)</span> be a smooth map <span class="math inline">\(\varphi : \mathbb{R}^2 \to \mathbb{R}^2\)</span>.</p>
 <p>Find the two‑form <span class="math inline">\(d(\varphi^{*}\omega).\)</span></p>
 <p><img src="fig/pic%2066.png" /></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-53" class="example"><strong>Example 3.22  </strong></span>Let <span class="math inline">\(\omega\)</span> be a <em><span class="math inline">\(k\)</span></em>-form, η an <em>m</em>-form, and <span class="math inline">\(\lambda\)</span> an <em><span class="math inline">\(l\)</span></em>-form on <span class="math inline">\(U \subseteq \mathbb{R}^n\)</span>. Show that</p>
+<p><span id="exm:unnamed-chunk-47" class="example"><strong>Example 3.22  </strong></span>Let <span class="math inline">\(\omega\)</span> be a <em><span class="math inline">\(k\)</span></em>-form, η an <em>m</em>-form, and <span class="math inline">\(\lambda\)</span> an <em><span class="math inline">\(l\)</span></em>-form on <span class="math inline">\(U \subseteq \mathbb{R}^n\)</span>. Show that</p>
 <p><span class="math display">\[
 d(\omega \wedge \eta \wedge \lambda)
 = d\omega \wedge \eta \wedge \lambda
@@ -994,7 +986,7 @@ d(\omega \wedge \eta \wedge \lambda)
 <p><img src="fig/pic%2063.jpg" /></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-54" class="example"><strong>Example 3.23  </strong></span>Let <span class="math inline">\(f, g : U \to \mathbb{R}\)</span> be smooth functions with <span class="math inline">\(U \subseteq \mathbb{R}^n\)</span>, and let <span class="math inline">\(\alpha : [a,b] \to \mathbb{R}^n\)</span> be a parametric curve whose image lies in <span class="math inline">\(U\)</span>.<br />
+<p><span id="exm:unnamed-chunk-48" class="example"><strong>Example 3.23  </strong></span>Let <span class="math inline">\(f, g : U \to \mathbb{R}\)</span> be smooth functions with <span class="math inline">\(U \subseteq \mathbb{R}^n\)</span>, and let <span class="math inline">\(\alpha : [a,b] \to \mathbb{R}^n\)</span> be a parametric curve whose image lies in <span class="math inline">\(U\)</span>.<br />
 Using the product rule for the exterior derivative <span class="math inline">\(d(fg)\)</span>, show that</p>
 <p><span class="math display">\[\int_{\alpha} f\, dg= f(\alpha(b))\, g(\alpha(b))  - f(\alpha(a))\, g(\alpha(a))  - \int_{\alpha} g\, df.\]</span></p>
 <p>This identity is the natural generalization of integration by parts to line integrals of one‑forms. When the curve is an interval in <span class="math inline">\(\mathbb{R}\)</span>, it reduces to the usual integration‑by‑parts formula.</p>
@@ -1002,7 +994,7 @@ Using the product rule for the exterior derivative <span class="math inline">\(d
 <img src="fig/pic%2064.png" /></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-55" class="example"><strong>Example 3.24  </strong></span>Let <span class="math inline">\(\omega\)</span> and <span class="math inline">\(\eta\)</span> be one‑forms that differ by the exterior derivative of a <span class="math inline">\(0\)</span>-form, i.e. <span class="math inline">\(\eta = \omega + df\)</span> for some smooth function <span class="math inline">\(f\)</span>. Show that
+<p><span id="exm:unnamed-chunk-49" class="example"><strong>Example 3.24  </strong></span>Let <span class="math inline">\(\omega\)</span> and <span class="math inline">\(\eta\)</span> be one‑forms that differ by the exterior derivative of a <span class="math inline">\(0\)</span>-form, i.e. <span class="math inline">\(\eta = \omega + df\)</span> for some smooth function <span class="math inline">\(f\)</span>. Show that
 <span class="math inline">\(d(\omega \wedge \eta) = d\omega \wedge df.\)</span>
 <img src="fig/pic%2063.png" /></p>
 </div>
@@ -1010,19 +1002,19 @@ Using the product rule for the exterior derivative <span class="math inline">\(d
 <div id="grad-curl-and-div-connection" class="section level3 hasAnchor" number="3.3.2">
 <h3><span class="header-section-number">3.3.2</span> Grad, Curl, and Div Connection<a href="hodge-star-and-differential-forms.html#grad-curl-and-div-connection" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="definition">
-<p><span id="def:unnamed-chunk-56" class="definition"><strong>Definition 3.11  (Gradient) </strong></span>For a <span class="math inline">\(0\)</span>-form <span class="math inline">\(f\)</span>:
+<p><span id="def:unnamed-chunk-50" class="definition"><strong>Definition 3.11  (Gradient) </strong></span>For a <span class="math inline">\(0\)</span>-form <span class="math inline">\(f\)</span>:
 <span class="math display">\[df = \frac{\partial f}{\partial x}dx + \frac{\partial f}{\partial y}dy + \frac{\partial f}{\partial z}dz \quad \longleftrightarrow \quad \nabla f = \left(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z}\right)\]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unnamed-chunk-57" class="definition"><strong>Definition 3.12  (Curl) </strong></span>For a <span class="math inline">\(1\)</span>-form <span class="math inline">\(\omega = f_1\,dx + f_2\,dy + f_3\,dz\)</span>, the <span class="math inline">\(2\)</span>-form <span class="math inline">\(d\omega\)</span> corresponds to <span class="math inline">\(\nabla \times \mathbf{F}\)</span>:</p>
+<p><span id="def:unnamed-chunk-51" class="definition"><strong>Definition 3.12  (Curl) </strong></span>For a <span class="math inline">\(1\)</span>-form <span class="math inline">\(\omega = f_1\,dx + f_2\,dy + f_3\,dz\)</span>, the <span class="math inline">\(2\)</span>-form <span class="math inline">\(d\omega\)</span> corresponds to <span class="math inline">\(\nabla \times \mathbf{F}\)</span>:</p>
 <p><span class="math display">\[d\omega = \left(\frac{\partial f_3}{\partial y} - \frac{\partial f_2}{\partial z}\right)dy \wedge dz + \left(\frac{\partial f_1}{\partial z} - \frac{\partial f_3}{\partial x}\right)dz \wedge dx + \left(\frac{\partial f_2}{\partial x} - \frac{\partial f_1}{\partial y}\right)dx \wedge dy\]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unnamed-chunk-58" class="definition"><strong>Definition 3.13  (Divergence) </strong></span>For a <span class="math inline">\(2\)</span>-form <span class="math inline">\(\eta = f_1\,dy \wedge dz + f_2\,dz \wedge dx + f_3\,dx \wedge dy\)</span>, the <span class="math inline">\(3\)</span>-form <span class="math inline">\(d\eta\)</span> corresponds to <span class="math inline">\(\nabla \cdot \mathbf{F}\)</span>:</p>
+<p><span id="def:unnamed-chunk-52" class="definition"><strong>Definition 3.13  (Divergence) </strong></span>For a <span class="math inline">\(2\)</span>-form <span class="math inline">\(\eta = f_1\,dy \wedge dz + f_2\,dz \wedge dx + f_3\,dx \wedge dy\)</span>, the <span class="math inline">\(3\)</span>-form <span class="math inline">\(d\eta\)</span> corresponds to <span class="math inline">\(\nabla \cdot \mathbf{F}\)</span>:</p>
 <p><span class="math display">\[d\eta = \left(\frac{\partial f_1}{\partial x} + \frac{\partial f_2}{\partial y} + \frac{\partial f_3}{\partial z}\right)dx \wedge dy \wedge dz\]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-59" class="example"><strong>Example 3.25  (Maxwell’s equations) </strong></span>Here you can write whatever explanation, derivation, or equations you want.</p>
+<p><span id="exm:unnamed-chunk-53" class="example"><strong>Example 3.25  (Maxwell’s equations) </strong></span>Here you can write whatever explanation, derivation, or equations you want.</p>
 <p><span class="math display">\[\begin{align}
 \nabla \cdot \mathbf{E} &amp;= \frac{\rho}{\varepsilon_0}, \\[6pt]
 \nabla \cdot \mathbf{B} &amp;= 0, \\[12pt]
@@ -1079,7 +1071,7 @@ Using the product rule for the exterior derivative <span class="math inline">\(d
 </tbody>
 </table>
 <div class="lemma">
-<p><span id="lem:unnamed-chunk-60" class="lemma"><strong>Lemma 3.7  (Vector calculus identities) </strong></span>Let <span class="math inline">\(f, g\)</span> be smooth functions on <span class="math inline">\(U \subseteq \mathbb{R}^3\)</span>, and let<br />
+<p><span id="lem:unnamed-chunk-54" class="lemma"><strong>Lemma 3.7  (Vector calculus identities) </strong></span>Let <span class="math inline">\(f, g\)</span> be smooth functions on <span class="math inline">\(U \subseteq \mathbb{R}^3\)</span>, and let<br />
 <span class="math inline">\(\mathbf{F}, \mathbf{G}\)</span> be smooth vector fields on <span class="math inline">\(U\)</span>.<br />
 Then the following identities hold:</p>
 <ol style="list-style-type: decimal">
@@ -1114,52 +1106,52 @@ Then the following identities hold:</p>
    \]</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-10" class="proof"><em>Proof</em>. </span>Omitted</p>
+<p><span id="unlabeled-div-9" class="proof"><em>Proof</em>. </span>Omitted</p>
 </div>
 </div>
 </div>
 <div id="the-hodge-star-operator" class="section level2 hasAnchor" number="3.4">
 <h2><span class="header-section-number">3.4</span> The Hodge Star Operator<a href="hodge-star-and-differential-forms.html#the-hodge-star-operator" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="definition">
-<p><span id="def:unnamed-chunk-62" class="definition"><strong>Definition 3.14  (Hodge Star Dual) </strong></span>Let <span class="math inline">\(\omega = dx_{i_1} \wedge \dots \wedge dx_{i_k}\)</span> be a basic <span class="math inline">\(k\)</span>-form on <span class="math inline">\(\mathbb{R}^n\)</span>. The <strong>Hodge star dual</strong> <span class="math inline">\(*\omega\)</span> is the unique basic <span class="math inline">\((n-k)\)</span>-form satisfying:</p>
+<p><span id="def:unnamed-chunk-56" class="definition"><strong>Definition 3.14  (Hodge Star Dual) </strong></span>Let <span class="math inline">\(\omega = dx_{i_1} \wedge \dots \wedge dx_{i_k}\)</span> be a basic <span class="math inline">\(k\)</span>-form on <span class="math inline">\(\mathbb{R}^n\)</span>. The <strong>Hodge star dual</strong> <span class="math inline">\(*\omega\)</span> is the unique basic <span class="math inline">\((n-k)\)</span>-form satisfying:</p>
 <p><span class="math display">\[\omega \wedge *\omega = dx_1 \wedge \dots \wedge dx_n\]</span></p>
 <p>Extended linearly, for a general <span class="math inline">\(k\)</span>-form <span class="math inline">\(\eta = \sum f_{i_1 \dots i_k} dx_{i_1} \wedge \dots \wedge dx_{i_k}\)</span>:</p>
 <p><span class="math display">\[*\eta = \sum f_{i_1 \dots i_k} *(dx_{i_1} \wedge \dots \wedge dx_{i_k})\]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-63" class="example"><strong>Example 3.26  (The action of the Hodge star in R) </strong></span><img src="fig/pic%2067.png" /></p>
+<p><span id="exm:unnamed-chunk-57" class="example"><strong>Example 3.26  (The action of the Hodge star in R) </strong></span><img src="fig/pic%2067.png" /></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-64" class="example"><strong>Example 3.27  (The action of the Hodge star in R^2) </strong></span><img src="fig/pic%2068.png" /></p>
+<p><span id="exm:unnamed-chunk-58" class="example"><strong>Example 3.27  (The action of the Hodge star in R^2) </strong></span><img src="fig/pic%2068.png" /></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-65" class="example"><strong>Example 3.28  (The action of the Hodge star in R^3) </strong></span><img src="fig/pic%2069.png" /></p>
+<p><span id="exm:unnamed-chunk-59" class="example"><strong>Example 3.28  (The action of the Hodge star in R^3) </strong></span><img src="fig/pic%2069.png" /></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-66" class="example"><strong>Example 3.29  (An example the Hodge star in R^3) </strong></span>Consider the two‑form <span class="math inline">\(\omega = xyz\, dy \wedge dz \;+\; e^{x}\, dx \wedge dy.\)</span> Find Its Hodge star dual is the one‑form.
+<p><span id="exm:unnamed-chunk-60" class="example"><strong>Example 3.29  (An example the Hodge star in R^3) </strong></span>Consider the two‑form <span class="math inline">\(\omega = xyz\, dy \wedge dz \;+\; e^{x}\, dx \wedge dy.\)</span> Find Its Hodge star dual is the one‑form.
 <img src="fig/pic%2070.jpg" /></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-67" class="example"><strong>Example 3.30  (Another example the Hodge star in R^3) </strong></span>Let <span class="math inline">\(w = fdx+gdy+h dz\)</span> be a one form on <span class="math inline">\(\mathbb{R}^3\)</span>. Find Its Hodge star dual is the one‑form.</p>
+<p><span id="exm:unnamed-chunk-61" class="example"><strong>Example 3.30  (Another example the Hodge star in R^3) </strong></span>Let <span class="math inline">\(w = fdx+gdy+h dz\)</span> be a one form on <span class="math inline">\(\mathbb{R}^3\)</span>. Find Its Hodge star dual is the one‑form.</p>
 <p><img src="fig/pic%2071.jpg" /></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-68" class="example"><strong>Example 3.31  </strong></span><img src="fig/pic%2072.png" /></p>
+<p><span id="exm:unnamed-chunk-62" class="example"><strong>Example 3.31  </strong></span><img src="fig/pic%2072.png" /></p>
 </div>
 <div class="proposition">
-<p><span id="prp:unnamed-chunk-69" class="proposition"><strong>Proposition 3.1  </strong></span>On <span class="math inline">\(k\)</span>-forms in <span class="math inline">\(\mathbb{R}^n\)</span>, applying the Hodge star twice yields:</p>
+<p><span id="prp:unnamed-chunk-63" class="proposition"><strong>Proposition 3.1  </strong></span>On <span class="math inline">\(k\)</span>-forms in <span class="math inline">\(\mathbb{R}^n\)</span>, applying the Hodge star twice yields:</p>
 <p><span class="math display">\[**\alpha = (-1)^{k(n-k)} \alpha\]</span>
 <img src="fig/pic%2073.jpg" />
 <img src="fig/pic%2074.jpg" /></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-70" class="example"><strong>Example 3.32  </strong></span>Let <span class="math inline">\(\omega\)</span> and <span class="math inline">\(\eta\)</span> be one‑forms on <span class="math inline">\(\mathbb{R}^n\)</span>, and let <span class="math inline">\(\mathbf{F}\)</span> and <span class="math inline">\(\mathbf{G}\)</span> be the associated vector fields. Show that
+<p><span id="exm:unnamed-chunk-64" class="example"><strong>Example 3.32  </strong></span>Let <span class="math inline">\(\omega\)</span> and <span class="math inline">\(\eta\)</span> be one‑forms on <span class="math inline">\(\mathbb{R}^n\)</span>, and let <span class="math inline">\(\mathbf{F}\)</span> and <span class="math inline">\(\mathbf{G}\)</span> be the associated vector fields. Show that
 <span class="math display">\[\star(\omega \wedge \star \eta) = \mathbf{F} \cdot \mathbf{G}.\]</span></p>
 <p><img src="fig/pic%2075.jpg" />
 <img src="fig/pic%2076.jpg" /></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-71" class="example"><strong>Example 3.33  </strong></span>Let <span class="math inline">\(\omega\)</span> and <span class="math inline">\(\eta\)</span> be <span class="math inline">\(k\)</span>-forms on <span class="math inline">\(\mathbb{R}^n\)</span>. Show that
+<p><span id="exm:unnamed-chunk-65" class="example"><strong>Example 3.33  </strong></span>Let <span class="math inline">\(\omega\)</span> and <span class="math inline">\(\eta\)</span> be <span class="math inline">\(k\)</span>-forms on <span class="math inline">\(\mathbb{R}^n\)</span>. Show that
 <span class="math display">\[\omega \wedge \star \eta = (-1)^{k(n-k)}\, \star \omega \wedge \eta.\]</span></p>
 <p><img src="fig/pic%2077.png" />
 <img src="fig/pic%2078.png" /></p>
@@ -1319,7 +1311,7 @@ c = \sum_i a_i \sigma_i,
 </div>
 <p>Now let’s see some concreate examples.</p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-72" class="example"><strong>Example 3.34  </strong></span></p>
+<p><span id="exm:unnamed-chunk-66" class="example"><strong>Example 3.34  </strong></span></p>
 <table>
 <tr>
 <th>
@@ -1423,7 +1415,7 @@ count Δ₂ five times with reversed orientation
 </table>
 </div>
 <div class="definition">
-<p><span id="def:unnamed-chunk-73" class="definition"><strong>Definition 3.15  (Boundary operator) </strong></span><span class="math display">\[
+<p><span id="def:unnamed-chunk-67" class="definition"><strong>Definition 3.15  (Boundary operator) </strong></span><span class="math display">\[
 \delta(\langle P_0, \ldots, P_n \rangle)
 =
 \begin{cases}
@@ -1583,12 +1575,12 @@ If <span class="math inline">\(\omega\)</span> is a <span class="math inline">\(
 \]</span></p>
 <p>The exterior derivative decomposes as <span class="math inline">\(d = \partial + \bar{\partial}\)</span>.</p>
 <div class="definition">
-<p><span id="def:unnamed-chunk-74" class="definition"><strong>Definition 3.16  (Laplacian and Harmonic Forms) </strong></span>The Laplacian of a function <span class="math inline">\(f\)</span> is:</p>
+<p><span id="def:unnamed-chunk-68" class="definition"><strong>Definition 3.16  (Laplacian and Harmonic Forms) </strong></span>The Laplacian of a function <span class="math inline">\(f\)</span> is:</p>
 <p><span class="math display">\[\Delta f = (f_{xx} + f_{yy})\,dx \wedge dy = -2i\,\partial \bar{\partial} f\]</span></p>
 <p>A <span class="math inline">\(1\)</span>-form <span class="math inline">\(\omega\)</span> is <strong>harmonic</strong> if it is locally given by <span class="math inline">\(df\)</span> where <span class="math inline">\(\Delta f = 0\)</span>.</p>
 </div>
 <div class="proposition">
-<p><span id="prp:unnamed-chunk-75" class="proposition"><strong>Proposition 3.2  </strong></span>A differential form <span class="math inline">\(\omega\)</span> is harmonic if and only if it is both <strong>closed</strong> (<span class="math inline">\(d\omega = 0\)</span>) and <strong>co-closed</strong> (<span class="math inline">\(d*\omega = 0\)</span>).</p>
+<p><span id="prp:unnamed-chunk-69" class="proposition"><strong>Proposition 3.2  </strong></span>A differential form <span class="math inline">\(\omega\)</span> is harmonic if and only if it is both <strong>closed</strong> (<span class="math inline">\(d\omega = 0\)</span>) and <strong>co-closed</strong> (<span class="math inline">\(d*\omega = 0\)</span>).</p>
 </div>
 
 </div>
