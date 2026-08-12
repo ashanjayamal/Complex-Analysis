@@ -29,7 +29,7 @@ The Möbius map $\zeta = \dfrac{1+z}{1-z}$ sends $\mathbb D$ conformally onto th
 
 ![](fig/koebe_function_mapping.png)
 
-```{r tikz-koebe-vertical, echo=FALSE,engine='tikz',fig.path = "fig/", fig.ext='png', engine.opts=list(template=local({p <- file.path(tempdir(), "tikz_template.tex"); writeLines(paste("\\documentclass[tikz,border=2pt]{standalone}", "\\usepackage{amsmath, amssymb, xcolor}", "\\usetikzlibrary{positioning, calc}", "\\begin{document}", "%% TIKZ_CODE %%", "\\end{document}", sep = "\n"), p); p}))}
+```{r tikz-koebe-vertical, echo=FALSE,engine='tikz',fig.path = "fig/", fig.ext='png',fig.show=TRUE, engine.opts=list(template=local({p <- file.path(tempdir(), "tikz_template.tex"); writeLines(paste("\\documentclass[tikz,border=2pt]{standalone}", "\\usepackage{amsmath, amssymb, xcolor}", "\\usetikzlibrary{positioning, calc}", "\\begin{document}", "%% TIKZ_CODE %%", "\\end{document}", sep = "\n"), p); p}))}
 \begin{tikzpicture}[
     scale=0.9,
     every node/.style={transform shape},
