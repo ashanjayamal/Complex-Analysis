@@ -29,6 +29,78 @@ The Möbius map $\zeta = \dfrac{1+z}{1-z}$ sends $\mathbb D$ conformally onto th
 
 ![](fig/koebe_function_mapping.png)
 
+```{r tikz-koebe-vertical, echo=FALSE,engine='tikz', fig.ext='png', engine.opts=list(template=local({p <- file.path(tempdir(), "tikz_template.tex"); writeLines(paste("\\documentclass[tikz,border=2pt]{standalone}", "\\usepackage{amsmath, amssymb, xcolor}", "\\usetikzlibrary{positioning, calc}", "\\begin{document}", "%% TIKZ_CODE %%", "\\end{document}", sep = "\n"), p); p}))}
+\begin{tikzpicture}[
+    scale=0.9,
+    every node/.style={transform shape},
+    region/.style={fill=cyan!20, draw=black, thick},
+    slit/.style={ultra thick, red!80!black},
+    arrow/.style={->, >=stealth, thick, blue!80!black}
+]
+  % Step 1: Unit Disk D
+  \begin{scope}[shift={(0,12)}]
+    \fill[region] (0,0) circle (1.2);
+    \draw[->, black] (-1.5,0) -- (1.5,0);
+    \draw[->, black] (0,-1.5) -- (0,1.5);
+    \draw[thick, black] (0,0) circle (1.2);
+    \node at (0, 1.6) [font=\small\bfseries] {$\mathbb{D}$};
+    \node at (0,-1.7) {\small $z$-plane};
+  \end{scope}
+  % Arrow 1
+  \draw[arrow] (0,10.2) -- node[right=4pt] {\small $f_1(z) = \dfrac{1+z}{1-z}$} node[left=4pt] {\tiny (Cayley)} (0,8.8);
+  % Step 2: Right Half-Plane
+  \begin{scope}[shift={(0,7.2)}]
+    \fill[region] (0,-1.4) rectangle (1.4,1.4);
+    \draw[->, black] (-1.5,0) -- (1.5,0);
+    \draw[->, black] (0,-1.5) -- (0,1.5);
+    \draw[very thick, black] (0,-1.4) -- (0,1.4);
+    \node at (0.7, 1.6) [font=\small\bfseries] {$\mathbb{H}_{\text{right}}$};
+    \node at (0,-1.7) {\small $w$-plane};
+  \end{scope}
+  % Arrow 2
+  \draw[arrow] (0,5.4) -- node[right=4pt] {\small $f_2(w) = w^2$} node[left=4pt] {\tiny (Squaring)} (0,4.0);
+  % Step 3: Slit Plane C \ (-inf, 0]
+  \begin{scope}[shift={(0,2.4)}]
+    \fill[region] (-1.4,-1.4) rectangle (1.4,1.4);
+    \draw[->, black] (-1.5,0) -- (1.5,0);
+    \draw[->, black] (0,-1.5) -- (0,1.5);
+    \draw[slit] (-1.4,0) -- (0,0);
+    \fill[red!80!black] (0,0) circle (2pt);
+    \node at (0, 1.6) [font=\small\bfseries] {$\mathbb{C} \setminus (-\infty, 0]$};
+    \node at (0,-1.7) {\small $\zeta$-plane};
+  \end{scope}
+  % Arrow 3
+  \draw[arrow] (0,0.6) -- node[right=4pt] {\small $f_3(\zeta) = \dfrac{1}{4}\zeta$} node[left=4pt] {\tiny (Scaling)} (0,-0.8);
+  % Step 4: Slit Plane C \ (-inf, 0] (After Scaling)
+  \begin{scope}[shift={(0,-2.4)}]
+    \fill[region] (-1.4,-1.4) rectangle (1.4,1.4);
+    \draw[->, black] (-1.5,0) -- (1.5,0);
+    \draw[->, black] (0,-1.5) -- (0,1.5);
+    \draw[slit] (-1.4,0) -- (0,0);
+    \fill[red!80!black] (0,0) circle (2pt);
+    \node at (0, 1.6) [font=\small\bfseries] {$\mathbb{C} \setminus (-\infty, 0]$};
+    \node at (0,-1.7) {\small $v$-plane};
+  \end{scope}
+  % Arrow 4
+  \draw[arrow] (0,-4.2) -- node[right=4pt] {\small $f_4(v) = v - \dfrac{1}{4}$} node[left=4pt] {\tiny (Translation)} (0,-5.6);
+  % Step 5: Final Slit Plane C \ (-inf, -1/4]
+  \begin{scope}[shift={(0,-7.2)}]
+    \fill[region] (-1.4,-1.4) rectangle (1.4,1.4);
+    \draw[->, black] (-1.5,0) -- (1.5,0);
+    \draw[->, black] (0,-1.5) -- (0,1.5);
+    \draw[slit] (-1.4,0) -- (-0.5,0);
+    \fill[red!80!black] (-0.5,0) circle (2pt);
+    \node at (-0.5,-0.3) [font=\tiny, red!80!black] {$-\frac{1}{4}$};
+    \node at (0, 1.6) [font=\small\bfseries] {$\mathbb{C} \setminus \left(-\infty, -\frac{1}{4}\right]$};
+    \node at (0,-1.7) {\small $u$-plane};
+  \end{scope}
+  % Direct Map (Left Arrow)
+  \draw[arrow, ultra thick, blue!80!black] (-3, 12) to[out=200, in=160] node[left=6pt, align=center] {
+    \Large $k(z) = \dfrac{z}{(1-z)^2}$\\[6pt]
+    $= \dfrac{1}{4}\left(\dfrac{1+z}{1-z}\right)^2 - \dfrac{1}{4}$
+  } (-3, -7.2);
+\end{tikzpicture}
+```
 
 ```{example}
 ther examples in $S$:

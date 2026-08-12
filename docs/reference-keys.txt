@@ -150,7 +150,7 @@ graded-product-rule
 grad-curl-and-div-connection
 the-hodge-star-operator
 integration-chains-and-stokes-theorem
-simplices-and-chains
+simpleces-and-chains
 geometric-simplices
 homology-groups
 summary
