@@ -1,4 +1,8 @@
 # Nehari and Eric Method
+
+This is my readings on the Eric's Upgrade on Nehari's method. 
+
+
 ![](fig/Eric vs nehari/Eric vs nehari-1.jpg)
 ![](fig/Eric vs nehari/Eric vs nehari-2.jpg)
 ![](fig/Eric vs nehari/Eric vs nehari-3.jpg)
