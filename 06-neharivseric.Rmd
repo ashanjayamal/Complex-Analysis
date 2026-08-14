@@ -1,7 +1,13 @@
 # Nehari and Eric Method
 
-This is my readings on the Eric's Upgrade on Nehari's method. 
+---
 
+
+<embed src="fig/eric.pdf" type="application/pdf" width="100%" height="1000px" />
+
+
+
+---
 
 ![](fig/Eric vs nehari/Eric vs nehari-1.jpg)
 ![](fig/Eric vs nehari/Eric vs nehari-2.jpg)
