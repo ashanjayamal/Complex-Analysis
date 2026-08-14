@@ -7,7 +7,7 @@ output:
           <li><a href="./">Complex Analysis</a></li>
         after: |
           <li><a href="https://ashanjayamal.github.io/academicpages" target="blank">
-          Property of Ashan Jayamal</a></li>
+          Ashan De Silva/a></li>
       edit: https://github.com/ashanjaymal/Complex-Analysis/edit/main/%s
 
   bookdown::pdf_book:
