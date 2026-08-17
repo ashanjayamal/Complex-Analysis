@@ -23,7 +23,7 @@
 <meta name="author" content="Ashan Jayamal" />
 
 
-<meta name="date" content="2026-08-14" />
+<meta name="date" content="2026-08-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -168,18 +168,19 @@
 <li class="chapter" data-level="6.3" data-path="elementary-theory-of-univalent-functions.html"><a href="elementary-theory-of-univalent-functions.html#growth-and-distortion-theorems"><i class="fa fa-check"></i><b>6.3</b> Growth and Distortion Theorems</a></li>
 <li class="chapter" data-level="6.4" data-path="elementary-theory-of-univalent-functions.html"><a href="elementary-theory-of-univalent-functions.html#coefficient-estimates"><i class="fa fa-check"></i><b>6.4</b> Coefficient Estimates</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="nehari-and-eric-method.html"><a href="nehari-and-eric-method.html"><i class="fa fa-check"></i><b>7</b> Nehari and Eric Method</a></li>
-<li class="chapter" data-level="8" data-path="torus.html"><a href="torus.html"><i class="fa fa-check"></i><b>8</b> Torus</a>
+<li class="chapter" data-level="7" data-path="quadric-differential-on-riemann-sphere.html"><a href="quadric-differential-on-riemann-sphere.html"><i class="fa fa-check"></i><b>7</b> Quadric Differential on Riemann Sphere</a></li>
+<li class="chapter" data-level="8" data-path="nehari-and-eric-method.html"><a href="nehari-and-eric-method.html"><i class="fa fa-check"></i><b>8</b> Nehari and Eric Method</a></li>
+<li class="chapter" data-level="9" data-path="torus.html"><a href="torus.html"><i class="fa fa-check"></i><b>9</b> Torus</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="torus.html"><a href="torus.html#the-four-points-you-provided-form-the-corners-of-a-parallelogram-in-the-complex-plane"><i class="fa fa-check"></i><b>8.1</b> The four points you provided form the corners of a parallelogram in the complex plane:</a></li>
+<li class="chapter" data-level="9.1" data-path="torus.html"><a href="torus.html#the-four-points-you-provided-form-the-corners-of-a-parallelogram-in-the-complex-plane"><i class="fa fa-check"></i><b>9.1</b> The four points you provided form the corners of a parallelogram in the complex plane:</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="important-results.html"><a href="important-results.html"><i class="fa fa-check"></i><b>9</b> Important Results</a>
+<li class="chapter" data-level="10" data-path="important-results.html"><a href="important-results.html"><i class="fa fa-check"></i><b>10</b> Important Results</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="important-results.html"><a href="important-results.html#n-dimensional-lebesgue-measure-theory"><i class="fa fa-check"></i><b>9.1</b> <span class="math inline">\(n\)</span>-Dimensional Lebesgue Measure Theory</a>
+<li class="chapter" data-level="10.1" data-path="important-results.html"><a href="important-results.html#n-dimensional-lebesgue-measure-theory"><i class="fa fa-check"></i><b>10.1</b> <span class="math inline">\(n\)</span>-Dimensional Lebesgue Measure Theory</a>
 <ul>
-<li class="chapter" data-level="9.1.1" data-path="important-results.html"><a href="important-results.html#interpretation-by-dimension"><i class="fa fa-check"></i><b>9.1.1</b> Interpretation by Dimension</a></li>
-<li class="chapter" data-level="9.1.2" data-path="important-results.html"><a href="important-results.html#lower-dimensional-sets-have-measure-zero"><i class="fa fa-check"></i><b>9.1.2</b> Lower-dimensional sets have measure zero</a></li>
-<li class="chapter" data-level="9.1.3" data-path="important-results.html"><a href="important-results.html#visualizing-lebesgue-measure-and-rectangle-covers"><i class="fa fa-check"></i><b>9.1.3</b> Visualizing Lebesgue Measure and Rectangle Covers</a></li>
+<li class="chapter" data-level="10.1.1" data-path="important-results.html"><a href="important-results.html#interpretation-by-dimension"><i class="fa fa-check"></i><b>10.1.1</b> Interpretation by Dimension</a></li>
+<li class="chapter" data-level="10.1.2" data-path="important-results.html"><a href="important-results.html#lower-dimensional-sets-have-measure-zero"><i class="fa fa-check"></i><b>10.1.2</b> Lower-dimensional sets have measure zero</a></li>
+<li class="chapter" data-level="10.1.3" data-path="important-results.html"><a href="important-results.html#visualizing-lebesgue-measure-and-rectangle-covers"><i class="fa fa-check"></i><b>10.1.3</b> Visualizing Lebesgue Measure and Rectangle Covers</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -1633,16 +1634,110 @@ If <span class="math inline">\(\omega\)</span> is a <span class="math inline">\(
 \partial f &amp;= f_z\,dz = \frac{1}{2}(f_x - i f_y)\,dz \\ \bar{\partial} f &amp;= f_{\bar{z}}\,d\bar{z} = \frac{1}{2}(f_x + i f_y)\,d\bar{z}
 \end{aligned}
 \]</span></p>
+<div class="proof">
+<p><span id="unlabeled-div-11" class="proof"><em>Proof</em>. </span><img src="fig/pic%20103.jpg" />
+<img src="fig/pic%20104.jpg" /></p>
+</div>
 <p>The exterior derivative decomposes as <span class="math inline">\(d = \partial + \bar{\partial}\)</span>.</p>
+<div class="proof">
+<p><span id="unlabeled-div-12" class="proof"><em>Proof</em>. </span><img src="fig/pic%20105.jpg" /></p>
+</div>
+<p>It is also easy to see that</p>
+<p><span class="math display">\[
+\partial^{2} = \partial\bar{\partial} + \bar{\partial}\partial
+= \bar{\partial}^{2} = 0,
+\]</span></p>
+<p>whenever these operators are defined.</p>
+<div class="proof">
+<p><span id="unlabeled-div-13" class="proof"><em>Proof</em>. </span>Simple. Omitted. (I will addd it later)</p>
+</div>
 <div class="definition">
-<p><span id="def:unnamed-chunk-74" class="definition"><strong>Definition 3.16  (Laplacian and Harmonic Forms) </strong></span>The Laplacian of a function <span class="math inline">\(f\)</span> is:</p>
+<p><span id="def:unnamed-chunk-77" class="definition"><strong>Definition 3.16  (Exact and Co-exact Forms) </strong></span>A <span class="math inline">\(1\)</span>-form <span class="math inline">\(\omega\)</span> on <span class="math inline">\(M\)</span> is called if there exists a <span class="math inline">\(C^{2}\)</span> function <span class="math inline">\(f\)</span> such that <span class="math inline">\(\omega = df\)</span>.<br />
+It is called if <span class="math inline">\(*\omega\)</span> is exact; equivalently, <span class="math inline">\(\omega = *df\)</span> for some <span class="math inline">\(C^{2}\)</span> function <span class="math inline">\(f\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unnamed-chunk-78" class="definition"><strong>Definition 3.17  (Closed and Co-closed Forms) </strong></span>A <span class="math inline">\(1\)</span>-form <span class="math inline">\(\omega\)</span> is if it is <span class="math inline">\(C^{1}\)</span> and satisfies <span class="math inline">\(d\omega = 0\)</span>.<br />
+It is if <span class="math inline">\(*\omega\)</span> is closed.</p>
+</div>
+<p>Every exact form is closed, and every co-exact form is co-closed. On a simply connected domain, closed forms are exact and co-closed forms are co-exact.<br />
+Thus, closed and co-closed forms are always locally exact and locally co-exact.</p>
+<div class="definition">
+<p><span id="def:unnamed-chunk-79" class="definition"><strong>Definition 3.18  (Laplacian) </strong></span>For a <span class="math inline">\(C^{2}\)</span> function <span class="math inline">\(f\)</span> on <span class="math inline">\(M\)</span>, the of <span class="math inline">\(f\)</span> in local coordinates is defined by</p>
+<p><span class="math display">\[
+\Delta f = (f_{xx} + f_{yy})\, dx \wedge dy.
+\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unnamed-chunk-80" class="definition"><strong>Definition 3.19  (Harmonic Functions and Forms) </strong></span>A function <span class="math inline">\(f\)</span> is if <span class="math inline">\(\Delta f = 0\)</span>.<br />
+A <span class="math inline">\(1\)</span>-form <span class="math inline">\(\omega\)</span> is if locally <span class="math inline">\(\omega = df\)</span> for some harmonic function <span class="math inline">\(f\)</span>.</p>
+</div>
+<div id="summary-1" class="section level4 hasAnchor" number="3.6.0.1">
+<h4><span class="header-section-number">3.6.0.1</span> Summary<a href="hodge-star-and-differential-forms.html#summary-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<table>
+<colgroup>
+<col width="22%" />
+<col width="52%" />
+<col width="26%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Concept</th>
+<th>Mathematical Definition</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Exact</strong></td>
+<td><span class="math inline">\(\omega = df\)</span></td>
+<td>The form is the differential of a function.</td>
+</tr>
+<tr class="even">
+<td><strong>Closed</strong></td>
+<td><span class="math inline">\(d\omega = 0\)</span></td>
+<td>Its exterior derivative vanishes.</td>
+</tr>
+<tr class="odd">
+<td><strong>Co-exact</strong></td>
+<td><span class="math inline">\(*\omega = df\)</span> or <span class="math inline">\(\omega = *df\)</span></td>
+<td>The Hodge dual of the form is exact.</td>
+</tr>
+<tr class="even">
+<td><strong>Co-closed</strong></td>
+<td><span class="math inline">\(d(*\omega) = 0\)</span></td>
+<td>The exterior derivative of the Hodge dual is zero.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="fig/pic%20106.png" /></p>
+<div class="definition">
+<p><span id="def:unnamed-chunk-81" class="definition"><strong>Definition 3.20  (Laplacian and Harmonic Forms) </strong></span>The Laplacian of a function <span class="math inline">\(f\)</span> is:</p>
 <p><span class="math display">\[\Delta f = (f_{xx} + f_{yy})\,dx \wedge dy = -2i\,\partial \bar{\partial} f\]</span></p>
 <p>A <span class="math inline">\(1\)</span>-form <span class="math inline">\(\omega\)</span> is <strong>harmonic</strong> if it is locally given by <span class="math inline">\(df\)</span> where <span class="math inline">\(\Delta f = 0\)</span>.</p>
 </div>
 <div class="proposition">
-<p><span id="prp:unnamed-chunk-75" class="proposition"><strong>Proposition 3.2  </strong></span>A differential form <span class="math inline">\(\omega\)</span> is harmonic if and only if it is both <strong>closed</strong> (<span class="math inline">\(d\omega = 0\)</span>) and <strong>co-closed</strong> (<span class="math inline">\(d*\omega = 0\)</span>).</p>
+<p><span id="prp:unnamed-chunk-82" class="proposition"><strong>Proposition 3.2  </strong></span>A differential form <span class="math inline">\(\omega\)</span> is harmonic if and only if it is both <strong>closed</strong> (<span class="math inline">\(d\omega = 0\)</span>) and <strong>co-closed</strong> (<span class="math inline">\(d*\omega = 0\)</span>).</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-14" class="remark"><em>Remark</em>. </span>It is straightforward to verify that for any <span class="math inline">\(C^{2}\)</span> function <span class="math inline">\(f\)</span>,
+<span class="math display">\[
+-2i\,\bar{\partial}\partial f \;=\; \Delta f \;=\; d^{*}df.
+\]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-15" class="proof"><em>Proof</em>. </span><img src="fig/pic%20107.jpg" />
+<img src="fig/pic%20108.jpg" />
+<img src="fig/pic%20109.jpg" /></p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-16" class="remark"><em>Remark</em>. </span></p>
+<ol style="list-style-type: decimal">
+<li><p>The Laplacian <span class="math inline">\(\Delta\)</span> requires careful justification to ensure it is well defined, and this relies essentially on the fact that we are working on Riemann surfaces rather than arbitrary smooth surfaces.</p></li>
+<li><p>The notion of a harmonic function is fundamentally local. In particular, any real-valued harmonic function can be expressed locally as the real part of a holomorphic function. Moreover, real-valued harmonic functions obey the maximum–minimum principle: a non‑constant harmonic function cannot attain a maximum or minimum at an interior point.</p></li>
+</ol>
 </div>
 
+</div>
 </div>
 </div>
             </section>

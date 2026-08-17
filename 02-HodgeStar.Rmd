@@ -1740,7 +1740,73 @@ $$
 $$
 
 
+```{proof}
+![](fig/pic 103.jpg)
+![](fig/pic 104.jpg)
+```
+
 The exterior derivative decomposes as $d = \partial + \bar{\partial}$.
+
+```{proof}
+![](fig/pic 105.jpg)
+```
+
+It is also easy to see that
+
+
+\[
+\partial^{2} = \partial\bar{\partial} + \bar{\partial}\partial 
+= \bar{\partial}^{2} = 0,
+\]
+
+
+whenever these operators are defined.
+
+
+```{proof}
+Simple. Omitted. (I will addd it later)
+```
+
+```{definition,name="Exact and Co-exact Forms"}
+A $1$-form $\omega$ on $M$ is called \emph{exact} if there exists a $C^{2}$ function $f$ such that $\omega = df$.  
+It is called \emph{co-exact} if $*\omega$ is exact; equivalently, $\omega = *df$ for some $C^{2}$ function $f$.
+```
+
+```{definition,name="Closed and Co-closed Forms"}
+A $1$-form $\omega$ is \emph{closed} if it is $C^{1}$ and satisfies $d\omega = 0$.  
+It is \emph{co-closed} if $*\omega$ is closed.
+```
+
+
+Every exact form is closed, and every co-exact form is co-closed.  On a simply connected domain, closed forms are exact and co-closed forms are co-exact.  
+Thus, closed and co-closed forms are always locally exact and locally co-exact.
+
+```{definition,name="Laplacian"}
+For a $C^{2}$ function $f$ on $M$, the \emph{Laplacian} of $f$ in local coordinates is defined by
+
+
+\[
+\Delta f = (f_{xx} + f_{yy})\, dx \wedge dy.
+\]
+
+
+```
+
+```{definition,name="Harmonic Functions and Forms"}
+A function $f$ is \emph{harmonic} if $\Delta f = 0$.  
+A $1$-form $\omega$ is \emph{harmonic} if locally $\omega = df$ for some harmonic function $f$.
+```
+
+#### Summary
+
+| Concept    | Mathematical Definition | Explanation |
+|-----------|--------------------------|-------------|
+| **Exact** | $\omega = df$ | The form is the differential of a function. |
+| **Closed** | $d\omega = 0$ | Its exterior derivative vanishes. |
+| **Co-exact** | $*\omega = df$ or $\omega = *df$ | The Hodge dual of the form is exact. |
+| **Co-closed** | $d(*\omega) = 0$ | The exterior derivative of the Hodge dual is zero. |
+
+![](fig/pic 106.png)
 
 ```{definition,name="Laplacian and Harmonic Forms"}
 The Laplacian of a function $f$ is:
@@ -1753,4 +1819,25 @@ A $1$-form $\omega$ is **harmonic** if it is locally given by $df$ where $\Delta
 
 ```{proposition}
 A differential form $\omega$ is harmonic if and only if it is both **closed** ($d\omega = 0$) and **co-closed** ($d*\omega = 0$).
+```
+
+```{remark}
+It is straightforward to verify that for any $C^{2}$ function $f$,
+\[
+-2i\,\bar{\partial}\partial f \;=\; \Delta f \;=\; d^{*}df.
+\]
+```
+
+```{proof}
+![](fig/pic 107.jpg)
+![](fig/pic 108.jpg)
+![](fig/pic 109.jpg)
+```
+
+
+```{remark}
+1. The Laplacian \( \Delta \) requires careful justification to ensure it is well defined, and this relies essentially on the fact that we are working on Riemann surfaces rather than arbitrary smooth surfaces.
+
+1. The notion of a harmonic function is fundamentally local. In particular, any real-valued harmonic function can be expressed locally as the real part of a holomorphic function. Moreover, real-valued harmonic functions obey the maximum–minimum principle: a non‑constant harmonic function cannot attain a maximum or minimum at an interior point.
+
 ```
