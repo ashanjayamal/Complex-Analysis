@@ -1,59 +1,6 @@
 # Quadric Differentials
 
 
-## Quadratic Differentials (Jensen), in Pommerenke's *Univalent Functions*
-
-Quick orientation before we dig in: this chapter proves Jenkins' **General Coefficient Theorem**, the classical machine for extremal problems on multiply connected domains and quasiconformal maps. Your proposal has moved *away* from the Jenkins/Grötzsch route toward Schippers' invariant $m(D_1,D_2,Q\,dz^2)$ — but that invariant is built from exactly the same object, a quadratic differential $Q(z)\,dz^2$, and the same idea of $Q$-length and $Q$-area you'll meet in §8.2. So this chapter is the classical ancestor of the machinery you're generalizing; worth having solid, even if the proof techniques themselves aren't where your thesis is headed.
-
-
-### Introduction — the idea in miniature
-
-**Setup.** Let $G\subset\mathbb C$ be a domain and $T=\{x+iy:|x|\le a,\ |y|<b\}$ a rectangle such that $T\setminus G$ consists of finitely many horizontal segments interior to $T$ — think of $T$ with a few horizontal cuts removed, and $f$ is defined on what's left. Let $f$ be analytic and univalent on $G$, and write
-$$\Delta(z) = f(z)-z,$$
-the **displacement function**. Since $f$ is univalent it's analytic, so $\Delta$ is analytic on $G$ too.
-
-**Step 1 — a pointwise inequality.** For any complex number $w=f'(z)$,
-$$2\,\mathrm{Re}(w-1) \;\le\; 2(|w|-1) \;\le\; |w|^2-1,$$
-the first because $\mathrm{Re}\,w\le |w|$, the second because $|w|^2-2|w|+1=(|w|-1)^2\ge 0$. Since $\Delta'=f'-1$, this says
-$$2\,\mathrm{Re}\,\Delta'(z) \le |f'(z)|^2-1 \qquad(\star)$$
-pointwise, everywhere in $G$.
-
-**Step 2 — integrate.** Since $|f'(z)|^2$ is the Jacobian of the map $f$, $\iint_T|f'|^2\,dA = \mathrm{area}\,f(T)$. Integrating $(\star)$ over $T$:
-$$2\iint_T \mathrm{Re}\,\Delta'(z)\,dx\,dy \;\le\; \mathrm{area}\,f(T)-\mathrm{area}\,T.$$
-
-**Step 3 — turn the area integral into a boundary integral.** Since $\Delta$ is analytic, $\Delta' = \partial(\mathrm{Re}\,\Delta)/\partial x$ (Cauchy–Riemann), so Green's theorem ($\oint P\,dx+Q\,dy = \iint(\partial Q/\partial x-\partial P/\partial y)\,dA$, with $P=0,\,Q=\mathrm{Re}\,\Delta$) gives exactly
-$$\iint_T \mathrm{Re}\,\Delta'(z)\,dx\,dy = \oint_{\partial T}\mathrm{Re}\,\Delta(z)\,dy.$$
-So
-$$\boxed{\ \mathrm{area}\,f(T)-\mathrm{area}\,T \;\ge\; 2\oint_{\partial T}\mathrm{Re}\,\Delta(z)\,dy\ } \tag{1}$$
-
-This is the prototype of **every** estimate in the chapter. The whole point of quadratic differentials, later on, is that they let you run this *same* argument on wildly more complicated domains (bounded by trajectories instead of straight slits), where $\Delta'$ gets replaced by something built from $Q$.
-
-Applying $(1)$ to the rectangle and taking $G$ to contain $\infty$ with $\mathbb C\setminus G$ a union of horizontal segments, the same style of computation (large squares $T_n\to\mathbb C$) forces $\mathrm{Re}\,b_1 \le 0$ for $f(z)=z+b_0+b_1z^{-1}+\cdots$ — a first, embryonic case of the General Coefficient Theorem. That's the arc of the whole chapter: (1) generalizes to Theorems 8.9–8.12, and the homotopy machinery of §8.4 is what makes the generalization rigorous.
-
-#### Problems for 8.1
-
-**Problem 1 (Rengel's inequality).** With $G,T,f$ as above, suppose every horizontal segment $[-a+iy,\,a+iy]$ ($|y|\le b$) maps to a curve of length $\ge 2\alpha$. Show
-$$\frac{\mathrm{area}\,f(T)}{\mathrm{area}\,T}\ge \frac{\alpha^2}{a^2},$$
-with equality only for $f(z)=c_1z+c_0$, $|c_1|=\alpha/a$.
-
-*Solution.* This one is cleanest via Cauchy–Schwarz directly (the same "length-vs-area" idea as $(\star)$, but sharper). For fixed $y$, the image of $t\mapsto t+iy$, $t\in[-a,a]$, has length
-$$L(y)=\int_{-a}^a |f'(t+iy)|\,dt \;\ge\; 2\alpha.$$
-By Cauchy–Schwarz,
-$$L(y)^2 = \Big(\int_{-a}^a |f'(t+iy)|\cdot 1\,dt\Big)^2 \le \Big(\int_{-a}^a 1^2\,dt\Big)\Big(\int_{-a}^a |f'(t+iy)|^2\,dt\Big) = 2a\int_{-a}^a|f'(t+iy)|^2\,dt,$$
-so
-$$\int_{-a}^a |f'(t+iy)|^2\,dt \;\ge\; \frac{L(y)^2}{2a}\;\ge\;\frac{2\alpha^2}{a}.$$
-Integrate over $y\in[-b,b]$:
-$$\mathrm{area}\,f(T)=\iint_T|f'|^2\,dA \;\ge\; \int_{-b}^b \frac{2\alpha^2}{a}\,dy = \frac{4\alpha^2 b}{a}.$$
-Since $\mathrm{area}\,T=4ab$, dividing gives $\mathrm{area}\,f(T)/\mathrm{area}\,T\ge \alpha^2/a^2$. $\blacksquare$
-
-*Equality* forces, for a.e. $y$: (i) equality in Cauchy–Schwarz, i.e. $|f'(t+iy)|$ constant in $t$, and (ii) $L(y)=2\alpha$ exactly. Condition (i) holding for every $y$ forces $|f'|$ constant throughout $T$; an analytic function of constant modulus is constant, so $f'\equiv c_1$ and $f(z)=c_1z+c_0$. Tightness of (ii) then forces $2a|c_1|=2\alpha$, i.e. $|c_1|=\alpha/a$.
-
-This is exactly the classical **length–area principle** — the ancestor of extremal length, and (unsurprisingly) the same inequality that sits underneath Schippers' construction once you go to the double-cover, $Q$-metric picture.
-
-**Problem 2.** $G$ has finite connectivity, $\infty\in G$; $f(z)=z+b_0+b_1z^{-1}+\cdots$ is univalent on $G$, and $\hat{\mathbb C}\setminus f(G)$ consists of horizontal segments. Show $\mathrm{Re}\,b_1 \ge \frac{1}{2\pi}\,\mathrm{area}(\hat{\mathbb C}\setminus f(G))$.
-
-Since the complement here is a finite union of slits, the right side is literally $0$ — so this is really asking you to show $\mathrm{Re}\,b_1\ge 0$ for the canonical "horizontal slit map" of a finitely-connected domain, by running the $T_n\to\infty$ limit from the introduction, but now with $\hat{\mathbb C}\setminus G$ contributing an extra fixed boundary term (from the "holes" of $G$) to the Green's-theorem step. I'd rather set this one up **with** you than hand you a slick proof I haven't fully nailed down live — the bookkeeping of that extra boundary term is exactly the kind of thing worth doing on paper together. 
-
 
 <iframe src="https://quadraticdiffrentialriemannsphere.netlify.app/" width="100%" height="1000"></iframe>   
 
