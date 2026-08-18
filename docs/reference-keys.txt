@@ -184,9 +184,6 @@ the-area-theorem
 growth-and-distortion-theorems
 coefficient-estimates
 quadric-differentials
-quadratic-differentials-jensen-in-pommerenkes-univalent-functions
-introduction-the-idea-in-miniature
-problems-for-8.1
 nehari-and-eric-method
 torus
 the-four-points-you-provided-form-the-corners-of-a-parallelogram-in-the-complex-plane

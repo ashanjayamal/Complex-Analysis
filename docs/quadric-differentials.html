@@ -23,7 +23,7 @@
 <meta name="author" content="Ashan Jayamal" />
 
 
-<meta name="date" content="2026-08-17" />
+<meta name="date" content="2026-08-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -168,13 +168,7 @@
 <li class="chapter" data-level="6.3" data-path="elementary-theory-of-univalent-functions.html"><a href="elementary-theory-of-univalent-functions.html#growth-and-distortion-theorems"><i class="fa fa-check"></i><b>6.3</b> Growth and Distortion Theorems</a></li>
 <li class="chapter" data-level="6.4" data-path="elementary-theory-of-univalent-functions.html"><a href="elementary-theory-of-univalent-functions.html#coefficient-estimates"><i class="fa fa-check"></i><b>6.4</b> Coefficient Estimates</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="quadric-differentials.html"><a href="quadric-differentials.html"><i class="fa fa-check"></i><b>7</b> Quadric Differentials</a>
-<ul>
-<li class="chapter" data-level="7.1" data-path="quadric-differentials.html"><a href="quadric-differentials.html#quadratic-differentials-jensen-in-pommerenkes-univalent-functions"><i class="fa fa-check"></i><b>7.1</b> Quadratic Differentials (Jensen), in Pommerenke’s <em>Univalent Functions</em></a>
-<ul>
-<li class="chapter" data-level="7.1.1" data-path="quadric-differentials.html"><a href="quadric-differentials.html#introduction-the-idea-in-miniature"><i class="fa fa-check"></i><b>7.1.1</b> Introduction — the idea in miniature</a></li>
-</ul></li>
-</ul></li>
+<li class="chapter" data-level="7" data-path="quadric-differentials.html"><a href="quadric-differentials.html"><i class="fa fa-check"></i><b>7</b> Quadric Differentials</a></li>
 <li class="chapter" data-level="8" data-path="nehari-and-eric-method.html"><a href="nehari-and-eric-method.html"><i class="fa fa-check"></i><b>8</b> Nehari and Eric Method</a></li>
 <li class="chapter" data-level="9" data-path="torus.html"><a href="torus.html"><i class="fa fa-check"></i><b>9</b> Torus</a>
 <ul>
@@ -212,52 +206,10 @@ Ashan De Silva/a></li>
             <section class="normal" id="section-">
 <div id="quadric-differentials" class="section level1 hasAnchor" number="7">
 <h1><span class="header-section-number">Chapter 7</span> Quadric Differentials<a href="quadric-differentials.html#quadric-differentials" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="quadratic-differentials-jensen-in-pommerenkes-univalent-functions" class="section level2 hasAnchor" number="7.1">
-<h2><span class="header-section-number">7.1</span> Quadratic Differentials (Jensen), in Pommerenke’s <em>Univalent Functions</em><a href="quadric-differentials.html#quadratic-differentials-jensen-in-pommerenkes-univalent-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Quick orientation before we dig in: this chapter proves Jenkins’ <strong>General Coefficient Theorem</strong>, the classical machine for extremal problems on multiply connected domains and quasiconformal maps. Your proposal has moved <em>away</em> from the Jenkins/Grötzsch route toward Schippers’ invariant <span class="math inline">\(m(D_1,D_2,Q\,dz^2)\)</span> — but that invariant is built from exactly the same object, a quadratic differential <span class="math inline">\(Q(z)\,dz^2\)</span>, and the same idea of <span class="math inline">\(Q\)</span>-length and <span class="math inline">\(Q\)</span>-area you’ll meet in §8.2. So this chapter is the classical ancestor of the machinery you’re generalizing; worth having solid, even if the proof techniques themselves aren’t where your thesis is headed.</p>
-<div id="introduction-the-idea-in-miniature" class="section level3 hasAnchor" number="7.1.1">
-<h3><span class="header-section-number">7.1.1</span> Introduction — the idea in miniature<a href="quadric-differentials.html#introduction-the-idea-in-miniature" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><strong>Setup.</strong> Let <span class="math inline">\(G\subset\mathbb C\)</span> be a domain and <span class="math inline">\(T=\{x+iy:|x|\le a,\ |y|&lt;b\}\)</span> a rectangle such that <span class="math inline">\(T\setminus G\)</span> consists of finitely many horizontal segments interior to <span class="math inline">\(T\)</span> — think of <span class="math inline">\(T\)</span> with a few horizontal cuts removed, and <span class="math inline">\(f\)</span> is defined on what’s left. Let <span class="math inline">\(f\)</span> be analytic and univalent on <span class="math inline">\(G\)</span>, and write
-<span class="math display">\[\Delta(z) = f(z)-z,\]</span>
-the <strong>displacement function</strong>. Since <span class="math inline">\(f\)</span> is univalent it’s analytic, so <span class="math inline">\(\Delta\)</span> is analytic on <span class="math inline">\(G\)</span> too.</p>
-<p><strong>Step 1 — a pointwise inequality.</strong> For any complex number <span class="math inline">\(w=f&#39;(z)\)</span>,
-<span class="math display">\[2\,\mathrm{Re}(w-1) \;\le\; 2(|w|-1) \;\le\; |w|^2-1,\]</span>
-the first because <span class="math inline">\(\mathrm{Re}\,w\le |w|\)</span>, the second because <span class="math inline">\(|w|^2-2|w|+1=(|w|-1)^2\ge 0\)</span>. Since <span class="math inline">\(\Delta&#39;=f&#39;-1\)</span>, this says
-<span class="math display">\[2\,\mathrm{Re}\,\Delta&#39;(z) \le |f&#39;(z)|^2-1 \qquad(\star)\]</span>
-pointwise, everywhere in <span class="math inline">\(G\)</span>.</p>
-<p><strong>Step 2 — integrate.</strong> Since <span class="math inline">\(|f&#39;(z)|^2\)</span> is the Jacobian of the map <span class="math inline">\(f\)</span>, <span class="math inline">\(\iint_T|f&#39;|^2\,dA = \mathrm{area}\,f(T)\)</span>. Integrating <span class="math inline">\((\star)\)</span> over <span class="math inline">\(T\)</span>:
-<span class="math display">\[2\iint_T \mathrm{Re}\,\Delta&#39;(z)\,dx\,dy \;\le\; \mathrm{area}\,f(T)-\mathrm{area}\,T.\]</span></p>
-<p><strong>Step 3 — turn the area integral into a boundary integral.</strong> Since <span class="math inline">\(\Delta\)</span> is analytic, <span class="math inline">\(\Delta&#39; = \partial(\mathrm{Re}\,\Delta)/\partial x\)</span> (Cauchy–Riemann), so Green’s theorem (<span class="math inline">\(\oint P\,dx+Q\,dy = \iint(\partial Q/\partial x-\partial P/\partial y)\,dA\)</span>, with <span class="math inline">\(P=0,\,Q=\mathrm{Re}\,\Delta\)</span>) gives exactly
-<span class="math display">\[\iint_T \mathrm{Re}\,\Delta&#39;(z)\,dx\,dy = \oint_{\partial T}\mathrm{Re}\,\Delta(z)\,dy.\]</span>
-So
-<span class="math display">\[\boxed{\ \mathrm{area}\,f(T)-\mathrm{area}\,T \;\ge\; 2\oint_{\partial T}\mathrm{Re}\,\Delta(z)\,dy\ } \tag{1}\]</span></p>
-<p>This is the prototype of <strong>every</strong> estimate in the chapter. The whole point of quadratic differentials, later on, is that they let you run this <em>same</em> argument on wildly more complicated domains (bounded by trajectories instead of straight slits), where <span class="math inline">\(\Delta&#39;\)</span> gets replaced by something built from <span class="math inline">\(Q\)</span>.</p>
-<p>Applying <span class="math inline">\((1)\)</span> to the rectangle and taking <span class="math inline">\(G\)</span> to contain <span class="math inline">\(\infty\)</span> with <span class="math inline">\(\mathbb C\setminus G\)</span> a union of horizontal segments, the same style of computation (large squares <span class="math inline">\(T_n\to\mathbb C\)</span>) forces <span class="math inline">\(\mathrm{Re}\,b_1 \le 0\)</span> for <span class="math inline">\(f(z)=z+b_0+b_1z^{-1}+\cdots\)</span> — a first, embryonic case of the General Coefficient Theorem. That’s the arc of the whole chapter: (1) generalizes to Theorems 8.9–8.12, and the homotopy machinery of §8.4 is what makes the generalization rigorous.</p>
-<div id="problems-for-8.1" class="section level4 hasAnchor" number="7.1.1.1">
-<h4><span class="header-section-number">7.1.1.1</span> Problems for 8.1<a href="quadric-differentials.html#problems-for-8.1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p><strong>Problem 1 (Rengel’s inequality).</strong> With <span class="math inline">\(G,T,f\)</span> as above, suppose every horizontal segment <span class="math inline">\([-a+iy,\,a+iy]\)</span> (<span class="math inline">\(|y|\le b\)</span>) maps to a curve of length <span class="math inline">\(\ge 2\alpha\)</span>. Show
-<span class="math display">\[\frac{\mathrm{area}\,f(T)}{\mathrm{area}\,T}\ge \frac{\alpha^2}{a^2},\]</span>
-with equality only for <span class="math inline">\(f(z)=c_1z+c_0\)</span>, <span class="math inline">\(|c_1|=\alpha/a\)</span>.</p>
-<p><em>Solution.</em> This one is cleanest via Cauchy–Schwarz directly (the same “length-vs-area” idea as <span class="math inline">\((\star)\)</span>, but sharper). For fixed <span class="math inline">\(y\)</span>, the image of <span class="math inline">\(t\mapsto t+iy\)</span>, <span class="math inline">\(t\in[-a,a]\)</span>, has length
-<span class="math display">\[L(y)=\int_{-a}^a |f&#39;(t+iy)|\,dt \;\ge\; 2\alpha.\]</span>
-By Cauchy–Schwarz,
-<span class="math display">\[L(y)^2 = \Big(\int_{-a}^a |f&#39;(t+iy)|\cdot 1\,dt\Big)^2 \le \Big(\int_{-a}^a 1^2\,dt\Big)\Big(\int_{-a}^a |f&#39;(t+iy)|^2\,dt\Big) = 2a\int_{-a}^a|f&#39;(t+iy)|^2\,dt,\]</span>
-so
-<span class="math display">\[\int_{-a}^a |f&#39;(t+iy)|^2\,dt \;\ge\; \frac{L(y)^2}{2a}\;\ge\;\frac{2\alpha^2}{a}.\]</span>
-Integrate over <span class="math inline">\(y\in[-b,b]\)</span>:
-<span class="math display">\[\mathrm{area}\,f(T)=\iint_T|f&#39;|^2\,dA \;\ge\; \int_{-b}^b \frac{2\alpha^2}{a}\,dy = \frac{4\alpha^2 b}{a}.\]</span>
-Since <span class="math inline">\(\mathrm{area}\,T=4ab\)</span>, dividing gives <span class="math inline">\(\mathrm{area}\,f(T)/\mathrm{area}\,T\ge \alpha^2/a^2\)</span>. <span class="math inline">\(\blacksquare\)</span></p>
-<p><em>Equality</em> forces, for a.e. <span class="math inline">\(y\)</span>: (i) equality in Cauchy–Schwarz, i.e. <span class="math inline">\(|f&#39;(t+iy)|\)</span> constant in <span class="math inline">\(t\)</span>, and (ii) <span class="math inline">\(L(y)=2\alpha\)</span> exactly. Condition (i) holding for every <span class="math inline">\(y\)</span> forces <span class="math inline">\(|f&#39;|\)</span> constant throughout <span class="math inline">\(T\)</span>; an analytic function of constant modulus is constant, so <span class="math inline">\(f&#39;\equiv c_1\)</span> and <span class="math inline">\(f(z)=c_1z+c_0\)</span>. Tightness of (ii) then forces <span class="math inline">\(2a|c_1|=2\alpha\)</span>, i.e. <span class="math inline">\(|c_1|=\alpha/a\)</span>.</p>
-<p>This is exactly the classical <strong>length–area principle</strong> — the ancestor of extremal length, and (unsurprisingly) the same inequality that sits underneath Schippers’ construction once you go to the double-cover, <span class="math inline">\(Q\)</span>-metric picture.</p>
-<p><strong>Problem 2.</strong> <span class="math inline">\(G\)</span> has finite connectivity, <span class="math inline">\(\infty\in G\)</span>; <span class="math inline">\(f(z)=z+b_0+b_1z^{-1}+\cdots\)</span> is univalent on <span class="math inline">\(G\)</span>, and <span class="math inline">\(\hat{\mathbb C}\setminus f(G)\)</span> consists of horizontal segments. Show <span class="math inline">\(\mathrm{Re}\,b_1 \ge \frac{1}{2\pi}\,\mathrm{area}(\hat{\mathbb C}\setminus f(G))\)</span>.</p>
-<p>Since the complement here is a finite union of slits, the right side is literally <span class="math inline">\(0\)</span> — so this is really asking you to show <span class="math inline">\(\mathrm{Re}\,b_1\ge 0\)</span> for the canonical “horizontal slit map” of a finitely-connected domain, by running the <span class="math inline">\(T_n\to\infty\)</span> limit from the introduction, but now with <span class="math inline">\(\hat{\mathbb C}\setminus G\)</span> contributing an extra fixed boundary term (from the “holes” of <span class="math inline">\(G\)</span>) to the Green’s-theorem step. I’d rather set this one up <strong>with</strong> you than hand you a slick proof I haven’t fully nailed down live — the bookkeeping of that extra boundary term is exactly the kind of thing worth doing on paper together.</p>
 <iframe src="https://quadraticdiffrentialriemannsphere.netlify.app/" width="100%" height="1000">
 </iframe>
 <p>This was generated using AI<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
 
-</div>
-</div>
-</div>
 </div>
 <div class="footnotes">
 <hr />
