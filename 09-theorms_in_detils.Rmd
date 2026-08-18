@@ -15,6 +15,8 @@ Let \( f \) be analytic in \( D \) and continuous in \( D \cup \Gamma \), and le
 Suppose \( f(z) = g(z) \) for all \( z \in \Gamma \).
 Then \( f \) has an analytic continuation \( F \) to \( D \cup \Gamma \cup \Delta \) with \( F(z) = g(z) \) in \( \Delta \).
 ```
+
+
 ```{proof}
 <div style="display: flex; gap: 2px;">
 <div style="flex: 1;">

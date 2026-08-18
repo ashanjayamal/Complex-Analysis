@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Complex Analysis</title>
+  <title>Chapter 7 Quadric Differentials | Complex Analysis</title>
   <meta name="description" content="This is just a test" />
   <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Complex Analysis" />
+  <meta property="og:title" content="Chapter 7 Quadric Differentials | Complex Analysis" />
   <meta property="og:type" content="book" />
   <meta property="og:image" content="https://ashanjayamal.github.io/Complex-Analysis/fig/cover.png" />
   <meta property="og:description" content="This is just a test" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Complex Analysis" />
+  <meta name="twitter:title" content="Chapter 7 Quadric Differentials | Complex Analysis" />
   
   <meta name="twitter:description" content="This is just a test" />
   <meta name="twitter:image" content="https://ashanjayamal.github.io/Complex-Analysis/fig/cover.png" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="complex-numbers.html"/>
+<link rel="prev" href="elementary-theory-of-univalent-functions.html"/>
+<link rel="next" href="nehari-and-eric-method.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -52,14 +52,6 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<link href="libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.12.0/plotly.js"></script>
-<script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-2.25.2/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-2.25.2/plotly-latest.min.js"></script>
 
 
 
@@ -210,33 +202,68 @@ Ashan De Silva/a></li>
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Complex Analysis</h1>
-<p class="author"><em>Ashan Jayamal</em></p>
-<p class="date"><em>2026-08-17</em></p>
-</div>
-<div id="introduction" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction<a href="index.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Ask someone what the square root of 4 is, and they will not hesitate: 2. Ask for the square root of −1, and something interesting happens. Most people pause, then say some version of the same thing: <em>that doesn’t exist.</em></p>
-<p>They are not wrong to hesitate. For over a thousand years, some of the sharpest minds in mathematics agreed with them. A number that, when multiplied by itself, gives a negative result seemed less like a number and more like a contradiction a hole in the number line where nothing should be allowed to stand. When the number finally forced its way into mathematics, it did not arrive through some philosopher’s curiosity about the impossible. It arrived because mathematicians doing ordinary, practical work solving cubic equations with three perfectly good, perfectly real solutions found that the only way to reach those real answers was to pass, briefly, through square roots of negative numbers. The imaginary was not a detour around the real. It turned out to be sewn into it.</p>
-<p>This book is about that number, and the strange, beautiful mathematics that grew up around it.</p>
-<p>I want to be honest about something before we start: I did not always find complex numbers beautiful. For a long time they felt like a trick a symbol, <span class="math inline">\(i\)</span>, invented so that certain equations would stop being unsolvable, defined by little more than the rule <span class="math inline">\(i^2 = -1\)</span> and otherwise left to behave like an ordinary number. It took years of study, first as a student and now as a researcher in complex analysis, before I understood what was actually being offered: not a patch, but a second dimension. The moment you accept <span class="math inline">\(i\)</span>, the number line which had felt complete, self-sufficient, the whole of arithmetic turns out to have been only one axis of a much larger plane. Numbers stop being points on a line and become points in a plane, and multiplication, of all things, becomes rotation.</p>
-<p>If you grew up here in Sri Lanka, you may already have an intuition for this kind of shift in perspective, even if no one called it mathematics. Think of the geometric repetition in a batik pattern, or the way a <em>rasam pot’s</em> shadow rotates through the day, or the careful symmetry worked into a <em>vesak koodu</em>. Rotation, reflection, repetition with variation these are not decorations on top of mathematics. They are mathematics, and complex numbers turn out to be the precise language for describing them. By the time we reach the middle of this book, you will see multiplication by <span class="math inline">\(i\)</span> the way you already see a quarter-turn of a lantern: not as an abstract operation, but as a motion you can picture.</p>
-<p>We will take the historical route, because I think it is the honest one. Real numbers themselves the ones you already trust were not always on solid ground. The Pythagoreans were shaken to discover that <span class="math inline">\(\sqrt{2}\)</span> could not be written as a fraction. Indian mathematicians, including Brahmagupta in the seventh century, were the first to write down clear arithmetic rules for negative numbers and zero, centuries before Europe caught up. The Kerala school, working in South India in the 14th to 16th centuries, developed infinite series for trigonometric functions long before calculus had a name in the West. None of this was inevitable or obvious at the time. Every number system we now take for granted negative, irrational, real, and eventually imaginary was once controversial, resisted, or simply unnamed.</p>
-<p>So we will not start with a definition of <span class="math inline">\(i\)</span> and a list of rules to memorize. We will start with the crisis that made it necessary, follow the mathematicians who fought over what to make of it, and only then turn to the elegant plane, the rotations, and the surprising places electrical engineering, quantum mechanics, the shape of fractals where this once-imaginary number turns out to be indispensable.</p>
-<p>By the end, I hope <span class="math inline">\(\sqrt{-1}\)</span> will feel less like an exception to arithmetic and more like the moment arithmetic finally became honest about its own shape.</p>
-<div id="why-complex-numbers" class="section level3 hasAnchor" number="1.0.1">
-<h3><span class="header-section-number">1.0.1</span> Why Complex Numbers<a href="index.html#why-complex-numbers" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="quadric-differentials" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Quadric Differentials<a href="quadric-differentials.html#quadric-differentials" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="quadratic-differentials-jensen-in-pommerenkes-univalent-functions" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Quadratic Differentials (Jensen), in Pommerenke’s <em>Univalent Functions</em><a href="quadric-differentials.html#quadratic-differentials-jensen-in-pommerenkes-univalent-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Quick orientation before we dig in: this chapter proves Jenkins’ <strong>General Coefficient Theorem</strong>, the classical machine for extremal problems on multiply connected domains and quasiconformal maps. Your proposal has moved <em>away</em> from the Jenkins/Grötzsch route toward Schippers’ invariant <span class="math inline">\(m(D_1,D_2,Q\,dz^2)\)</span> — but that invariant is built from exactly the same object, a quadratic differential <span class="math inline">\(Q(z)\,dz^2\)</span>, and the same idea of <span class="math inline">\(Q\)</span>-length and <span class="math inline">\(Q\)</span>-area you’ll meet in §8.2. So this chapter is the classical ancestor of the machinery you’re generalizing; worth having solid, even if the proof techniques themselves aren’t where your thesis is headed.</p>
+<div id="introduction-the-idea-in-miniature" class="section level3 hasAnchor" number="7.1.1">
+<h3><span class="header-section-number">7.1.1</span> Introduction — the idea in miniature<a href="quadric-differentials.html#introduction-the-idea-in-miniature" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Setup.</strong> Let <span class="math inline">\(G\subset\mathbb C\)</span> be a domain and <span class="math inline">\(T=\{x+iy:|x|\le a,\ |y|&lt;b\}\)</span> a rectangle such that <span class="math inline">\(T\setminus G\)</span> consists of finitely many horizontal segments interior to <span class="math inline">\(T\)</span> — think of <span class="math inline">\(T\)</span> with a few horizontal cuts removed, and <span class="math inline">\(f\)</span> is defined on what’s left. Let <span class="math inline">\(f\)</span> be analytic and univalent on <span class="math inline">\(G\)</span>, and write
+<span class="math display">\[\Delta(z) = f(z)-z,\]</span>
+the <strong>displacement function</strong>. Since <span class="math inline">\(f\)</span> is univalent it’s analytic, so <span class="math inline">\(\Delta\)</span> is analytic on <span class="math inline">\(G\)</span> too.</p>
+<p><strong>Step 1 — a pointwise inequality.</strong> For any complex number <span class="math inline">\(w=f&#39;(z)\)</span>,
+<span class="math display">\[2\,\mathrm{Re}(w-1) \;\le\; 2(|w|-1) \;\le\; |w|^2-1,\]</span>
+the first because <span class="math inline">\(\mathrm{Re}\,w\le |w|\)</span>, the second because <span class="math inline">\(|w|^2-2|w|+1=(|w|-1)^2\ge 0\)</span>. Since <span class="math inline">\(\Delta&#39;=f&#39;-1\)</span>, this says
+<span class="math display">\[2\,\mathrm{Re}\,\Delta&#39;(z) \le |f&#39;(z)|^2-1 \qquad(\star)\]</span>
+pointwise, everywhere in <span class="math inline">\(G\)</span>.</p>
+<p><strong>Step 2 — integrate.</strong> Since <span class="math inline">\(|f&#39;(z)|^2\)</span> is the Jacobian of the map <span class="math inline">\(f\)</span>, <span class="math inline">\(\iint_T|f&#39;|^2\,dA = \mathrm{area}\,f(T)\)</span>. Integrating <span class="math inline">\((\star)\)</span> over <span class="math inline">\(T\)</span>:
+<span class="math display">\[2\iint_T \mathrm{Re}\,\Delta&#39;(z)\,dx\,dy \;\le\; \mathrm{area}\,f(T)-\mathrm{area}\,T.\]</span></p>
+<p><strong>Step 3 — turn the area integral into a boundary integral.</strong> Since <span class="math inline">\(\Delta\)</span> is analytic, <span class="math inline">\(\Delta&#39; = \partial(\mathrm{Re}\,\Delta)/\partial x\)</span> (Cauchy–Riemann), so Green’s theorem (<span class="math inline">\(\oint P\,dx+Q\,dy = \iint(\partial Q/\partial x-\partial P/\partial y)\,dA\)</span>, with <span class="math inline">\(P=0,\,Q=\mathrm{Re}\,\Delta\)</span>) gives exactly
+<span class="math display">\[\iint_T \mathrm{Re}\,\Delta&#39;(z)\,dx\,dy = \oint_{\partial T}\mathrm{Re}\,\Delta(z)\,dy.\]</span>
+So
+<span class="math display">\[\boxed{\ \mathrm{area}\,f(T)-\mathrm{area}\,T \;\ge\; 2\oint_{\partial T}\mathrm{Re}\,\Delta(z)\,dy\ } \tag{1}\]</span></p>
+<p>This is the prototype of <strong>every</strong> estimate in the chapter. The whole point of quadratic differentials, later on, is that they let you run this <em>same</em> argument on wildly more complicated domains (bounded by trajectories instead of straight slits), where <span class="math inline">\(\Delta&#39;\)</span> gets replaced by something built from <span class="math inline">\(Q\)</span>.</p>
+<p>Applying <span class="math inline">\((1)\)</span> to the rectangle and taking <span class="math inline">\(G\)</span> to contain <span class="math inline">\(\infty\)</span> with <span class="math inline">\(\mathbb C\setminus G\)</span> a union of horizontal segments, the same style of computation (large squares <span class="math inline">\(T_n\to\mathbb C\)</span>) forces <span class="math inline">\(\mathrm{Re}\,b_1 \le 0\)</span> for <span class="math inline">\(f(z)=z+b_0+b_1z^{-1}+\cdots\)</span> — a first, embryonic case of the General Coefficient Theorem. That’s the arc of the whole chapter: (1) generalizes to Theorems 8.9–8.12, and the homotopy machinery of §8.4 is what makes the generalization rigorous.</p>
+<div id="problems-for-8.1" class="section level4 hasAnchor" number="7.1.1.1">
+<h4><span class="header-section-number">7.1.1.1</span> Problems for 8.1<a href="quadric-differentials.html#problems-for-8.1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Problem 1 (Rengel’s inequality).</strong> With <span class="math inline">\(G,T,f\)</span> as above, suppose every horizontal segment <span class="math inline">\([-a+iy,\,a+iy]\)</span> (<span class="math inline">\(|y|\le b\)</span>) maps to a curve of length <span class="math inline">\(\ge 2\alpha\)</span>. Show
+<span class="math display">\[\frac{\mathrm{area}\,f(T)}{\mathrm{area}\,T}\ge \frac{\alpha^2}{a^2},\]</span>
+with equality only for <span class="math inline">\(f(z)=c_1z+c_0\)</span>, <span class="math inline">\(|c_1|=\alpha/a\)</span>.</p>
+<p><em>Solution.</em> This one is cleanest via Cauchy–Schwarz directly (the same “length-vs-area” idea as <span class="math inline">\((\star)\)</span>, but sharper). For fixed <span class="math inline">\(y\)</span>, the image of <span class="math inline">\(t\mapsto t+iy\)</span>, <span class="math inline">\(t\in[-a,a]\)</span>, has length
+<span class="math display">\[L(y)=\int_{-a}^a |f&#39;(t+iy)|\,dt \;\ge\; 2\alpha.\]</span>
+By Cauchy–Schwarz,
+<span class="math display">\[L(y)^2 = \Big(\int_{-a}^a |f&#39;(t+iy)|\cdot 1\,dt\Big)^2 \le \Big(\int_{-a}^a 1^2\,dt\Big)\Big(\int_{-a}^a |f&#39;(t+iy)|^2\,dt\Big) = 2a\int_{-a}^a|f&#39;(t+iy)|^2\,dt,\]</span>
+so
+<span class="math display">\[\int_{-a}^a |f&#39;(t+iy)|^2\,dt \;\ge\; \frac{L(y)^2}{2a}\;\ge\;\frac{2\alpha^2}{a}.\]</span>
+Integrate over <span class="math inline">\(y\in[-b,b]\)</span>:
+<span class="math display">\[\mathrm{area}\,f(T)=\iint_T|f&#39;|^2\,dA \;\ge\; \int_{-b}^b \frac{2\alpha^2}{a}\,dy = \frac{4\alpha^2 b}{a}.\]</span>
+Since <span class="math inline">\(\mathrm{area}\,T=4ab\)</span>, dividing gives <span class="math inline">\(\mathrm{area}\,f(T)/\mathrm{area}\,T\ge \alpha^2/a^2\)</span>. <span class="math inline">\(\blacksquare\)</span></p>
+<p><em>Equality</em> forces, for a.e. <span class="math inline">\(y\)</span>: (i) equality in Cauchy–Schwarz, i.e. <span class="math inline">\(|f&#39;(t+iy)|\)</span> constant in <span class="math inline">\(t\)</span>, and (ii) <span class="math inline">\(L(y)=2\alpha\)</span> exactly. Condition (i) holding for every <span class="math inline">\(y\)</span> forces <span class="math inline">\(|f&#39;|\)</span> constant throughout <span class="math inline">\(T\)</span>; an analytic function of constant modulus is constant, so <span class="math inline">\(f&#39;\equiv c_1\)</span> and <span class="math inline">\(f(z)=c_1z+c_0\)</span>. Tightness of (ii) then forces <span class="math inline">\(2a|c_1|=2\alpha\)</span>, i.e. <span class="math inline">\(|c_1|=\alpha/a\)</span>.</p>
+<p>This is exactly the classical <strong>length–area principle</strong> — the ancestor of extremal length, and (unsurprisingly) the same inequality that sits underneath Schippers’ construction once you go to the double-cover, <span class="math inline">\(Q\)</span>-metric picture.</p>
+<p><strong>Problem 2.</strong> <span class="math inline">\(G\)</span> has finite connectivity, <span class="math inline">\(\infty\in G\)</span>; <span class="math inline">\(f(z)=z+b_0+b_1z^{-1}+\cdots\)</span> is univalent on <span class="math inline">\(G\)</span>, and <span class="math inline">\(\hat{\mathbb C}\setminus f(G)\)</span> consists of horizontal segments. Show <span class="math inline">\(\mathrm{Re}\,b_1 \ge \frac{1}{2\pi}\,\mathrm{area}(\hat{\mathbb C}\setminus f(G))\)</span>.</p>
+<p>Since the complement here is a finite union of slits, the right side is literally <span class="math inline">\(0\)</span> — so this is really asking you to show <span class="math inline">\(\mathrm{Re}\,b_1\ge 0\)</span> for the canonical “horizontal slit map” of a finitely-connected domain, by running the <span class="math inline">\(T_n\to\infty\)</span> limit from the introduction, but now with <span class="math inline">\(\hat{\mathbb C}\setminus G\)</span> contributing an extra fixed boundary term (from the “holes” of <span class="math inline">\(G\)</span>) to the Green’s-theorem step. I’d rather set this one up <strong>with</strong> you than hand you a slick proof I haven’t fully nailed down live — the bookkeeping of that extra boundary term is exactly the kind of thing worth doing on paper together.</p>
+<iframe src="https://quadraticdiffrentialriemannsphere.netlify.app/" width="100%" height="1000">
+</iframe>
+<p>This was generated using AI<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
 
 </div>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>The content was produced with assistance from multiple AI systems, including Google Gemini, Anthropic Claude, ChatGPT, and Microsoft Copilot; therefore, credit cannot be attributed to a single model.<a href="quadric-differentials.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="complex-numbers.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="elementary-theory-of-univalent-functions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="nehari-and-eric-method.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -267,7 +294,7 @@ gitbook.start({
     "size": 2
   },
   "edit": {
-    "link": "https://github.com/ashanjaymal/Complex-Analysis/edit/main/index.Rmd",
+    "link": "https://github.com/ashanjaymal/Complex-Analysis/edit/main/06-qdonriemannspahere.Rmd",
     "text": "Edit"
   },
   "history": {
